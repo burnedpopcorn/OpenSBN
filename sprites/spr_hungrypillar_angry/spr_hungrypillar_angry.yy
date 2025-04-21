@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Escape Pillar",
+    "path": "folders/Sprites/Level Assets/Escape Pillar.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

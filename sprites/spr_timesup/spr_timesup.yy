@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "HUD",
-    "path": "folders/Sprites/HUD.yy",
+    "name": "Cutscenes",
+    "path": "folders/Sprites/HUD/Cutscenes.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

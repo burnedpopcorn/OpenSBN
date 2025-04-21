@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "Escape Guy",
-    "path": "folders/Sprites/Level Assets/Escape Guy.yy",
+    "path": "folders/Sprites/NPCs/Escape Guy.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

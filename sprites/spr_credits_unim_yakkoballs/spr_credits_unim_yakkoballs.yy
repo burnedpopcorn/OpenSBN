@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "Credits",
-    "path": "folders/Sprites/HUD/Credits.yy",
+    "path": "folders/Sprites/HUD/Cutscenes/Credits.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

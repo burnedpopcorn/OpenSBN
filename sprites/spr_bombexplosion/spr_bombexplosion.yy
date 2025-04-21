@@ -65,8 +65,8 @@
   },
   "origin": 4,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Effects and Particles",
+    "path": "folders/Sprites/HUD/Effects and Particles.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

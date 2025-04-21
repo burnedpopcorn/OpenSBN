@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Unused",
+    "path": "folders/Tile Sets/Unused.yy",
   },
   "spriteId": {
     "name": "_decompiled_ts_superforest",
@@ -24,7 +24,7 @@
     "name": "plumbergroup",
     "path": "texturegroups/plumbergroup",
   },
-  "tile_count": 391,
+  "tile_count": 400,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -418,6 +418,15 @@
       388,
       389,
       390,
+      391,
+      392,
+      393,
+      394,
+      395,
+      396,
+      397,
+      398,
+      399,
     ],
     "SerialiseFrameCount": 1,
   },

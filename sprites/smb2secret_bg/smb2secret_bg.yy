@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Backgrounds",
+    "path": "folders/Sprites/BGs and Tilesets/Backgrounds.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

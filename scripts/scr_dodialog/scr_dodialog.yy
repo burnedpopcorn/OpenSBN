@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Dialog",
+    "path": "folders/Scripts/General/Visuals/Dialog.yy",
   },
 }

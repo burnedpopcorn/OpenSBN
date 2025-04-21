@@ -49,8 +49,8 @@
   },
   "origin": 0,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Debug",
+    "path": "folders/Sprites/Level Assets/Debug.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

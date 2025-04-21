@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 7,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Checkpoint",
+    "path": "folders/Sprites/Level Assets/Checkpoint.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Effects and Particles",
+    "path": "folders/Sprites/HUD/Effects and Particles.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

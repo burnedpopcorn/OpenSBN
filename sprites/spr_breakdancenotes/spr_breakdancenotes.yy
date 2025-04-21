@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Breakdance",
+    "path": "folders/Sprites/Player/Breakdance.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

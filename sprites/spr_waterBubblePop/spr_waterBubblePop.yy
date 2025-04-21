@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Water",
+    "path": "folders/Sprites/Level Assets/Water.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Unused",
+    "path": "folders/Tile Sets/Unused.yy",
   },
   "spriteId": {
     "name": "_decompiled_tile_castle_tileset",
@@ -24,7 +24,7 @@
     "name": "unused",
     "path": "texturegroups/unused",
   },
-  "tile_count": 860,
+  "tile_count": 870,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -887,6 +887,16 @@
       857,
       858,
       859,
+      860,
+      861,
+      862,
+      863,
+      864,
+      865,
+      866,
+      867,
+      868,
+      869,
     ],
     "SerialiseFrameCount": 1,
   },

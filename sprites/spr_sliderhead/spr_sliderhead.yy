@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 1,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Option Menu",
+    "path": "folders/Sprites/HUD/Option Menu.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -57,7 +57,7 @@
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":-1,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"75cf0d71-9c9b-42c4-ab8c-2364069b2337","path":"sprites/spr_sliderhead/spr_sliderhead.yy",},},},"Disabled":false,"id":"7fa8b7c0-dfeb-4e4d-8740-3f3a118160cb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"510b4610-55cc-4fe1-854f-c2667c5a3ca3","path":"sprites/spr_sliderhead/spr_sliderhead.yy",},},},"Disabled":false,"id":"df10987d-6a74-4586-81b3-a82004323f13","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"aff0da77-28ad-4fb5-9ba0-ee1972e1b21c","path":"sprites/spr_sliderhead/spr_sliderhead.yy",},},},"Disabled":false,"id":"de6f3384-4f29-45eb-a809-b807850ef39d","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},

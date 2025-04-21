@@ -30,8 +30,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Collectables",
+    "path": "folders/Sprites/Level Assets/Collectables.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

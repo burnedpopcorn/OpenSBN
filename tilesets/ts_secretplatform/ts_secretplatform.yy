@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Secrets",
+    "path": "folders/Tile Sets/Secrets.yy",
   },
   "spriteId": {
     "name": "_decompiled_ts_secretplatform",

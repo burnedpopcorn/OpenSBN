@@ -38,8 +38,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Enemies",
+    "path": "folders/Sprites/Enemies.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

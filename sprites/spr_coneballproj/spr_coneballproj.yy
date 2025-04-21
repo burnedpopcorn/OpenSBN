@@ -30,8 +30,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Comeball",
+    "path": "folders/Sprites/Leftovers/Comeball.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

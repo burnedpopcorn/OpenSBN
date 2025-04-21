@@ -57,7 +57,7 @@
   "origin": 9,
   "parent": {
     "name": "Fish Guy",
-    "path": "folders/Sprites/Level Assets/Fish Guy.yy",
+    "path": "folders/Sprites/NPCs/Fish Guy.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

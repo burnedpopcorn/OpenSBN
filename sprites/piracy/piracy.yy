@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Cutscenes",
+    "path": "folders/Sprites/HUD/Cutscenes.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

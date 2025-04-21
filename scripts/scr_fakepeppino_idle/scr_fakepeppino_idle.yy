@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Fake Peppino",
+    "path": "folders/Scripts/Leftovers/Boss States/Fake Peppino.yy",
   },
 }

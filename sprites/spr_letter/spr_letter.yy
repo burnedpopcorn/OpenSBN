@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "MailBox",
+    "path": "folders/Sprites/HUD/MailBox.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

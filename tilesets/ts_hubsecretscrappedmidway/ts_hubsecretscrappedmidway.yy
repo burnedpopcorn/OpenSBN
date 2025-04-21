@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Hub",
+    "path": "folders/Tile Sets/Unused/Hub.yy",
   },
   "spriteId": {
     "name": "_decompiled_ts_hubsecretscrappedmidway",
@@ -24,7 +24,7 @@
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",
   },
-  "tile_count": 252,
+  "tile_count": 256,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -279,6 +279,10 @@
       249,
       250,
       251,
+      252,
+      253,
+      254,
+      255,
     ],
     "SerialiseFrameCount": 1,
   },

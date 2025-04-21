@@ -36,8 +36,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Gamepad Buttons",
+    "path": "folders/Sprites/HUD/Option Menu/Gamepad Buttons.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Solid",
-    "path": "folders/Sprites/Level Assets/Debug/Solid.yy",
+    "name": "Miscellanous",
+    "path": "folders/Sprites/Level Assets/Debug/Miscellanous.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

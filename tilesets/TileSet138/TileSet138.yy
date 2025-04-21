@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "SMB2",
+    "path": "folders/Tile Sets/Unused/SMB2.yy",
   },
   "spriteId": {
     "name": "_decompiled_TileSet138",
@@ -24,7 +24,7 @@
     "name": "plumbergroup",
     "path": "texturegroups/plumbergroup",
   },
-  "tile_count": 120,
+  "tile_count": 121,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -147,6 +147,7 @@
       117,
       118,
       119,
+      120,
     ],
     "SerialiseFrameCount": 1,
   },

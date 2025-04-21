@@ -31,7 +31,7 @@
   "origin": 4,
   "parent": {
     "name": "Cat Priest",
-    "path": "folders/Sprites/Level Assets/Cat Priest.yy",
+    "path": "folders/Sprites/NPCs/Cat Priest.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

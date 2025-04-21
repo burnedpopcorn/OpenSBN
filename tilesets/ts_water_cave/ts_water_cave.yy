@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Eerie Lake",
+    "path": "folders/Tile Sets/Eerie Lake.yy",
   },
   "spriteId": {
     "name": "_decompiled_ts_water_cave",
@@ -24,7 +24,7 @@
     "name": "fishgroup",
     "path": "texturegroups/fishgroup",
   },
-  "tile_count": 525,
+  "tile_count": 529,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -1077,6 +1077,14 @@
       523,
       524,
       524,
+      525,
+      525,
+      526,
+      526,
+      527,
+      527,
+      528,
+      528,
     ],
     "SerialiseFrameCount": 2,
   },

@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Hub",
+    "path": "folders/Tile Sets/Unused/Hub.yy",
   },
   "spriteId": {
     "name": "_decompiled_ts_huboutside",
@@ -24,7 +24,7 @@
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",
   },
-  "tile_count": 21,
+  "tile_count": 25,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -48,6 +48,10 @@
       18,
       19,
       20,
+      21,
+      22,
+      23,
+      24,
     ],
     "SerialiseFrameCount": 1,
   },
