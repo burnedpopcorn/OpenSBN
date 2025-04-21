@@ -1,0 +1,1 @@
+targetRoom = vir_7;

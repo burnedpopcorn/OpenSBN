@@ -1,0 +1,12 @@
+current_arr = 0;
+content_arr = [obj_bigcollect];
+count = 15;
+collectcount = 3;
+hsp = 0;
+vsp = 0;
+grav = 0.5;
+alarm[0] = count;
+depth = 11;
+platformid = -4;
+hsp_carry = 0;
+vsp_carry = 0;

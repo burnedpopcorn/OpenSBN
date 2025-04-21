@@ -1,0 +1,1 @@
+targetRoom = mansiondelta_2;

@@ -1,0 +1,9 @@
+depth = -10;
+active = false;
+teleportCooldown = 120;
+teleportDistance = 200;
+initialDistance = 500;
+dimOpacity = 0;
+dimSpeed = 0.05;
+snd_scream = fmod_createEventInstance("event:/SFX/voice/terrorScream");
+snd_teleport = fmod_createEventInstance("event:/SFX/misc/evilteleport");

@@ -1,0 +1,1 @@
+targetRoom = smb_5;

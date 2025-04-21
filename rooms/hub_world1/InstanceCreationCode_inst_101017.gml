@@ -1,0 +1,9 @@
+targetRoom = midway_1;
+sprite_index = spr_gate_midway;
+titlecard_sprite = spr_titlecards;
+titlecard_index = 0;
+title_sprite = spr_titlecards_title;
+title_index = 0;
+title_music = "event:/music/midway_titlecard";
+group_arr = ["midwaygroup"];
+level = "midway";

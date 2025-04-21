@@ -1,0 +1,16 @@
+addSong("event:/music/soundtest/title", "Bo-gin Your Journey - UNI M.");
+addSong("event:/music/soundtest/pause", "It's Bo Break-Time - UNI M.");
+addSong("event:/music/soundtest/hub", "And This is My \nGlorious Mansion! - UNI M.");
+addSong("event:/music/soundtest/midway", "Bad to the Bo - VI");
+addSong("event:/music/soundtest/midwaysecret", "I Found a Mid Secret - UNI M.");
+addSong("event:/music/soundtest/eerie", "Blud Lake - VI");
+addSong("event:/music/soundtest/eeriecave", "A Broken Heart \nand a Bladder - UNI M.");
+addSong("event:/music/soundtest/eeriecave_underwater", "A Broken Heart \nand a Bladder (Fish Mix) - UNI M.");
+addSong("event:/music/soundtest/eeriesecret", "A Secret Resides at the \nBottom of the Lake - UNI M.");
+addSong("event:/music/soundtest/eeriefish", "Unown's Death Scene - Mr.Unown, Froskii");
+addSong("event:/music/soundtest/fishdance", "Strong House at Nighttime - UNI M.");
+addSong("event:/music/soundtest/tuctime", "Its Bo Time! - VI");
+addSong("event:/music/soundtest/lap", "Ring Around the Bosey - UNI M.");
+addSong("event:/music/soundtest/pillar", "Tachyarrhythmia Rhythms - UNI M.");
+addSong("event:/music/soundtest/credits", "The Bo Bash - UNI M.");
+addSong("event:/music/soundtest/end", "The End of the \nBo-Ginning - UNI M.");

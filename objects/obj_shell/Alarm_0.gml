@@ -1,0 +1,1 @@
+global.shellactivate = false;

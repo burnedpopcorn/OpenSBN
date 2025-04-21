@@ -1,0 +1,1 @@
+kill_sounds(snd);

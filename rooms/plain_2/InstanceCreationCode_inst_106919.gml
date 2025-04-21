@@ -1,0 +1,1 @@
+targetRoom = plain_1;

@@ -1,0 +1,207 @@
+event_inherited();
+
+if (room == rm_blank)
+    exit;
+
+var targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_player1;
+
+if (bombreset > 0)
+    bombreset--;
+
+if (state == states.walk)
+{
+    if (!chasing)
+    {
+        targetplayer = instance_nearest(x, y, obj_player1);
+        
+        if (targetplayer.x > (x - 1900) && targetplayer.x < (x + 1900) && y <= (targetplayer.y + obj_gameFrame.defaultheight) && y >= (targetplayer.y - obj_gameFrame.defaultheight))
+        {
+            chasing = 1;
+            
+            if (x != targetplayer.x)
+                image_xscale = -sign(x - targetplayer.x);
+            
+            image_index = 0;
+            sprite_index = spr_shrimp_knife;
+            state = UnknownEnum.Value_131;
+            bombreset = 0;
+            hsp = 0;
+        }
+    }
+    else
+    {
+        state = UnknownEnum.Value_143;
+        sprite_index = walkspr;
+        image_index = 0;
+    }
+}
+else if (state == UnknownEnum.Value_143)
+{
+    if (sprite_index == spr_shrimp_throw)
+        sprite_index = spr_shrimp_walk;
+    
+    move = sign(targetplayer.x - x);
+    
+    if (move != 0)
+        image_xscale = move;
+    
+    if (chasespeed < 4)
+        chasespeed += 0.25;
+    
+    if (abs(x - targetplayer.x) < 230)
+    {
+        hsp = -move * chasespeed;
+        
+        if (move != 0 && move != -dir)
+            movespeed = 2;
+    }
+    else if (abs(x - targetplayer.x) > 240)
+    {
+        hsp = move * chasespeed;
+        
+        if (move != 0 && move != dir)
+            chasespeed = 2;
+    }
+    else
+    {
+        hsp = 0;
+        chasespeed = 0;
+    }
+    
+    var inst_front = collision_line(x, y + 25, x + (sign(hsp) * 78), y + 25, obj_solid, false, true);
+    
+    if (bombreset == 0)
+    {
+        if (targetplayer.x > (x - attackthreshold_x) && targetplayer.x < (x + attackthreshold_x) && targetplayer.y > (y - attackthreshold_y) && targetplayer.y < (y + attackthreshold_y) && (inst_front == -4 || (inst_front != -4 && x > inst_front.x && targetplayer.x > inst_front.x) || (inst_front != -4 && x < inst_front.x && targetplayer.x < inst_front.x)))
+        {
+            state = UnknownEnum.Value_130;
+            hsp = 0;
+            attack_count = attack_max;
+        }
+    }
+    
+    var inst_down = collision_line(x + (sign(hsp) * 16), y, x + (sign(hsp) * 16), y + 64, obj_solid, false, true);
+    var inst_down2 = collision_line(x + (sign(hsp) * 16), y, x + (sign(hsp) * 16), y + 64, obj_platform, false, true);
+    var inst_up = collision_line(x + (sign(hsp) * 96), y + 25, x + (sign(hsp) * 96), (y - 78) + 50, obj_platform, false, true);
+    
+    if (image_index > (image_number - 1))
+    {
+        if (sprite_index == spr_shrimp_jump)
+        {
+            sprite_index = spr_shrimp_fall;
+            image_index = 0;
+        }
+        else if (sprite_index == spr_shrimp_land)
+        {
+            sprite_index = spr_shrimp_walk;
+            image_index = 0;
+        }
+    }
+    
+    if (grounded && sprite_index == spr_shrimp_fall)
+    {
+        sprite_index = spr_shrimp_land;
+        image_index = 0;
+    }
+    
+    if ((inst_front != -4 || inst_up != -4 || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != UnknownEnum.Value_130)
+    {
+        vsp = -11;
+        sprite_index = spr_shrimp_jump;
+        image_index = 0;
+        hsp = image_xscale * chasespeed;
+    }
+}
+
+if (state == UnknownEnum.Value_130)
+{
+    if (attack_count > 0)
+    {
+        attack_count--;
+    }
+    else
+    {
+        image_index = 0;
+        sprite_index = spr_shrimp_knife;
+        bombreset = 0;
+        state = UnknownEnum.Value_131;
+        hsp = 0;
+    }
+}
+
+switch (state)
+{
+    case UnknownEnum.Value_128:
+        scr_enemy_idle();
+        break;
+    
+    case UnknownEnum.Value_132:
+        scr_enemy_turn();
+        break;
+    
+    case states.walk:
+        scr_enemy_walk();
+        break;
+    
+    case UnknownEnum.Value_138:
+        scr_enemy_land();
+        break;
+    
+    case states.hit:
+        scr_enemy_hit();
+        break;
+    
+    case states.stun:
+        chasing = 1;
+        scr_enemy_stun();
+        break;
+    
+    case UnknownEnum.Value_131:
+        scr_pizzagoblin_throw();
+        break;
+    
+    case states.grabbed:
+        chasing = 1;
+        scr_enemy_grabbed();
+        break;
+    
+    case UnknownEnum.Value_127:
+        scr_enemy_rage();
+        break;
+}
+
+if (state == states.stun && stunned > 100 && birdcreated == 0)
+{
+    birdcreated = 1;
+    
+    with (instance_create(x, y, obj_enemybird))
+        ID = other.id;
+}
+
+if (sprite_index == scaredspr && state == UnknownEnum.Value_128)
+    invincible = 0;
+
+if (state != states.stun)
+    birdcreated = 0;
+
+if (flash == 1 && alarm[2] <= 0)
+    alarm[2] = 0.15 * room_speed;
+
+scr_scareenemy();
+
+if (state != states.grabbed)
+    depth = 0;
+
+if (state != states.stun)
+    thrown = false;
+
+if (boundbox == 0)
+{
+    with (instance_create(x, y, obj_baddiecollisionbox))
+    {
+        sprite_index = other.sprite_index;
+        mask_index = other.sprite_index;
+        baddieID = other.id;
+        other.boundbox = 1;
+    }
+}

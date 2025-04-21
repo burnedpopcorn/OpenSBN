@@ -1,0 +1,1 @@
+global.BlinkTrail = !global.BlinkTrail;

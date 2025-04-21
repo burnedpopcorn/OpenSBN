@@ -1,0 +1,1 @@
+targetRoom = faketut_2;

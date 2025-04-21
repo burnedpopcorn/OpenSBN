@@ -1,0 +1,1 @@
+triggerdistance = 300;

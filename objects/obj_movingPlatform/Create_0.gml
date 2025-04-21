@@ -1,0 +1,30 @@
+canCollide = function(argument0 = obj_player)
+{
+    switch (argument0)
+    {
+        case obj_player:
+        case obj_player1:
+        case obj_player2:
+            var _state = (argument0.state == states.backbreaker || argument0.state == states.chainsaw) ? argument0.tauntstoredstate : argument0.state;
+            return _state != states.ladder;
+            break;
+        
+        default:
+            return true;
+            break;
+    }
+};
+
+hsp = 0;
+vsp = 0;
+hdir = 1;
+vdir = -1;
+v_velocity = 2;
+h_velocity = 0;
+depth = 0;
+changing_vdir = 0;
+changing_hdir = 0;
+image_speed = 0.35;
+mask_index = spr_chigaco;
+trueX = x;
+trueY = y;

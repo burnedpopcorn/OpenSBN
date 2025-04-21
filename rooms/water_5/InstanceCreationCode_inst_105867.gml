@@ -1,0 +1,1 @@
+targetRoom = water_7;
