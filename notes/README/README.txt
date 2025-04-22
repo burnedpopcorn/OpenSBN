@@ -15,22 +15,17 @@ There are also some player states that have also have had their code removed, bu
 (dont recommend it, since they will crash the game,
 since the state function code has been deleted, but the function is still being referenced)
 
-I dont plan on ever making a cleaned up version, since I try and keep things 
-faithful to their original counterparts, even if it was slopply made
+I dont plan on ever making a cleaned up version, because frankly i dont really like SBN anyways
+(its a mystery why im even making this decomp anyways...)
 
 --------------------------------------------------------
 
 Packages Added:
-	- FMOD						(DONE)
-	- GameFrame					(DONE)
-	- NekoPresence				(DONE)
-	- Scribble Deluxe 9.0.0		(DONE)
-	- Mr Unown Collisions		(Kinda Done lmao)
-	
-TODO
-	Fix Rail Collisions (Check Virdesert decomp)
-	Remove all Unknown Enums
-	Finish Organizing Project
+	- YYFMOD
+	- GameFrame
+	- NekoPresence
+	- Scribble Deluxe 9.0.0
+	- Mr Unown Collisions
 
 --------------------------------------------------------
 Project Decompilied by Ultimate_GMS2_Decompiler_v2.csx
