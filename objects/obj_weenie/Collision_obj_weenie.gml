@@ -1,8 +1,8 @@
-if (state == states.stun && thrown && other.state != states.tumble && other.state != states.stun)
+if (state == enemystates.stun && thrown && other.state != states.tumble && other.state != enemystates.stun)
 {
     with (other)
     {
-        state = states.stun;
+        state = enemystates.stun;
         vsp = -5;
         stunstate = 0;
         stunned = 100;

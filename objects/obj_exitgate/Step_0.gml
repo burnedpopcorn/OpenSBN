@@ -24,12 +24,12 @@ if (drop && global.panic)
             {
                 handsprite = spr_grabbiehand_catch;
                 handindex = 0;
-                dropstate = states.grabbed;
+                dropstate = enemystates.grabbed;
             }
             
             break;
         
-        case states.grabbed:
+        case enemystates.grabbed:
             depth = 80;
             var _ty = drop_y - 100;
             y = approach(y, _ty, 3);
@@ -55,7 +55,7 @@ if (drop && global.panic)
             {
                 depth = 50;
                 y = drop_y;
-                dropstate = UnknownEnum.Value_128;
+                dropstate = enemystates.idle;
                 handsprite = spr_grabbiehand_idle;
                 
                 with (obj_camera)
@@ -67,7 +67,7 @@ if (drop && global.panic)
             
             break;
         
-        case UnknownEnum.Value_128:
+        case enemystates.idle:
             hand_y -= 6;
             break;
     }

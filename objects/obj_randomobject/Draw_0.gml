@@ -1,6 +1,6 @@
 event_inherited();
 
-if (state == states.ghostpossess && substate == states.normal)
+if (state == enemystates.ghostpossess && substate == states.normal)
 {
     var _angle = point_direction(0, 0, moveX, moveY);
     var t = 32;

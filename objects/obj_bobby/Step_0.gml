@@ -3,52 +3,52 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
-    case states.stun:
+    case enemystates.idle:
+    case enemystates.stun:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         scr_enemy_charge();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
     
-    case states.ghostpossess:
+    case enemystates.ghostpossess:
         scr_enemy_ghostpossess();
         break;
     
@@ -57,7 +57,7 @@ switch (state)
         break;
 }
 
-if (state == states.walk)
+if (state == enemystates.walk)
 {
     image_speed = 0.2;
     
@@ -81,7 +81,7 @@ if (state == states.walk)
             sprite_index = idlespr;
             image_xscale *= -1;
             image_index = 0;
-            state = UnknownEnum.Value_128;
+            state = enemystates.idle;
             event_play_oneshot("event:/SFX/voice/baby", x, y);
         }
     }
@@ -98,7 +98,7 @@ if (state == states.walk)
         idlebuffer = irandom_range(200, 600);
         sprite_index = idlespr;
         image_index = 0;
-        state = UnknownEnum.Value_128;
+        state = enemystates.idle;
         event_play_oneshot("event:/SFX/voice/baby", x, y);
     }
 }

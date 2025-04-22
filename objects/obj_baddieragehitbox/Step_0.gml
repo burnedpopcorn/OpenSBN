@@ -7,7 +7,7 @@ if (instance_exists(ID))
     
     with (ID)
     {
-        if (state != UnknownEnum.Value_127)
+        if (state != enemystates.rage)
         {
             ragehitbox = 0;
             instance_destroy(other);

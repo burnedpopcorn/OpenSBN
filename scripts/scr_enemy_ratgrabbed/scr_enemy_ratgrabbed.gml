@@ -11,7 +11,7 @@ function scr_enemy_ratgrabbed()
         if (!p)
             sprite_index = stunfallspr;
         
-        if (!p && state != states.stun)
+        if (!p && state != enemystates.stun)
             state = UnknownEnum.Value_207;
         
         if (p && !ratgrabbed)
@@ -31,7 +31,7 @@ function scr_enemy_ratgrabbed()
                 grounded = false;
                 hp = -1;
                 alarm[1] = 5;
-                state = states.stun;
+                state = enemystates.stun;
                 stunned = 200;
                 hithsp = hsp;
                 hitvsp = vsp;

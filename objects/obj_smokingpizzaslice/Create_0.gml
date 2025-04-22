@@ -1,5 +1,5 @@
 scr_initenemy();
-substate = states.walk;
+substate = enemystates.walk;
 substate_max = 3 * room_speed;
 substate_buffer = substate_max;
 hitboxcreate = 0;
@@ -7,7 +7,7 @@ shot = 0;
 grav = 0.5;
 hsp = 0;
 vsp = 0;
-state = states.walk;
+state = enemystates.walk;
 stunned = 0;
 alarm[0] = 150;
 roaming = 1;

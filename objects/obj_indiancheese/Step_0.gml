@@ -1,18 +1,18 @@
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         scr_enemy_charge();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         
         if (totemID != -4)
@@ -20,31 +20,31 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
     
-    case states.ghostpossess:
+    case enemystates.ghostpossess:
         scr_enemy_ghostpossess();
         break;
 }
@@ -90,10 +90,10 @@ if (state == UnknownEnum.Value_190 && totemID != -4)
 }
 else if (state == UnknownEnum.Value_190 && totemID == -4)
 {
-    state = states.walk;
+    state = enemystates.walk;
 }
 
-if (state == states.stun && stunned > 40 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -101,7 +101,7 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
@@ -112,14 +112,14 @@ var player = instance_nearest(x, y, obj_player1);
 if (elite && ragecooldown > 0)
     ragecooldown--;
 
-if (state == states.walk && sprite_index == walkspr && sprite_index != spr_indiancheese_scared && elite && ragecooldown == 0)
+if (state == enemystates.walk && sprite_index == walkspr && sprite_index != spr_indiancheese_scared && elite && ragecooldown == 0)
 {
     if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
     {
         if (x != player.x)
             image_xscale = -sign(x - player.x);
         
-        state = UnknownEnum.Value_127;
+        state = enemystates.rage;
         sprite_index = spr_indiancheese_howl;
         image_index = 0;
         shot = 0;
@@ -139,10 +139,10 @@ else if (image_speed == 0)
 if (sprite_index == spr_indiancheese_land && floor(image_index) == (image_number - 1))
     sprite_index = spr_indiancheese_walk;
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

@@ -3,56 +3,56 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         scr_enemy_charge();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -60,7 +60,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 scr_scareenemy();
@@ -71,10 +71,10 @@ if (ragebuffer > 0)
 
 if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
 {
-    if (state != UnknownEnum.Value_127 && ragebuffer == 0 && elite && (state == states.walk || state == UnknownEnum.Value_130))
+    if (state != enemystates.rage && ragebuffer == 0 && elite && (state == enemystates.walk || state == enemystates.charge))
     {
         event_play_oneshot("event:/SFX/enemies/charge", x, y);
-        state = UnknownEnum.Value_127;
+        state = enemystates.rage;
         sprite_index = spr_fencer_rage;
         
         if (x != player.x)
@@ -89,13 +89,13 @@ if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >=
     }
     else if (x != player.x && grounded)
     {
-        if (state == states.walk && charging == 0)
+        if (state == enemystates.walk && charging == 0)
         {
             with (instance_create(x, y, obj_tackhitbox))
                 ID = other.id;
             
             charging = 1;
-            state = UnknownEnum.Value_130;
+            state = enemystates.charge;
             movespeed = 5;
             vsp = -7;
             event_play_oneshot("event:/SFX/enemies/charge", x, y);
@@ -104,7 +104,7 @@ if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >=
     }
 }
 
-if (state == states.stun || state == states.walk)
+if (state == enemystates.stun || state == enemystates.walk)
 {
     charging = 0;
     movespeed = 0;
@@ -116,7 +116,7 @@ if (sprite_index == spr_fencer_chargestart && floor(image_index) == (image_numbe
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (hitboxcreate == 0 && (state == states.walk || state == UnknownEnum.Value_127 || state == UnknownEnum.Value_130))
+if (hitboxcreate == 0 && (state == enemystates.walk || state == enemystates.rage || state == enemystates.charge))
 {
     hitboxcreate = 1;
     
@@ -124,10 +124,10 @@ if (hitboxcreate == 0 && (state == states.walk || state == UnknownEnum.Value_127
         ID = other.id;
 }
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

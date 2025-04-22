@@ -5,15 +5,15 @@ targetplayer = instance_nearest(x, y, obj_player1);
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         if (targetplayer.x > (x - 700) && targetplayer.x < (x + 700) && targetplayer.y < (y + 500) && targetplayer.y > (y - 500))
         {
             if (grounded && x != targetplayer.x)
@@ -62,7 +62,7 @@ switch (state)
                 var inst_down2 = collision_line(x + (sign(hsp) * 16), y, x + (sign(hsp) * 16), y + 64, obj_platform, false, true);
                 var inst_up = collision_line(x + (sign(hsp) * 96), y + 25, x + (sign(hsp) * 96), (y - 78) + 50, obj_platform, false, true);
                 
-                if (((!place_meeting(x, y + 1, obj_slope) && (inst_front != -4 || inst_up != -4)) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != UnknownEnum.Value_130)
+                if (((!place_meeting(x, y + 1, obj_slope) && (inst_front != -4 || inst_up != -4)) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != enemystates.charge)
                 {
                     vsp = -11;
                     sprite_index = spr_null;
@@ -93,51 +93,51 @@ switch (state)
         
         if (floor(image_index) == (image_number - 1))
         {
-            state = states.walk;
+            state = enemystates.walk;
             instance_destroy(hitboxID);
             cooldown = 100;
         }
         
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
     
-    case states.ghostpossess:
+    case enemystates.ghostpossess:
         scr_enemy_ghostpossess();
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -145,16 +145,16 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

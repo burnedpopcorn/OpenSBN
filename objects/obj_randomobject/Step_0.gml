@@ -6,7 +6,7 @@ switch (state)
         launch_buffer = 120;
         break;
     
-    case states.ghostpossess:
+    case enemystates.ghostpossess:
         switch (substate)
         {
             case states.normal:

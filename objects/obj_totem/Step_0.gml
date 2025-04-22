@@ -5,7 +5,7 @@ if (empty)
 {
     with (obj_indiancheese)
     {
-        if (empty && state == states.walk && x > (other.x - 72) && x < (other.x + 72) && y > (other.y - 74) && y < (other.y + 50) && grounded)
+        if (empty && state == enemystates.walk && x > (other.x - 72) && x < (other.x + 72) && y > (other.y - 74) && y < (other.y + 50) && grounded)
         {
             state = UnknownEnum.Value_190;
             totemID = other.id;

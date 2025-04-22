@@ -3,19 +3,19 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         scr_enemy_charge();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         
         if (!instance_exists(coneID))
@@ -29,40 +29,40 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -70,16 +70,16 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
-if (state == states.walk && y > ystart && !scr_solid(x, y - 1))
+if (state == enemystates.walk && y > ystart && !scr_solid(x, y - 1))
     y--;
 
-if (state == states.walk && y < ystart && !scr_solid(x, y + 1))
+if (state == enemystates.walk && y < ystart && !scr_solid(x, y + 1))
     y++;
 
-if (state == states.stun)
+if (state == enemystates.stun)
     grav = 0.5;
 else
     grav = 0;
@@ -87,7 +87,7 @@ else
 if (cooldown > 0)
     cooldown--;
 
-if (state == states.walk)
+if (state == enemystates.walk)
 {
     if (!patrolfound)
     {
@@ -103,12 +103,12 @@ if (state == states.walk)
         alarm[5] = 60;
     }
 }
-else if (state == states.stun || state == states.grabbed || state == states.hit)
+else if (state == enemystates.stun || state == enemystates.grabbed || state == enemystates.hit)
 {
     alarm[5] = -1;
 }
 
-if (state == states.walk && point_in_camera(x, y, view_camera[0]))
+if (state == enemystates.walk && point_in_camera(x, y, view_camera[0]))
 {
     var p = 0;
     
@@ -131,7 +131,7 @@ if (state == states.punch)
     
     if (floor(image_index) == (image_number - 1))
     {
-        state = states.walk;
+        state = enemystates.walk;
         sprite_index = walkspr;
         cooldown = 100;
     }
@@ -140,13 +140,13 @@ if (state == states.punch)
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state == states.stun || state == states.walk)
+if (state == enemystates.stun || state == enemystates.walk)
     movespeed = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

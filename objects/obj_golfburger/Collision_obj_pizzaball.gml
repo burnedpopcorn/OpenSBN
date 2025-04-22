@@ -1,6 +1,6 @@
-if (state != states.throwing && state != states.stun && state != states.grabbed)
+if (state != states.throwing && state != enemystates.stun && state != enemystates.grabbed)
 {
-    if (other.state == states.walk)
+    if (other.state == enemystates.walk)
     {
         golfid = other.id;
         shot = 0;

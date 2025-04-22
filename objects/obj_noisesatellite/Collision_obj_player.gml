@@ -1,4 +1,4 @@
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
 {
     with (obj_player1)
     {
@@ -19,7 +19,7 @@ if (state != states.grabbed)
                     other.vsp = -5;
                     other.hsp = -other.image_xscale * 3;
                     instance_create(x, y + 50, obj_stompeffect);
-                    other.state = states.stun;
+                    other.state = enemystates.stun;
                     stompAnim = 1;
                     other.image_index = 0;
                     vsp = -14;
@@ -30,7 +30,7 @@ if (state != states.grabbed)
                     other.vsp = -5;
                     other.hsp = -other.image_xscale * 3;
                     instance_create(x, y + 50, obj_stompeffect);
-                    other.state = states.stun;
+                    other.state = enemystates.stun;
                     stompAnim = 1;
                     other.image_index = 0;
                     vsp = -9;
@@ -56,7 +56,7 @@ if (state != states.grabbed)
             if (x != other.x)
                 other.image_xscale = -sign(other.x - x);
             
-            other.state = states.stun;
+            other.state = enemystates.stun;
             image_index = 0;
             state = states.tackle;
         }
@@ -69,7 +69,7 @@ if (state != states.grabbed)
             other.hsp = xscale;
             other.image_index = 0;
             other.stunned = 200;
-            other.state = states.stun;
+            other.state = enemystates.stun;
             machpunchAnim = 1;
             
             if (!scr_solid(x, y + 1) && state != states.freefall)
@@ -89,7 +89,7 @@ if (state != states.grabbed)
                 vsp = -10;
         }
         
-        if (attacking == 0 && state != states.tackle && state != states.hurt && !(y < other.y) && grabbing == 0 && other.state != states.stun)
+        if (attacking == 0 && state != states.tackle && state != states.hurt && !(y < other.y) && grabbing == 0 && other.state != enemystates.stun)
         {
             if (x != other.x)
             {
@@ -103,14 +103,14 @@ if (state != states.grabbed)
             other.hsp = -other.image_xscale * 4;
             other.vsp = -4;
             
-            if (other.state == states.walk || other.state == UnknownEnum.Value_132)
-                other.state = UnknownEnum.Value_128;
+            if (other.state == enemystates.walk || other.state == enemystates.turn)
+                other.state = enemystates.idle;
             
             image_index = 0;
             state = states.bump;
             
-            if (other.state == UnknownEnum.Value_138)
-                other.state = UnknownEnum.Value_128;
+            if (other.state == enemystates.land)
+                other.state = enemystates.idle;
         }
     }
 }

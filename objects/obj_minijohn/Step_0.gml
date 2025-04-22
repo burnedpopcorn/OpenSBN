@@ -2,35 +2,35 @@ var player = instance_nearest(x, y, obj_player1);
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
@@ -38,15 +38,15 @@ switch (state)
         scr_enemy_chase();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
     
@@ -134,7 +134,7 @@ switch (state)
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -157,7 +157,7 @@ if (state == UnknownEnum.Value_143 && ragecooldown <= 0)
             flash = 1;
             alarm[4] = 5;
             ragecooldown = 100;
-            state = UnknownEnum.Value_127;
+            state = enemystates.rage;
             create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
             
             with (instance_create(x, y, obj_tackhitbox))
@@ -180,7 +180,7 @@ if (state == UnknownEnum.Value_143 && ragecooldown <= 0)
 if (ragecooldown > 0)
     ragecooldown--;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
@@ -189,7 +189,7 @@ if (flash == 1 && alarm[2] <= 0)
 if (state != UnknownEnum.Value_143)
     momentum = 0;
 
-if (state == states.walk || state == UnknownEnum.Value_128)
+if (state == enemystates.walk || state == enemystates.idle)
 {
     var targetplayer = obj_player1;
     
@@ -208,9 +208,9 @@ if (instance_exists(obj_player2))
 {
     if (obj_player2.x > (x - 400) && obj_player2.x < (x + 400) && y <= (obj_player2.y + 60) && y >= (obj_player2.y - 60))
     {
-        if (state != UnknownEnum.Value_128 && obj_player2.state == states.mach3)
+        if (state != enemystates.idle && obj_player2.state == states.mach3)
         {
-            state = UnknownEnum.Value_128;
+            state = enemystates.idle;
             sprite_index = scaredspr;
             
             if (x != obj_player2.x)
@@ -219,10 +219,10 @@ if (instance_exists(obj_player2))
     }
 }
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

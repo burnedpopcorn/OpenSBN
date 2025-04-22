@@ -2,7 +2,7 @@ scr_initenemy();
 elite = true;
 elitehit = 9;
 wastedhits = 0;
-state = states.walk;
+state = enemystates.walk;
 hitboxID = -4;
 oldtargetspot = -4;
 targetspot = -4;

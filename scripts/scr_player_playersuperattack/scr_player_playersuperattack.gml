@@ -77,7 +77,7 @@ function state_player_playersuperattack()
                     with (bossID)
                     {
                         boss_hurt_noplayer(30);
-                        state = states.hit;
+                        state = enemystates.hit;
                         hitX = x;
                         hitY = y;
                         hitvsp = -11;

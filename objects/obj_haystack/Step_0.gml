@@ -4,7 +4,7 @@ if (sprite_index != spr_grannygrapeburning && sprite_index != spr_grannygrapebur
 {
     with (obj_peasanto)
     {
-        if (state == UnknownEnum.Value_130 && place_meeting(x + hsp, y, other))
+        if (state == enemystates.charge && place_meeting(x + hsp, y, other))
             other.sprite_index = spr_grannygrapeburningup;
     }
     
@@ -47,7 +47,7 @@ else if (sprite_index == spr_grannygrapeburning)
     
     with (instance_place(x, y - 1, obj_baddie))
     {
-        if (state != states.grabbed)
+        if (state != enemystates.grabbed)
             instance_destroy();
     }
     

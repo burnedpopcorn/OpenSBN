@@ -10,7 +10,7 @@ function scr_enemy_idle()
     
     if ((vsp >= 0 || object_index == obj_miniufo || object_index == obj_kentukybomber) && sprite_index == scaredspr && scaredbuffer <= 0)
     {
-        state = states.walk;
+        state = enemystates.walk;
         sprite_index = walkspr;
         
         if (object_index == obj_treasureguy)
@@ -29,7 +29,7 @@ function scr_enemy_idle()
     if (sprite_index == spr_tack_turn && floor(image_index) == (image_number - 1))
     {
         sprite_index = walkspr;
-        state = states.walk;
+        state = enemystates.walk;
     }
     
     if (place_meeting(x, y + 1, obj_railparent))
@@ -46,7 +46,7 @@ function scr_enemy_idle()
         {
             sprite_index = walkspr;
             image_index = 0;
-            state = states.walk;
+            state = enemystates.walk;
         }
     }
     else

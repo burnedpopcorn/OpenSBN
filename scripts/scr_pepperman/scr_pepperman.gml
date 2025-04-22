@@ -104,7 +104,7 @@ function scr_pepperman_freefall()
     {
         event_play_oneshot("event:/SFX/bo/groundpound", x, y);
         oldtargetspot = targetspot;
-        state = states.walk;
+        state = enemystates.walk;
         
         if (point_in_camera(x, y, 329))
         {
@@ -213,7 +213,7 @@ function scr_pepperman_shoulderbash()
                 other.idle_timer = 10;
         }
         
-        state = states.stun;
+        state = enemystates.stun;
         hsp = -image_xscale * 5;
         vsp = -8;
         stunned = 30;

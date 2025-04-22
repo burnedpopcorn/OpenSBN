@@ -12,7 +12,7 @@ with (obj_player)
 
 switch (state)
 {
-    case UnknownEnum.Value_0:
+    case menuselected.bofallingcutscene:
         var instant = keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(global.player_input_device);
         
         switch (sprite_index)
@@ -42,7 +42,7 @@ switch (state)
             case introArr[1]:
                 if (image_index >= (image_number - 1) || instant)
                 {
-                    state = UnknownEnum.Value_1;
+                    state = menuselected.selectsave;
                     selected = 1;
                     moveBuffer = 10;
                     sprite_index = saves[selected].spr_hover;
@@ -70,7 +70,7 @@ switch (state)
         
         break;
     
-    case states.revolver:
+    case menuselected.loadsave:
         saves[selected].step();
         
         if (frame_current != introSoundBuffer)
@@ -132,12 +132,12 @@ switch (state)
         
         break;
     
-    case states.normal:
+    case menuselected.deletesave:
         saves[selected].step();
         
         if (!input_check("taunt"))
         {
-            state = UnknownEnum.Value_1;
+            state = menuselected.selectsave;
             moveBuffer = 10;
             deleteBuffer = deleteTime;
             exit;
@@ -149,7 +149,7 @@ switch (state)
         {
             deleteSave(selected);
             event_play_oneshot("event:/SFX/misc/explosion", obj_gameFrame.defaultwidth / 2, obj_gameFrame.defaultheight / 2);
-            state = UnknownEnum.Value_1;
+            state = menuselected.selectsave;
             moveBuffer = 10;
             deleteBuffer = deleteTime;
             image_index = 0;
@@ -157,7 +157,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_1:
+    case menuselected.selectsave:
         var allow_movement = true;
         var current_save = saves[selected];
         
@@ -166,7 +166,7 @@ switch (state)
         
         if (input_check_pressed("jump"))
         {
-            state = states.revolver;
+            state = menuselected.loadsave;
             introSoundBuffer = 0;
             image_index = 0;
             event_play_oneshot("event:/SFX/misc/evilteleport");
@@ -177,13 +177,13 @@ switch (state)
         
         if (input_check_pressed("slap"))
         {
-            state = states.dynamite;
+            state = menuselected.endgame;
             select2 = 1;
         }
         
         if (input_check("taunt") && current_save.percentage > 0)
         {
-            state = states.normal;
+            state = menuselected.deletesave;
             allow_movement = false;
         }
         
@@ -193,7 +193,7 @@ switch (state)
             allow_movement = false;
         }
         
-        if (allow_movement && state == UnknownEnum.Value_1)
+        if (allow_movement && state == menuselected.selectsave)
         {
             var move = input_check_pressed("right") - input_check_pressed("left");
             var selOld = selected;
@@ -209,7 +209,7 @@ switch (state)
         
         break;
     
-    case states.dynamite:
+    case menuselected.endgame:
         saves[selected].step();
         var move2 = input_check_pressed("right") - input_check_pressed("left");
         var sel2Old = select2;
@@ -226,19 +226,15 @@ switch (state)
                 goBack = true;
         }
         else if (input_check_pressed("slap"))
-        {
             goBack = true;
-        }
         
         if (goBack)
         {
-            state = UnknownEnum.Value_1;
+            state = menuselected.selectsave;
             select2 = 1;
         }
         else if (quitGame)
-        {
             game_end();
-        }
         
         break;
 }

@@ -1,6 +1,6 @@
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         if (!instance_exists(blockinst))
         {
             blockinst = instance_create(x, y, obj_solid);
@@ -11,7 +11,7 @@ switch (state)
         
         break;
     
-    case states.walk:
+    case enemystates.walk:
         if (blockinst != -4 && instance_exists(blockinst))
         {
             instance_destroy(blockinst);

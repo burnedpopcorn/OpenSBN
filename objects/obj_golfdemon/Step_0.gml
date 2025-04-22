@@ -1,35 +1,35 @@
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         hsp = 0;
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
@@ -37,23 +37,23 @@ switch (state)
         scr_enemy_chase();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
 }
 
-if ((state == states.walk || state == UnknownEnum.Value_128) && sprite_index != spr_golfdemon_idle2)
+if ((state == enemystates.walk || state == enemystates.idle) && sprite_index != spr_golfdemon_idle2)
     sprite_index = spr_golfdemon_idle;
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -64,7 +64,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 if (ragecooldown > 0)
     ragecooldown--;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
@@ -73,7 +73,7 @@ if (flash == 1 && alarm[2] <= 0)
 if (state != UnknownEnum.Value_143)
     momentum = 0;
 
-if (state == states.walk || state == UnknownEnum.Value_128)
+if (state == enemystates.walk || state == enemystates.idle)
 {
     var targetplayer = instance_nearest(x, y, obj_player1);
     
@@ -95,10 +95,10 @@ if (state == states.walk || state == UnknownEnum.Value_128)
     }
 }
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

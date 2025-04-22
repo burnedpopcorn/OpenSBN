@@ -9,7 +9,7 @@ function state_turret_normal()
     
     if (col == -4 && col2 == -4 && colX && colY)
     {
-        state = UnknownEnum.Value_130;
+        state = enemystates.charge;
         can_fire = 1;
         charge_buffer = charge_max;
         stopfiring = 100;

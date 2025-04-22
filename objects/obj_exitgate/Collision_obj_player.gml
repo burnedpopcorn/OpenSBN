@@ -45,7 +45,7 @@ if (image_index == 1 && global.panic == false && room != rm_missing)
     }
 }
 
-if (drop && dropstate != UnknownEnum.Value_128)
+if (drop && dropstate != enemystates.idle)
     exit;
 
 with (obj_player1)

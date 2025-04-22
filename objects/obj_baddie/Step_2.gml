@@ -1,4 +1,4 @@
-if (state == states.grabbed)
+if (state == enemystates.grabbed)
     scr_enemy_grabbed();
 else if (state == states.lungeattack)
     scr_enemy_lungeattack();
@@ -7,16 +7,16 @@ else if (state == UnknownEnum.Value_268)
 
 scr_squash();
 
-if (state != states.stun && state != states.hit)
+if (state != enemystates.stun && state != enemystates.hit)
     linethrown = false;
 
-if (state == states.stun && !thrown)
+if (state == enemystates.stun && !thrown)
     linethrown = false;
 
 if (object_index != obj_pizzaball && (place_meeting(x + 1, y, obj_spike) || place_meeting(x - 1, y, obj_spike) || place_meeting(x, y + 1, obj_spike) || place_meeting(x, y - 1, obj_spike)))
     instance_destroy();
 
-if (state != states.grabbed && state != states.pummel && object_index != obj_pepbat && object_index != obj_ghoul && object_index != obj_fakesanta && use_collision)
+if (state != enemystates.grabbed && state != enemystates.pummel && object_index != obj_pepbat && object_index != obj_ghoul && object_index != obj_fakesanta && use_collision)
     scr_collide();
 
 if (invtime > 0)
@@ -25,9 +25,9 @@ if (invtime > 0)
 if (sprite_index == walkspr && hsp != 0 && floor(image_index) == (image_number - 1) && object_index != obj_ghoul && object_index != obj_bobby)
     create_particle(x - (image_xscale * 20), y + 43, particle.cloudeffect, 0);
 
-if (state == states.walk)
+if (state == enemystates.walk)
     image_speed = 0.35 + (global.baddiespeed * 0.05);
-else if (state != UnknownEnum.Value_130)
+else if (state != enemystates.charge)
     image_speed = 0.35;
 
 if (dodgebuffer > 0)
@@ -39,7 +39,7 @@ with (instance_nearest(x, y, obj_player1))
     {
         other.stunned = 0;
         
-        if (other.state != UnknownEnum.Value_131 && !other.provoked && other.bombreset > 0)
+        if (other.state != enemystates.pthrow && !other.provoked && other.bombreset > 0)
         {
             other.bombreset = 0;
             other.provoked = 1;
@@ -47,7 +47,7 @@ with (instance_nearest(x, y, obj_player1))
         
         other.scaredbuffer = 0;
     }
-    else if (other.state != UnknownEnum.Value_131)
+    else if (other.state != enemystates.pthrow)
     {
         other.provoked = 0;
     }

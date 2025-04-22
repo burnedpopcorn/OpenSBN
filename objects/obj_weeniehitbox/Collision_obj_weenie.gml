@@ -1,4 +1,4 @@
-if (other.id != baddieID && other.state != states.tumble && other.state != states.stun)
+if (other.id != baddieID && other.state != states.tumble && other.state != enemystates.stun)
 {
     with (other)
     {

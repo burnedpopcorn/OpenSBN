@@ -35,7 +35,7 @@ function scr_enemy_stun()
     }
     else if (floor(image_index) == (image_number - 1) && sprite_index == spr_null)
     {
-        state = states.walk;
+        state = enemystates.walk;
         stunned = 0;
         sprite_index = spr_tank_walk;
     }
@@ -143,7 +143,7 @@ function scr_enemy_stun()
         vsp = 0;
         image_index = 0;
         sprite_index = walkspr;
-        state = states.walk;
+        state = enemystates.walk;
         stunned = 0;
     }
     

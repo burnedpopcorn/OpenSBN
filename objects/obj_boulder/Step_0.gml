@@ -1,6 +1,6 @@
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         if (!active)
         {
             hsp = 0;
@@ -15,16 +15,16 @@ switch (state)
         }
         else if (grounded)
         {
-            state = states.walk;
+            state = enemystates.walk;
         }
         
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         hsp = image_xscale * b_movespeed;
         
         if (b_movespeed < 6)
@@ -70,15 +70,15 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         if (global.attackstyle != 2)
         {
             switch (hp)
@@ -150,7 +150,7 @@ switch (state)
             vsp = 0;
             image_index = 0;
             sprite_index = walkspr;
-            state = states.walk;
+            state = enemystates.walk;
         }
         
         if (place_meeting(x, y + 1, obj_railparent))
@@ -162,32 +162,32 @@ switch (state)
         grav = 0.5;
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
     
-    case states.ghostpossess:
+    case enemystates.ghostpossess:
         scr_enemy_ghostpossess();
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -195,10 +195,10 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
-if (state == states.stun)
+if (state == enemystates.stun)
 {
     if (stuntouchbuffer > 0)
         stuntouched = 1;
@@ -222,10 +222,10 @@ if (flash == 1 && alarm[2] <= 0)
 angle = 0;
 flash = 0;
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

@@ -4,7 +4,7 @@ if (instance_exists(obj_optionNew))
 draw_set_font(global.bigfont);
 draw_set_color(c_white);
 
-if (state != UnknownEnum.Value_0)
+if (state != menuselected.bofallingcutscene)
 {
     draw_text_scribble(obj_gameFrame.defaultwidth - 128, obj_gameFrame.defaultheight - 40, string("[spr_transfopromptfont][fa_center][fa_middle]{0} ERASE", get_control_sprite("taunt")));
     draw_text_scribble(43, obj_gameFrame.defaultheight - 164, string("[spr_transfopromptfont][fa_center][fa_middle]{0}", get_control_sprite("start")));
@@ -19,7 +19,7 @@ if (state != UnknownEnum.Value_0)
     draw_set_font(global.bigfont);
 }
 
-if (state == states.normal)
+if (state == menuselected.deletesave)
 {
     draw_set_alpha(0.6);
     draw_rectangle_color(-100, -100, obj_gameFrame.defaultwidth + 100, obj_gameFrame.defaultheight + 100, c_black, c_black, c_black, c_black, false);
@@ -39,7 +39,7 @@ if (state == states.normal)
     draw_text_scribble(obj_gameFrame.defaultwidth / 2, (obj_gameFrame.defaultheight / 2) + 96, "[spr_transfopromptfont][fa_center][fa_middle]ARE YOU SURE?");
 }
 
-if (state == states.dynamite)
+if (state == menuselected.endgame)
 {
     draw_set_alpha(0.6);
     draw_rectangle_color(-100, -100, obj_gameFrame.defaultwidth + 100, obj_gameFrame.defaultheight + 100, c_black, c_black, c_black, c_black, false);

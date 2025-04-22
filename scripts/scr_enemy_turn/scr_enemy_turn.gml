@@ -7,13 +7,13 @@ function scr_enemy_turn()
     {
         if (object_index != obj_tank)
         {
-            state = UnknownEnum.Value_128;
+            state = enemystates.idle;
             image_index = 0;
             sprite_index = idlespr;
         }
         else
         {
-            state = states.walk;
+            state = enemystates.walk;
             image_index = 0;
             sprite_index = walkspr;
         }

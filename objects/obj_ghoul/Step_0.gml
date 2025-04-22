@@ -5,7 +5,7 @@ image_speed = 0.35;
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         sprite_index = idlespr;
         playerid = instance_nearest(x, y, obj_player1);
         var x1 = 370;
@@ -30,11 +30,11 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         scr_enemy_charge();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         sprite_index = idlespr;
         var d = point_direction(x, y, xstart, ystart);
         x += lengthdir_x(8, d);
@@ -44,7 +44,7 @@ switch (state)
         
         if (x > (xstart - 10) && x < (xstart + 10) && y > (ystart - 10) && y < (ystart + 10))
         {
-            state = UnknownEnum.Value_128;
+            state = enemystates.idle;
             image_xscale = start_xscale;
             cooldown = 100;
             x = xstart;
@@ -81,47 +81,47 @@ switch (state)
         {
             y = attack_y;
             vsp = 0;
-            state = UnknownEnum.Value_128;
+            state = enemystates.idle;
             cooldown = 100;
             image_xscale *= -1;
         }
         
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         hit = 1;
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -129,22 +129,22 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (bombreset > 0)
     bombreset--;
 
-if (grounded && state == UnknownEnum.Value_131 && floor(image_index) == 3)
+if (grounded && state == enemystates.pthrow && floor(image_index) == 3)
     vsp = -5;
 
 if (boundbox == 0)

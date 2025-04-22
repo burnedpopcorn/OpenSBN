@@ -44,7 +44,7 @@ if (instance_number(obj_baddie) < 20)
     {
         instance_create(x, y, obj_pizzaportalfade);
         important = 1;
-        state = states.stun;
+        state = enemystates.stun;
         stunned = 50;
     }
 }

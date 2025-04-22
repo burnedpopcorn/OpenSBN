@@ -9,7 +9,7 @@ if (refresh <= 0 && !point_in_camera_ext(x, y, view_camera[0], 100, 100))
             platformid = other.platformid;
         
         image_xscale = other.image_xscale;
-        state = states.stun;
+        state = enemystates.stun;
         stunned = 10;
         vsp = -2;
         other.baddieID = id;

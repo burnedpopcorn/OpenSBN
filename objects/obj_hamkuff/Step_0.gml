@@ -3,21 +3,21 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         break;
     
     case states.blockstance:
         if (!instance_exists(playerid))
         {
-            state = states.walk;
+            state = enemystates.walk;
             break;
         }
         else
@@ -33,7 +33,7 @@ switch (state)
                 {
                     if (state == UnknownEnum.Value_154)
                     {
-                        other.state = states.walk;
+                        other.state = enemystates.walk;
                     }
                     else if (!launched)
                     {
@@ -94,7 +94,7 @@ switch (state)
                         
                         if (launched)
                         {
-                            other.state = states.walk;
+                            other.state = enemystates.walk;
                             instance_destroy(other);
                             global.combotime = 60;
                         }
@@ -125,44 +125,44 @@ switch (state)
             break;
         }
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
     
-    case states.ghostpossess:
+    case enemystates.ghostpossess:
         scr_enemy_ghostpossess();
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -170,12 +170,12 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.walk)
+if (state != enemystates.walk)
     attract_player = 0;
 
 var _dis = 300;
 
-if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != states.taxi && ((distance_to_object(obj_player1) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
+if (state == enemystates.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != states.taxi && ((distance_to_object(obj_player1) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
 {
     state = states.blockstance;
     sprite_index = spr_hamkuff_chain1;
@@ -217,14 +217,14 @@ if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && ob
     }
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;

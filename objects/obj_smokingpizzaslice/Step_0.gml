@@ -6,7 +6,7 @@ if (bombreset > 0)
 
 switch (state)
 {
-    case states.walk:
+    case enemystates.walk:
         if (substate_buffer > 0)
         {
             substate_buffer--;
@@ -17,13 +17,13 @@ switch (state)
             var old_substate = substate;
             
             while (substate == old_substate)
-                substate = choose(states.walk, UnknownEnum.Value_128, UnknownEnum.Value_132);
+                substate = choose(enemystates.walk, enemystates.idle, enemystates.turn);
             
-            if (substate == states.walk)
+            if (substate == enemystates.walk)
             {
                 image_xscale = choose(-1, 1);
             }
-            else if (substate == UnknownEnum.Value_132)
+            else if (substate == enemystates.turn)
             {
                 sprite_index = spr_pizzaslug_turn;
                 image_index = 0;
@@ -33,7 +33,7 @@ switch (state)
         
         switch (substate)
         {
-            case states.walk:
+            case enemystates.walk:
                 image_speed = 0.35;
                 
                 if (sprite_index != spr_pizzaslug_walk)
@@ -45,13 +45,13 @@ switch (state)
                 scr_enemy_walk();
                 break;
             
-            case UnknownEnum.Value_128:
+            case enemystates.idle:
                 image_speed = 0.35;
                 hsp = 0;
                 sprite_index = spr_pizzaslug_idle;
                 break;
             
-            case UnknownEnum.Value_132:
+            case enemystates.turn:
                 image_speed = 0.35;
                 substate_buffer = 5;
                 
@@ -59,14 +59,14 @@ switch (state)
                 {
                     image_xscale *= -1;
                     substate_buffer = substate_max;
-                    substate = UnknownEnum.Value_128;
+                    substate = enemystates.idle;
                     sprite_index = spr_pizzaslug_idle;
                 }
                 
                 break;
             
-            case UnknownEnum.Value_131:
-                state = UnknownEnum.Value_131;
+            case enemystates.pthrow:
+                state = enemystates.pthrow;
                 substate_buffer = 0;
                 image_index = 0;
                 sprite_index = spr_pizzaslug_cough;
@@ -75,40 +75,40 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -116,7 +116,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
@@ -124,7 +124,7 @@ if (flash == 1 && alarm[2] <= 0)
 
 var player = instance_nearest(x, y, obj_player1);
 
-if (state == states.walk)
+if (state == enemystates.walk)
 {
     if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60) && ragecooldown == 0)
     {
@@ -138,7 +138,7 @@ if (state == states.walk)
             shot = 0;
             sprite_index = spr_pizzaslug_rage;
             image_index = 0;
-            state = UnknownEnum.Value_127;
+            state = enemystates.rage;
             flash = 1;
             alarm[4] = 5;
             create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
@@ -149,7 +149,7 @@ if (state == states.walk)
                 image_xscale = -sign(x - player.x);
             
             ragecooldown = 160;
-            state = UnknownEnum.Value_131;
+            state = enemystates.pthrow;
             substate_buffer = 0;
             image_index = 0;
             sprite_index = spr_pizzaslug_cough;
@@ -162,10 +162,10 @@ if (ragecooldown > 0)
 
 scr_scareenemy();
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

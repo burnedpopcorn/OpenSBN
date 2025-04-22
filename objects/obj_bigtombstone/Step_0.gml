@@ -9,7 +9,7 @@ switch (state)
         substate = states.normal;
         break;
     
-    case states.ghostpossess:
+    case enemystates.ghostpossess:
         move = input_check("right") - input_check("left");
         playerid.x = x;
         playerid.y = y;

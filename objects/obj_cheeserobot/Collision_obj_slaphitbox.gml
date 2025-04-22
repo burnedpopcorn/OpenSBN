@@ -1,5 +1,5 @@
 instance_create(x + (obj_player1.xscale * 40), y, obj_punchdust);
-state = states.grabbed;
+state = enemystates.grabbed;
 obj_player1.state = states.grab;
 instance_destroy(other);
 obj_player1.suplexhavetomash = 5;

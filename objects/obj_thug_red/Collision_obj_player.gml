@@ -9,7 +9,7 @@ else
 {
     with (other)
     {
-        if (instakillmove == 1 && baddie.state != states.grabbed && baddie.thrown == false && !baddie.invincible)
+        if (instakillmove == 1 && baddie.state != enemystates.grabbed && baddie.thrown == false && !baddie.invincible)
         {
             if (state == states.mach3 && sprite_index != spr_mach3hit && (character == "P" || character == "V"))
             {
@@ -44,7 +44,7 @@ else
                 
                 baddie.vsp = -8;
                 baddie.stunned = baddie.inv_max;
-                baddie.state = states.stun;
+                baddie.state = enemystates.stun;
                 baddie.inv_stun = 1;
                 baddie.inv_timer = baddie.inv_max;
                 baddie.hp--;

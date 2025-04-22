@@ -158,7 +158,7 @@ function scr_enemy_bounce()
         }
         
         image_index = 0;
-        state = UnknownEnum.Value_128;
+        state = enemystates.idle;
         sprite_index = idlespr;
     }
     

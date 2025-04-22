@@ -23,7 +23,7 @@ switch (state)
         
         if (grounded)
         {
-            state = states.stun;
+            state = enemystates.stun;
             stunned = 50;
             hsp = 0;
             vsp = 0;
@@ -33,7 +33,7 @@ switch (state)
         scr_collide();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         if (stunned > 0)
         {
             stunned--;

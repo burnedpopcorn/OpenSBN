@@ -45,7 +45,7 @@ function scr_playerN_hookshot()
             if (grounded && point_in_camera(x, y, view_camera[0]))
             {
                 image_index = 0;
-                state = UnknownEnum.Value_128;
+                state = enemystates.idle;
                 vsp = -7;
                 hsp = 0;
             }

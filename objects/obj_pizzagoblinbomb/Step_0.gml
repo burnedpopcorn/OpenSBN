@@ -45,7 +45,7 @@ switch (state)
         scr_collide();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         grounded = false;
         x = playerid.x;
         y = playerid.y - 40;

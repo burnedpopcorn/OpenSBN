@@ -26,7 +26,7 @@ function scr_fakepeppino_walk()
         movespeed = 0;
         sprite_index = spr_fakepeppino_idle;
         image_index = 0;
-        state = UnknownEnum.Value_128;
+        state = enemystates.idle;
     }
     
     exit;

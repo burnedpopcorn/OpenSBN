@@ -3,15 +3,15 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         if (!idle)
         {
             scr_enemy_walk();
@@ -24,49 +24,49 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case states.pummel:
+    case enemystates.pummel:
         scr_enemy_pummel();
         break;
     
-    case states.staggered:
+    case enemystates.staggered:
         scr_enemy_staggered();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
     
-    case states.ghostpossess:
+    case enemystates.ghostpossess:
         scr_enemy_ghostpossess();
         break;
 }
 
 scr_scareenemy();
 
-if (state != states.walk)
+if (state != enemystates.walk)
     idle = 0;
 
-if (state == states.walk)
+if (state == enemystates.walk)
 {
     var x1 = 270;
     playerid = instance_nearest(x, y, obj_player1);
@@ -82,7 +82,7 @@ if (state == states.walk)
         
         with (obj_farmerbaddie)
         {
-            if ((id == b || distance_to_object(other) < 300) && state != states.grabbed && state != states.stun && state != states.hit && state != UnknownEnum.Value_268)
+            if ((id == b || distance_to_object(other) < 300) && state != enemystates.grabbed && state != enemystates.stun && state != enemystates.hit && state != UnknownEnum.Value_268)
             {
                 state = states.jump;
                 sprite_index = ragespr;
@@ -161,7 +161,7 @@ else if (state == states.punch)
     if (attackspeed <= 0)
     {
         cooldown = 60;
-        state = states.walk;
+        state = enemystates.walk;
         idle = 0;
         hsp = 0;
         sprite_index = walkspr;
@@ -177,7 +177,7 @@ if (state != states.punch && hitboxID != -4 && instance_exists(hitboxID))
     hitboxID = -4;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -185,16 +185,16 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

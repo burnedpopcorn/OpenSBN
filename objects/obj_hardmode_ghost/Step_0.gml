@@ -19,7 +19,7 @@ else
         with (instance_create(x, y, content[n]))
         {
             important = 1;
-            state = states.stun;
+            state = enemystates.stun;
             stunned = 50;
         }
         

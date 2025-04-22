@@ -11,13 +11,13 @@ function do_dialog(argument0)
     
     with (obj_player1)
     {
-        if (state == states.ghostpossess)
+        if (state == enemystates.ghostpossess)
         {
             visible = true;
             
             with (possessID)
             {
-                state = states.stun;
+                state = enemystates.stun;
                 stunned = 50;
             }
         }

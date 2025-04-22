@@ -1,43 +1,43 @@
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         scr_enemy_charge();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
 }
 
-if (state == states.stun && stunned > 40 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -45,7 +45,7 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 idlespr = spr_cheeserobot_idle;
@@ -60,24 +60,24 @@ if (flash == 1 && alarm[2] <= 0)
 if (hp <= 0)
     instance_destroy();
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (bombreset > 0)
     bombreset--;
 
-if (x != obj_player1.x && state != UnknownEnum.Value_131 && bombreset == 0)
+if (x != obj_player1.x && state != enemystates.pthrow && bombreset == 0)
 {
     if (obj_player1.x > (x - 400) && obj_player1.x < (x + 400) && y <= (obj_player1.y + 20) && y >= (obj_player1.y - 20))
     {
-        if (state == states.walk || state == UnknownEnum.Value_128)
+        if (state == enemystates.walk || state == enemystates.idle)
         {
             image_index = 0;
             image_xscale = -sign(x - obj_player1.x);
-            state = UnknownEnum.Value_131;
+            state = enemystates.pthrow;
         }
     }
 }

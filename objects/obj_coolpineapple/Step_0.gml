@@ -3,53 +3,53 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         grav = 0.5;
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         grav = 0.5;
         scr_enemy_charge();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         grav = 0.5;
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         grav = 0.5;
         scr_enemy_walk();
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         grav = 0.5;
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         grav = 0.5;
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         grav = 0.5;
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         grav = 0.5;
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         grav = 0.5;
         scr_enemy_grabbed();
         break;
 }
 
-if (!hitboxcreate && state == states.walk)
+if (!hitboxcreate && state == enemystates.walk)
 {
     hitboxcreate = 1;
     
@@ -63,7 +63,7 @@ if (!hitboxcreate && state == states.walk)
 if (inv_timer <= 0)
     scr_scareenemy();
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -71,13 +71,13 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (sprite_index == scaredspr)
     inv_timer = 0;
 
-if (state == states.walk)
+if (state == enemystates.walk)
 {
     grav = 0.5;
     
@@ -128,7 +128,7 @@ switch (state)
         {
             sprite_index = walkspr;
             grav = taunt_storedgrav;
-            state = states.walk;
+            state = enemystates.walk;
             hsp = taunt_storedhsp;
             movespeed = taunt_storedmovespeed;
         }
@@ -222,7 +222,7 @@ switch (state)
             else
             {
                 sprite_index = walkspr;
-                state = states.walk;
+                state = enemystates.walk;
                 breakdanceinst = -4;
             }
         }
@@ -233,10 +233,10 @@ switch (state)
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

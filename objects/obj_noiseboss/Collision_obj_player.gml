@@ -1,11 +1,11 @@
-if (state == states.walk && !other.brick && other.state == states.ratmountpunch)
+if (state == enemystates.walk && !other.brick && other.state == states.ratmountpunch)
 {
     var s = other.state;
     scr_hurtplayer(other);
     
     if (s != other.state)
     {
-        if (state == states.walk)
+        if (state == enemystates.walk)
         {
             state = states.punch;
             sprite_index = spr_null;

@@ -13,7 +13,7 @@ if (refresh <= 0)
                 platformid = other.platformid;
             
             image_xscale = other.image_xscale;
-            state = states.stun;
+            state = enemystates.stun;
             stunned = 50;
             vsp = -5;
             other.baddieid = id;

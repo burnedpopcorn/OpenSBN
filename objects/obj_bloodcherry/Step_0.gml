@@ -3,19 +3,19 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         scr_enemy_charge();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         movespeed = 0;
         
@@ -44,23 +44,23 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
@@ -73,7 +73,7 @@ switch (state)
             throw_spr = spr_cherry_spitstart;
             throw_frame = 1;
             image_index = 0;
-            state = UnknownEnum.Value_131;
+            state = enemystates.pthrow;
         }
         
         break;
@@ -82,7 +82,7 @@ switch (state)
 if (state != states.jump)
     scr_scareenemy();
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -90,16 +90,16 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (bombreset > 0)
@@ -107,7 +107,7 @@ if (bombreset > 0)
 
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_player1;
 
-if (bombreset <= 0 && !scr_solid_line_ext(x, targetplayer.y, targetplayer.x, targetplayer.y) && grounded && x != targetplayer.x && state == states.walk && sprite_index == walkspr && bbox_in_camera(view_camera[0]))
+if (bombreset <= 0 && !scr_solid_line_ext(x, targetplayer.y, targetplayer.x, targetplayer.y) && grounded && x != targetplayer.x && state == enemystates.walk && sprite_index == walkspr && bbox_in_camera(view_camera[0]))
 {
     if ((y - 30) < targetplayer.y)
     {
@@ -116,7 +116,7 @@ if (bombreset <= 0 && !scr_solid_line_ext(x, targetplayer.y, targetplayer.x, tar
         throw_frame = 9;
         image_index = 0;
         image_xscale = -sign(x - targetplayer.x);
-        state = UnknownEnum.Value_131;
+        state = enemystates.pthrow;
     }
     else
     {

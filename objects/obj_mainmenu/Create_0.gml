@@ -113,11 +113,20 @@ deleteSave = function(argument0)
     saves[argument0].readValues();
 };
 
+enum menuselected
+{
+	bofallingcutscene = 0,
+	selectsave = 1,
+	deletesave = 2,
+	loadsave = 3,
+	endgame = 4,
+}
+
 image_speed = 0;
 endFadeAlpha = 0;
 loading = false;
 introSoundBuffer = 0;
-state = UnknownEnum.Value_0;
+state = menuselected.bofallingcutscene;
 selected = 0;
 select2 = 0;
 moveBuffer = 10;

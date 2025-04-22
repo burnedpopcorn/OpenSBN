@@ -2,7 +2,7 @@ if (count < countmax)
 {
     with (instance_place(x, y - 1, obj_weenie))
     {
-        if (state != states.grabbed)
+        if (state != enemystates.grabbed)
         {
             other.count++;
             other.savedcount++;

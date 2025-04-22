@@ -2,7 +2,7 @@ var cx = camera_get_view_x(view_camera[0]);
 
 switch (state)
 {
-    case states.walk:
+    case enemystates.walk:
         if (playerid.x != x)
             image_xscale = sign(playerid.x - x);
         
@@ -11,14 +11,14 @@ switch (state)
         
         if (currentx == targetx)
         {
-            state = UnknownEnum.Value_130;
+            state = enemystates.charge;
             attack_buffer = attack_max;
         }
         
         y = approach(y, playerid.y, 8);
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         if (playerid.x != x)
             image_xscale = sign(playerid.x - x);
         

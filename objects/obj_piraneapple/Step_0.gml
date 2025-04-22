@@ -3,7 +3,7 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case states.walk:
+    case enemystates.walk:
         var targetplayer = obj_player1.id;
         
         if (hamspotted == 1)
@@ -70,7 +70,7 @@ switch (state)
         {
             if (grounded)
             {
-                state = states.walk;
+                state = enemystates.walk;
                 sprite_index = spr_piraneappleattack;
             }
             

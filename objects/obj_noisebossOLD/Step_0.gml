@@ -82,7 +82,7 @@ switch (state)
         boss_noise_jetpackspin();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         grav = 0.5;
         state_boss_walk(boss_noise_do_attack);
         inv_timer = 2;
@@ -108,13 +108,13 @@ switch (state)
         inv_timer = 2;
         break;
     
-    case states.hit:
+    case enemystates.hit:
         grav = 0.5;
         scr_enemy_hit();
         stunned = targetstunned;
         break;
     
-    case states.stun:
+    case enemystates.stun:
         grav = 0.5;
         state_boss_stun();
         break;

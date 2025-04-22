@@ -35,7 +35,7 @@ if (kidsparty_lightning || dark_lightning)
             
             with (obj_patrolcone)
             {
-                if (instance_exists(baddieID) && baddieID.state != states.stun && baddieID.state != states.grabbed && baddieID.state != states.hit && baddieID.state != states.punch)
+                if (instance_exists(baddieID) && baddieID.state != enemystates.stun && baddieID.state != enemystates.grabbed && baddieID.state != enemystates.hit && baddieID.state != states.punch)
                 {
                     var points = get_triangle_points(x, y, image_angle, len, size);
                     var c = 16777215;
@@ -59,7 +59,7 @@ if (kidsparty_lightning || dark_lightning)
             
             with (obj_patrolcone)
             {
-                if (instance_exists(baddieID) && baddieID.state != states.stun && baddieID.state != states.grabbed && baddieID.state != states.hit && baddieID.state != states.punch)
+                if (instance_exists(baddieID) && baddieID.state != enemystates.stun && baddieID.state != enemystates.grabbed && baddieID.state != enemystates.hit && baddieID.state != states.punch)
                     draw_sprite_ext(spr_null, 0, x - surf_x, y - surf_y, 1, 1, image_angle, c_white, 1);
             }
             
@@ -70,7 +70,7 @@ if (kidsparty_lightning || dark_lightning)
             
             with (obj_patrolcone)
             {
-                if (instance_exists(baddieID) && baddieID.state != states.stun && baddieID.state != states.grabbed && baddieID.state != states.hit && baddieID.state != states.punch)
+                if (instance_exists(baddieID) && baddieID.state != enemystates.stun && baddieID.state != enemystates.grabbed && baddieID.state != enemystates.hit && baddieID.state != states.punch)
                 {
                     if (collision || (instance_exists(baddieID) && baddieID.alarm[5] != -1))
                     {

@@ -63,9 +63,9 @@ function pepperman_decide_attack_phase5()
         attack_cooldown = attack_max[phase - 1];
         groundpound_fakeout = 1;
         readjusting = 0;
-        state = (irandom(100) > 50) ? choose(UnknownEnum.Value_130, UnknownEnum.Value_130, states.shoulder) : states.jump;
+        state = (irandom(100) > 50) ? choose(enemystates.charge, enemystates.charge, states.shoulder) : states.jump;
         
-        if (state == UnknownEnum.Value_130)
+        if (state == enemystates.charge)
         {
             sprite_index = spr_pepperman_shoulderstart;
             image_index = 0;
@@ -427,7 +427,7 @@ function boss_pepperman_shoulderbash()
             shake_mag_acc = 3 / room_speed;
         }
         
-        state = states.stun;
+        state = enemystates.stun;
         stunned = 100;
         vsp = -4;
         hsp = -image_xscale * 8;
@@ -507,7 +507,7 @@ function boss_pepperman_supershoulderbash()
             shake_mag_acc = 3 / room_speed;
         }
         
-        state = states.stun;
+        state = enemystates.stun;
         stunned = 50;
         vsp = -4;
         hsp = -image_xscale * 8;
@@ -552,7 +552,7 @@ function boss_pepperman_shoulder()
         if (phase >= 5)
             boss_pepperman_summonbricks();
         
-        state = states.stun;
+        state = enemystates.stun;
         stunned = 50;
         vsp = -4;
         hsp = -image_xscale * 8;

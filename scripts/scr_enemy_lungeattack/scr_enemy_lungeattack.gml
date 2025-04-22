@@ -19,7 +19,7 @@ function scr_enemy_lungeattack()
     }
     else
     {
-        state = states.stun;
+        state = enemystates.stun;
         hsp = hithsp;
         vsp = hitvsp;
         stunned = 200;

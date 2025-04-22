@@ -15,7 +15,7 @@ switch (state)
         substate = states.normal;
         break;
     
-    case states.ghostpossess:
+    case enemystates.ghostpossess:
         move = input_check("right") - input_check("left");
         var spd = 12;
         var accel = 0.1;

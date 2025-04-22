@@ -13,7 +13,7 @@ with (ID)
 {
     if (object_index == obj_coolpineapple || object_index == obj_ghostknight || object_index == obj_tack || object_index == obj_noisey || object_index == obj_smokingpizzaslice)
     {
-        if (state != states.walk && state != UnknownEnum.Value_127)
+        if (state != enemystates.walk && state != enemystates.rage)
         {
             hitboxcreate = 0;
             instance_destroy(other);
@@ -80,13 +80,13 @@ with (ID)
         case obj_soldier:
             other.x = x + (image_xscale * 24);
             
-            if (state != UnknownEnum.Value_127)
+            if (state != enemystates.rage)
                 instance_destroy(other);
             
             break;
         
         case obj_indiancheese:
-            if (state != states.walk && sprite_index != spr_indiancheese_howl)
+            if (state != enemystates.walk && sprite_index != spr_indiancheese_howl)
             {
                 hitboxcreate = 0;
                 instance_destroy(other);
@@ -115,13 +115,13 @@ with (ID)
             break;
         
         case obj_minijohn:
-            if (state != UnknownEnum.Value_127 && state != states.punch)
+            if (state != enemystates.rage && state != states.punch)
                 instance_destroy(other);
             
             break;
         
         case obj_ninja:
-            if (state != UnknownEnum.Value_130 && state != states.punch)
+            if (state != enemystates.charge && state != states.punch)
                 instance_destroy(other);
             
             if (state == states.punch)
@@ -150,7 +150,7 @@ with (ID)
             break;
         
         case obj_pickle:
-            if (state != UnknownEnum.Value_131)
+            if (state != enemystates.pthrow)
                 instance_destroy(other);
             
             break;
@@ -160,7 +160,7 @@ with (ID)
         case obj_snowman:
         case obj_clamchor:
         case obj_boneFish:
-            if (state != UnknownEnum.Value_130 && state != UnknownEnum.Value_127)
+            if (state != enemystates.charge && state != enemystates.rage)
             {
                 hitboxcreate = 0;
                 instance_destroy(other);

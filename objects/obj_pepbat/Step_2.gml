@@ -1,6 +1,6 @@
 event_inherited();
 
-if (state == states.stun)
+if (state == enemystates.stun)
 {
     if (!scr_solid(x, y))
     {

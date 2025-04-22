@@ -106,14 +106,14 @@ switch (state)
         boss_pepperman_shoulderturn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         grav = 0.5;
         state_boss_walk(boss_pepperman_decide_attack);
         invincible = 1;
         inv_timer = 2;
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         grav = 0.5;
         boss_pepperman_charge();
         invincible = 1;
@@ -139,13 +139,13 @@ switch (state)
         inv_timer = 2;
         break;
     
-    case states.hit:
+    case enemystates.hit:
         grav = 0.5;
         scr_enemy_hit();
         stunned = targetstunned;
         break;
     
-    case states.stun:
+    case enemystates.stun:
         grav = 0.5;
         state_boss_stun();
         break;
@@ -153,4 +153,4 @@ switch (state)
 
 xscale = image_xscale;
 colliding = !(state == states.superslam || state == UnknownEnum.Value_164 || state == UnknownEnum.Value_160 || state == UnknownEnum.Value_161);
-attacking = state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == UnknownEnum.Value_159 || state == states.shoulder || state == states.superslam || state == UnknownEnum.Value_164 || state == UnknownEnum.Value_160 || state == UnknownEnum.Value_161 || state == states.walk;
+attacking = state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == UnknownEnum.Value_159 || state == states.shoulder || state == states.superslam || state == UnknownEnum.Value_164 || state == UnknownEnum.Value_160 || state == UnknownEnum.Value_161 || state == enemystates.walk;

@@ -10,7 +10,7 @@ if (instance_exists(ID))
     
     with (ID)
     {
-        if (state != UnknownEnum.Value_143 && state != UnknownEnum.Value_127)
+        if (state != UnknownEnum.Value_143 && state != enemystates.rage)
         {
             hitboxcreate = 0;
             instance_destroy(other);

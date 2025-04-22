@@ -3,7 +3,7 @@ sprite_index = spr_turnipGrassCave;
 onPick = function()
 {
     var inst = instance_create(x, y, obj_twoliterdog);
-    inst.state = states.grabbed;
+    inst.state = enemystates.grabbed;
     
     with (obj_player1)
     {

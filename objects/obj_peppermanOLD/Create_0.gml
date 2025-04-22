@@ -151,7 +151,7 @@ function player_hurt(argument0, argument1)
                 shake_mag_acc = 3 / room_speed;
             }
             
-            hitstate = states.stun;
+            hitstate = enemystates.stun;
             stunned = 70;
             hitvsp = -4;
             hithsp = -image_xscale * 8;

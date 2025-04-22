@@ -59,7 +59,7 @@ function state_player_backbreaker()
                 if (point_in_camera(x, y, view_camera[0]) && state != UnknownEnum.Value_268)
                 {
                     hp = -99;
-                    state = states.hit;
+                    state = enemystates.hit;
                     hitLag = lag;
                     hitX = x;
                     hitY = y;

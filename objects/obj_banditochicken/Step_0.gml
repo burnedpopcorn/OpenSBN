@@ -3,44 +3,44 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case UnknownEnum.Value_130:
+    case enemystates.charge:
         scr_enemy_charge();
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -48,7 +48,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
@@ -58,14 +58,14 @@ var targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_playe
 
 if (targetplayer.x > (x - 400) && targetplayer.x < (x + 400) && y <= (targetplayer.y + 160) && y >= (targetplayer.y - 160))
 {
-    if (state == states.walk || state == UnknownEnum.Value_128)
+    if (state == enemystates.walk || state == enemystates.idle)
         activated = 1;
 }
 
-if (!activated && (state == states.walk || state == UnknownEnum.Value_128))
+if (!activated && (state == enemystates.walk || state == enemystates.idle))
     sprite_index = spr_banditochicken_sleep;
 
-if ((state == states.walk || state == UnknownEnum.Value_128) && activated == 1 && sprite_index != spr_banditochicken_wake && sprite_index != spr_banditochicken_scared)
+if ((state == enemystates.walk || state == enemystates.idle) && activated == 1 && sprite_index != spr_banditochicken_wake && sprite_index != spr_banditochicken_scared)
 {
     movespeed = 0;
     image_xscale = -sign(x - targetplayer.x);
@@ -77,20 +77,20 @@ if (sprite_index == spr_banditochicken_wake && floor(image_index) == (image_numb
 {
     image_xscale *= -1;
     sprite_index = spr_banditochicken_chase;
-    state = UnknownEnum.Value_130;
+    state = enemystates.charge;
     movespeed = 8;
     
     with (instance_create(x, y, obj_jumpdust))
         image_xscale = other.image_xscale;
 }
 
-if (state == UnknownEnum.Value_130 && bonebuffer > 0)
+if (state == enemystates.charge && bonebuffer > 0)
     bonebuffer--;
 
-if (grounded && jumping < 40 && state == UnknownEnum.Value_130)
+if (grounded && jumping < 40 && state == enemystates.charge)
     jumping++;
 
-if (state == UnknownEnum.Value_130 && grounded && jumping >= 40)
+if (state == enemystates.charge && grounded && jumping >= 40)
 {
     vsp = -11;
     jumping = 0;
@@ -129,10 +129,10 @@ if (bonebuffer == 0)
     bonebuffer = 100;
 }
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

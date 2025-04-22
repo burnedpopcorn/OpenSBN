@@ -337,7 +337,7 @@ function boss_mrstick_springshoes()
     {
         hsp = 0;
         movespeed = 0;
-        state = states.stun;
+        state = enemystates.stun;
         stunned = 100;
         sprite_index = spr_mrstick_hurt;
         

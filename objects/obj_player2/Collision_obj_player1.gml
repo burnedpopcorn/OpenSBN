@@ -37,7 +37,7 @@ if (other.cutscene == 0 && other.state != states.actor && state != states.actor 
             sprite_index = spr_haulingstart;
             baddiegrabbedID = other.id;
             state = states.grab;
-            other.state = states.grabbed;
+            other.state = enemystates.grabbed;
             obj_player1.depth = -7;
             obj_player2.depth = -6;
         }

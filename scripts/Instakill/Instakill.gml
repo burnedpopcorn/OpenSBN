@@ -121,7 +121,7 @@ function Instakill()
         hitX = x;
         hitY = y;
         other.baddieID.alarm[3] = 3;
-        other.baddieID.state = states.hit;
+        other.baddieID.state = enemystates.hit;
         other.baddieID.image_xscale = -xscale;
         
         if (!global.performance_mode)
@@ -157,7 +157,7 @@ function Instakill()
     }
     else
     {
-        other.baddieID.state = states.stun;
+        other.baddieID.state = enemystates.stun;
         other.baddieID.vsp = -4;
         other.baddieID.stunned = 40;
         scr_hurtplayer(id);

@@ -8,7 +8,7 @@ var targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_playe
 if (bombreset > 0)
     bombreset--;
 
-if (state == states.walk)
+if (state == enemystates.walk)
 {
     if (!chasing)
     {
@@ -23,7 +23,7 @@ if (state == states.walk)
             
             image_index = 0;
             sprite_index = spr_shrimp_knife;
-            state = UnknownEnum.Value_131;
+            state = enemystates.pthrow;
             bombreset = 0;
             hsp = 0;
         }
@@ -74,7 +74,7 @@ else if (state == UnknownEnum.Value_143)
     {
         if (targetplayer.x > (x - attackthreshold_x) && targetplayer.x < (x + attackthreshold_x) && targetplayer.y > (y - attackthreshold_y) && targetplayer.y < (y + attackthreshold_y) && (inst_front == -4 || (inst_front != -4 && x > inst_front.x && targetplayer.x > inst_front.x) || (inst_front != -4 && x < inst_front.x && targetplayer.x < inst_front.x)))
         {
-            state = UnknownEnum.Value_130;
+            state = enemystates.charge;
             hsp = 0;
             attack_count = attack_max;
         }
@@ -104,7 +104,7 @@ else if (state == UnknownEnum.Value_143)
         image_index = 0;
     }
     
-    if ((inst_front != -4 || inst_up != -4 || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != UnknownEnum.Value_130)
+    if ((inst_front != -4 || inst_up != -4 || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != enemystates.charge)
     {
         vsp = -11;
         sprite_index = spr_shrimp_jump;
@@ -113,7 +113,7 @@ else if (state == UnknownEnum.Value_143)
     }
 }
 
-if (state == UnknownEnum.Value_130)
+if (state == enemystates.charge)
 {
     if (attack_count > 0)
     {
@@ -124,53 +124,53 @@ if (state == UnknownEnum.Value_130)
         image_index = 0;
         sprite_index = spr_shrimp_knife;
         bombreset = 0;
-        state = UnknownEnum.Value_131;
+        state = enemystates.pthrow;
         hsp = 0;
     }
 }
 
 switch (state)
 {
-    case UnknownEnum.Value_128:
+    case enemystates.idle:
         scr_enemy_idle();
         break;
     
-    case UnknownEnum.Value_132:
+    case enemystates.turn:
         scr_enemy_turn();
         break;
     
-    case states.walk:
+    case enemystates.walk:
         scr_enemy_walk();
         break;
     
-    case UnknownEnum.Value_138:
+    case enemystates.land:
         scr_enemy_land();
         break;
     
-    case states.hit:
+    case enemystates.hit:
         scr_enemy_hit();
         break;
     
-    case states.stun:
+    case enemystates.stun:
         chasing = 1;
         scr_enemy_stun();
         break;
     
-    case UnknownEnum.Value_131:
+    case enemystates.pthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case states.grabbed:
+    case enemystates.grabbed:
         chasing = 1;
         scr_enemy_grabbed();
         break;
     
-    case UnknownEnum.Value_127:
+    case enemystates.rage:
         scr_enemy_rage();
         break;
 }
 
-if (state == states.stun && stunned > 100 && birdcreated == 0)
+if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -178,10 +178,10 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (sprite_index == scaredspr && state == UnknownEnum.Value_128)
+if (sprite_index == scaredspr && state == enemystates.idle)
     invincible = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
@@ -189,10 +189,10 @@ if (flash == 1 && alarm[2] <= 0)
 
 scr_scareenemy();
 
-if (state != states.grabbed)
+if (state != enemystates.grabbed)
     depth = 0;
 
-if (state != states.stun)
+if (state != enemystates.stun)
     thrown = false;
 
 if (boundbox == 0)

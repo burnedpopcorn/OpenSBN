@@ -8,12 +8,12 @@ function scr_enemy_pummel()
     
     with (_playerinst)
     {
-        if (state != states.pummel)
+        if (state != enemystates.pummel)
         {
             with (other)
             {
                 stagger_dir = -image_xscale;
-                state = states.staggered;
+                state = enemystates.staggered;
                 stagger_buffer = stagger_max;
                 hsp = 0;
             }
@@ -36,7 +36,7 @@ function scr_enemy_pummel()
                     state = states.tackle;
                     movespeed = 5;
                     image_index = 0;
-                    other.state = states.stun;
+                    other.state = enemystates.stun;
                     other.grav = 0;
                     other.hsp = -other.image_xscale * 25;
                     other.vsp = -2;
@@ -78,9 +78,9 @@ function scr_enemy_pummel()
                     with (other)
                     {
                         hp -= 2;
-                        state = (hp <= 0) ? states.stun : states.staggered;
+                        state = (hp <= 0) ? enemystates.stun : enemystates.staggered;
                         
-                        if (state == states.staggered)
+                        if (state == enemystates.staggered)
                         {
                             stunned = 100;
                             stuntouchbuffer = 50;
@@ -112,9 +112,9 @@ function scr_enemy_pummel()
                     with (other)
                     {
                         hp -= 2;
-                        state = (hp <= 0) ? states.stun : states.staggered;
+                        state = (hp <= 0) ? enemystates.stun : enemystates.staggered;
                         
-                        if (state == states.staggered)
+                        if (state == enemystates.staggered)
                         {
                             stunned = 100;
                             stuntouchbuffer = 50;
@@ -171,7 +171,7 @@ function scr_enemy_staggered()
     {
         image_index = 0;
         sprite_index = walkspr;
-        state = states.walk;
+        state = enemystates.walk;
     }
 }
 

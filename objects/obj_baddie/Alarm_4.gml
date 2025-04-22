@@ -6,5 +6,5 @@ if (grounded == true)
         image_xscale = other.image_xscale;
 }
 
-if (state == UnknownEnum.Value_127)
+if (state == enemystates.rage)
     alarm[4] = 5;
