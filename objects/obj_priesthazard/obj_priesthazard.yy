@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Priest",
+    "path": "folders/Objects/Level Assets/Priest.yy",
   },
   "parentObjectId": {
     "name": "obj_priest",

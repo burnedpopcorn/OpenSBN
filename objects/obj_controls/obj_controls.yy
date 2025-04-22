@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Inputs",
+    "path": "folders/Objects/General/Options/Inputs.yy",
   },
   "parentObjectId": null,
   "persistent": false,

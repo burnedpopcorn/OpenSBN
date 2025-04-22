@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Start Gate",
+    "path": "folders/Objects/Level Assets/Hub/Start Gate.yy",
   },
   "parentObjectId": null,
   "persistent": false,

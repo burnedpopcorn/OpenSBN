@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Hoodlum Gerome",
+    "path": "folders/Objects/Level Assets/Hoodlum Gerome.yy",
   },
   "parentObjectId": {
     "name": "obj_junk",

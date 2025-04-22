@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Audio",
+    "path": "folders/Objects/General/Audio.yy",
   },
   "parentObjectId": null,
   "persistent": true,

@@ -50,8 +50,8 @@
   },
   "origin": 4,
   "parent": {
-    "name": "Unused - Unrganized",
-    "path": "folders/Sprites/Unused - Unrganized.yy",
+    "name": "Unused - Unorganized",
+    "path": "folders/Sprites/Unused - Unorganized.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

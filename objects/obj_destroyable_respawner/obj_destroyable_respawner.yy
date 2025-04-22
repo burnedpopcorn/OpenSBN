@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Destroyables",
+    "path": "folders/Objects/Level Assets/Destroyables.yy",
   },
   "parentObjectId": null,
   "persistent": false,

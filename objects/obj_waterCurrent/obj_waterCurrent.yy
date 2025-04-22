@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Unorganized",
+    "path": "folders/Objects/Unorganized.yy",
   },
   "parentObjectId": {
     "name": "obj_water",

@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Warp Doors",
+    "path": "folders/Objects/Level Assets/Debug/Warp Doors.yy",
   },
   "parentObjectId": null,
   "persistent": false,

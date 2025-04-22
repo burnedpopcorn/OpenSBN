@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Technical",
+    "path": "folders/Objects/Enemies/Technical.yy",
   },
   "parentObjectId": {
     "name": "obj_hurtbox",

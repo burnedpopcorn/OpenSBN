@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Mailbox",
+    "path": "folders/Objects/Level Assets/Hub/Mailbox.yy",
   },
   "parentObjectId": null,
   "persistent": false,

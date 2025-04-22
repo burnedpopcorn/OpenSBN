@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Lap 2 Portal",
+    "path": "folders/Objects/Level Assets/Lap 2 Portal.yy",
   },
   "parentObjectId": null,
   "persistent": false,

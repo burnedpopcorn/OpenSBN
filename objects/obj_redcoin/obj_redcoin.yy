@@ -14,8 +14,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Red Coins",
+    "path": "folders/Objects/Level Assets/Collectables/Red Coins.yy",
   },
   "parentObjectId": null,
   "persistent": false,

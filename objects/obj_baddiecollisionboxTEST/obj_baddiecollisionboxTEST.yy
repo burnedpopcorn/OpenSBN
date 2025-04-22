@@ -20,8 +20,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Collision",
+    "path": "folders/Objects/Enemies/Technical/Collision.yy",
   },
   "parentObjectId": null,
   "persistent": false,

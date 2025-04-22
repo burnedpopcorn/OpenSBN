@@ -14,8 +14,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Visual",
+    "path": "folders/Objects/General/Visual.yy",
   },
   "parentObjectId": null,
   "persistent": true,

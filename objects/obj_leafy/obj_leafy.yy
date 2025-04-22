@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "LEAFY",
+    "path": "folders/Objects/Level Assets/Hub/LEAFY.yy",
   },
   "parentObjectId": null,
   "persistent": false,

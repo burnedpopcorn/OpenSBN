@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Collectables",
+    "path": "folders/Objects/Level Assets/Collectables.yy",
   },
   "parentObjectId": {
     "name": "obj_collect",

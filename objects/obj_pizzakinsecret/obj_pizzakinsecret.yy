@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Savouri",
+    "path": "folders/Objects/Level Assets/Savouri.yy",
   },
   "parentObjectId": {
     "name": "obj_pizzakinparent",

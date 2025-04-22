@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Door Transition",
+    "path": "folders/Objects/General/Visual/Door Transition.yy",
   },
   "parentObjectId": null,
   "persistent": false,
