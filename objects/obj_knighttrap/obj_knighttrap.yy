@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Leftovers",
+    "path": "folders/Objects/Leftovers.yy",
   },
   "parentObjectId": {
     "name": "obj_trap",
