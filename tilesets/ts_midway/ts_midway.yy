@@ -13,7 +13,7 @@
   "out_tilevborder": 2,
   "parent": {
     "name": "Midway",
-    "path": "folders/Tile Sets/Midway.yy",
+    "path": "folders/Tile Sets/Levels/Midway.yy",
   },
   "spriteId": {
     "name": "_decompiled_ts_midway",

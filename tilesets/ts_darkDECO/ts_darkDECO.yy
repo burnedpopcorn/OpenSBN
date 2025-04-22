@@ -13,7 +13,7 @@
   "out_tilevborder": 2,
   "parent": {
     "name": "Eerie Lake",
-    "path": "folders/Tile Sets/Eerie Lake.yy",
+    "path": "folders/Tile Sets/Levels/Eerie Lake.yy",
   },
   "spriteId": {
     "name": "_decompiled_ts_darkDECO",

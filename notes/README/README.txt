@@ -20,16 +20,17 @@ faithful to their original counterparts, even if it was slopply made
 
 --------------------------------------------------------
 
-Packages to add:
+Packages Added:
 	- FMOD						(DONE)
 	- GameFrame					(DONE)
 	- NekoPresence				(DONE)
 	- Scribble Deluxe 9.0.0		(DONE)
-	- Mr Unown Collisions
+	- Mr Unown Collisions		(Kinda Done lmao)
 	
 TODO
-	Fix FMOD DLL
 	Fix Rail Collisions (Check Virdesert decomp)
+	Remove all Unknown Enums
+	Finish Organizing Project
 
 --------------------------------------------------------
 Project Decompilied by Ultimate_GMS2_Decompiler_v2.csx
