@@ -148,14 +148,14 @@ if (brown)
                         event_play_oneshot("event:/SFX/misc/toppingot", room_width / 2, room_height / 2);
                     
                     toppin_y[toppin_index] = yy;
-                    toppin_state = UnknownEnum.Value_143;
+                    toppin_state = enemystates.chase;
                     brown = 1;
                 }
                 
                 break;
             }
         
-        case UnknownEnum.Value_143:
+        case enemystates.chase:
             toppin_yscale[toppin_index] = approach(toppin_yscale[toppin_index], 1, 0.1);
             
             if (toppin_yscale[toppin_index] == 1)

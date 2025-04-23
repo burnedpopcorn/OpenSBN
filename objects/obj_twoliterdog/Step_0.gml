@@ -54,7 +54,7 @@ switch (state)
         scr_enemy_ghostpossess();
         break;
     
-    case UnknownEnum.Value_143:
+    case enemystates.chase:
         if (sprite_index == spr_twoliter_tipover && animation_end(undefined, 6))
         {
             image_index = image_number - 1;
@@ -99,7 +99,7 @@ switch (state)
         break;
 }
 
-if (state != UnknownEnum.Value_143)
+if (state != enemystates.chase)
     scr_scareenemy();
 
 if (thrown == true)
@@ -142,7 +142,7 @@ if (targetplayer.x > (x - 400) && targetplayer.x < (x + 400) && y <= (targetplay
             vsp = -2;
             image_index = 0;
             sprite_index = spr_twoliter_tipover;
-            state = UnknownEnum.Value_143;
+            state = enemystates.chase;
             
             if (-sign(x - targetplayer.x) != 0)
                 image_xscale = -sign(x - targetplayer.x);
@@ -167,7 +167,7 @@ if (boundbox == 0)
     }
 }
 
-if (state == UnknownEnum.Value_143 && sprite_index == spr_twoliter_fall)
+if (state == enemystates.chase && sprite_index == spr_twoliter_fall)
 {
     if (hitboxcreate == 0)
     {

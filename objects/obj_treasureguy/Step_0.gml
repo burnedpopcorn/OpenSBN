@@ -106,7 +106,7 @@ if (state == enemystates.idle)
     if (sprite_index == scaredspr)
     {
         if (image_index > (image_number - 1))
-            state = UnknownEnum.Value_143;
+            state = enemystates.chase;
     }
     else
     {
@@ -115,7 +115,7 @@ if (state == enemystates.idle)
     }
 }
 
-if (state != enemystates.idle && state != UnknownEnum.Value_191 && state != enemystates.grabbed && state != enemystates.hit && state != enemystates.stun && state != UnknownEnum.Value_143 && !running)
+if (state != enemystates.idle && state != UnknownEnum.Value_191 && state != enemystates.grabbed && state != enemystates.hit && state != enemystates.stun && state != enemystates.chase && !running)
 {
     if (x < (targetplayer.x + threshold_x) && x > (targetplayer.x - threshold_x) && y < (targetplayer.y + threshold_y) && y > (targetplayer.y - threshold_y))
     {
@@ -129,7 +129,7 @@ if (state != enemystates.idle && state != UnknownEnum.Value_191 && state != enem
     }
 }
 
-if (state == UnknownEnum.Value_143)
+if (state == enemystates.chase)
 {
     image_speed = 0.5;
     

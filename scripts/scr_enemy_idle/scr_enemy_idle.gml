@@ -14,7 +14,7 @@ function scr_enemy_idle()
         sprite_index = walkspr;
         
         if (object_index == obj_treasureguy)
-            state = UnknownEnum.Value_143;
+            state = enemystates.chase;
         
         if (object_index == obj_pickle && attacking)
         {

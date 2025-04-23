@@ -30,12 +30,12 @@ if (state == enemystates.walk)
     }
     else
     {
-        state = UnknownEnum.Value_143;
+        state = enemystates.chase;
         sprite_index = walkspr;
         image_index = 0;
     }
 }
-else if (state == UnknownEnum.Value_143)
+else if (state == enemystates.chase)
 {
     if (sprite_index == spr_shrimp_throw)
         sprite_index = spr_shrimp_walk;

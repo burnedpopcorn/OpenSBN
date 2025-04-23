@@ -34,7 +34,7 @@ switch (state)
         scr_enemy_grabbed();
         break;
     
-    case UnknownEnum.Value_143:
+    case enemystates.chase:
         scr_enemy_chase();
         break;
     
@@ -83,7 +83,7 @@ switch (state)
             
             if (floor(image_index) == (image_number - 1))
             {
-                state = UnknownEnum.Value_143;
+                state = enemystates.chase;
                 ragecooldown = 100;
                 sprite_index = spr_minijohn_charge;
             }
@@ -127,7 +127,7 @@ switch (state)
         }
         else if (grounded)
         {
-            state = UnknownEnum.Value_143;
+            state = enemystates.chase;
             sprite_index = spr_minijohn_charge;
         }
         
@@ -142,7 +142,7 @@ if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state == UnknownEnum.Value_143 && ragecooldown <= 0)
+if (state == enemystates.chase && ragecooldown <= 0)
 {
     if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
     {
@@ -186,7 +186,7 @@ if (state != enemystates.stun)
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != UnknownEnum.Value_143)
+if (state != enemystates.chase)
     momentum = 0;
 
 if (state == enemystates.walk || state == enemystates.idle)
@@ -201,7 +201,7 @@ if (state == enemystates.walk || state == enemystates.idle)
     if (targetplayer.x != x)
         image_xscale = -sign(x - targetplayer.x);
     
-    state = UnknownEnum.Value_143;
+    state = enemystates.chase;
 }
 
 if (instance_exists(obj_player2))

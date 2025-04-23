@@ -183,22 +183,22 @@ enum states
 	shield = 176,
 }
 
-// enemystates.idle
 enum enemystates
 {
-	grabbed = 6,//done
+	grabbed = 6,
 	ghostpossess = 19,
-	rage = 127,//done
-	idle = 128, //done
-	charge = 130,//done
-	pthrow = 131,//done
-	turn = 132,//done
-	walk = 136,//done
-	land = 138,//done
-	hit = 139,//done
-	stun = 140,//done
-	pummel = 156,//done
-	staggered = 157,//done
+	rage = 127,
+	idle = 128,
+	charge = 130,
+	pthrow = 131,
+	turn = 132,
+	walk = 136,
+	land = 138,
+	hit = 139,
+	stun = 140,
+	chase = 143,
+	pummel = 156,
+	staggered = 157,
 }
 
 randomize();

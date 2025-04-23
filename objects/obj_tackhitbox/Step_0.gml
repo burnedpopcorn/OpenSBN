@@ -169,7 +169,7 @@ with (ID)
             break;
         
         case obj_twoliterdog:
-            if (state != UnknownEnum.Value_143 || sprite_index != spr_twoliter_fall)
+            if (state != enemystates.chase || sprite_index != spr_twoliter_fall)
             {
                 hitboxcreate = 0;
                 instance_destroy(other);

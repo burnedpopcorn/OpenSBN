@@ -151,7 +151,7 @@ function scr_enemy_rage()
                 
                 movespeed = 4;
                 image_xscale = -sign(x - targetplayer.x);
-                state = UnknownEnum.Value_143;
+                state = enemystates.chase;
                 sprite_index = spr_minijohn_charge;
             }
             

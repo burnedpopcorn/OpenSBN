@@ -45,7 +45,7 @@ switch (state)
         scr_enemy_grabbed();
         break;
     
-    case UnknownEnum.Value_143:
+    case enemystates.chase:
         scr_enemy_chase();
         break;
 }
@@ -70,7 +70,7 @@ if (state != enemystates.grabbed)
 if (state != enemystates.stun)
     thrown = false;
 
-if (state != UnknownEnum.Value_143 && image_alpha >= 1)
+if (state != enemystates.chase && image_alpha >= 1)
     scr_scareenemy();
 
 if (bombreset > 0)
@@ -91,12 +91,12 @@ if (bombreset == 0 && state == enemystates.walk)
     {
         attacking = 1;
         pos = sign(x - targetplayer.x);
-        state = UnknownEnum.Value_143;
+        state = enemystates.chase;
         fade = 1;
     }
 }
 
-if (state == UnknownEnum.Value_143)
+if (state == enemystates.chase)
 {
     if (fade)
     {
