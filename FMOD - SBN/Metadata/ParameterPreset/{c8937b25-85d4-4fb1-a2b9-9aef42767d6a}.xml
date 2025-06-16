@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{c8937b25-85d4-4fb1-a2b9-9aef42767d6a}">
+		<property name="name">
+			<value>beatboxfade</value>
+		</property>
+		<relationship name="folder">
+			<destination>{af479a8a-c292-4a8f-85f3-4292a2ec45a8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f59e49ae-12bf-4dcf-9beb-45e0101b1b90}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f59e49ae-12bf-4dcf-9beb-45e0101b1b90}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>2.7999999523162842</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>2.7999999523162842</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

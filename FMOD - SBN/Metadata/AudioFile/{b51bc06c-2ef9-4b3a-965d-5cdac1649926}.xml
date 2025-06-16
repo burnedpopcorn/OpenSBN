@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b51bc06c-2ef9-4b3a-965d-5cdac1649926}">
+		<property name="assetPath">
+			<value>SFX/Bo/Movement/Kung Fu/bo_kungfu2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3248979591836734</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a19502c-b47c-40cf-84ee-c598ada31671}</destination>
+		</relationship>
+	</object>
+</objects>

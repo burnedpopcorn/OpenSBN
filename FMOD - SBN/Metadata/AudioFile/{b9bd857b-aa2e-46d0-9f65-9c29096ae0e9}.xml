@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b9bd857b-aa2e-46d0-9f65-9c29096ae0e9}">
+		<property name="assetPath">
+			<value>SFX/DESERT/d_with_reverb.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.5789569160997732</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a19502c-b47c-40cf-84ee-c598ada31671}</destination>
+		</relationship>
+	</object>
+</objects>

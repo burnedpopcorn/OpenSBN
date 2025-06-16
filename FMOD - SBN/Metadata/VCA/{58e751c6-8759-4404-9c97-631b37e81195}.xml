@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerVCA" id="{58e751c6-8759-4404-9c97-631b37e81195}">
+		<property name="name">
+			<value>Pillar Ambiance</value>
+		</property>
+		<relationship name="automators">
+			<destination>{5af62cb7-383b-4a2c-b157-eda1f82bb58b}</destination>
+		</relationship>
+		<relationship name="masters">
+			<destination>{88478496-05f6-4b53-8008-d25ec5e5270e}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{beb8ab98-cf43-493b-b52e-7ec910f8aa28}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{5af62cb7-383b-4a2c-b157-eda1f82bb58b}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>volume</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{9455e48d-bd44-45ab-87ee-46a490de2783}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{9455e48d-bd44-45ab-87ee-46a490de2783}">
+		<relationship name="parameter">
+			<destination>{d472aeaf-f2f2-4444-a818-df762de421d6}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{953c3aa1-83e3-4077-b9af-604e2bffb755}</destination>
+			<destination>{c8399935-80a0-45b4-b74c-26a9c68ec6df}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{953c3aa1-83e3-4077-b9af-604e2bffb755}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.356008351</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{c8399935-80a0-45b4-b74c-26a9c68ec6df}">
+		<property name="position">
+			<value>0.99576271186440679</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{923a6f65-109d-4062-bffc-c9bfd85a3c5b}">
+		<property name="assetPath">
+			<value>SFX/Misc/Hit/sfx_killingblow.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.57599999999999996</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a19502c-b47c-40cf-84ee-c598ada31671}</destination>
+		</relationship>
+	</object>
+</objects>

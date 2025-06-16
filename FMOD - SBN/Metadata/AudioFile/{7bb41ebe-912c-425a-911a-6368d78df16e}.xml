@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7bb41ebe-912c-425a-911a-6368d78df16e}">
+		<property name="assetPath">
+			<value>SFX/Combo/comboup1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.3749166666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a19502c-b47c-40cf-84ee-c598ada31671}</destination>
+		</relationship>
+	</object>
+</objects>

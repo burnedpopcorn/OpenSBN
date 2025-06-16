@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2df58bd2-56ca-40ee-b59f-1a70bde778f2}">
+		<property name="assetPath">
+			<value>SFX/Enemy/JOHN_PILLAR_IMPACT.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.9121666666666659</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2a19502c-b47c-40cf-84ee-c598ada31671}</destination>
+		</relationship>
+	</object>
+</objects>

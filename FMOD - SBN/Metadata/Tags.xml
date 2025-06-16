@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MasterTagFolder" id="{16d4913d-38b8-4d1e-8955-6b3d0d3b2531}">
+		<property name="name">
+			<value>Master</value>
+		</property>
+		<relationship name="items">
+			<destination>{b5363c23-ee9e-40bd-a464-de9d27ee11dd}</destination>
+			<destination>{248d1729-c023-406b-9556-2bbb8d8c85fc}</destination>
+			<destination>{ac76e628-e8c9-45ae-80b1-cfad5c2502ec}</destination>
+			<destination>{8d2fb4aa-89e9-4f25-8533-628a1bd0d124}</destination>
+			<destination>{2e1821d0-37b0-4cf5-8077-414c539ee953}</destination>
+		</relationship>
+	</object>
+	<object class="Tag" id="{b5363c23-ee9e-40bd-a464-de9d27ee11dd}">
+		<property name="name">
+			<value>sfx3d</value>
+		</property>
+	</object>
+	<object class="Tag" id="{248d1729-c023-406b-9556-2bbb8d8c85fc}">
+		<property name="name">
+			<value>sfx2d</value>
+		</property>
+	</object>
+	<object class="Tag" id="{ac76e628-e8c9-45ae-80b1-cfad5c2502ec}">
+		<property name="name">
+			<value>Unreferenced</value>
+		</property>
+	</object>
+	<object class="Tag" id="{8d2fb4aa-89e9-4f25-8533-628a1bd0d124}">
+		<property name="name">
+			<value>music</value>
+		</property>
+	</object>
+	<object class="Tag" id="{2e1821d0-37b0-4cf5-8077-414c539ee953}">
+		<property name="name">
+			<value>world</value>
+		</property>
+	</object>
+</objects>

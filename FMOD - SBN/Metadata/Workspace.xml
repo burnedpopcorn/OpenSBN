@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{e8ebe9a5-57d8-4dc2-9330-1706dce52532}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../pizza tower build archives/pizza tower mods/Super_Bo_Noise_v1.1.1.1.1.1.1.1/sound/Desktop</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{e4097992-9d6d-4b5c-8cad-8d8fc028c425}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{16d4913d-38b8-4d1e-8955-6b3d0d3b2531}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{c95e5431-fc91-4ff8-b8c0-01aa2dd1cb59}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{af479a8a-c292-4a8f-85f3-4292a2ec45a8}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{fd17f3ac-dac0-496b-88b5-0858dd29a7e4}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{1dcb7ecd-e26d-4bac-8b87-325587a1ca2c}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{2a19502c-b47c-40cf-84ee-c598ada31671}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{beb8ab98-cf43-493b-b52e-7ec910f8aa28}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{3f0d3985-74a8-40b7-9a91-82a48439cbea}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{70ed3c11-0733-4e03-90fb-aa84d91b75d5}</destination>
+		</relationship>
+	</object>
+</objects>

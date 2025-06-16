@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{77e4eea5-379f-4d70-91fc-e900a401cbca}">
+		<property name="name">
+			<value>Reverb</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c95e5431-fc91-4ff8-b8c0-01aa2dd1cb59}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{c03e6ecb-042e-4e67-a283-c117f49c4631}</destination>
+		</relationship>
+	</object>
+	<object class="SFXReverbEffect" id="{c03e6ecb-042e-4e67-a283-c117f49c4631}">
+		<property name="decayTime">
+			<value>2100</value>
+		</property>
+		<property name="earlyDelay">
+			<value>7</value>
+		</property>
+		<property name="lateDelay">
+			<value>11</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>27</value>
+		</property>
+		<property name="lowShelfFrequency">
+			<value>310</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-15.5</value>
+		</property>
+		<property name="highCut">
+			<value>580</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>79</value>
+		</property>
+		<property name="wetLevel">
+			<value>-80</value>
+		</property>
+		<relationship name="automators">
+			<destination>{cfcec7cd-51f5-4a1e-b8d5-a03298b60e89}</destination>
+			<destination>{0172ec7f-69d1-4cc2-8d1d-cd141d024ee4}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{cfcec7cd-51f5-4a1e-b8d5-a03298b60e89}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>dryLevel</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{37c6af75-5ce6-4fc2-8e55-26850870c7d4}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{0172ec7f-69d1-4cc2-8d1d-cd141d024ee4}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>wetLevel</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{9f80fa5e-3919-455f-813b-e829a9a761b5}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{37c6af75-5ce6-4fc2-8e55-26850870c7d4}">
+		<relationship name="parameter">
+			<destination>{e26cc20a-4b34-4576-85e2-7ced5c479181}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{eea93300-455d-4836-b92c-fa6e11429c01}</destination>
+			<destination>{7cae5dbd-bfa4-4bf4-b2fd-c66050c23709}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{9f80fa5e-3919-455f-813b-e829a9a761b5}">
+		<relationship name="parameter">
+			<destination>{e26cc20a-4b34-4576-85e2-7ced5c479181}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{4a0c0a02-deed-439d-af1b-aec6b211e891}</destination>
+			<destination>{9685ec7c-be19-4285-9307-c598cc485083}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{eea93300-455d-4836-b92c-fa6e11429c01}">
+		<property name="position">
+			<value>0.084745762711864403</value>
+		</property>
+		<property name="value">
+			<value>3.81469727e-06</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{7cae5dbd-bfa4-4bf4-b2fd-c66050c23709}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>-11</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{4a0c0a02-deed-439d-af1b-aec6b211e891}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.390703321</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{9685ec7c-be19-4285-9307-c598cc485083}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>6</value>
+		</property>
+	</object>
+</objects>

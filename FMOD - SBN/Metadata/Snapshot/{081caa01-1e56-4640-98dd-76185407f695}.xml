@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Snapshot" id="{081caa01-1e56-4640-98dd-76185407f695}">
+		<property name="name">
+			<value>Water Level</value>
+		</property>
+		<property name="behavior">
+			<value>1</value>
+		</property>
+		<relationship name="mixer">
+			<destination>{beb8ab98-cf43-493b-b52e-7ec910f8aa28}</destination>
+		</relationship>
+		<relationship name="automatableProperties">
+			<destination>{555436b8-86d6-4a1e-b2a6-36076747375b}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{0341fbbc-8163-4b4b-aacb-a9d597ba1f7f}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{45c9f924-e58e-4055-9f98-8a701239f7c3}</destination>
+		</relationship>
+		<relationship name="snapshotMasterTrack">
+			<destination>{50616c74-ff45-44a6-aa57-6dd329ec2cce}</destination>
+		</relationship>
+	</object>
+	<object class="EventAutomatableProperties" id="{555436b8-86d6-4a1e-b2a6-36076747375b}" />
+	<object class="MarkerTrack" id="{0341fbbc-8163-4b4b-aacb-a9d597ba1f7f}" />
+	<object class="Timeline" id="{45c9f924-e58e-4055-9f98-8a701239f7c3}" />
+	<object class="SnapshotMasterTrack" id="{50616c74-ff45-44a6-aa57-6dd329ec2cce}" />
+</objects>

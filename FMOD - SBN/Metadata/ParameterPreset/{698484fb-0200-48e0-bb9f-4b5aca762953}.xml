@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{698484fb-0200-48e0-bb9f-4b5aca762953}">
+		<property name="name">
+			<value>beatboxstate</value>
+		</property>
+		<relationship name="folder">
+			<destination>{af479a8a-c292-4a8f-85f3-4292a2ec45a8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e5346fbc-dbdd-4624-b3c1-3639c2b0c3b1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e5346fbc-dbdd-4624-b3c1-3639c2b0c3b1}">
+		<property name="maximum">
+			<value>10</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.02500000037252903</value>
+		</property>
+	</object>
+</objects>
