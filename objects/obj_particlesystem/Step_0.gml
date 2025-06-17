@@ -11,7 +11,7 @@ if (!ds_list_empty(global.debris_list))
                 if (vsp < 20)
                     vsp += grav;
                 
-                if (type == UnknownEnum.Value_1)
+                if (type == debris.fade)
                 {
                     vsp = 0;
                     alpha -= 0.05;
@@ -37,7 +37,7 @@ if (!ds_list_empty(global.debris_list))
                 var outofx = x > (room_width + sprw) || x < -sprw;
                 var outofy = y > (room_height + sprh) || y < -sprh;
                 
-                if (outofx || outofy || (type == UnknownEnum.Value_1 && alpha <= 0))
+                if (outofx || outofy || (type == debris.fade && alpha <= 0))
                     _destroy = true;
                 
                 if (_destroy)

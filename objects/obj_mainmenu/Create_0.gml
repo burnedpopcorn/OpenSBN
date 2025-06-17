@@ -1,3 +1,12 @@
+enum menuselected
+{
+	bofallingcutscene = 0,
+	selectsave = 1,
+	deletesave = 2,
+	loadsave = 3,
+	endgame = 4,
+}
+
 saveFile = function(argument0) constructor
 {
     index = argument0;
@@ -60,7 +69,7 @@ saveFile = function(argument0) constructor
             var acc = floor(abs(displayPer - other.percentage) / 10) + 1;
             displayPer = approach(displayPer, other.percentage, acc);
             
-            if (state == states.revolver)
+            if (state == menuselected.loadsave)
             {
                 if (sprite_index != other.spr_choose)
                 {
@@ -112,15 +121,6 @@ deleteSave = function(argument0)
     file_delete(string("saves/{0}", path));
     saves[argument0].readValues();
 };
-
-enum menuselected
-{
-	bofallingcutscene = 0,
-	selectsave = 1,
-	deletesave = 2,
-	loadsave = 3,
-	endgame = 4,
-}
 
 image_speed = 0;
 endFadeAlpha = 0;

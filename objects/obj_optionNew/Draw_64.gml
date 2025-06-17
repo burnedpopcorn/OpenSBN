@@ -28,7 +28,7 @@ if (m.align_center)
 {
     draw_set_halign(fa_center);
     draw_set_valign(fa_top);
-    var c = 16777215;
+    var c = c_white;
     
     for (var i = 0; i < len; i++)
     {
@@ -40,7 +40,7 @@ if (m.align_center)
         c = 8421504;
         
         if (i == sel)
-            c = 16777215;
+            c = c_white;
         
         draw_text_color(xx, yy + (m.ypad * i), o.name, c, c, c, c, 1);
     }
@@ -50,7 +50,7 @@ else
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
     xx = m.xpad;
-    var c = 16777215;
+    var c = c_white;
     
     for (var i = 0; i < len; i++)
     {
@@ -59,29 +59,29 @@ else
         c = 8421504;
         
         if (i == sel)
-            c = 16777215;
+            c = c_white;
         
         draw_text_color(xx, yy + (m.ypad * i), o.name, c, c, c, c, 1);
         draw_set_halign(fa_right);
         
         switch (o.type)
         {
-            case UnknownEnum.Value_1:
-            case UnknownEnum.Value_2:
+            case menutype.press:
+            case menutype.redirect:
                 if (i == sel && variable_instance_exists(o, "drawIcon"))
                     o.drawIcon(xx + (string_width(o.name) / 2) + 64, yy + (m.ypad * i));
                 
                 break;
             
-            case UnknownEnum.Value_3:
+            case menutype.toggle:
                 draw_text_color(obj_gameFrame.defaultwidth - m.xpad, yy + (m.ypad * i), o.value ? "ON" : "OFF", c, c, c, c, 1);
                 break;
             
-            case UnknownEnum.Value_4:
+            case menutype.multiple:
                 draw_text_color(obj_gameFrame.defaultwidth - m.xpad, yy + (m.ypad * i), o.dictionary[o.value], c, c, c, c, 1);
                 break;
             
-            case UnknownEnum.Value_5:
+            case menutype.slider:
                 var w = 208;
                 var h = 16;
                 var wper = w * (o.value / 100);

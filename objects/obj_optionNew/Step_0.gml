@@ -51,8 +51,8 @@ if (sel != selected)
 
 switch (option.type)
 {
-    case UnknownEnum.Value_1:
-    case UnknownEnum.Value_2:
+    case menutype.press:
+    case menutype.redirect:
         if (key_confirm)
         {
             option.onPress();
@@ -61,7 +61,7 @@ switch (option.type)
         
         break;
     
-    case UnknownEnum.Value_3:
+    case menutype.toggle:
         if (key_confirm || move2 != 0)
         {
             option.onPress();
@@ -70,7 +70,7 @@ switch (option.type)
         
         break;
     
-    case UnknownEnum.Value_4:
+    case menutype.multiple:
         if (move2 != 0)
         {
             option.onPress(move2);
@@ -79,7 +79,7 @@ switch (option.type)
         
         break;
     
-    case UnknownEnum.Value_5:
+    case menutype.slider:
         if (moveslide != 0 && slidebuffer <= 0 && (option.value + moveslide) != 101 && (option.value + moveslide) != -1)
         {
             slidebuffer = 1;
@@ -125,7 +125,7 @@ if (key_back && !instance_exists(obj_option_keyconfig))
         {
             var b = m.options[i];
             
-            if (b.type == UnknownEnum.Value_5)
+            if (b.type == menutype.slider)
                 b.silence();
         }
         

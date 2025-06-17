@@ -1,6 +1,6 @@
 switch (type)
 {
-    case UnknownEnum.Value_0:
+    case buttonpressed.left:
         sprite_index = spr_soundtest_button_left;
         
         onPress = function()
@@ -16,7 +16,7 @@ switch (type)
         
         break;
     
-    case UnknownEnum.Value_1:
+    case buttonpressed.pause:
         sprite_index = spr_soundtest_button_pause;
         
         onPress = function()
@@ -34,7 +34,7 @@ switch (type)
         
         break;
     
-    case UnknownEnum.Value_2:
+    case buttonpressed.right:
         sprite_index = spr_soundtest_button_right;
         
         onPress = function()

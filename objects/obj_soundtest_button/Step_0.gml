@@ -11,5 +11,5 @@ else
     image_index = 0;
 }
 
-if (type == UnknownEnum.Value_1)
+if (type == buttonpressed.pause)
     image_index = obj_soundtest.active;

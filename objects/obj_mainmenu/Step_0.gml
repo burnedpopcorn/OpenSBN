@@ -99,6 +99,7 @@ switch (state)
                         break;
                 }
             }
+			// that one funny discord gif
             else if (selected == 3)
             {
                 switch (frame_current)

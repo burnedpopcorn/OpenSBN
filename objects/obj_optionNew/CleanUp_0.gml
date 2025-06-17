@@ -6,7 +6,7 @@ for (var j = 0; j < array_length(menuarr); j++)
     {
         var b = m.options[i];
         
-        if (b.type == UnknownEnum.Value_5)
+        if (b.type == menutype.slider)
             b.silence();
     }
 }

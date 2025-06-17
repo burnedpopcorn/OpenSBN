@@ -1,5 +1,10 @@
-global.resolutions[UnknownEnum.Value_0] = [[480, 270], [960, 540], [1024, 576], [1280, 720], [1600, 900], [1920, 1080]];
-global.resolutions[UnknownEnum.Value_1] = [[640, 480], [800, 600], [1024, 768], [1152, 864], [1440, 1080]];
+enum resolution
+{
+	normal = 0,
+	undertale = 1
+}
+global.resolutions[resolution.normal] = [[480, 270], [960, 540], [1024, 576], [1280, 720], [1600, 900], [1920, 1080]];
+global.resolutions[resolution.undertale] = [[640, 480], [800, 600], [1024, 768], [1152, 864], [1440, 1080]];
 depth = -99999;
 gameframe_init();
 scr_init_options();
@@ -20,8 +25,8 @@ saved_guiwidth = display_get_gui_width();
 saved_guiheight = display_get_gui_height();
 currentwidth = savedwidth;
 currentheight = savedheight;
-defaultwidth = global.resolutions[UnknownEnum.Value_0][1][0];
-defaultheight = global.resolutions[UnknownEnum.Value_0][1][1];
+defaultwidth = global.resolutions[resolution.normal][1][0];
+defaultheight = global.resolutions[resolution.normal][1][1];
 displaywidth = defaultwidth;
 displayheight = defaultheight;
 gui_surface = -4;

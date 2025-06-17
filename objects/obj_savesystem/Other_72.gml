@@ -4,17 +4,17 @@ var error = ds_map_find_value(async_load, "error");
 
 switch (state)
 {
-    case UnknownEnum.Value_1:
+    case savestate.saving:
         if (ident == saveid)
         {
             buffer_delete(savebuff);
             trace("Save status: ", status, ", error: ", error);
-            state = UnknownEnum.Value_0;
+            state = savestate.idle;
         }
         
         break;
     
-    case states.normal:
+    case savestate.loading:
         if (ident == loadid)
         {
             var buffstring = buffer_read(loadbuff, buffer_string);
@@ -23,9 +23,9 @@ switch (state)
             buffer_delete(loadbuff);
             trace("inistr: ", ini_str);
             trace("buffstring: ", buffstring);
-            state = UnknownEnum.Value_0;
+            state = savestate.idle;
             
-            if (room == rm_mainmenu && obj_mainmenu.state == states.revolver)
+            if (room == rm_mainmenu && obj_mainmenu.state == menuselected.loadsave)
                 event_user(0);
         }
         

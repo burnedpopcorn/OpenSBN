@@ -11,9 +11,19 @@ bg_y = 0;
 keystring = "";
 keyboard_string = "";
 
+enum menutype
+{
+	menu = 0, // one where you select submenu to enter
+	press = 1,
+	redirect = 2, // back button
+	toggle = 3,
+	multiple = 4,
+	slider = 5
+}
+
 optionMenu = function(argument0, argument1 = bg_options_general, argument2 = false) constructor
 {
-    type = UnknownEnum.Value_0;
+    type = menutype.menu;
     index = argument0;
     align_center = argument2;
     bgspr = argument1;
@@ -35,7 +45,7 @@ optionMenu = function(argument0, argument1 = bg_options_general, argument2 = fal
 
 optionPress = function(argument0) constructor
 {
-    type = UnknownEnum.Value_1;
+    type = menutype.press;
     name = argument0;
     onActivate = undefined;
     
@@ -48,13 +58,13 @@ optionPress = function(argument0) constructor
 
 optionRedirect = function(argument0, argument1, argument2 = [spr_null, 0]) constructor
 {
-    type = UnknownEnum.Value_2;
+    type = menutype.redirect;
     name = argument0;
     drawArr = argument2;
     target = argument1;
     onActivate = undefined;
     
-    drawIcon = function(argument0, argument1, argument2 = 1, argument3 = 1, argument4 = 0, argument5 = 16777215, argument6 = 1)
+    drawIcon = function(argument0, argument1, argument2 = 1, argument3 = 1, argument4 = 0, argument5 = c_white, argument6 = 1)
     {
         draw_sprite_ext(drawArr[0], drawArr[1], argument0, argument1, argument2, argument3, argument4, argument5, argument6);
     };
@@ -75,7 +85,7 @@ optionRedirect = function(argument0, argument1, argument2 = [spr_null, 0]) const
 
 optionToggle = function(argument0, argument1, argument2) constructor
 {
-    type = UnknownEnum.Value_3;
+    type = menutype.toggle;
     name = argument0;
     variable = argument1;
     key = argument2;
@@ -99,7 +109,7 @@ optionToggle = function(argument0, argument1, argument2) constructor
 
 optionMultiple = function(argument0, argument1, argument2, argument3) constructor
 {
-    type = UnknownEnum.Value_4;
+    type = menutype.multiple;
     name = argument0;
     variable = argument1;
     key = argument2;
@@ -131,7 +141,7 @@ optionMultiple = function(argument0, argument1, argument2, argument3) constructo
 
 optionSlide = function(argument0, argument1, argument2, argument3 = 100, argument4 = undefined, argument5 = false, argument6 = 0) constructor
 {
-    type = UnknownEnum.Value_5;
+    type = menutype.slider;
     name = argument0;
     variable = argument1;
     key = argument2;

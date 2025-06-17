@@ -24,8 +24,8 @@ enum particle
 }
 enum debris
 {
-	normal,
-	fade
+	normal = 0,
+	fade = 1
 }
 
 if (instance_number(obj_particlesystem) > 1)
