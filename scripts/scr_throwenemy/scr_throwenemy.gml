@@ -32,6 +32,4 @@ function scr_throwenemy()
             state = states.stun;
         }
     }
-    
-    exit;
 }

@@ -45,7 +45,7 @@ function scr_shoot_farmerprojectile()
         if (farmerpos == 1)
             inst = obj_farmer2projectile;
         else if (farmerpos == 2)
-            inst = 87;
+            inst = obj_bigspitcheesespike;
         
         with (instance_create(x, y, inst))
         {

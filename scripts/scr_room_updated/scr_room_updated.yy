@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "General",
-    "path": "folders/Scripts/General.yy",
+    "name": "Leftovers",
+    "path": "folders/Scripts/Leftovers.yy",
   },
 }

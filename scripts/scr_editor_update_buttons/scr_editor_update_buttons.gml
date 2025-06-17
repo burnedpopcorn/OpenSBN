@@ -70,6 +70,4 @@ function scr_editor_update_buttons()
             }
         }
     }
-    
-    exit;
 }

@@ -78,9 +78,8 @@ function DebugCommand(argument0, argument1, argument2, argument3) constructor
     };
 }
 
+// unused
 function TextList_Add(argument0, argument1)
 {
-    with (obj_debugcontroller)
-    {
-    }
+    with (obj_debugcontroller) { }
 }

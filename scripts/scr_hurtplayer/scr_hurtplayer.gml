@@ -1,21 +1,13 @@
 function scr_hurtplayer(argument0)
 {
-    var _hurt = 0;
+    var _hurt = false;
     
     with (argument0)
     {
-        if (global.failcutscene)
-        {
-        }
-        else if (state == states.Parry || state == states.debugstate || state == states.golf || state == states.slipbanan)
-        {
-        }
-        else if (state == states.handstandjump && flash == 1)
-        {
-        }
-        else if (state == states.backbreaker || state == states.chainsaw)
-        {
-        }
+        if (global.failcutscene) { }
+        else if (state == states.Parry || state == states.debugstate || state == states.golf || state == states.slipbanan) { }
+        else if (state == states.handstandjump && flash == 1) { }
+        else if (state == states.backbreaker || state == states.chainsaw) { }
         else if (global.kungfu)
         {
             if (state == states.blockstance)
@@ -89,21 +81,13 @@ function scr_hurtplayer(argument0)
                 _hurt = 1;
             }
         }
-        else if (state == states.shotgundash)
-        {
-        }
-        else if (state == states.fishhurt)
-        {
-        }
-        else if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.knightpepbump) && cutscene == 0)
-        {
-        }
-        else if (state == states.ghost)
-        {
-        }
+        else if (state == states.shotgundash) { }
+        else if (state == states.fishhurt) { }
+        else if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.knightpepbump) && cutscene == 0) { }
+        else if (state == states.ghost) { }
         else if (state == states.ghostpossess)
         {
-            if (instance_exists(possessID) && object_get_parent(possessID) == 407)
+            if (instance_exists(possessID) && object_get_parent(possessID) == obj_characterselect)
             {
                 state = states.ghost;
                 
@@ -114,24 +98,12 @@ function scr_hurtplayer(argument0)
                 }
             }
         }
-        else if (state == states.slipnslide)
-        {
-        }
-        else if (state == states.trickjump)
-        {
-        }
-        else if (state == states.chainsawbump)
-        {
-        }
-        else if (state == states.bombpep && hurted == 0)
-        {
-        }
-        else if (state == states.rideweenie)
-        {
-        }
-        else if (state == states.slipnslide)
-        {
-        }
+        else if (state == states.slipnslide) { }
+        else if (state == states.trickjump) { }
+        else if (state == states.chainsawbump) { }
+        else if (state == states.bombpep && hurted == 0) { }
+        else if (state == states.rideweenie) { }
+        else if (state == states.slipnslide) { }
         else if (state == states.boxxedpep)
         {
             hsp = -xscale * 4;
@@ -167,7 +139,7 @@ function scr_hurtplayer(argument0)
                     image_xscale = -other.xscale;
             }
             
-            _hurt = 1;
+            _hurt = true;
             
             if (character == "V")
                 global.playerhealth -= 25;
@@ -279,6 +251,4 @@ function scr_hurtplayer(argument0)
             }
         }
     }
-    
-    exit;
 }

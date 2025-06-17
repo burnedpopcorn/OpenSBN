@@ -1,13 +1,16 @@
+// 0 and 1 are the same
+// 4 and 7 are the same
 enum afterimage
 {
-	afterimage,
-	mach3effect,
-	heatattack,
-	firemouth,
-	blue,
-	blur,
+	none = 0,
+	heatattack_blur = 1,
+	mach3effect = 2,
+	red = 4,
+	spink = 6,
 	
-	enum_length // used to check how many afterimage types there are
+	unknown3 = 3,
+	unknown5 = 5,
+	unknown7 = 7,
 }
 
 depth = 1;

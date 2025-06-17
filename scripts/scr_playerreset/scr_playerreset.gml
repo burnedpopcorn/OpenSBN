@@ -202,12 +202,12 @@ function scr_playerreset()
         
         if (instance_exists(obj_gnome_checklist))
         {
-            var destroy = 1;
+            var destroy = true;
             
             with (obj_player1)
             {
                 if (state == states.gameover || state == states.timesup)
-                    destroy = 0;
+                    destroy = false;
             }
             
             if (destroy)

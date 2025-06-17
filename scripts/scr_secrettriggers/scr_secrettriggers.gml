@@ -45,14 +45,14 @@ function secret_check_touchall()
                 touchrequirement[xx][1] = 1;
         }
         
-        var b = 1;
+        var b = true;
         var i = 0;
         
         while (i < array_length(touchrequirement))
         {
             if (!touchrequirement[i][1])
             {
-                b = 0;
+                b = false;
                 break;
             }
             else
@@ -71,12 +71,12 @@ function secret_check_touchall()
 
 function secret_check_trigger(argument0)
 {
-    var _found = 0;
+    var _found = false;
     
     with (obj_secrettrigger)
     {
         if (trigger == argument0 && active)
-            _found = 1;
+            _found = true;
     }
     
     if (_found)
@@ -101,7 +101,7 @@ function secret_open_portal(argument0)
     exit;
 }
 
-function secret_close_portal(argument0, argument1 = 0)
+function secret_close_portal(argument0, argument1 = false)
 {
     with (obj_secretportal)
     {

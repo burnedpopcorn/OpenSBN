@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Escape",
-    "path": "folders/Scripts/General/Escape.yy",
+    "name": "Leftovers",
+    "path": "folders/Scripts/Leftovers.yy",
   },
 }

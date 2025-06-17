@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Input",
-    "path": "folders/Scripts/General/Input.yy",
+    "name": "Leftovers",
+    "path": "folders/Scripts/Leftovers.yy",
   },
 }

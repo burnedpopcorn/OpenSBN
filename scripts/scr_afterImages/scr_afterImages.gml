@@ -1,42 +1,61 @@
-global.AftImgColorDefinitions[UnknownEnum.Value_0] = 
+// this and heatattack_blur are the only ones that can use palette swaps
+global.AftImgColorDefinitions[afterimage.none] = 
 {
-    light: [16777215],
-    dark: [0]
+    light: [c_white],
+    dark: [c_black]
 };
-global.AftImgColorDefinitions[UnknownEnum.Value_1] = 
+global.AftImgColorDefinitions[afterimage.heatattack_blur] = 
 {
-    light: [16777215],
-    dark: [0]
+    light: [c_white],
+    dark: [c_black]
 };
-global.AftImgColorDefinitions[UnknownEnum.Value_2] = 
+// for mach running
+global.AftImgColorDefinitions[afterimage.mach3effect] = 
 {
+	// (Light Pink) , (Light Yellow)
     light: [14717951, 8446200],
     dark: [3670136, 10344]
+	// (Dark Purple) , (Dark Orange)
 };
-global.AftImgColorDefinitions[UnknownEnum.Value_3] = 
+// unused, but seems to be old firemouth
+global.AftImgColorDefinitions[afterimage.unknown3] = 
 {
+	// (Red Orange)
     light: [12512],
     dark: [64]
+	// (Dark Red)
 };
-global.AftImgColorDefinitions[UnknownEnum.Value_4] = 
+// for enemies i think
+global.AftImgColorDefinitions[afterimage.red] = 
 {
+	// (Red Orange)
     light: [12512],
     dark: [12512]
+	// (Red Orange)
 };
-global.AftImgColorDefinitions[UnknownEnum.Value_5] = 
+// unused, maybe alternate mach run?
+global.AftImgColorDefinitions[afterimage.unknown5] = 
 {
+	// (Bright Pink)
     light: [16292088],
     dark: [4726800]
+	// (Dark Blue)
 };
-global.AftImgColorDefinitions[UnknownEnum.Value_6] = 
+// the other player afterimage, for things like uppercut
+global.AftImgColorDefinitions[afterimage.spink] = 
 {
+	// (Bright Pink)
     light: [16292088],
     dark: [16292088]
+	// (Bright Pink)
 };
-global.AftImgColorDefinitions[UnknownEnum.Value_7] = 
+// unused solid red afterimage
+global.AftImgColorDefinitions[afterimage.unknown7] = 
 {
+	// (Red Orange)
     light: [12512],
     dark: [12512]
+	// (Red Orange)
 };
 
 function afterimage_create(argument0, argument1, argument2, argument3, argument4, argument5 = 1, argument6 = 15, argument7 = false, argument8 = id)
@@ -67,7 +86,7 @@ function afterimage_create(argument0, argument1, argument2, argument3, argument4
 
 function create_mach3effect(argument0, argument1, argument2, argument3, argument4, argument5 = id, argument6 = 1)
 {
-    var struc = afterimage_create(UnknownEnum.Value_2, argument0, argument1, argument2, argument3, argument4, undefined, true, argument5);
+    var struc = afterimage_create(afterimage.mach3effect, argument0, argument1, argument2, argument3, argument4, undefined, true, argument5);
     struc.image_yscale = argument6;
     struc.image_alpha = 0.5;
     struc.afterImageIndex = choose(0, 1);
@@ -76,7 +95,7 @@ function create_mach3effect(argument0, argument1, argument2, argument3, argument
 
 function create_spink_afterimage(argument0, argument1, argument2, argument3, argument4, argument5 = 1)
 {
-    var struc = afterimage_create(UnknownEnum.Value_6, argument0, argument1, argument2, argument3, argument4, -1);
+    var struc = afterimage_create(afterimage.spink, argument0, argument1, argument2, argument3, argument4, -1);
     struc.image_yscale = argument5;
     struc.image_alpha = 1.25;
     return struc;
@@ -84,7 +103,7 @@ function create_spink_afterimage(argument0, argument1, argument2, argument3, arg
 
 function create_red_afterimage(argument0, argument1, argument2, argument3, argument4, argument5 = 1)
 {
-    var struc = afterimage_create(UnknownEnum.Value_4, argument0, argument1, argument2, argument3, argument4, -1);
+    var struc = afterimage_create(afterimage.red, argument0, argument1, argument2, argument3, argument4, -1);
     struc.image_yscale = argument5;
     struc.image_alpha = 0.6;
     return struc;
@@ -92,7 +111,7 @@ function create_red_afterimage(argument0, argument1, argument2, argument3, argum
 
 function create_blur_afterimage(argument0, argument1, argument2, argument3, argument4, argument5, argument6)
 {
-    var struc = afterimage_create(UnknownEnum.Value_1, argument0, argument1, argument2, argument3, argument4, -1);
+    var struc = afterimage_create(afterimage.heatattack_blur, argument0, argument1, argument2, argument3, argument4, -1);
     struc.image_alpha = 0.8;
     struc.image_yscale = argument5;
     struc.image_angle = argument6;
@@ -101,12 +120,12 @@ function create_blur_afterimage(argument0, argument1, argument2, argument3, argu
 
 function create_heatattack_afterimage(argument0, argument1, argument2, argument3, argument4)
 {
-    return afterimage_create(UnknownEnum.Value_1, argument0, argument1, argument2, argument3, argument4);
+    return afterimage_create(afterimage.heatattack_blur, argument0, argument1, argument2, argument3, argument4);
     show_debug_message("BIG BONER DOWN THE LANE");
 }
 
 function create_firemouth_afterimage(argument0, argument1, argument2, argument3, argument4)
 {
-    return afterimage_create(UnknownEnum.Value_4, argument0, argument1, argument2, argument3, argument4);
+    return afterimage_create(afterimage.red, argument0, argument1, argument2, argument3, argument4);
     show_debug_message("BIG BONER DOWN THE LANE");
 }

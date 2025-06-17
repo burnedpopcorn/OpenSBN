@@ -1,3 +1,2 @@
-function scr_panicbg_init()
-{
-}
+// unused
+function scr_panicbg_init() { }
