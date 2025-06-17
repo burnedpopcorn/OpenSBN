@@ -13,7 +13,7 @@ with (ID)
 {
     if (object_index == obj_coolpineapple || object_index == obj_ghostknight || object_index == obj_tack || object_index == obj_noisey || object_index == obj_smokingpizzaslice)
     {
-        if (state != enemystates.walk && state != enemystates.rage)
+        if (state != states.walk && state != states.rage)
         {
             hitboxcreate = 0;
             instance_destroy(other);
@@ -80,13 +80,13 @@ with (ID)
         case obj_soldier:
             other.x = x + (image_xscale * 24);
             
-            if (state != enemystates.rage)
+            if (state != states.rage)
                 instance_destroy(other);
             
             break;
         
         case obj_indiancheese:
-            if (state != enemystates.walk && sprite_index != spr_indiancheese_howl)
+            if (state != states.walk && sprite_index != spr_indiancheese_howl)
             {
                 hitboxcreate = 0;
                 instance_destroy(other);
@@ -115,13 +115,13 @@ with (ID)
             break;
         
         case obj_minijohn:
-            if (state != enemystates.rage && state != states.punch)
+            if (state != states.rage && state != states.punch)
                 instance_destroy(other);
             
             break;
         
         case obj_ninja:
-            if (state != enemystates.charge && state != states.punch)
+            if (state != states.charge && state != states.punch)
                 instance_destroy(other);
             
             if (state == states.punch)
@@ -150,7 +150,7 @@ with (ID)
             break;
         
         case obj_pickle:
-            if (state != enemystates.pthrow)
+            if (state != states.pizzagoblinthrow)
                 instance_destroy(other);
             
             break;
@@ -160,7 +160,7 @@ with (ID)
         case obj_snowman:
         case obj_clamchor:
         case obj_boneFish:
-            if (state != enemystates.charge && state != enemystates.rage)
+            if (state != states.charge && state != states.rage)
             {
                 hitboxcreate = 0;
                 instance_destroy(other);
@@ -169,7 +169,7 @@ with (ID)
             break;
         
         case obj_twoliterdog:
-            if (state != enemystates.chase || sprite_index != spr_twoliter_fall)
+            if (state != states.chase || sprite_index != spr_twoliter_fall)
             {
                 hitboxcreate = 0;
                 instance_destroy(other);

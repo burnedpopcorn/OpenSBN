@@ -6,7 +6,7 @@ switch (state)
         state_turret_normal();
         break;
     
-    case enemystates.charge:
+    case states.charge:
         state_turret_charge();
         break;
 }

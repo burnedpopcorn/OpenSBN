@@ -36,7 +36,7 @@ function mrstick_start_round()
                 create_particle(x, y, particle.genericpoofeffect, 0);
                 important = 0;
                 phase = b[1];
-                state = enemystates.stun;
+                state = states.stun;
                 stunned = 50;
             }
         }

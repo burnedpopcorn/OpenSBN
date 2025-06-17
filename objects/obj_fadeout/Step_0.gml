@@ -18,7 +18,7 @@ if (fadealpha > 1)
                 
                 with (obj_player1)
                 {
-                    if (state == states.ejected || state == UnknownEnum.Value_154)
+                    if (state == states.ejected || state == states.policetaxi)
                     {
                         visible = true;
                         state = states.normal;

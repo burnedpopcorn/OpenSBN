@@ -1,28 +1,28 @@
 if (room == rm_blank)
     exit;
 
-if (state == enemystates.walk && grounded && vsp > 0 && obj_player1.state == states.freefallland)
+if (state == states.walk && grounded && vsp > 0 && obj_player1.state == states.freefallland)
     scr_pizzaball_go_to_thrown(0, -10);
 
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_pizzaball_hit();
         break;
     
@@ -34,45 +34,45 @@ switch (state)
         scr_pizzaball_thrown();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_pizzaball_go_to_thrown(0, vsp * 0.5);
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_pizzaball_grabbed();
         break;
     
-    case enemystates.pummel:
+    case states.pummel:
         scr_enemy_pummel();
         break;
     
-    case enemystates.staggered:
+    case states.staggered:
         scr_enemy_staggered();
         break;
     
-    case enemystates.rage:
+    case states.rage:
         scr_enemy_rage();
         break;
     
-    case enemystates.ghostpossess:
+    case states.ghostpossess:
         scr_enemy_ghostpossess();
         break;
 }
 
-if ((state == enemystates.walk || state == enemystates.idle) && sit)
+if ((state == states.walk || state == states.idle) && sit)
 {
     hsp = 0;
     sprite_index = spr_pizzaball_idle1;
 }
 
-if (state != enemystates.walk)
+if (state != states.walk)
     sit = 0;
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -87,16 +87,16 @@ if (state == states.thrown && !instance_exists(pointerID))
     pointerID.objectID = id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (boundbox == 0)

@@ -1,4 +1,4 @@
-if (state != enemystates.stun)
+if (state != states.stun)
 {
     if (!other.isgustavo)
     {

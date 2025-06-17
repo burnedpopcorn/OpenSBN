@@ -115,7 +115,7 @@ if (global.noisejetpack)
     draw_sprite_ext(sprite_index, image_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
 }
 
-if (state == UnknownEnum.Value_252)
+if (state == states.tv_whitenoise)
     draw_sprite(spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 
 draw_set_font(global.smallnumber_fnt);

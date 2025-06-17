@@ -7,7 +7,7 @@ if (instance_exists(ID))
     
     with (ID)
     {
-        if (state != enemystates.rage)
+        if (state != states.rage)
         {
             ragehitbox = 0;
             instance_destroy(other);

@@ -6,7 +6,7 @@ var targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_playe
 if (bombreset > 0)
     bombreset--;
 
-if (state == enemystates.walk)
+if (state == states.walk)
 {
     if (!chasing)
     {
@@ -18,7 +18,7 @@ if (state == enemystates.walk)
         if (targetplayer.x > (x - 150) && targetplayer.x < (x + 150) && y <= (targetplayer.y + 60) && y >= (targetplayer.y - 60))
         {
             chasing = 1;
-            state = enemystates.charge;
+            state = states.charge;
             attack_count = attack_max;
             
             if (x != targetplayer.x)
@@ -31,12 +31,12 @@ if (state == enemystates.walk)
     }
     else
     {
-        state = enemystates.chase;
+        state = states.chase;
         sprite_index = walkspr;
         image_index = 0;
     }
 }
-else if (state == enemystates.chase)
+else if (state == states.chase)
 {
     if (sprite_index == spr_shrimp_throw)
         sprite_index = spr_shrimp_walk;
@@ -60,7 +60,7 @@ else if (state == enemystates.chase)
     {
         if (targetplayer.x > (x - attackthreshold_x) && targetplayer.x < (x + attackthreshold_x) && targetplayer.y > (y - attackthreshold_y) && targetplayer.y < (y + attackthreshold_y))
         {
-            state = enemystates.charge;
+            state = states.charge;
             hsp = 0;
             attack_count = attack_max;
         }
@@ -91,7 +91,7 @@ else if (state == enemystates.chase)
         image_index = 0;
     }
     
-    if ((inst_front != -4 || inst_up != -4 || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != enemystates.charge)
+    if ((inst_front != -4 || inst_up != -4 || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != states.charge)
     {
         vsp = -11;
         sprite_index = spr_shrimp_jump;
@@ -100,7 +100,7 @@ else if (state == enemystates.chase)
     }
 }
 
-if (state == enemystates.charge)
+if (state == states.charge)
 {
     bombreset = attackreset;
     
@@ -145,7 +145,7 @@ if (state == states.punch)
     if (attackspeed == 0)
     {
         bombreset = attackreset;
-        state = enemystates.walk;
+        state = states.walk;
         sprite_index = walkspr;
         image_index = 0;
     }
@@ -167,46 +167,46 @@ else if (flash && alarm[4] == -1)
 
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         chasing = 1;
         scr_enemy_stun();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         chasing = 1;
         scr_enemy_grabbed();
         break;
     
-    case enemystates.rage:
+    case states.rage:
         scr_enemy_rage();
         break;
 }
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -214,7 +214,7 @@ if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
@@ -224,7 +224,7 @@ if (elite && ragecooldown <= 0)
 {
     var player = instance_nearest(x, y, obj_player1);
     
-    if (state == enemystates.walk || state == enemystates.charge)
+    if (state == states.walk || state == states.charge)
     {
         if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
         {
@@ -234,7 +234,7 @@ if (elite && ragecooldown <= 0)
             flash = 1;
             shot = 0;
             alarm[4] = 5;
-            state = enemystates.rage;
+            state = states.rage;
             create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
             ragecooldown = 100;
         }
@@ -246,13 +246,13 @@ if (ragecooldown > 0)
 
 scr_scareenemy();
 
-if (sprite_index == scaredspr && state == enemystates.idle)
+if (sprite_index == scaredspr && state == states.idle)
     invincible = 0;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (boundbox == 0)

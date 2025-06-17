@@ -29,7 +29,7 @@ function scr_hurtplayer(argument0)
                 sprite_index = spr_null;
                 hsp = -xscale * 2;
             }
-            else if (state != states.thrown && state != enemystates.hit && !hurted)
+            else if (state != states.thrown && state != states.hit && !hurted)
             {
                 instance_create(x, y, obj_parryeffect);
                 
@@ -41,7 +41,7 @@ function scr_hurtplayer(argument0)
                 
                 hitLag = 3;
                 hitxscale = (x != other.x) ? sign(other.x - x) : -other.image_xscale;
-                state = enemystates.hit;
+                state = states.hit;
                 hitstunned = 50;
                 hurted = 1;
                 alarm[7] = hitstunned + 30;
@@ -101,7 +101,7 @@ function scr_hurtplayer(argument0)
         else if (state == states.ghost)
         {
         }
-        else if (state == enemystates.ghostpossess)
+        else if (state == states.ghostpossess)
         {
             if (instance_exists(possessID) && object_get_parent(possessID) == 407)
             {
@@ -109,7 +109,7 @@ function scr_hurtplayer(argument0)
                 
                 with (obj_baddie)
                 {
-                    if (is_controllable && state == enemystates.ghostpossess && playerid == other.id)
+                    if (is_controllable && state == states.ghostpossess && playerid == other.id)
                         instance_destroy();
                 }
             }
@@ -159,7 +159,7 @@ function scr_hurtplayer(argument0)
             alarm[7] = 120;
             hurted = 1;
         }
-        else if (state != states.hurt && state != states.ratmounthurt && state != enemystates.grabbed && (hurted == 0 || state == states.cheesepep || state == states.cheesepepstickside || state == states.cheesepepstickup) && cutscene == 0)
+        else if (state != states.hurt && state != states.ratmounthurt && state != states.grabbed && (hurted == 0 || state == states.cheesepep || state == states.cheesepepstickside || state == states.cheesepepstickup) && cutscene == 0)
         {
             if (state == states.mort || state == states.morthook || state == states.mortjump || state == states.mortattack)
             {
@@ -204,7 +204,7 @@ function scr_hurtplayer(argument0)
                 }
             }
             
-            if (state == enemystates.grabbed)
+            if (state == states.grabbed)
             {
                 if (object_index == obj_player1)
                     y = obj_player2.y;

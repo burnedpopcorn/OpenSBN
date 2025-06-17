@@ -5,14 +5,14 @@ var targetplayer = instance_nearest(x, y, obj_player1);
 
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         if (sprite_index != scaredspr)
         {
             sprite_index = spr_pepbat_idle;
             
             if (targetplayer.x > (x - 150) && targetplayer.x < (x + 150) && targetplayer.y > y && targetplayer.y < (y + 200))
             {
-                state = enemystates.walk;
+                state = states.walk;
                 hit = 0;
             }
         }
@@ -29,11 +29,11 @@ switch (state)
         
         break;
     
-    case enemystates.charge:
+    case states.charge:
         scr_enemy_charge();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         sprite_index = spr_pepbat_move;
         var dir = point_direction(x, y, xstart, ystart);
         x = approach(x, xstart, abs(lengthdir_x(5, dir)));
@@ -46,12 +46,12 @@ switch (state)
         {
             x = xstart;
             y = ystart;
-            state = enemystates.idle;
+            state = states.idle;
         }
         
         break;
     
-    case enemystates.walk:
+    case states.walk:
         vsp = 0;
         hsp = 0;
         sprite_index = spr_pepbat_move;
@@ -69,42 +69,42 @@ switch (state)
         if (hit || distance_to_point(xstart, ystart) > 800)
         {
             hit = 0;
-            state = enemystates.turn;
+            state = states.turn;
         }
         
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         hit = 1;
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case enemystates.pummel:
+    case states.pummel:
         scr_enemy_pummel();
         break;
     
-    case enemystates.staggered:
+    case states.staggered:
         scr_enemy_staggered();
         break;
 }
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -112,16 +112,16 @@ if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 scr_scareenemy();
@@ -131,21 +131,21 @@ if (bombreset > 0)
 
 targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_player1;
 
-if (x != targetplayer.x && state == enemystates.walk && state != enemystates.pthrow && obj_player1.state != states.tumble && bombreset <= 0 && grounded)
+if (x != targetplayer.x && state == states.walk && state != states.pizzagoblinthrow && obj_player1.state != states.tumble && bombreset <= 0 && grounded)
 {
     if (targetplayer.x > (x - 80) && targetplayer.x < (x + 80) && y <= (targetplayer.y + 30) && y >= (targetplayer.y - 30))
     {
-        if (state == enemystates.walk)
+        if (state == states.walk)
         {
             image_index = 0;
             sprite_index = spr_pepbat_kick;
             image_xscale = -sign(x - targetplayer.x);
-            state = enemystates.pthrow;
+            state = states.pizzagoblinthrow;
         }
     }
 }
 
-if (grounded && state == enemystates.pthrow && floor(image_index) == 3)
+if (grounded && state == states.pizzagoblinthrow && floor(image_index) == 3)
     vsp = -5;
 
 if (boundbox == 0)

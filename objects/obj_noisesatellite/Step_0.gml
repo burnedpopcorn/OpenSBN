@@ -1,30 +1,30 @@
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
 }
@@ -55,10 +55,10 @@ if (cigar == 0)
     grabbedspr = spr_noisesatellitestun;
 }
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (flash == 1 && alarm[2] <= 0)

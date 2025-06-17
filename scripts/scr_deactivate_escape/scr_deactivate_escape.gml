@@ -25,7 +25,7 @@ function scr_deactivate_escape()
     
     with (obj_arenaspawn)
     {
-        if (state == UnknownEnum.Value_144 || state == UnknownEnum.Value_145)
+        if (state == states.spawnenemy || state == states.arena)
         {
             if (!ds_list_empty(baddielist))
             {

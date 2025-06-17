@@ -77,7 +77,7 @@ function noise_do_attack_normal()
             image_index = 0;
             break;
         
-        case UnknownEnum.Value_169:
+        case states.boss_skateboardturn:
             state = states.skateboard;
             skateboard_turns = 1;
             movespeed = 0;
@@ -85,7 +85,7 @@ function noise_do_attack_normal()
             image_index = 0;
             break;
         
-        case UnknownEnum.Value_170:
+        case states.boss_bombkick:
             state = states.throwing;
             sprite_index = spr_null;
             image_index = 0;
@@ -103,7 +103,7 @@ function noise_do_attack_normal()
             
             break;
         
-        case UnknownEnum.Value_171:
+        case states.boss_bombpogo:
             state = states.pogo;
             bombpogo = 1;
             pogospeed = 0;
@@ -120,24 +120,24 @@ function noise_do_attack_normal()
             pogo_buffer = pogo_max + (room_speed * irandom(pogo_random));
             break;
         
-        case UnknownEnum.Value_174:
-            state = UnknownEnum.Value_172;
+        case states.boss_jetpackcancel:
+            state = states.boss_jetpackstart;
             jetpackcancel = 1;
             sprite_index = spr_null;
             image_index = 0;
             movespeed = 0;
             break;
         
-        case UnknownEnum.Value_172:
+        case states.boss_jetpackstart:
             jetpackcancel = 0;
             sprite_index = spr_null;
             image_index = 0;
             movespeed = 0;
             break;
         
-        case UnknownEnum.Value_175:
+        case states.boss_jetpackspin:
             movespeed = 10;
-            state = UnknownEnum.Value_175;
+            state = states.boss_jetpackspin;
             event_play_oneshot("event:/SFX/bo/jump", x, y);
             vsp = -15;
             sprite_index = spr_null;
@@ -175,7 +175,7 @@ function noise_do_attack_angry()
             image_index = 0;
             break;
         
-        case UnknownEnum.Value_169:
+        case states.boss_skateboardturn:
             state = states.handstandjump;
             slide = 0;
             skateboard_turns = 1;
@@ -199,7 +199,7 @@ function noise_do_attack_angry()
             image_index = 0;
             break;
         
-        case UnknownEnum.Value_170:
+        case states.boss_bombkick:
             bombcount = 1;
             state = states.throwing;
             sprite_index = spr_null;
@@ -219,7 +219,7 @@ function noise_do_attack_angry()
             
             break;
         
-        case UnknownEnum.Value_171:
+        case states.boss_bombpogo:
             state = states.pogo;
             bombpogo = 1;
             pogospeed = 0;
@@ -236,26 +236,26 @@ function noise_do_attack_angry()
             pogo_buffer = pogo_max + (room_speed * irandom(pogo_random));
             break;
         
-        case UnknownEnum.Value_174:
+        case states.boss_jetpackcancel:
             jumpcount = 1;
-            state = UnknownEnum.Value_172;
+            state = states.boss_jetpackstart;
             jetpackcancel = 1;
             sprite_index = spr_null;
             image_index = 0;
             movespeed = 0;
             break;
         
-        case UnknownEnum.Value_172:
+        case states.boss_jetpackstart:
             jetpackcancel = 0;
             sprite_index = spr_null;
             image_index = 0;
             movespeed = 0;
             break;
         
-        case UnknownEnum.Value_175:
+        case states.boss_jetpackspin:
             jumpcount = 1;
             movespeed = 10;
-            state = UnknownEnum.Value_175;
+            state = states.boss_jetpackspin;
             event_play_oneshot("event:/SFX/bo/jump", x, y);
             vsp = -15;
             sprite_index = spr_null;
@@ -522,7 +522,7 @@ function boss_noise_crouchslide()
     
     if (slideskateboard && place_meeting(x + (sign(hsp) * 116), y, obj_solid))
     {
-        state = UnknownEnum.Value_169;
+        state = states.boss_skateboardturn;
         skateboard_turns = 1;
         movespeed = 12;
         sprite_index = spr_playerN_machslideboost;
@@ -588,7 +588,7 @@ function boss_noise_skateboard()
     
     if (skateboard_turns > 0 && place_meeting(x + (sign(hsp) * 116), y, obj_solid))
     {
-        state = UnknownEnum.Value_169;
+        state = states.boss_skateboardturn;
         movespeed = 12;
         sprite_index = spr_playerN_machslideboost;
         image_index = 0;
@@ -779,7 +779,7 @@ function boss_noise_jetpackstart()
     
     if (image_index > (image_number - 1))
     {
-        state = UnknownEnum.Value_173;
+        state = states.boss_jetpack;
         movespeed = !angry ? 15 : 20;
         sprite_index = !angry ? spr_playerN_jetpackboost : spr_playerN_crazyrun;
     }
@@ -823,7 +823,7 @@ function boss_noise_jetpack()
         
         if (dx < 200)
         {
-            state = UnknownEnum.Value_175;
+            state = states.boss_jetpackspin;
             event_play_oneshot("event:/SFX/bo/jump", x, y);
             vsp = -15;
             sprite_index = spr_null;
@@ -873,7 +873,7 @@ function boss_noise_jetpackspin()
         {
             jumpcount--;
             movespeed = 10;
-            state = UnknownEnum.Value_175;
+            state = states.boss_jetpackspin;
             event_play_oneshot("event:/SFX/bo/jump", x, y);
             vsp = -15;
             sprite_index = spr_null;

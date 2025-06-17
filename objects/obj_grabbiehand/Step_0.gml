@@ -6,13 +6,13 @@ switch (state)
     case states.transitioncutscene:
         if (floor(image_index) == (image_number - 1))
         {
-            state = UnknownEnum.Value_137;
+            state = states.fall;
             sprite_index = spr_grabbiehand_fall;
         }
         
         break;
     
-    case UnknownEnum.Value_137:
+    case states.fall:
         var spd = 12;
         shootdir = angle_rotate(shootdir, point_direction(x, y, targetplayer.x, targetplayer.y), turnspeed);
         hsp = lengthdir_x(spd, shootdir);
@@ -23,7 +23,7 @@ switch (state)
         
         if (grounded)
         {
-            state = enemystates.stun;
+            state = states.stun;
             stunned = 50;
             hsp = 0;
             vsp = 0;
@@ -33,7 +33,7 @@ switch (state)
         scr_collide();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         if (stunned > 0)
         {
             stunned--;

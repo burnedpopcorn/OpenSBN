@@ -1,57 +1,57 @@
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.charge:
+    case states.charge:
         scr_enemy_charge();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         
         if (totemID != -4)
-            state = UnknownEnum.Value_190;
+            state = states.totem;
         
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case enemystates.rage:
+    case states.rage:
         scr_enemy_rage();
         break;
     
-    case enemystates.ghostpossess:
+    case states.ghostpossess:
         scr_enemy_ghostpossess();
         break;
 }
 
 scr_scareenemy();
 
-if (state == UnknownEnum.Value_190 && totemID != -4)
+if (state == states.totem && totemID != -4)
 {
     image_speed = 0.35;
     
@@ -88,12 +88,12 @@ if (state == UnknownEnum.Value_190 && totemID != -4)
         }
     }
 }
-else if (state == UnknownEnum.Value_190 && totemID == -4)
+else if (state == states.totem && totemID == -4)
 {
-    state = enemystates.walk;
+    state = states.walk;
 }
 
-if (state == enemystates.stun && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -101,7 +101,7 @@ if (state == enemystates.stun && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
@@ -112,14 +112,14 @@ var player = instance_nearest(x, y, obj_player1);
 if (elite && ragecooldown > 0)
     ragecooldown--;
 
-if (state == enemystates.walk && sprite_index == walkspr && sprite_index != spr_indiancheese_scared && elite && ragecooldown == 0)
+if (state == states.walk && sprite_index == walkspr && sprite_index != spr_indiancheese_scared && elite && ragecooldown == 0)
 {
     if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
     {
         if (x != player.x)
             image_xscale = -sign(x - player.x);
         
-        state = enemystates.rage;
+        state = states.rage;
         sprite_index = spr_indiancheese_howl;
         image_index = 0;
         shot = 0;
@@ -139,10 +139,10 @@ else if (image_speed == 0)
 if (sprite_index == spr_indiancheese_land && floor(image_index) == (image_number - 1))
     sprite_index = spr_indiancheese_walk;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (boundbox == 0)

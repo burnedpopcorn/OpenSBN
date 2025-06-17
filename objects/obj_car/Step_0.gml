@@ -31,7 +31,7 @@ switch (state)
                         state = states.chainsaw;
                     }
                     
-                    state = enemystates.hit;
+                    state = states.hit;
                     hitX = x;
                     hitY = y;
                     hitLag = 50;
@@ -47,7 +47,7 @@ switch (state)
         
         break;
     
-    case enemystates.hit:
+    case states.hit:
         x = hitX + irandom_range(-1, 1);
         y = hitY + irandom_range(-1, 1);
         

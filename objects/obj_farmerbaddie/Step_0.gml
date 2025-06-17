@@ -3,15 +3,15 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         if (!idle)
         {
             scr_enemy_walk();
@@ -24,49 +24,49 @@ switch (state)
         
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case enemystates.pummel:
+    case states.pummel:
         scr_enemy_pummel();
         break;
     
-    case enemystates.staggered:
+    case states.staggered:
         scr_enemy_staggered();
         break;
     
-    case enemystates.rage:
+    case states.rage:
         scr_enemy_rage();
         break;
     
-    case enemystates.ghostpossess:
+    case states.ghostpossess:
         scr_enemy_ghostpossess();
         break;
 }
 
 scr_scareenemy();
 
-if (state != enemystates.walk)
+if (state != states.walk)
     idle = 0;
 
-if (state == enemystates.walk)
+if (state == states.walk)
 {
     var x1 = 270;
     playerid = instance_nearest(x, y, obj_player1);
@@ -82,7 +82,7 @@ if (state == enemystates.walk)
         
         with (obj_farmerbaddie)
         {
-            if ((id == b || distance_to_object(other) < 300) && state != enemystates.grabbed && state != enemystates.stun && state != enemystates.hit && state != UnknownEnum.Value_268)
+            if ((id == b || distance_to_object(other) < 300) && state != states.grabbed && state != states.stun && state != states.hit && state != states.secret)
             {
                 state = states.jump;
                 sprite_index = ragespr;
@@ -161,7 +161,7 @@ else if (state == states.punch)
     if (attackspeed <= 0)
     {
         cooldown = 60;
-        state = enemystates.walk;
+        state = states.walk;
         idle = 0;
         hsp = 0;
         sprite_index = walkspr;
@@ -177,7 +177,7 @@ if (state != states.punch && hitboxID != -4 && instance_exists(hitboxID))
     hitboxID = -4;
 }
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -185,16 +185,16 @@ if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (boundbox == 0)

@@ -3,7 +3,7 @@ switch (state)
     case states.normal:
         with (obj_player1)
         {
-            if (other.state != enemystates.walk && state == states.normal && vsp > 0 && input_check("up") && place_meeting(x, y + 1, other))
+            if (other.state != states.walk && state == states.normal && vsp > 0 && input_check("up") && place_meeting(x, y + 1, other))
             {
                 state = states.actor;
                 hsp = 0;
@@ -14,7 +14,7 @@ switch (state)
                 {
                     playerid = other.id;
                     playerxoffset = other.x - x;
-                    state = enemystates.walk;
+                    state = states.walk;
                     
                     if (place_meeting(x + (dir * 32), y, obj_solid))
                         dir *= -1;
@@ -24,7 +24,7 @@ switch (state)
         
         break;
     
-    case enemystates.walk:
+    case states.walk:
         x += (dir * 5);
         playerid.x = x + playerxoffset;
         playerid.hsp = 0;

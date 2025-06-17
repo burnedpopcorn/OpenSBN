@@ -3,7 +3,7 @@ switch (state)
     case states.normal:
         if (obj_player1.x <= x)
         {
-            state = UnknownEnum.Value_147;
+            state = states.arenaround;
             round_count = 10;
             
             with (obj_arenagate)
@@ -39,21 +39,21 @@ switch (state)
                 image_index = 0;
             }
             
-            state = UnknownEnum.Value_147;
+            state = states.arenaround;
             round_count = 10;
         }
         
         break;
     
-    case UnknownEnum.Value_147:
+    case states.arenaround:
         if (round_count > 0)
             round_count--;
         else
-            state = UnknownEnum.Value_144;
+            state = states.spawnenemy;
         
         break;
     
-    case UnknownEnum.Value_144:
+    case states.spawnenemy:
         if (!ds_list_empty(baddielist))
         {
             for (var i = 0; i < ds_list_size(baddielist); i++)
@@ -85,7 +85,7 @@ switch (state)
         wave_minutes = minutes;
         wave_seconds = seconds;
         round_count = round_max;
-        state = UnknownEnum.Value_145;
+        state = states.arena;
         
         with (obj_arenadoor)
         {
@@ -102,7 +102,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_145:
+    case states.arena:
         var _doorfinish = 1;
         
         with (obj_arenadoor)
@@ -137,7 +137,7 @@ switch (state)
             }
             else
             {
-                state = UnknownEnum.Value_144;
+                state = states.spawnenemy;
                 round_count = round_max;
             }
         }

@@ -9,12 +9,12 @@ function scr_pizzagoblin_throw()
         switch (object_index)
         {
             default:
-                state = enemystates.walk;
+                state = states.walk;
                 sprite_index = walkspr;
                 break;
             
             case obj_bloodcherry:
-                state = enemystates.walk;
+                state = states.walk;
                 sprite_index = walkspr;
                 image_index = 0;
                 sprite_index = spr_cherry_fall;
@@ -139,7 +139,7 @@ function scr_pizzagoblin_throwOLD()
     
     if (floor(image_index) == (image_number - 1))
     {
-        state = enemystates.walk;
+        state = states.walk;
         sprite_index = walkspr;
     }
     
@@ -335,9 +335,9 @@ function scr_pizzagoblin_throwOLD()
                 break;
             
             case obj_smokingpizzaslice:
-                substate = choose(enemystates.walk, enemystates.idle, enemystates.idle);
+                substate = choose(states.walk, states.idle, states.idle);
                 
-                if (substate == enemystates.walk)
+                if (substate == states.walk)
                     image_xscale = choose(-1, 1, -image_xscale);
                 
                 substate_buffer = substate_max;

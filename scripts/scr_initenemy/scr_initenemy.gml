@@ -95,8 +95,8 @@ function scr_initenemy()
     grav = 0.5;
     hsp = 0;
     vsp = 0;
-    state = enemystates.walk;
-    storedstate = enemystates.walk;
+    state = states.walk;
+    storedstate = states.walk;
     stunned = 0;
     alarm[0] = 150;
     roaming = 1;

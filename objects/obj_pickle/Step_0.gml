@@ -6,51 +6,51 @@ if (!instance_exists(cloneid))
 
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.charge:
+    case states.charge:
         scr_enemy_charge();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         image_alpha = 1;
         scr_enemy_stun();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         image_alpha = 1;
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         image_alpha = 1;
         scr_enemy_grabbed();
         break;
     
-    case enemystates.chase:
+    case states.chase:
         scr_enemy_chase();
         break;
 }
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -58,19 +58,19 @@ if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
-if (state != enemystates.chase && image_alpha >= 1)
+if (state != states.chase && image_alpha >= 1)
     scr_scareenemy();
 
 if (bombreset > 0)
@@ -82,7 +82,7 @@ if (sprite_index == scaredspr)
     attacking = 0;
 }
 
-if (bombreset == 0 && state == enemystates.walk)
+if (bombreset == 0 && state == states.walk)
 {
     attacking = 0;
     targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_player1;
@@ -91,12 +91,12 @@ if (bombreset == 0 && state == enemystates.walk)
     {
         attacking = 1;
         pos = sign(x - targetplayer.x);
-        state = enemystates.chase;
+        state = states.chase;
         fade = 1;
     }
 }
 
-if (state == enemystates.chase)
+if (state == states.chase)
 {
     if (fade)
     {
@@ -170,7 +170,7 @@ if (state == enemystates.chase)
             if (image_xscale == 0)
                 image_xscale = old_xscale;
             
-            state = enemystates.pthrow;
+            state = states.pizzagoblinthrow;
             
             if (elite && cloneid == -4)
             {
@@ -188,7 +188,7 @@ if (state == enemystates.chase)
                     bombreset = 0;
                     image_index = 0;
                     image_xscale = other.image_xscale;
-                    state = enemystates.pthrow;
+                    state = states.pizzagoblinthrow;
                     hsp = other.image_xscale * 2;
                     vsp = -6;
                 }
@@ -203,7 +203,7 @@ if (state == enemystates.chase)
 
 invincible = attacking;
 
-if (state == enemystates.idle)
+if (state == states.idle)
 {
     if (scaredbuffer > 0 && attacking)
     {

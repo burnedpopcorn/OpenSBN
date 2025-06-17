@@ -15,7 +15,7 @@ for (var i = 0; i < 2; i++)
     
     if (instance_exists(baddieID) && place_meeting(x, y, _obj_player) && _obj_player.cutscene == 0)
     {
-        if (baddieID.state != enemystates.grabbed && !baddieID.invincible && baddieID.state != enemystates.ghostpossess)
+        if (baddieID.state != states.grabbed && !baddieID.invincible && baddieID.state != states.ghostpossess)
         {
             with (_obj_player)
             {
@@ -31,7 +31,7 @@ for (var i = 0; i < 2; i++)
                         
                         other.baddieID.hsp = xscale * 5;
                         other.baddieID.vsp = -5;
-                        other.baddieID.state = enemystates.stun;
+                        other.baddieID.state = states.stun;
                         
                         if (other.baddieID.stunned < 100)
                             other.baddieID.stunned = 100;
@@ -72,7 +72,7 @@ for (var i = 0; i < 2; i++)
                 if (instance_exists(other.baddieID) && state == states.lungegrab)
                 {
                     other.baddieID.grabbedby = _playerindex;
-                    other.baddieID.state = enemystates.grabbed;
+                    other.baddieID.state = states.grabbed;
                     other.baddieID.hp = -99;
                     
                     if (input_check("down"))
@@ -93,15 +93,15 @@ for (var i = 0; i < 2; i++)
                     }
                 }
                 
-                if (instance_exists(other.baddieID) && other.baddieID.state != UnknownEnum.Value_207 && !other.baddieID.invincible && state == states.ratmountattack)
+                if (instance_exists(other.baddieID) && other.baddieID.state != states.ratgrabbed && !other.baddieID.invincible && state == states.ratmountattack)
                 {
                     other.baddieID.ratplayerid = id;
-                    other.baddieID.state = UnknownEnum.Value_207;
+                    other.baddieID.state = states.ratgrabbed;
                     ratgrabbedID = other.baddieID.id;
                     state = states.ratmount;
                 }
                 
-                if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) || state != states.tumble) && ((state == states.handstandjump && global.attackstyle == 1) || instakillmove == 1) && other.baddieID.state != enemystates.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
+                if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) || state != states.tumble) && ((state == states.handstandjump && global.attackstyle == 1) || instakillmove == 1) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
                 {
                     Instakill();
                 }
@@ -123,14 +123,14 @@ for (var i = 0; i < 2; i++)
                         state = states.grab;
                         baddiegrabbedID = other.baddieID;
                         grabbingenemy = 1;
-                        other.baddieID.state = enemystates.grabbed;
+                        other.baddieID.state = states.grabbed;
                         other.baddieID.grabbedby = _playerindex;
                     }
                     else if (input_check("up"))
                     {
                         baddiegrabbedID = other.baddieID;
                         grabbingenemy = 1;
-                        other.baddieID.state = enemystates.grabbed;
+                        other.baddieID.state = states.grabbed;
                         other.baddieID.grabbedby = _playerindex;
                         sprite_index = spr_piledriver;
                         vsp = -14;
@@ -146,7 +146,7 @@ for (var i = 0; i < 2; i++)
                     baddiegrabbedID = other.baddieID;
                     grabbingenemy = 1;
                     var _prevstate = other.baddieID.state;
-                    other.baddieID.state = enemystates.grabbed;
+                    other.baddieID.state = states.grabbed;
                     other.baddieID.grabbedby = _playerindex;
                     
                     if (global.pummeltest)
@@ -218,7 +218,7 @@ for (var i = 0; i < 2; i++)
                             pogospeedprev = 0;
                             other.baddieID.vsp = -3;
                             event_play_oneshot("event:/SFX/enemies/stomp", x, y);
-                            other.baddieID.state = enemystates.stun;
+                            other.baddieID.state = states.stun;
                             
                             if (other.baddieID.stunned < 100)
                                 other.baddieID.stunned = 100;
@@ -241,16 +241,16 @@ for (var i = 0; i < 2; i++)
                 
                 var pepp_grab = 0;
                 
-                if (character == "M" && instance_exists(other.baddieID) && (state == states.normal || state == states.jump) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == enemystates.stun && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
+                if (character == "M" && instance_exists(other.baddieID) && (state == states.normal || state == states.jump) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == states.stun && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
                 {
                     other.baddieID.pepperman_grab = 1;
                     pepperman_grabID = other.baddieID.id;
-                    other.baddieID.state = enemystates.grabbed;
+                    other.baddieID.state = states.grabbed;
                     other.baddieID.grabbedby = _playerindex;
                     pepp_grab = 1;
                 }
                 
-                if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && (state == states.tumble || state == states.mach2) && other.baddieID.state != states.punch && other.baddieID.state != enemystates.hit && !pepp_grab && other.baddieID.thrown == false && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != enemystates.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
+                if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && (state == states.tumble || state == states.mach2) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == false && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
                 {
                     var lag = 0;
                     other.baddieID.stuntouchbuffer = 15;
@@ -260,7 +260,7 @@ for (var i = 0; i < 2; i++)
                         xscale = 0.8;
                         yscale = 1.3;
                         instance_create(x, y, obj_bangeffect);
-                        state = enemystates.hit;
+                        state = states.hit;
                         image_xscale = -other.xscale;
                         hithsp = other.xscale * 12;
                         hitvsp = (other.y - 180 - y) / 60;
@@ -291,7 +291,7 @@ for (var i = 0; i < 2; i++)
                 
                 if (character != "M" && instance_exists(other.baddieID) && state == states.grabbing && !other.baddieID.invincible)
                 {
-                    if (instance_exists(other.baddieID) && y < (other.baddieID.y - 50) && attacking == 0 && state != states.handstandjump && other.baddieID.state != enemystates.grabbed && sprite_index != spr_player_mach2jump && (state == states.jump || state == states.mach1 || (state == states.grab && sprite_index != spr_swingding)) && vsp > 0 && other.baddieID.vsp >= 0 && sprite_index != spr_stompprep && !other.baddieID.invincible)
+                    if (instance_exists(other.baddieID) && y < (other.baddieID.y - 50) && attacking == 0 && state != states.handstandjump && other.baddieID.state != states.grabbed && sprite_index != spr_player_mach2jump && (state == states.jump || state == states.mach1 || (state == states.grab && sprite_index != spr_swingding)) && vsp > 0 && other.baddieID.vsp >= 0 && sprite_index != spr_stompprep && !other.baddieID.invincible)
                     {
                         event_play_oneshot("event:/SFX/enemies/stomp", x, y);
                         
@@ -299,7 +299,7 @@ for (var i = 0; i < 2; i++)
                             other.baddieID.image_xscale = -sign(other.baddieID.x - x);
                         
                         image_index = 0;
-                        other.baddieID.state = enemystates.stun;
+                        other.baddieID.state = states.stun;
                         
                         if (other.baddieID.stunned < 100)
                             other.baddieID.stunned = 100;
@@ -332,7 +332,7 @@ for (var i = 0; i < 2; i++)
                         image_index = 0;
                         sprite_index = spr_haulingstart;
                         state = states.grab;
-                        other.baddieID.state = enemystates.grabbed;
+                        other.baddieID.state = states.grabbed;
                         other.baddieID.grabbedby = _playerindex;
                     }
                 }

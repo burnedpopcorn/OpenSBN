@@ -1,43 +1,43 @@
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.charge:
+    case states.charge:
         scr_enemy_charge();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
 }
 
-if (state == enemystates.stun && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -45,10 +45,10 @@ if (state == enemystates.stun && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
-if (place_meeting(x + hsp, y, obj_iceblock) && state == enemystates.charge)
+if (place_meeting(x + hsp, y, obj_iceblock) && state == states.charge)
 {
     with (instance_place(x + hsp, y, obj_iceblock))
         instance_destroy();
@@ -56,12 +56,12 @@ if (place_meeting(x + hsp, y, obj_iceblock) && state == enemystates.charge)
 
 targetplayer = instance_nearest(x, y, obj_player1);
 
-if (state == enemystates.walk && attack_cooldown <= 0)
+if (state == states.walk && attack_cooldown <= 0)
 {
     if (x != targetplayer.x && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y < (y + 50) && targetplayer.y > (y - 50))
     {
         flame_buffer = flame_max;
-        state = enemystates.charge;
+        state = states.charge;
         image_xscale = sign(targetplayer.x - x);
         sprite_index = spr_peasanto_flameattack;
         image_index = 0;
@@ -70,7 +70,7 @@ if (state == enemystates.walk && attack_cooldown <= 0)
     }
 }
 
-if (state == enemystates.charge)
+if (state == states.charge)
 {
     if (!hitboxcreate)
     {
@@ -82,7 +82,7 @@ if (state == enemystates.charge)
     
     if (flame_buffer <= 0)
     {
-        state = enemystates.walk;
+        state = states.walk;
         sprite_index = walkspr;
         attack_cooldown = attack_max;
     }
@@ -100,10 +100,10 @@ if (attack_cooldown > 0)
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (boundbox == 0)

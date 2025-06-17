@@ -6,7 +6,7 @@ var targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_playe
 if (bombreset > 0)
     bombreset--;
 
-if (state == enemystates.walk)
+if (state == states.walk)
 {
     if (!chasing)
     {
@@ -21,18 +21,18 @@ if (state == enemystates.walk)
             if (x != targetplayer.x)
                 image_xscale = -sign(x - targetplayer.x);
             
-            state = enemystates.pthrow;
+            state = states.pizzagoblinthrow;
             hsp = 0;
         }
     }
     else
     {
-        state = enemystates.chase;
+        state = states.chase;
         sprite_index = walkspr;
         image_index = 0;
     }
 }
-else if (state == enemystates.chase)
+else if (state == states.chase)
 {
     if (abs(x - targetplayer.x) < 78)
     {
@@ -55,7 +55,7 @@ else if (state == enemystates.chase)
     {
         if (targetplayer.x > (x - attackthreshold_x) && targetplayer.x < (x + attackthreshold_x) && targetplayer.y > (y - attackthreshold_y) && targetplayer.y < (y + attackthreshold_y) && (inst_front == -4 || (inst_front != -4 && x > inst_front.x && targetplayer.x > inst_front.x) || (inst_front != -4 && x < inst_front.x && targetplayer.x < inst_front.x)))
         {
-            state = enemystates.charge;
+            state = states.charge;
             hsp = 0;
             attack_count = attack_max;
         }
@@ -65,11 +65,11 @@ else if (state == enemystates.chase)
     var inst_down2 = collision_line(x + (sign(hsp) * 16), y, x + (sign(hsp) * 16), y + 64, obj_platform, false, true);
     var inst_up = collision_line(x + (sign(hsp) * 96), y + 25, x + (sign(hsp) * 96), (y - 78) + 50, obj_platform, false, true);
     
-    if ((inst_front != -4 || inst_up != -4 || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != enemystates.charge)
+    if ((inst_front != -4 || inst_up != -4 || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != states.charge)
         vsp = -11;
 }
 
-if (state == enemystates.charge)
+if (state == states.charge)
 {
     if (attack_count > 0)
     {
@@ -79,53 +79,53 @@ if (state == enemystates.charge)
     {
         image_index = 0;
         sprite_index = spr_shrimp_throw;
-        state = enemystates.pthrow;
+        state = states.pizzagoblinthrow;
         hsp = 0;
     }
 }
 
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         chasing = 1;
         scr_enemy_stun();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         chasing = 1;
         scr_enemy_grabbed();
         break;
     
-    case enemystates.rage:
+    case states.rage:
         scr_enemy_rage();
         break;
 }
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -133,7 +133,7 @@ if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
@@ -141,10 +141,10 @@ if (flash == 1 && alarm[2] <= 0)
 
 scr_scareenemy();
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (boundbox == 0)

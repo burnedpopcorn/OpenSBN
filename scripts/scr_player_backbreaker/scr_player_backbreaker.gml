@@ -56,10 +56,10 @@ function state_player_backbreaker()
             
             with (obj_baddie)
             {
-                if (point_in_camera(x, y, view_camera[0]) && state != UnknownEnum.Value_268)
+                if (point_in_camera(x, y, view_camera[0]) && state != states.secret)
                 {
                     hp = -99;
-                    state = enemystates.hit;
+                    state = states.hit;
                     hitLag = lag;
                     hitX = x;
                     hitY = y;

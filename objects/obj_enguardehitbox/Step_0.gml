@@ -8,5 +8,5 @@ x = baddieID.x + (baddieID.image_xscale * 48);
 y = baddieID.y + 48;
 image_xscale = baddieID.image_xscale;
 
-if (baddieID.state != UnknownEnum.Value_240)
+if (baddieID.state != states.pizzahead_enguarde)
     instance_destroy();

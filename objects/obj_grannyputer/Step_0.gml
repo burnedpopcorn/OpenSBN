@@ -18,13 +18,13 @@ switch (text_state)
             if (text_y == -(text_sprite_height * text_yscale))
                 event_play_oneshot("event:/SFX/voice/grannypute", x, y);
             
-            text_state = UnknownEnum.Value_137;
+            text_state = states.fall;
             text_vsp = 0;
         }
         
         break;
     
-    case UnknownEnum.Value_137:
+    case states.fall:
         text_y += text_vsp;
         
         if (text_vsp < 20)

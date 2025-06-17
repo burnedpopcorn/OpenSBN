@@ -3,19 +3,19 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.charge:
+    case states.charge:
         scr_enemy_charge();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         var _vsp = 3;
         var face = sign(ystart - y);
@@ -25,40 +25,40 @@ switch (state)
         
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case enemystates.pummel:
+    case states.pummel:
         scr_enemy_pummel();
         break;
     
-    case enemystates.staggered:
+    case states.staggered:
         scr_enemy_staggered();
         break;
     
-    case enemystates.rage:
+    case states.rage:
         scr_enemy_rage();
         break;
 }
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -66,10 +66,10 @@ if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
-if (state == enemystates.stun)
+if (state == states.stun)
     grav = 0.5;
 else
     grav = 0;
@@ -77,10 +77,10 @@ else
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.charge)
+if (state != states.charge)
     scr_scareenemy();
 
 var player = instance_nearest(x, y, obj_player1);
@@ -90,10 +90,10 @@ if (ragebuffer > 0)
 
 if (collision_rectangle(x - 100, y - 30, x + 100, y + 600, obj_player1, false, true) > 0 && !scr_solid_line(player) && y == ystart)
 {
-    if (state != enemystates.rage && ragebuffer == 0 && (state == enemystates.walk || state == enemystates.charge))
+    if (state != states.rage && ragebuffer == 0 && (state == states.walk || state == states.charge))
     {
         event_play_oneshot("event:/SFX/enemies/charge", x, y);
-        state = enemystates.rage;
+        state = states.rage;
         sprite_index = spr_clam_attackstart;
         
         if (x != player.x)
@@ -114,10 +114,10 @@ if (collision_rectangle(x - 100, y - 30, x + 100, y + 600, obj_player1, false, t
     }
 }
 
-if (state == enemystates.stun || state == enemystates.walk)
+if (state == states.stun || state == states.walk)
     movespeed = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (boundbox == 0)

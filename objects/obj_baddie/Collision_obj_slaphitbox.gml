@@ -13,5 +13,5 @@ with (obj_player1)
     state = states.grab;
 }
 
-state = enemystates.grabbed;
+state = states.grabbed;
 instance_destroy(other);

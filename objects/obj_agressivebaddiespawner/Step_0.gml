@@ -15,7 +15,7 @@ if (refresh <= 0)
     {
         with (instance_create(x, y - 35, content))
         {
-            state = enemystates.stun;
+            state = states.stun;
             stunned = 50;
             vsp = -5;
             var found = 0;

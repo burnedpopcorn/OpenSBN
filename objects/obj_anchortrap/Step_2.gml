@@ -5,7 +5,7 @@ switch (state)
         vsp = 0;
         break;
     
-    case UnknownEnum.Value_137:
+    case states.fall:
         var num = instance_place_list(x, y + vsp + 1, obj_destructibles, global.instancelist, 0);
         
         for (var i = 0; i < num; i++)

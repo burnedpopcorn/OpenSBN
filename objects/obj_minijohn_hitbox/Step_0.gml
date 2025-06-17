@@ -10,7 +10,7 @@ if (instance_exists(ID))
     
     with (ID)
     {
-        if (state != enemystates.chase && state != enemystates.rage)
+        if (state != states.chase && state != states.rage)
         {
             hitboxcreate = 0;
             instance_destroy(other);

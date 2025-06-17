@@ -10,7 +10,7 @@ else
     if (s != other.state)
     {
         with (obj_noiseboss)
-            state = enemystates.walk;
+            state = states.walk;
         
         hsp = image_xscale * 5;
         vsp = -11;

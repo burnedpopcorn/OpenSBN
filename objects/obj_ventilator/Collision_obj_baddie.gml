@@ -1,6 +1,6 @@
 with (other)
 {
-    if (state != enemystates.grabbed)
+    if (state != states.grabbed)
     {
         if (place_meeting(x, y - 1, obj_solid))
             ventilator_vsp = 5;

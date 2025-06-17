@@ -3,7 +3,7 @@ targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_player1;
 if (obj_bosscontroller.state == states.arenaintro)
     exit;
 
-if (hp <= 0 && state != UnknownEnum.Value_147 && state != UnknownEnum.Value_164)
+if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)
 {
     if (!thrown && !destroyable)
         boss_destroy(lastplayerid);
@@ -29,7 +29,7 @@ switch (phase)
 
 switch (state)
 {
-    case UnknownEnum.Value_147:
+    case states.arenaround:
         grav = 0.5;
         state_boss_arenaround();
         break;
@@ -66,17 +66,17 @@ switch (state)
         boss_pepperman_shoulderbash();
         break;
     
-    case UnknownEnum.Value_159:
+    case states.boss_supershoulderbash:
         grav = 0.5;
         boss_pepperman_supershoulderbash();
         break;
     
-    case UnknownEnum.Value_160:
+    case states.boss_superattackstart:
         grav = 0.5;
         boss_pepperman_superattackstart();
         break;
     
-    case UnknownEnum.Value_161:
+    case states.boss_superattackcharge:
         grav = 0.5;
         boss_pepperman_superattackcharge();
         break;
@@ -86,12 +86,12 @@ switch (state)
         boss_pepperman_superslam();
         break;
     
-    case UnknownEnum.Value_164:
+    case states.boss_fistmatch:
         grav = 0.5;
         boss_pepperman_fistmatch();
         break;
     
-    case UnknownEnum.Value_165:
+    case states.boss_fistmatchend:
         grav = 0.5;
         boss_pepperman_fistmatchend();
         break;
@@ -101,19 +101,19 @@ switch (state)
         boss_pepperman_shoulder();
         break;
     
-    case UnknownEnum.Value_163:
+    case states.boss_shoulderturn:
         grav = 0.5;
         boss_pepperman_shoulderturn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         grav = 0.5;
         state_boss_walk(boss_pepperman_decide_attack);
         invincible = 1;
         inv_timer = 2;
         break;
     
-    case enemystates.charge:
+    case states.charge:
         grav = 0.5;
         boss_pepperman_charge();
         invincible = 1;
@@ -139,18 +139,18 @@ switch (state)
         inv_timer = 2;
         break;
     
-    case enemystates.hit:
+    case states.hit:
         grav = 0.5;
         scr_enemy_hit();
         stunned = targetstunned;
         break;
     
-    case enemystates.stun:
+    case states.stun:
         grav = 0.5;
         state_boss_stun();
         break;
 }
 
 xscale = image_xscale;
-colliding = !(state == states.superslam || state == UnknownEnum.Value_164 || state == UnknownEnum.Value_160 || state == UnknownEnum.Value_161);
-attacking = state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == UnknownEnum.Value_159 || state == states.shoulder || state == states.superslam || state == UnknownEnum.Value_164 || state == UnknownEnum.Value_160 || state == UnknownEnum.Value_161 || state == enemystates.walk;
+colliding = !(state == states.superslam || state == states.boss_fistmatch || state == states.boss_superattackstart || state == states.boss_superattackcharge);
+attacking = state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == states.boss_supershoulderbash || state == states.shoulder || state == states.superslam || state == states.boss_fistmatch || state == states.boss_superattackstart || state == states.boss_superattackcharge || state == states.walk;

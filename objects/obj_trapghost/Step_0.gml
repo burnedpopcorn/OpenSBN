@@ -26,12 +26,12 @@ switch (state)
             y = approach(y, yto, abs(lengthdir_y(32, dir)));
             
             if (x == xto && y == yto)
-                state = enemystates.chase;
+                state = states.chase;
         }
         
         break;
     
-    case enemystates.chase:
+    case states.chase:
         if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap && (trapid.object_index != obj_pinballtrap || trapid.sprite_index != spr_kingghost_pinball3)))
         {
             state = states.normal;
@@ -69,9 +69,9 @@ switch (state)
                 case obj_anchortrap:
                     sprite_index = spr_kingghost_anchor2;
                     
-                    if (state != UnknownEnum.Value_137 && state != states.jump && obj_player1.x > (x - 100) && obj_player1.x < (x + 100) && obj_player1.y > y && obj_player1.y < (y + 500))
+                    if (state != states.fall && state != states.jump && obj_player1.x > (x - 100) && obj_player1.x < (x + 100) && obj_player1.y > y && obj_player1.y < (y + 500))
                     {
-                        state = UnknownEnum.Value_137;
+                        state = states.fall;
                         vsp = 10;
                     }
                     
@@ -107,7 +107,7 @@ switch (state)
         break;
 }
 
-visible = state != enemystates.chase;
+visible = state != states.chase;
 
 if (room == rank_room)
     instance_destroy();

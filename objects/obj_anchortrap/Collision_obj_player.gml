@@ -1,2 +1,2 @@
-if (state == UnknownEnum.Value_137)
+if (state == states.fall)
     scr_hurtplayer(other);

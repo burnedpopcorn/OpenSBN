@@ -8,28 +8,28 @@ if (activated == 1)
 {
     switch (state)
     {
-        case enemystates.stun:
+        case states.stun:
             scr_enemy_stun();
             break;
         
-        case enemystates.hit:
+        case states.hit:
             scr_enemy_hit();
             break;
         
-        case enemystates.grabbed:
+        case states.grabbed:
             scr_enemy_grabbed();
             break;
         
-        case enemystates.pummel:
+        case states.pummel:
             scr_enemy_pummel();
             break;
         
-        case enemystates.staggered:
+        case states.staggered:
             scr_enemy_staggered();
             break;
     }
     
-    if (state == enemystates.walk)
+    if (state == states.walk)
     {
         highest_y = -250;
         var _instY = collision_line(obj_player1.x, obj_player1.y, obj_player1.x, obj_player1.y - 270, obj_solid, false, true);
@@ -112,15 +112,15 @@ if (activated == 1)
         }
         
         if (ii == (image_number - 1))
-            state = enemystates.walk;
+            state = states.walk;
     }
     
     if (flash == 1 && alarm[2] <= 0)
         alarm[2] = 0.15 * room_speed;
     
-    if (state != enemystates.grabbed)
+    if (state != states.grabbed)
         depth = 0;
     
-    if (state != enemystates.stun)
+    if (state != states.stun)
         thrown = false;
 }

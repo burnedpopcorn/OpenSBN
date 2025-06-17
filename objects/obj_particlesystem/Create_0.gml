@@ -1,6 +1,7 @@
 enum particle 
 {
-	unused = 0,//unused, so dont use
+	enum_start = 0, // don't use this
+	
 	cloudeffect = 1,
 	crazyrunothereffect = 2,
 	highjumpcloud1 = 3,
@@ -18,6 +19,13 @@ enum particle
 	noisegrounddash = 15,
 	bubblepop = 16,
 	breakdance = 17, // new
+	
+	enum_length = 18, // don't use this
+}
+enum debris
+{
+	normal,
+	fade
 }
 
 if (instance_number(obj_particlesystem) > 1)

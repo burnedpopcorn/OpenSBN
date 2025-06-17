@@ -31,7 +31,7 @@ with (obj_baddie)
 {
     var _stun = 0;
     
-    if (state == enemystates.stun && thrown == false)
+    if (state == states.stun && thrown == false)
         _stun = 25;
     
     if (visible && object_index != obj_pizzaball && bbox_in_camera_ext(view_camera[0], 100))
@@ -146,7 +146,7 @@ with (obj_baddie)
 {
     var _stun = 0;
     
-    if (state == enemystates.stun)
+    if (state == states.stun)
         _stun = 25;
     
     if (visible && flash && bbox_in_camera(view_camera[0], 32))

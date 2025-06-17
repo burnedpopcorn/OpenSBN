@@ -40,7 +40,7 @@ function scr_enemy_hit()
         }
         
         stunned = 200;
-        state = enemystates.stun;
+        state = states.stun;
     }
     
     exit;

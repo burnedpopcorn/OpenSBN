@@ -8,7 +8,7 @@ function boss_mrstick_decide_attack()
         
         switch (state)
         {
-            case states.shield:
+            case states.boss_shield:
                 movespeed = 0;
                 hsp = 0;
                 shield_buffer = shield_max;
@@ -16,7 +16,7 @@ function boss_mrstick_decide_attack()
                 sprite_index = spr_mrstick_shield;
                 break;
             
-            case UnknownEnum.Value_177:
+            case states.boss_helicopterhat:
                 sprite_index = spr_mrstick_helicopterhat;
                 image_index = 0;
                 vsp = -14;
@@ -27,7 +27,7 @@ function boss_mrstick_decide_attack()
                 helicopterstate = 0;
                 break;
             
-            case UnknownEnum.Value_178:
+            case states.boss_panicjump:
                 sprite_index = spr_mrstick_jump;
                 vsp = -11;
                 image_xscale = (x > (room_width / 2)) ? -1 : 1;
@@ -42,20 +42,20 @@ function boss_mrstick_decide_attack()
                 warped = 0;
                 break;
             
-            case UnknownEnum.Value_179:
+            case states.boss_smokebombstart:
                 image_xscale = (x > (room_width / 2)) ? -1 : 1;
                 sprite_index = spr_mrstick_idle;
                 image_index = 0;
                 break;
             
-            case UnknownEnum.Value_181:
+            case states.boss_springshoes:
                 sprite_index = spr_mrstick_jump;
                 vsp = -20;
                 image_xscale = (x > (room_width / 2)) ? -1 : 1;
                 movespeed = 4;
                 break;
             
-            case UnknownEnum.Value_182:
+            case states.boss_cardboard:
                 with (instance_create(x, y, obj_mrstickcardboard))
                 {
                     image_index = other.image_index;
@@ -141,7 +141,7 @@ function boss_mrstick_normal()
     {
         do_mockery_buffer = do_mockery_max;
         mockery_buffer = mockery_max;
-        state = UnknownEnum.Value_184;
+        state = states.boss_mockery;
         sprite_index = spr_mrstick_tauntanim;
     }
     
@@ -289,7 +289,7 @@ function boss_mrstick_smokebombstart()
         sprite_index = spr_mrstick_run;
         image_index = 0;
         target_x = (x > (room_width / 2)) ? (room_width / 7) : (room_width - (room_width / 7));
-        state = UnknownEnum.Value_180;
+        state = states.boss_smokebombcrawl;
         
         with (instance_create(x, y, obj_chainsawpuff))
         {
@@ -337,7 +337,7 @@ function boss_mrstick_springshoes()
     {
         hsp = 0;
         movespeed = 0;
-        state = enemystates.stun;
+        state = states.stun;
         stunned = 100;
         sprite_index = spr_mrstick_hurt;
         
@@ -366,7 +366,7 @@ function boss_mrstick_cardboard()
     {
         instance_destroy(obj_mrstickcardboard);
         cardboard_buffer = 0;
-        state = UnknownEnum.Value_183;
+        state = states.boss_cardboardend;
         movespeed = 8;
         x = target_x;
         image_xscale = (x < (room_width / 2)) ? 1 : -1;

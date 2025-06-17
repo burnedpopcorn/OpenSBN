@@ -5,20 +5,20 @@ function scr_playersounds()
         var s = (state == states.chainsaw) ? tauntstoredstate : state;
         var _state = s;
         
-        if (s == UnknownEnum.Value_106 || s == UnknownEnum.Value_123 || s == UnknownEnum.Value_39)
+        if (s == states.mach2 || s == states.mach3 || s == states.climbwall)
         {
             if (!event_isplaying(machsnd))
                 fmod_event_play(machsnd);
             
             var m = 0;
             
-            if (s == UnknownEnum.Value_106 && sprite_index == spr_mach1 && grounded)
+            if (s == states.mach2 && sprite_index == spr_mach1 && grounded)
                 m = 1;
-            else if ((s == UnknownEnum.Value_106 && sprite_index == spr_mach) || state == states.climbwall)
+            else if ((s == states.mach2 && sprite_index == spr_mach) || state == states.climbwall)
                 m = 2;
-            else if (s == UnknownEnum.Value_123 && sprite_index != spr_crazyrun)
+            else if (s == states.mach3 && sprite_index != spr_crazyrun)
                 m = 3;
-            else if (s == UnknownEnum.Value_123 && sprite_index == spr_crazyrun)
+            else if (s == states.mach3 && sprite_index == spr_crazyrun)
                 m = 4;
             
             event_quick3D(machsnd);
@@ -63,7 +63,7 @@ function scr_playersounds()
         if (event_isplaying(global.OilMusic) && room != water_1)
             fmod_event_stop(global.OilMusic, true);
         
-        if (event_isplaying(snd_oilup) && s != UnknownEnum.Value_276)
+        if (event_isplaying(snd_oilup) && s != states.oilcutscene)
             fmod_event_stop(snd_oilup, true);
         
         event_quick3D(snd_oilup);
@@ -112,7 +112,7 @@ function scr_playersounds()
             fmod_event_stop(grindsnd, true);
         }
         
-        if (s == UnknownEnum.Value_110 || s == UnknownEnum.Value_124 || s == UnknownEnum.Value_78)
+        if (s == states.freefall || s == states.freefallprep || s == states.superslam)
         {
             event_quick3D(freefallsnd);
             

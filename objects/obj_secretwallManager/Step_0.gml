@@ -10,7 +10,7 @@ for (var i = 0; i < array_length(collision_arr); i++)
         with (me)
         {
             if (object_is_ancestor(object_index, obj_baddie))
-                my_cond = state != enemystates.grabbed && object_index != obj_grandpa;
+                my_cond = state != states.grabbed && object_index != obj_grandpa;
             
             if (place_meeting(x, y, obj_secrettile) && my_cond)
                 _badtouch = true;

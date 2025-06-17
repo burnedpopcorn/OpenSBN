@@ -1,27 +1,27 @@
 event_inherited();
 attack_pool[0] = [states.handstandjump, states.jump];
-attack_pool[1] = [states.skateboard, UnknownEnum.Value_169];
-attack_pool[2] = [states.handstandjump, states.throwing, UnknownEnum.Value_170];
-attack_pool[3] = [states.pogo, UnknownEnum.Value_171];
-attack_pool[4] = [UnknownEnum.Value_172, UnknownEnum.Value_174, UnknownEnum.Value_175];
-attack_pool[5] = [states.handstandjump, states.jump, states.skateboard, UnknownEnum.Value_169, states.throwing, UnknownEnum.Value_170, states.pogo, UnknownEnum.Value_171, UnknownEnum.Value_172, UnknownEnum.Value_174, UnknownEnum.Value_175];
-attack_pool[6] = [states.handstandjump, states.jump, states.skateboard, UnknownEnum.Value_169];
-attack_pool[7] = [states.handstandjump, states.throwing, UnknownEnum.Value_170, states.pogo, UnknownEnum.Value_171];
-attack_pool[8] = [UnknownEnum.Value_172, UnknownEnum.Value_174, UnknownEnum.Value_175];
+attack_pool[1] = [states.skateboard, states.boss_skateboardturn];
+attack_pool[2] = [states.handstandjump, states.throwing, states.boss_bombkick];
+attack_pool[3] = [states.pogo, states.boss_bombpogo];
+attack_pool[4] = [states.boss_jetpackstart, states.boss_jetpackcancel, states.boss_jetpackspin];
+attack_pool[5] = [states.handstandjump, states.jump, states.skateboard, states.boss_skateboardturn, states.throwing, states.boss_bombkick, states.pogo, states.boss_bombpogo, states.boss_jetpackstart, states.boss_jetpackcancel, states.boss_jetpackspin];
+attack_pool[6] = [states.handstandjump, states.jump, states.skateboard, states.boss_skateboardturn];
+attack_pool[7] = [states.handstandjump, states.throwing, states.boss_bombkick, states.pogo, states.boss_bombpogo];
+attack_pool[8] = [states.boss_jetpackstart, states.boss_jetpackcancel, states.boss_jetpackspin];
 attack_type[UnknownEnum.Value_44] = [UnknownEnum.Value_3, UnknownEnum.Value_3];
 attack_type[UnknownEnum.Value_94] = [UnknownEnum.Value_5, UnknownEnum.Value_3];
 attack_type[UnknownEnum.Value_79] = [UnknownEnum.Value_4, UnknownEnum.Value_4];
-attack_type[UnknownEnum.Value_169] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
+attack_type[states.boss_skateboardturn] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
 attack_type[UnknownEnum.Value_76] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
-attack_type[UnknownEnum.Value_170] = [UnknownEnum.Value_4, UnknownEnum.Value_4];
+attack_type[states.boss_bombkick] = [UnknownEnum.Value_4, UnknownEnum.Value_4];
 attack_type[UnknownEnum.Value_60] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
-attack_type[UnknownEnum.Value_171] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
-attack_type[UnknownEnum.Value_172] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
-attack_type[UnknownEnum.Value_174] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
-attack_type[UnknownEnum.Value_175] = [UnknownEnum.Value_3, UnknownEnum.Value_3];
+attack_type[states.boss_bombpogo] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
+attack_type[states.boss_jetpackstart] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
+attack_type[states.boss_jetpackcancel] = [UnknownEnum.Value_5, UnknownEnum.Value_5];
+attack_type[states.boss_jetpackspin] = [UnknownEnum.Value_3, UnknownEnum.Value_3];
 current_behaviour = UnknownEnum.Value_2;
 current_attack = UnknownEnum.Value_44;
-state = UnknownEnum.Value_147;
+state = states.arenaround;
 ds_map_set(player_hurtstates, UnknownEnum.Value_44, 30000);
 ds_map_set(player_hurtstates, UnknownEnum.Value_43, 50);
 ds_map_set(player_hurtstates, UnknownEnum.Value_106, 20);
@@ -31,8 +31,8 @@ ds_map_set(boss_hurtstates, UnknownEnum.Value_44, 30);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_104, 30);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_79, 60);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_60, 30);
-ds_map_set(boss_hurtstates, UnknownEnum.Value_173, 80);
-ds_map_set(boss_hurtstates, UnknownEnum.Value_175, 80);
+ds_map_set(boss_hurtstates, states.boss_jetpack, 80);
+ds_map_set(boss_hurtstates, states.boss_jetpackspin, 80);
 phase = 1;
 max_phase = 9;
 max_hp = 500 * max_phase;
@@ -196,7 +196,7 @@ function player_hurt(argument0, argument1)
             alarm[1] = 15;
         }
         
-        if (hitstate == states.skateboard || hitstate == UnknownEnum.Value_173)
+        if (hitstate == states.skateboard || hitstate == states.boss_jetpack)
         {
             stunned = (hitstate == states.skateboard) ? 30 : 70;
             
@@ -206,7 +206,7 @@ function player_hurt(argument0, argument1)
                 shake_mag_acc = 3 / room_speed;
             }
             
-            hitstate = enemystates.stun;
+            hitstate = states.stun;
             movespeed = 0;
             hitvsp = -4;
             hithsp = -image_xscale * 8;

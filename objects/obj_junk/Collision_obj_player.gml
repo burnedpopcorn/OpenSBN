@@ -19,7 +19,7 @@ if (!grabbed && unpickable == 0 && !ratgrabbed && other.state == states.ratmount
 {
     ratplayerid = other.id;
     ratgrabbed = 1;
-    state = UnknownEnum.Value_207;
+    state = states.ratgrabbed;
     other.ratgrabbedID = id;
     other.state = states.ratmount;
 }

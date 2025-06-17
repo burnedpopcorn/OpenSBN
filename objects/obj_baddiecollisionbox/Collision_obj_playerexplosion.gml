@@ -1,4 +1,4 @@
-if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != enemystates.grabbed && !baddieID.invincible && baddieID.instantkillable)
+if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != states.grabbed && !baddieID.invincible && baddieID.instantkillable)
 {
     baddieID.invtime = 15;
     event_play_oneshot("event:/SFX/bo/punch", x, y);
@@ -17,7 +17,7 @@ if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != enem
     baddieID.hp -= 1;
     instance_create(baddieID.x, baddieID.y, obj_parryeffect);
     baddieID.alarm[3] = 3;
-    baddieID.state = enemystates.hit;
+    baddieID.state = states.hit;
     baddieID.image_xscale = -other.image_xscale;
     instance_create(x, y, obj_slapstar);
     instance_create(x, y, obj_slapstar);

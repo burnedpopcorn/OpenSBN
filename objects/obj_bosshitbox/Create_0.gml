@@ -6,7 +6,7 @@ team = 1;
 
 function SUPER_player_hurt(argument0, argument1)
 {
-    if (!collisioned && argument1.state != UnknownEnum.Value_147)
+    if (!collisioned && argument1.state != states.arenaround)
     {
         if (instance_exists(obj_bosscontroller))
             obj_bosscontroller.player_hp -= argument0;
@@ -17,7 +17,7 @@ function SUPER_player_hurt(argument0, argument1)
         {
             var lag = 8;
             
-            if (state == states.chainsaw || state == enemystates.hit)
+            if (state == states.chainsaw || state == states.hit)
             {
                 x = hitX;
                 y = hitY;
@@ -32,7 +32,7 @@ function SUPER_player_hurt(argument0, argument1)
             hithsp = 15;
             hitstunned = 100;
             hitvsp = -8;
-            state = enemystates.hit;
+            state = states.hit;
             instance_create(other.x, other.y, obj_parryeffect);
             instance_create(x, y, obj_slapstar);
             instance_create(x, y, obj_slapstar);

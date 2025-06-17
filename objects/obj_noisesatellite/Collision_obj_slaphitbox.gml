@@ -1,13 +1,13 @@
-if (state == enemystates.stun && hp == 0 && stunned > 40 && slapped == 0)
+if (state == states.stun && hp == 0 && stunned > 40 && slapped == 0)
 {
     slapped = 1;
     instance_create(x + (obj_player1.xscale * 40), y, obj_punchdust);
-    state = enemystates.grabbed;
+    state = states.grabbed;
     obj_player1.state = states.grab;
     instance_destroy(other);
 }
 
-if (hp == 0 && !(state == enemystates.stun && stunned > 40) && state != enemystates.grabbed && slapped == 0)
+if (hp == 0 && !(state == states.stun && stunned > 40) && state != states.grabbed && slapped == 0)
 {
     instance_create(x, y, obj_spikehurteffect);
     other.image_xscale = image_xscale;
@@ -21,9 +21,9 @@ if (hp == 0 && !(state == enemystates.stun && stunned > 40) && state != enemysta
     
     vsp = -5;
     hsp = -image_xscale * 3;
-    state = enemystates.stun;
+    state = states.stun;
 }
-else if (state != enemystates.grabbed && slapped == 0)
+else if (state != states.grabbed && slapped == 0)
 {
     if (hp > 0)
         hp -= 1;
@@ -35,7 +35,7 @@ else if (state != enemystates.grabbed && slapped == 0)
         other.image_xscale = image_xscale;
     
     slapped = 1;
-    state = enemystates.stun;
+    state = states.stun;
     stunned = 40;
     
     if (other.x != x)

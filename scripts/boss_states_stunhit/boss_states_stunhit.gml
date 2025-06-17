@@ -40,7 +40,7 @@ function state_boss_stun()
     {
         image_index = 0;
         sprite_index = walkspr;
-        state = enemystates.walk;
+        state = states.walk;
     }
     
     exit;

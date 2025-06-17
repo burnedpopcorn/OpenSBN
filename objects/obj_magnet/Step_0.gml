@@ -15,8 +15,8 @@ switch (state)
             {
                 if (state != states.golf && distance_to_pos(x, y, other.x, other.y, 200, 150))
                 {
-                    state = UnknownEnum.Value_266;
-                    other.state = UnknownEnum.Value_266;
+                    state = states.magnet;
+                    other.state = states.magnet;
                     other.hsp = hsp;
                     other.vsp = vsp;
                     other.ballID = id;
@@ -26,7 +26,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_266:
+    case states.magnet:
         with (ballID)
         {
             depth = 0;
@@ -48,7 +48,7 @@ switch (state)
             hsp = other.hsp;
             vsp = other.vsp;
             
-            if (state != UnknownEnum.Value_266 && state != states.golf)
+            if (state != states.magnet && state != states.golf)
             {
                 other.state = states.normal;
                 other.cooldown = 200;

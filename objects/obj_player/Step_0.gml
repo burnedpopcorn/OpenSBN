@@ -496,7 +496,7 @@ switch (state)
         state_player_taxi();
         break;
     
-    case UnknownEnum.Value_154:
+    case states.policetaxi:
         state_player_taxi();
         break;
     
@@ -564,7 +564,7 @@ switch (state)
         state_player_tube();
         break;
     
-    case enemystates.pummel:
+    case states.pummel:
         state_player_pummel();
         break;
     
@@ -1370,7 +1370,7 @@ if (character != "M")
     }
 }
 
-if (state == states.gottreasure || sprite_index == spr_knightpepstart || sprite_index == spr_knightpepthunder || state == states.keyget || state == states.chainsaw || state == states.door || state == states.ejected || state == states.victory || state == states.comingoutdoor || state == states.gameover || state == states.gotoplayer || state == UnknownEnum.Value_154 || state == states.actor || place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretportalstart))
+if (state == states.gottreasure || sprite_index == spr_knightpepstart || sprite_index == spr_knightpepthunder || state == states.keyget || state == states.chainsaw || state == states.door || state == states.ejected || state == states.victory || state == states.comingoutdoor || state == states.gameover || state == states.gotoplayer || state == states.policetaxi || state == states.actor || place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretportalstart))
     cutscene = 1;
 else
     cutscene = 0;

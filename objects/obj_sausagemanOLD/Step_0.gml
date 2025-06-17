@@ -1,35 +1,35 @@
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
 }
 
-if (state == enemystates.stun && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -37,7 +37,7 @@ if (state == enemystates.stun && stunned > 40 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (hp <= 0)
@@ -85,7 +85,7 @@ if (cigar == 0)
     grabbedspr = spr_sausagemannocigar_grabbed;
 }
 
-if (cigar == 1 && cigarcreate == 0 && (state == enemystates.idle || state == enemystates.walk || state == enemystates.turn || state == enemystates.land))
+if (cigar == 1 && cigarcreate == 0 && (state == states.idle || state == states.walk || state == states.turn || state == states.land))
 {
     cigarcreate = 1;
     
@@ -93,10 +93,10 @@ if (cigar == 1 && cigarcreate == 0 && (state == enemystates.idle || state == ene
         ID = other.id;
 }
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (flash == 1 && alarm[2] <= 0)

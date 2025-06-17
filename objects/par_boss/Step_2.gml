@@ -8,7 +8,7 @@ else if (inv_timer == 0)
     invincible = 0;
 }
 
-if (grounded && state != enemystates.hit && state != enemystates.stun)
+if (grounded && state != states.hit && state != states.stun)
 {
     if (jugglecount > 0)
         jugglecount--;

@@ -1,6 +1,6 @@
 scr_collision_init();
 image_speed = 0.35;
-state = enemystates.walk;
+state = states.walk;
 image_xscale = choose(-1, 1);
 alarm[0] = 80 + irandom(70);
 hsp = 0;

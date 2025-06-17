@@ -37,11 +37,11 @@ function scr_enemy_grabbed()
             suplexhavetomash = other.hp - 1;
             move = -input_check_pressed("left") + input_check_pressed("right");
             
-            if (!(state == states.grab || state == states.chainsaw || state == enemystates.pummel || state == states.finishingblow || state == states.grabbing || state == states.throwing || state == states.slam || state == states.tacklecharge || state == states.punch || state == states.superslam || state == states.backkick || state == states.uppunch || state == states.shoulder))
+            if (!(state == states.grab || state == states.chainsaw || state == states.pummel || state == states.finishingblow || state == states.grabbing || state == states.throwing || state == states.slam || state == states.tacklecharge || state == states.punch || state == states.superslam || state == states.backkick || state == states.uppunch || state == states.shoulder))
             {
                 other.x = x;
                 other.y = y;
-                other.state = enemystates.stun;
+                other.state = states.stun;
                 other.image_index = 0;
             }
         }
@@ -62,7 +62,7 @@ function scr_enemy_grabbed()
             x = _obj_player.x;
             vsp = 0;
             y = _obj_player.y;
-            state = enemystates.stun;
+            state = states.stun;
             hsp = -image_xscale * 25;
             grav = 0;
             global.combotime = 60;
@@ -112,7 +112,7 @@ function scr_enemy_grabbed()
             thrown = true;
             x = _obj_player.x;
             y = _obj_player.y;
-            state = enemystates.stun;
+            state = states.stun;
             image_xscale *= -1;
             hsp = -image_xscale * 20;
             vsp = -7;
@@ -146,7 +146,7 @@ function scr_enemy_grabbed()
             thrown = true;
             x = _obj_player.x;
             y = _obj_player.y;
-            state = enemystates.stun;
+            state = states.stun;
             
             if (_obj_player.sprite_index == spr_player_shoulder)
                 vsp = 15;
@@ -205,7 +205,7 @@ function scr_enemy_grabbed()
             if (!important)
                 global.style += (5 + global.combo);
             
-            state = enemystates.stun;
+            state = states.stun;
             image_xscale = -_obj_player.xscale;
             instance_create(x, y, obj_slapstar);
             instance_create(x, y, obj_slapstar);
@@ -256,7 +256,7 @@ function scr_enemy_grabbed()
             thrown = true;
             x = _obj_player.x;
             y = _obj_player.y;
-            state = enemystates.stun;
+            state = states.stun;
             hsp = -image_xscale * 8;
             vsp = -6;
             check_grabbed_solid(_obj_player);
@@ -278,7 +278,7 @@ function scr_enemy_grabbed()
             x = _obj_player.x;
             y = _obj_player.y;
             hsp = -image_xscale * 2;
-            state = enemystates.stun;
+            state = states.stun;
             vsp = -20;
             global.combotime = 60;
             
@@ -399,7 +399,7 @@ function scr_enemy_grabbed()
                 elitehit--;
             
             mach3destroy = 1;
-            state = enemystates.hit;
+            state = states.hit;
             image_xscale = -_obj_player.xscale;
             explodeInstant = true;
             instance_create(x, y, obj_slapstar);
@@ -490,11 +490,11 @@ function scr_enemy_grabbed()
             }
         }
         
-        if (state != enemystates.grabbed || _obj_player.state != states.grab)
+        if (state != states.grabbed || _obj_player.state != states.grab)
         {
             check_grabbed_solid(_obj_player);
             
-            if (state == enemystates.hit)
+            if (state == states.hit)
             {
                 hitX = x;
                 hitY = y;
@@ -519,7 +519,7 @@ function scr_enemy_grabbed()
             thrown = true;
             x = _player.x;
             y = _player.y - 10;
-            state = enemystates.stun;
+            state = states.stun;
             hsp = image_xscale * 30;
             vsp = -6;
             _player.sprite_index = spr_pepperman_throw;
@@ -534,7 +534,7 @@ function scr_enemy_grabbed()
             x = _player.x;
             y = _player.y - 10;
             check_grabbed_solid(_player);
-            state = enemystates.stun;
+            state = states.stun;
             hsp = image_xscale * 2;
             vsp = -20;
             _player.sprite_index = spr_pepperman_throw;
@@ -545,7 +545,7 @@ function scr_enemy_grabbed()
         if (_player.state != states.normal && _player.state != states.jump)
         {
             _player.pepperman_grabID = -4;
-            state = enemystates.stun;
+            state = states.stun;
             pepperman_grab = 0;
         }
     }

@@ -20,7 +20,7 @@ function scr_fakepeppino_jump()
     {
         image_index = 0;
         sprite_index = spr_fakepeppino_land;
-        state = enemystates.idle;
+        state = states.idle;
         movespeed = 0;
     }
     

@@ -10,7 +10,7 @@ canCollide = function(argument0 = obj_player)
             with (argument0)
             {
                 var _state = (state == states.backbreaker || state == states.chainsaw) ? tauntstoredstate : state;
-                return _state == states.gotoplayer || _state == states.trashjump || _state == UnknownEnum.Value_211 || _state == states.mach3 || _state == states.Parry || sprite_index == spr_mach3boost;
+                return _state == states.gotoplayer || _state == states.trashjump || _state == states.trashjumpprep || _state == states.mach3 || _state == states.Parry || sprite_index == spr_mach3boost;
             }
             
             break;

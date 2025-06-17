@@ -3,52 +3,52 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case enemystates.idle:
-    case enemystates.stun:
+    case states.idle:
+    case states.stun:
         scr_enemy_idle();
         break;
     
-    case enemystates.charge:
+    case states.charge:
         scr_enemy_charge();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case enemystates.pummel:
+    case states.pummel:
         scr_enemy_pummel();
         break;
     
-    case enemystates.staggered:
+    case states.staggered:
         scr_enemy_staggered();
         break;
     
-    case enemystates.rage:
+    case states.rage:
         scr_enemy_rage();
         break;
     
-    case enemystates.ghostpossess:
+    case states.ghostpossess:
         scr_enemy_ghostpossess();
         break;
     
@@ -57,7 +57,7 @@ switch (state)
         break;
 }
 
-if (state == enemystates.walk)
+if (state == states.walk)
 {
     image_speed = 0.2;
     
@@ -81,7 +81,7 @@ if (state == enemystates.walk)
             sprite_index = idlespr;
             image_xscale *= -1;
             image_index = 0;
-            state = enemystates.idle;
+            state = states.idle;
             event_play_oneshot("event:/SFX/voice/baby", x, y);
         }
     }
@@ -98,7 +98,7 @@ if (state == enemystates.walk)
         idlebuffer = irandom_range(200, 600);
         sprite_index = idlespr;
         image_index = 0;
-        state = enemystates.idle;
+        state = states.idle;
         event_play_oneshot("event:/SFX/voice/baby", x, y);
     }
 }

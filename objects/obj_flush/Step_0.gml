@@ -1,4 +1,4 @@
-if (state == UnknownEnum.Value_226)
+if (state == states.flushtransition)
 {
     if (floor(image_index) == (image_number - 1))
     {

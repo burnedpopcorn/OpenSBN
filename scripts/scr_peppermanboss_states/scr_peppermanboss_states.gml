@@ -23,9 +23,9 @@ function pepperman_decide_attack_phase6()
         readjusting = 0;
         
         if (hp <= superattack_hpthreshold)
-            state = UnknownEnum.Value_160;
+            state = states.boss_superattackstart;
         
-        if (state != UnknownEnum.Value_160)
+        if (state != states.boss_superattackstart)
         {
             var fakephase = irandom(100);
             
@@ -63,9 +63,9 @@ function pepperman_decide_attack_phase5()
         attack_cooldown = attack_max[phase - 1];
         groundpound_fakeout = 1;
         readjusting = 0;
-        state = (irandom(100) > 50) ? choose(enemystates.charge, enemystates.charge, states.shoulder) : states.jump;
+        state = (irandom(100) > 50) ? choose(states.charge, states.charge, states.shoulder) : states.jump;
         
-        if (state == enemystates.charge)
+        if (state == states.charge)
         {
             sprite_index = spr_pepperman_shoulderstart;
             image_index = 0;
@@ -427,7 +427,7 @@ function boss_pepperman_shoulderbash()
             shake_mag_acc = 3 / room_speed;
         }
         
-        state = enemystates.stun;
+        state = states.stun;
         stunned = 100;
         vsp = -4;
         hsp = -image_xscale * 8;
@@ -485,7 +485,7 @@ function boss_pepperman_charge()
     
     if (image_index > (image_number - 1))
     {
-        state = UnknownEnum.Value_159;
+        state = states.boss_supershoulderbash;
         sprite_index = spr_pepperman_shoulderloop;
         image_index = 0;
         hsp = image_xscale * (shoulder_spd * 2);
@@ -507,7 +507,7 @@ function boss_pepperman_supershoulderbash()
             shake_mag_acc = 3 / room_speed;
         }
         
-        state = enemystates.stun;
+        state = states.stun;
         stunned = 50;
         vsp = -4;
         hsp = -image_xscale * 8;
@@ -536,7 +536,7 @@ function boss_pepperman_shoulder()
         if (place_meeting(x + (sign(hsp) * 96), y, obj_solid))
         {
             shoulderturns--;
-            state = UnknownEnum.Value_163;
+            state = states.boss_shoulderturn;
             sprite_index = spr_pepperman_shoulderstart;
             image_index = 0;
         }
@@ -552,7 +552,7 @@ function boss_pepperman_shoulder()
         if (phase >= 5)
             boss_pepperman_summonbricks();
         
-        state = enemystates.stun;
+        state = states.stun;
         stunned = 50;
         vsp = -4;
         hsp = -image_xscale * 8;
@@ -597,7 +597,7 @@ function boss_pepperman_superattackstart()
     
     if (x == tx)
     {
-        state = UnknownEnum.Value_161;
+        state = states.boss_superattackcharge;
         sprite_index = spr_pepperman_shoulderloop;
         image_xscale = (x > (room_width / 2)) ? -1 : 1;
     }
@@ -726,7 +726,7 @@ function boss_pepperman_fistmatch()
         with (lastplayerid)
         {
             sprite_index = spr_idle;
-            state = UnknownEnum.Value_165;
+            state = states.boss_fistmatchend;
             x = hitX;
             y = hitY;
             hithsp = other.image_xscale * 8;
@@ -735,7 +735,7 @@ function boss_pepperman_fistmatch()
         }
         
         sprite_index = idlespr;
-        state = UnknownEnum.Value_165;
+        state = states.boss_fistmatchend;
         x = hitX;
         y = hitY;
         hithsp = -image_xscale * 8;

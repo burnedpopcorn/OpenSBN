@@ -1,2 +1,2 @@
-if (!instance_exists(baddieID) || baddieID.state != enemystates.pthrow)
+if (!instance_exists(baddieID) || baddieID.state != states.pizzagoblinthrow)
     instance_destroy();

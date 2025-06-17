@@ -3,19 +3,19 @@ if (room == rm_blank)
 
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.charge:
+    case states.charge:
         scr_enemy_charge();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         movespeed = 0;
         
@@ -44,23 +44,23 @@ switch (state)
         
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
     
@@ -73,7 +73,7 @@ switch (state)
             throw_spr = spr_cherry_spitstart;
             throw_frame = 1;
             image_index = 0;
-            state = enemystates.pthrow;
+            state = states.pizzagoblinthrow;
         }
         
         break;
@@ -82,7 +82,7 @@ switch (state)
 if (state != states.jump)
     scr_scareenemy();
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -90,16 +90,16 @@ if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (bombreset > 0)
@@ -107,7 +107,7 @@ if (bombreset > 0)
 
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_player1;
 
-if (bombreset <= 0 && !scr_solid_line_ext(x, targetplayer.y, targetplayer.x, targetplayer.y) && grounded && x != targetplayer.x && state == enemystates.walk && sprite_index == walkspr && bbox_in_camera(view_camera[0]))
+if (bombreset <= 0 && !scr_solid_line_ext(x, targetplayer.y, targetplayer.x, targetplayer.y) && grounded && x != targetplayer.x && state == states.walk && sprite_index == walkspr && bbox_in_camera(view_camera[0]))
 {
     if ((y - 30) < targetplayer.y)
     {
@@ -116,7 +116,7 @@ if (bombreset <= 0 && !scr_solid_line_ext(x, targetplayer.y, targetplayer.x, tar
         throw_frame = 9;
         image_index = 0;
         image_xscale = -sign(x - targetplayer.x);
-        state = enemystates.pthrow;
+        state = states.pizzagoblinthrow;
     }
     else
     {

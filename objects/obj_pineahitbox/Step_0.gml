@@ -8,7 +8,7 @@ image_index = ID.image_index;
 
 with (ID)
 {
-    if (state != enemystates.idle && state != enemystates.walk)
+    if (state != states.idle && state != states.walk)
     {
         hitboxcreate = 0;
         instance_destroy(other);

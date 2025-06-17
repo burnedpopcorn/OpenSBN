@@ -1,22 +1,22 @@
-if (state == enemystates.grabbed)
+if (state == states.grabbed)
     scr_enemy_grabbed();
 else if (state == states.lungeattack)
     scr_enemy_lungeattack();
-else if (state == UnknownEnum.Value_268)
+else if (state == states.secret)
     scr_enemy_secret();
 
 scr_squash();
 
-if (state != enemystates.stun && state != enemystates.hit)
+if (state != states.stun && state != states.hit)
     linethrown = false;
 
-if (state == enemystates.stun && !thrown)
+if (state == states.stun && !thrown)
     linethrown = false;
 
 if (object_index != obj_pizzaball && (place_meeting(x + 1, y, obj_spike) || place_meeting(x - 1, y, obj_spike) || place_meeting(x, y + 1, obj_spike) || place_meeting(x, y - 1, obj_spike)))
     instance_destroy();
 
-if (state != enemystates.grabbed && state != enemystates.pummel && object_index != obj_pepbat && object_index != obj_ghoul && object_index != obj_fakesanta && use_collision)
+if (state != states.grabbed && state != states.pummel && object_index != obj_pepbat && object_index != obj_ghoul && object_index != obj_fakesanta && use_collision)
     scr_collide();
 
 if (invtime > 0)
@@ -25,9 +25,9 @@ if (invtime > 0)
 if (sprite_index == walkspr && hsp != 0 && floor(image_index) == (image_number - 1) && object_index != obj_ghoul && object_index != obj_bobby)
     create_particle(x - (image_xscale * 20), y + 43, particle.cloudeffect, 0);
 
-if (state == enemystates.walk)
+if (state == states.walk)
     image_speed = 0.35 + (global.baddiespeed * 0.05);
-else if (state != enemystates.charge)
+else if (state != states.charge)
     image_speed = 0.35;
 
 if (dodgebuffer > 0)
@@ -39,7 +39,7 @@ with (instance_nearest(x, y, obj_player1))
     {
         other.stunned = 0;
         
-        if (other.state != enemystates.pthrow && !other.provoked && other.bombreset > 0)
+        if (other.state != states.pizzagoblinthrow && !other.provoked && other.bombreset > 0)
         {
             other.bombreset = 0;
             other.provoked = 1;
@@ -47,7 +47,7 @@ with (instance_nearest(x, y, obj_player1))
         
         other.scaredbuffer = 0;
     }
-    else if (other.state != enemystates.pthrow)
+    else if (other.state != states.pizzagoblinthrow)
     {
         other.provoked = 0;
     }

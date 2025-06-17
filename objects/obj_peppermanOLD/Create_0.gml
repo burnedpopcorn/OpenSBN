@@ -1,5 +1,5 @@
 event_inherited();
-state = UnknownEnum.Value_147;
+state = states.arenaround;
 ds_map_set(player_hurtstates, UnknownEnum.Value_44, 30);
 ds_map_set(player_hurtstates, UnknownEnum.Value_43, 50);
 ds_map_set(player_hurtstates, UnknownEnum.Value_106, 20);
@@ -10,7 +10,7 @@ ds_map_set(player_hurtstates, UnknownEnum.Value_7, 20);
 ds_map_set(player_hurtstates, UnknownEnum.Value_99, 20);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_85, 60);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_155, 60);
-ds_map_set(boss_hurtstates, UnknownEnum.Value_159, 90);
+ds_map_set(boss_hurtstates, states.boss_supershoulderbash, 90);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_78, 200);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_82, 30);
 ds_map_set(boss_hurtstates, UnknownEnum.Value_110, 70);
@@ -143,7 +143,7 @@ function player_hurt(argument0, argument1)
         var _prevstate = state;
         SUPER_player_hurt(argument0, argument1);
         
-        if (_prevstate == states.shoulderbash || _prevstate == UnknownEnum.Value_159 || _prevstate == states.shoulder || _prevstate == states.superslam)
+        if (_prevstate == states.shoulderbash || _prevstate == states.boss_supershoulderbash || _prevstate == states.shoulder || _prevstate == states.superslam)
         {
             with (obj_camera)
             {
@@ -151,7 +151,7 @@ function player_hurt(argument0, argument1)
                 shake_mag_acc = 3 / room_speed;
             }
             
-            hitstate = enemystates.stun;
+            hitstate = states.stun;
             stunned = 70;
             hitvsp = -4;
             hithsp = -image_xscale * 8;
@@ -195,14 +195,14 @@ function player_hurt(argument0, argument1)
             }
             
             sprite_index = spr_idle;
-            state = UnknownEnum.Value_164;
+            state = states.boss_fistmatch;
             hitX = x;
             hitY = y;
             hsp = 0;
             vsp = 0;
             movespeed = 0;
             other.sprite_index = other.idlespr;
-            other.state = UnknownEnum.Value_164;
+            other.state = states.boss_fistmatch;
             other.image_xscale = -xscale;
             other.hitX = x + (xscale * 16);
             other.hitY = y;

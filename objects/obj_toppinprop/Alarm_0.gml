@@ -1,14 +1,14 @@
-if (state == enemystates.walk)
+if (state == states.walk)
 {
     hsp = 0;
-    state = enemystates.idle;
+    state = states.idle;
     alarm[0] = 80 + irandom(110);
 }
 else if (state != states.backbreaker)
 {
     image_xscale *= -1;
     hsp = 0;
-    state = enemystates.walk;
+    state = states.walk;
     alarm[0] = 60 + irandom(130);
 }
 else

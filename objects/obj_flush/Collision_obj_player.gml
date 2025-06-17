@@ -1,6 +1,6 @@
-if (state == UnknownEnum.Value_225)
+if (state == states.flushidle)
 {
-    state = UnknownEnum.Value_226;
+    state = states.flushtransition;
     image_index = 0;
     
     switch (type)
@@ -22,7 +22,7 @@ if (state == UnknownEnum.Value_225)
     
     with (obj_flush)
     {
-        if (state == UnknownEnum.Value_225 && trigger == other.trigger)
+        if (state == states.flushidle && trigger == other.trigger)
             _found = 1;
     }
     

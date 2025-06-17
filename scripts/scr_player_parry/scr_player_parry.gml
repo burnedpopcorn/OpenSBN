@@ -26,7 +26,7 @@ function state_player_parry()
         
         with (obj_baddie)
         {
-            if (distance_to_object(other) < parry_threshold && state != enemystates.hit && state != enemystates.grabbed && state != enemystates.stun && parryable && !(state == enemystates.stun && thrown == true))
+            if (distance_to_object(other) < parry_threshold && state != states.hit && state != states.grabbed && state != states.stun && parryable && !(state == states.stun && thrown == true))
             {
                 notification_push(1, [id, object_index, room]);
                 obj_player1.xscale = -image_xscale;
@@ -48,7 +48,7 @@ function state_player_parry()
                 mach3destroy = 1;
                 instance_create(x, y, obj_parryeffect);
                 alarm[3] = 1;
-                state = enemystates.hit;
+                state = states.hit;
                 image_xscale = -obj_player1.xscale;
                 instance_create(x, y, obj_slapstar);
                 instance_create(x, y, obj_slapstar);

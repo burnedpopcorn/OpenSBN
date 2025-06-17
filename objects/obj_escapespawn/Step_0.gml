@@ -42,7 +42,7 @@ switch (state)
             {
                 x = other.x;
                 y = other.y;
-                state = enemystates.stun;
+                state = states.stun;
                 sprite_index = stunfallspr;
                 stunned = 20;
                 boundbox = 0;

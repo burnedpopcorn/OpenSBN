@@ -2,7 +2,7 @@ var _used = 0;
 
 with (obj_trapghost)
 {
-    if (state == enemystates.chase && trapid == other.id)
+    if (state == states.chase && trapid == other.id)
         _used = 1;
 }
 

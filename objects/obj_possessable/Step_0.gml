@@ -1,4 +1,4 @@
-if (state == enemystates.ghostpossess)
+if (state == states.ghostpossess)
 {
     with (playerid)
     {

@@ -6,5 +6,5 @@ if (grounded == true)
         image_xscale = other.image_xscale;
 }
 
-if (state == enemystates.rage)
+if (state == states.rage)
     alarm[4] = 5;

@@ -13,7 +13,7 @@ function scr_enemy_ghostpossess()
         {
             state = states.ghost;
             vsp = -10;
-            other.state = enemystates.stun;
+            other.state = states.stun;
             other.stunned = 50;
             create_particle(x, y, particle.genericpoofeffect, 0);
             visible = true;

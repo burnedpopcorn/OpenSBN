@@ -4,7 +4,7 @@ if (!instance_exists(ID))
     exit;
 }
 
-if (ID.state != enemystates.charge)
+if (ID.state != states.charge)
 {
     ID.hitboxcreate = 0;
     instance_destroy();

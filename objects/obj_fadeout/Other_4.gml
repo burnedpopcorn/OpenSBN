@@ -18,7 +18,7 @@ if (obj_player1.state == states.taxi)
     }
 }
 
-if (obj_player1.state == UnknownEnum.Value_154)
+if (obj_player1.state == states.policetaxi)
 {
     with (obj_player1)
     {

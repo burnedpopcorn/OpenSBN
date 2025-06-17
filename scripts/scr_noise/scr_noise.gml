@@ -55,7 +55,7 @@ function scr_noise_walk()
                 
                 switch (state)
                 {
-                    case enemystates.turn:
+                    case states.turn:
                         if (!instance_exists(obj_noisetrap_crosshair) && instance_exists(obj_noisetrap))
                         {
                             var b = -4;
@@ -77,11 +77,11 @@ function scr_noise_walk()
                             }
                         }
                         
-                        state = enemystates.walk;
+                        state = states.walk;
                         break;
                     
-                    case states.shield:
-                        substate = states.shield;
+                    case states.boss_shield:
+                        substate = states.boss_shield;
                         shield_buffer = 120;
                         break;
                     
@@ -101,7 +101,7 @@ function scr_noise_walk()
 function scr_noise_punch()
 {
     if (floor(image_index) == (image_number - 1))
-        state = enemystates.walk;
+        state = states.walk;
     
     hsp = 0;
     
@@ -195,7 +195,7 @@ function scr_noise_jump()
         }
         else
         {
-            state = enemystates.walk;
+            state = states.walk;
             sprite_index = spr_playerN_land;
             image_index = 0;
         }
@@ -208,7 +208,7 @@ function scr_noise_shield()
 {
     switch (substate)
     {
-        case states.shield:
+        case states.boss_shield:
             hsp = 0;
             
             if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_land)
@@ -221,7 +221,7 @@ function scr_noise_shield()
             else
             {
                 substate = states.jump;
-                storedsubstate = enemystates.idle;
+                storedsubstate = states.idle;
                 shield_buffer = 100;
                 sprite_index = spr_playerN_jump;
                 image_index = 0;
@@ -246,7 +246,7 @@ function scr_noise_shield()
             
             break;
         
-        case enemystates.idle:
+        case states.idle:
             hsp = 0;
             
             if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_land)
@@ -280,13 +280,13 @@ function scr_noise_pistol()
             if (floor(image_index) == (image_number - 1))
             {
                 sprite_index = spr_playerN_minigunidle;
-                substate = enemystates.idle;
+                substate = states.idle;
                 cooldown = 1;
             }
             
             break;
         
-        case enemystates.idle:
+        case states.idle:
             sprite_index = spr_playerN_minigunidle;
             b = -4;
             
@@ -333,7 +333,7 @@ function scr_noise_pistol()
             }
             
             if (shoot_count <= 0)
-                substate = enemystates.idle;
+                substate = states.idle;
             
             break;
     }

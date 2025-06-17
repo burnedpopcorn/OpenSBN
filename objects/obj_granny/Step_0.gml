@@ -44,13 +44,13 @@ switch (text_state)
         
         if (obj_player1.state != states.backtohub && place_meeting(x, y, obj_player1) && !_hide)
         {
-            text_state = UnknownEnum.Value_137;
+            text_state = states.fall;
             text_vsp = 0;
         }
         
         break;
     
-    case UnknownEnum.Value_137:
+    case states.fall:
         text_y += text_vsp;
         
         if (text_vsp < 20)

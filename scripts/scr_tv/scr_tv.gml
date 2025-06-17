@@ -125,7 +125,7 @@ function tv_do_expression(argument0)
     {
         if (expressionsprite != argument0 && bubblespr == -4)
         {
-            state = UnknownEnum.Value_252;
+            state = states.tv_whitenoise;
             expressionsprite = argument0;
             
             switch (expressionsprite)

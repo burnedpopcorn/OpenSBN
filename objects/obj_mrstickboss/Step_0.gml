@@ -1,6 +1,6 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_player1;
 
-if (hp <= 0 && state != UnknownEnum.Value_147)
+if (hp <= 0 && state != states.arenaround)
 {
     if (!destroyed && !thrown && !destroyable)
         boss_destroy(lastplayerid);
@@ -8,7 +8,7 @@ if (hp <= 0 && state != UnknownEnum.Value_147)
 
 switch (state)
 {
-    case UnknownEnum.Value_147:
+    case states.arenaround:
         grav = 0.5;
         state_boss_arenaround();
         break;
@@ -18,17 +18,17 @@ switch (state)
         boss_mrstick_normal();
         break;
     
-    case states.shield:
+    case states.boss_shield:
         grav = 0.5;
         boss_mrstick_shield();
         break;
     
-    case UnknownEnum.Value_177:
+    case states.boss_helicopterhat:
         grav = 0.5;
         boss_mrstick_helicopterhat();
         break;
     
-    case UnknownEnum.Value_178:
+    case states.boss_panicjump:
         grav = 0.5;
         boss_mrstick_panicjump();
         break;
@@ -38,37 +38,37 @@ switch (state)
         boss_mrstick_jump();
         break;
     
-    case UnknownEnum.Value_179:
+    case states.boss_smokebombstart:
         grav = 0.5;
         boss_mrstick_smokebombstart();
         break;
     
-    case UnknownEnum.Value_180:
+    case states.boss_smokebombcrawl:
         grav = 0.5;
         boss_mrstick_smokebombcrawl();
         break;
     
-    case UnknownEnum.Value_181:
+    case states.boss_springshoes:
         grav = 0.5;
         boss_mrstick_springshoes();
         break;
     
-    case UnknownEnum.Value_182:
+    case states.boss_cardboard:
         grav = 0.5;
         boss_mrstick_cardboard();
         break;
     
-    case UnknownEnum.Value_183:
+    case states.boss_cardboardend:
         grav = 0.5;
         boss_mrstick_cardboardend();
         break;
     
-    case UnknownEnum.Value_184:
+    case states.boss_mockery:
         grav = 0.5;
         boss_mrstick_mockery();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         grav = 0.5;
         state_boss_walk(boss_mrstick_decide_attack);
         inv_timer = 2;
@@ -94,17 +94,17 @@ switch (state)
         inv_timer = 2;
         break;
     
-    case enemystates.hit:
+    case states.hit:
         grav = 0.5;
         scr_enemy_hit();
         stunned = targetstunned;
         break;
     
-    case enemystates.stun:
+    case states.stun:
         grav = 0.5;
         state_boss_stun();
         break;
 }
 
-colliding = !(state == states.jump || state == UnknownEnum.Value_182 || state == UnknownEnum.Value_183);
-attacking = state == states.shield || state == states.jump || state == UnknownEnum.Value_182 || state == UnknownEnum.Value_183 || state == UnknownEnum.Value_179;
+colliding = !(state == states.jump || state == states.boss_cardboard || state == states.boss_cardboardend);
+attacking = state == states.boss_shield || state == states.jump || state == states.boss_cardboard || state == states.boss_cardboardend || state == states.boss_smokebombstart;

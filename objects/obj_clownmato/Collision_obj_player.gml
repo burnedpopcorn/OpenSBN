@@ -1,6 +1,6 @@
 with (other)
 {
-    if ((!instakillmove || state == states.mach2) && state != states.bump && other.state == enemystates.walk && state != states.chainsaw)
+    if ((!instakillmove || state == states.mach2) && state != states.bump && other.state == states.walk && state != states.chainsaw)
     {
         vsp = -4;
         hsp = -3 * xscale;

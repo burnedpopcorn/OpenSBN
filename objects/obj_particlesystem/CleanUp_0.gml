@@ -1,7 +1,7 @@
 part_emitter_destroy(global.particle_system, global.part_emitter);
-var i = UnknownEnum.Value_0;
+var i = particle.enum_start;
 
-while (i < UnknownEnum.Value_18)
+while (i < particle.enum_length)
 {
     var k = ds_map_find_value(global.part_map, i);
     

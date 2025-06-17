@@ -1,4 +1,4 @@
-if (state == UnknownEnum.Value_154)
+if (state == states.policetaxi)
     exit;
 
 if (ds_queue_size(followqueue) < LAG_STEPS)
@@ -12,7 +12,7 @@ with (obj_player1)
     visible = false;
     
     if (state != states.gotoplayer)
-        state = UnknownEnum.Value_154;
+        state = states.policetaxi;
     
     cutscene = 1;
     hsp = 0;
@@ -20,7 +20,7 @@ with (obj_player1)
 }
 
 grav = 0;
-state = UnknownEnum.Value_154;
+state = states.policetaxi;
 hsp = 10;
 image_xscale = 1;
 vsp = 0;

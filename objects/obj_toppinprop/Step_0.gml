@@ -12,7 +12,7 @@ if (obj_player1.state == states.backbreaker && state != states.backbreaker)
 
 switch (state)
 {
-    case enemystates.walk:
+    case states.walk:
         sprite_index = movespr;
         var _bbox_side = (image_xscale >= 1) ? bbox_right : bbox_left;
         
@@ -22,7 +22,7 @@ switch (state)
         hsp = image_xscale * 2;
         break;
     
-    case enemystates.idle:
+    case states.idle:
         sprite_index = idlespr;
         hsp = 0;
         break;

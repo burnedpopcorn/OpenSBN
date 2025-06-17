@@ -7,7 +7,7 @@ wastedhits = 8 - elitehit;
 
 switch (state)
 {
-    case enemystates.walk:
+    case states.walk:
         scr_pepperman_walk();
         break;
     
@@ -23,28 +23,28 @@ switch (state)
         scr_pepperman_freefall();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case enemystates.pummel:
+    case states.pummel:
         scr_enemy_pummel();
         break;
     
-    case enemystates.staggered:
+    case states.staggered:
         scr_enemy_staggered();
         break;
 }
 
-if (state == enemystates.stun)
+if (state == states.stun)
 {
     if (thrown)
         savedthrown = true;
@@ -60,7 +60,7 @@ else
     savedthrown = false;
 }
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -82,21 +82,21 @@ else
     use_collision = 1;
 }
 
-if (state == enemystates.stun || state == states.shoulderbash || !use_collision || elitehit <= 1)
+if (state == states.stun || state == states.shoulderbash || !use_collision || elitehit <= 1)
     invincible = 1;
 else
     invincible = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (boundbox == 0)

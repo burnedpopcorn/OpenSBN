@@ -18,5 +18,5 @@ else if (col_buffer == 0)
     collisioned = 0;
 }
 
-if (baddieID.state != UnknownEnum.Value_168 && baddieID.state != states.chainsaw)
+if (baddieID.state != states.boss_millionpunch && baddieID.state != states.chainsaw)
     instance_destroy();

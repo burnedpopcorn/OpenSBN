@@ -2,51 +2,51 @@ var player = instance_nearest(x, y, obj_player1);
 
 switch (state)
 {
-    case enemystates.idle:
+    case states.idle:
         scr_enemy_idle();
         break;
     
-    case enemystates.turn:
+    case states.turn:
         scr_enemy_turn();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         scr_enemy_walk();
         break;
     
-    case enemystates.land:
+    case states.land:
         scr_enemy_land();
         break;
     
-    case enemystates.hit:
+    case states.hit:
         scr_enemy_hit();
         break;
     
-    case enemystates.stun:
+    case states.stun:
         scr_enemy_stun();
         break;
     
-    case enemystates.pthrow:
+    case states.pizzagoblinthrow:
         scr_pizzagoblin_throw();
         break;
     
-    case enemystates.grabbed:
+    case states.grabbed:
         scr_enemy_grabbed();
         break;
     
-    case enemystates.chase:
+    case states.chase:
         scr_enemy_chase();
         break;
     
-    case enemystates.pummel:
+    case states.pummel:
         scr_enemy_pummel();
         break;
     
-    case enemystates.staggered:
+    case states.staggered:
         scr_enemy_staggered();
         break;
     
-    case enemystates.rage:
+    case states.rage:
         scr_enemy_rage();
         break;
     
@@ -83,7 +83,7 @@ switch (state)
             
             if (floor(image_index) == (image_number - 1))
             {
-                state = enemystates.chase;
+                state = states.chase;
                 ragecooldown = 100;
                 sprite_index = spr_minijohn_charge;
             }
@@ -91,7 +91,7 @@ switch (state)
         
         break;
     
-    case UnknownEnum.Value_191:
+    case states.underground:
         hsp = 0;
         
         if (underground)
@@ -127,14 +127,14 @@ switch (state)
         }
         else if (grounded)
         {
-            state = enemystates.chase;
+            state = states.chase;
             sprite_index = spr_minijohn_charge;
         }
         
         break;
 }
 
-if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1;
     
@@ -142,7 +142,7 @@ if (state == enemystates.stun && stunned > 100 && birdcreated == 0)
         ID = other.id;
 }
 
-if (state == enemystates.chase && ragecooldown <= 0)
+if (state == states.chase && ragecooldown <= 0)
 {
     if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
     {
@@ -157,7 +157,7 @@ if (state == enemystates.chase && ragecooldown <= 0)
             flash = 1;
             alarm[4] = 5;
             ragecooldown = 100;
-            state = enemystates.rage;
+            state = states.rage;
             create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
             
             with (instance_create(x, y, obj_tackhitbox))
@@ -180,16 +180,16 @@ if (state == enemystates.chase && ragecooldown <= 0)
 if (ragecooldown > 0)
     ragecooldown--;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     birdcreated = 0;
 
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = 0.15 * room_speed;
 
-if (state != enemystates.chase)
+if (state != states.chase)
     momentum = 0;
 
-if (state == enemystates.walk || state == enemystates.idle)
+if (state == states.walk || state == states.idle)
 {
     var targetplayer = obj_player1;
     
@@ -201,16 +201,16 @@ if (state == enemystates.walk || state == enemystates.idle)
     if (targetplayer.x != x)
         image_xscale = -sign(x - targetplayer.x);
     
-    state = enemystates.chase;
+    state = states.chase;
 }
 
 if (instance_exists(obj_player2))
 {
     if (obj_player2.x > (x - 400) && obj_player2.x < (x + 400) && y <= (obj_player2.y + 60) && y >= (obj_player2.y - 60))
     {
-        if (state != enemystates.idle && obj_player2.state == states.mach3)
+        if (state != states.idle && obj_player2.state == states.mach3)
         {
-            state = enemystates.idle;
+            state = states.idle;
             sprite_index = scaredspr;
             
             if (x != obj_player2.x)
@@ -219,10 +219,10 @@ if (instance_exists(obj_player2))
     }
 }
 
-if (state != enemystates.grabbed)
+if (state != states.grabbed)
     depth = 0;
 
-if (state != enemystates.stun)
+if (state != states.stun)
     thrown = false;
 
 if (boundbox == 0)
@@ -236,7 +236,7 @@ if (boundbox == 0)
     }
 }
 
-if (state == UnknownEnum.Value_191)
+if (state == states.underground)
 {
     invincible = 1;
     

@@ -62,7 +62,7 @@ function state_player_machfreefall()
             if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0)
             {
                 image_index = 0;
-                state = enemystates.hit;
+                state = states.hit;
                 vsp = -7;
                 hsp = 0;
                 stunned = 200;

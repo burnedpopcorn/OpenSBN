@@ -1,3 +1,3 @@
 image_xscale = other.playerid.xscale;
-state = enemystates.walk;
+state = states.walk;
 movespeed = 6;

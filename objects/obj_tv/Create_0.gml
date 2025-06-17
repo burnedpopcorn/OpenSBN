@@ -1,3 +1,10 @@
+enum tvprompt
+{
+	normal,
+	trigger,
+	transfo
+}
+
 oldPromptText = "";
 promptAlpha = 0;
 promptTimer = 0;

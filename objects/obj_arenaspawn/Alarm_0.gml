@@ -1,4 +1,4 @@
-if (state != UnknownEnum.Value_147)
+if (state != states.arenaround)
 {
     wave_seconds--;
     
@@ -26,5 +26,5 @@ if (state != UnknownEnum.Value_147)
     }
 }
 
-if (state == UnknownEnum.Value_145 || state == UnknownEnum.Value_144)
+if (state == states.arena || state == states.spawnenemy)
     alarm[0] = 60;

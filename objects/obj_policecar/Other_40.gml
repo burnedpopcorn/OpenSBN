@@ -1,4 +1,4 @@
-if (state != UnknownEnum.Value_154)
+if (state != states.policetaxi)
     exit;
 
 if (!instance_exists(obj_fadeout))

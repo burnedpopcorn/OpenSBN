@@ -1,6 +1,6 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player1) : obj_player1;
 
-if (hp <= 0 && state != UnknownEnum.Value_147)
+if (hp <= 0 && state != states.arenaround)
 {
     if (!destroyed && !thrown && !destroyable)
         boss_destroy(lastplayerid);
@@ -9,12 +9,12 @@ if (hp <= 0 && state != UnknownEnum.Value_147)
 if (chooseparry_buffer > 0)
     chooseparry_buffer--;
 
-if ((state == states.handstandjump || state == states.crouchslide || state == UnknownEnum.Value_169 || state == UnknownEnum.Value_173 || state == UnknownEnum.Value_175 || (state == states.pogo && pogochargeactive) || state == states.skateboard) && alarm[0] <= 0)
+if ((state == states.handstandjump || state == states.crouchslide || state == states.boss_skateboardturn || state == states.boss_jetpack || state == states.boss_jetpackspin || (state == states.pogo && pogochargeactive) || state == states.skateboard) && alarm[0] <= 0)
     alarm[0] = 6;
 
 switch (state)
 {
-    case UnknownEnum.Value_147:
+    case states.arenaround:
         grav = 0.5;
         state_boss_arenaround();
         movespeed = 0;
@@ -47,7 +47,7 @@ switch (state)
         boss_noise_skateboard();
         break;
     
-    case UnknownEnum.Value_169:
+    case states.boss_skateboardturn:
         grav = 0.5;
         boss_noise_skateboardturn();
         break;
@@ -67,22 +67,22 @@ switch (state)
         boss_noise_pogo();
         break;
     
-    case UnknownEnum.Value_172:
+    case states.boss_jetpackstart:
         grav = 0.5;
         boss_noise_jetpackstart();
         break;
     
-    case UnknownEnum.Value_173:
+    case states.boss_jetpack:
         grav = 0.5;
         boss_noise_jetpack();
         break;
     
-    case UnknownEnum.Value_175:
+    case states.boss_jetpackspin:
         grav = 0.5;
         boss_noise_jetpackspin();
         break;
     
-    case enemystates.walk:
+    case states.walk:
         grav = 0.5;
         state_boss_walk(boss_noise_do_attack);
         inv_timer = 2;
@@ -108,17 +108,17 @@ switch (state)
         inv_timer = 2;
         break;
     
-    case enemystates.hit:
+    case states.hit:
         grav = 0.5;
         scr_enemy_hit();
         stunned = targetstunned;
         break;
     
-    case enemystates.stun:
+    case states.stun:
         grav = 0.5;
         state_boss_stun();
         break;
 }
 
 angry = phase > 6;
-attacking = state == states.handstandjump || state == states.crouchslide || state == states.skateboard || state == UnknownEnum.Value_169 || state == states.pogo || state == UnknownEnum.Value_172 || state == UnknownEnum.Value_173 || state == UnknownEnum.Value_175 || state == states.throwing;
+attacking = state == states.handstandjump || state == states.crouchslide || state == states.skateboard || state == states.boss_skateboardturn || state == states.pogo || state == states.boss_jetpackstart || state == states.boss_jetpack || state == states.boss_jetpackspin || state == states.throwing;
