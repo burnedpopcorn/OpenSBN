@@ -13,7 +13,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
     {
         global.marinatecount++;
         trace("Marinate Count: ", global.marinatecount);
-        mail_trigger(UnknownEnum.Value_5);
+        mail_trigger(mailtriggers.marinate20enemies);
     }
     
     instance_create(x, y, obj_slapstar);

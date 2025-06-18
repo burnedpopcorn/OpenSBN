@@ -1,9 +1,9 @@
 event_inherited();
 state = states.arenaround;
-ds_map_set(player_hurtstates, UnknownEnum.Value_44, 30);
-ds_map_set(player_hurtstates, UnknownEnum.Value_43, 50);
-ds_map_set(player_hurtstates, UnknownEnum.Value_106, 20);
-ds_map_set(player_hurtstates, UnknownEnum.Value_123, 30);
+ds_map_set(player_hurtstates, states.handstandjump, 30);
+ds_map_set(player_hurtstates, states.chainsawbump, 50);
+ds_map_set(player_hurtstates, states.mach2, 20);
+ds_map_set(player_hurtstates, states.mach3, 30);
 ds_map_set(player_hurtstates, UnknownEnum.Value_110, 20);
 ds_map_set(player_hurtstates, UnknownEnum.Value_82, 20);
 ds_map_set(player_hurtstates, UnknownEnum.Value_7, 20);

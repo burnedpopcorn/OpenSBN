@@ -171,7 +171,7 @@ function state_player_fishground()
     else
     {
         fishlandtimer = 600;
-        mail_trigger(UnknownEnum.Value_8);
+        mail_trigger(mailtriggers.fishoutofwater);
     }
     
     goesDownSlopes = false;

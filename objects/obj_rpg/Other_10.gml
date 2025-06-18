@@ -9,7 +9,7 @@ for (var i = 0; i < array_length(statNames); i++)
     if (st.level < 100)
         maxxed = false;
     else if (nm == "defense")
-        mail_trigger(UnknownEnum.Value_18);
+        mail_trigger(mailtriggers.maxdefense);
     
     var pmax = ds_map_find_value(statMax, nm);
     var pmin = ds_map_find_value(statOne, nm);
@@ -19,4 +19,4 @@ for (var i = 0; i < array_length(statNames); i++)
 }
 
 if (maxxed)
-    mail_trigger(UnknownEnum.Value_19);
+    mail_trigger(mailtriggers.maxlevel);

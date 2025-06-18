@@ -1,2 +1,2 @@
 event_inherited();
-mail_trigger(UnknownEnum.Value_2);
+mail_trigger(mailtriggers.visitsecrethubrooms);

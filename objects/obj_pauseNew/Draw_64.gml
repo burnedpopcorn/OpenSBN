@@ -1,7 +1,7 @@
 if (room == rm_mainmenu)
     exit;
 
-if (state == UnknownEnum.Value_0)
+if (state == pausestates.pause)
 {
     gpu_set_blendenable(false);
     draw_sprite_ext(pause_spr, 0, 0, 0, 1, 1, 0, c_white, 1);

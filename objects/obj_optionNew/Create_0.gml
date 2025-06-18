@@ -11,6 +11,22 @@ bg_y = 0;
 keystring = "";
 keyboard_string = "";
 
+enum MENUS
+{
+	mainmenu = 0,
+	
+	audio = 1,
+	video = 2,
+	game = 3,
+	controls = 4,
+	// submenus of controls
+	keyboard = 5,
+	gamepad = 6,
+	deadzones = 7,
+	
+	secret = 8
+}
+
 enum menutype
 {
 	menu = 0, // one where you select submenu to enter

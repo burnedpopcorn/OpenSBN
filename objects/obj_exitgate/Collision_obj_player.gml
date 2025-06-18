@@ -64,7 +64,7 @@ with (obj_player1)
         with (obj_garpo)
         {
             if (point_distance(x, y, obj_player1.x, obj_player1.y) < 500)
-                mail_trigger(UnknownEnum.Value_15);
+                mail_trigger(mailtriggers.closecallwithgrapo);
             
             visible = false;
             image_alpha = 0;
@@ -82,7 +82,7 @@ with (obj_player1)
         var roomname = room_get_name(room);
         var namestring = string_letters(roomname);
         scr_savescore(global.leveltosave);
-        mail_trigger(UnknownEnum.Value_1);
+        mail_trigger(mailtriggers.enteredalevel);
         
         if (global.combo > 0)
         {

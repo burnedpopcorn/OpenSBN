@@ -940,7 +940,7 @@ if (wallclingcooldown < 10)
 
 if (!instance_exists(superchargedeffectid) && supercharged)
 {
-    var superchargeStates = [UnknownEnum.Value_2, UnknownEnum.Value_94, UnknownEnum.Value_105, UnknownEnum.Value_106, UnknownEnum.Value_123, UnknownEnum.Value_65];
+    var superchargeStates = [UnknownEnum.Value_2, UnknownEnum.Value_94, UnknownEnum.Value_105, states.mach2, states.mach3, UnknownEnum.Value_65];
     
     if (array_contains(superchargeStates, state))
     {
@@ -1463,7 +1463,7 @@ if (state == states.waterfloat && place_meeting(x, y, obj_water))
         state = states.actor;
         hsp = 0;
         vsp = 0;
-        mail_trigger(UnknownEnum.Value_9);
+        mail_trigger(mailtriggers.drowninwater);
         event_play_oneshot("event:/SFX/bo/drown", x, y);
         
         with (instance_create(x, y + obj_gameFrame.defaultheight, obj_technicaldifficulty))

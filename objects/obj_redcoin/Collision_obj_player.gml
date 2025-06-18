@@ -60,6 +60,6 @@ if (other.state != states.gotoplayer)
     fmod_event_play(redsnd);
     global.redcoins++;
     global.redcoincount++;
-    mail_trigger(UnknownEnum.Value_12);
+    mail_trigger(mailtriggers.getredcoin);
     instance_destroy();
 }

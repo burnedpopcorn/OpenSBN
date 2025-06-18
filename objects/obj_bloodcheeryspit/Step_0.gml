@@ -2,7 +2,7 @@ x += hsp;
 
 with (instance_place(x + hsp, y, obj_grape))
 {
-    mail_trigger(UnknownEnum.Value_4);
+    mail_trigger(mailtriggers.makecherrykillgrape);
     instance_destroy();
 }
 

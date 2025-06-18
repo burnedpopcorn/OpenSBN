@@ -14,7 +14,7 @@ function scr_pizzaball_hit()
         with (instance_nearest(x, y, obj_player1))
             s = tauntstoredstate;
         
-        if (s != UnknownEnum.Value_106)
+        if (s != states.mach2)
             scr_pizzaball_go_to_thrown(hithsp * 1.5, -12);
         else
             scr_pizzaball_go_to_thrown(hithsp * 0.5, hitvsp * 0.5);

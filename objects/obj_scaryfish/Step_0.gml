@@ -13,7 +13,7 @@ if (obj_player1.sprite_index == spr_player_breakdance && dancecount > 0)
         sprite_index = spr_dance;
         var fg = layer_get_id("Foregrounds_1");
         layer_set_visible(fg, false);
-        mail_trigger(UnknownEnum.Value_11);
+        mail_trigger(mailtriggers.dancewithscaryfish);
         
         with (obj_music)
         {

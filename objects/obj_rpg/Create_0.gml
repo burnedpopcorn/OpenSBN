@@ -8,7 +8,15 @@ if (!variable_global_exists("rpgStats"))
 
 statOne = ds_map_create();
 statMax = ds_map_create();
-var defaultStats = [["movespeed", 0.25, 3], ["swimming", 0.35, 3], ["jump", 0.35, 3], ["groundpound", 1, 3], ["attack", 0.25, 4], ["defense", 0.25, 9]];
+var defaultStats = 
+[
+	["movespeed", 0.25, 3], 
+	["swimming", 0.35, 3], 
+	["jump", 0.35, 3], 
+	["groundpound", 1, 3], 
+	["attack", 0.25, 4], 
+	["defense", 0.25, 9]
+];
 levelup = 0;
 visible = false;
 

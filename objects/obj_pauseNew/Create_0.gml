@@ -1,5 +1,11 @@
+enum pausestates
+{
+	pause = 0,
+	unpause = 1
+}
+
 depth = -998;
-state = UnknownEnum.Value_1;
+state = pausestates.unpause;
 pause_surf = -4;
 pause_spr = -4;
 pauseAlpha = 0;

@@ -90,7 +90,7 @@ cat = function(argument0, argument1, argument2, argument3, argument4, argument5 
         {
             purrBuffer = 0;
             beenPet = true;
-            mail_trigger(UnknownEnum.Value_20);
+            mail_trigger(mailtriggers.petcat);
         }
     };
     

@@ -14,7 +14,7 @@ function scr_input_stickpressed(argument0)
     return ds_map_find_value(global.stickpressed, s);
 }
 
-function scr_input_stickpressed_update(argument0 = global.player_input_device, argument1 = global.deadzones[UnknownEnum.Value_0])
+function scr_input_stickpressed_update(argument0 = global.player_input_device, argument1 = global.deadzones[deadzone.master])
 {
     var sticks = [32785, 32786, 32787, 32788];
     
@@ -31,18 +31,18 @@ function scr_input_stickpressed_update(argument0 = global.player_input_device, a
 
 function scr_checkdeadzone(argument0, argument1)
 {
-    var dz = global.deadzones[UnknownEnum.Value_3];
+    var dz = global.deadzones[deadzone.press];
     
     switch (argument0)
     {
         case 32785:
         case 32787:
-            dz = global.deadzones[UnknownEnum.Value_2];
+            dz = global.deadzones[deadzone.horizontal];
             break;
         
         case 32786:
         case 32788:
-            dz = global.deadzones[UnknownEnum.Value_1];
+            dz = global.deadzones[deadzone.vertical];
             break;
     }
     
@@ -52,13 +52,13 @@ function scr_checkdeadzone(argument0, argument1)
         {
             case "upC":
                 if (obj_player1.state == states.Sjumpprep)
-                    dz = global.deadzones[UnknownEnum.Value_4];
+                    dz = global.deadzones[deadzone.sjump];
                 
                 break;
             
             case "downC":
                 if (obj_player1.state == states.crouch)
-                    dz = global.deadzones[UnknownEnum.Value_5];
+                    dz = global.deadzones[deadzone.crouch];
                 
                 break;
         }

@@ -8,5 +8,5 @@ condition = function()
 
 output = function()
 {
-    mail_trigger(UnknownEnum.Value_22);
+    mail_trigger(mailtriggers.enteroldmidwaygate);
 };

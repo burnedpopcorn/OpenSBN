@@ -1,5 +1,18 @@
 var m = menuarr[menu];
-var bgArr = [[UnknownEnum.Value_0], [UnknownEnum.Value_1], [UnknownEnum.Value_2], [UnknownEnum.Value_3], [UnknownEnum.Value_4, UnknownEnum.Value_5, UnknownEnum.Value_6, UnknownEnum.Value_7], [UnknownEnum.Value_8]];
+var bgArr = 
+[
+	[MENUS.mainmenu], 
+	[MENUS.audio], 
+	[MENUS.video], 
+	[MENUS.game], 
+	[
+		MENUS.controls, 
+		MENUS.keyboard, 
+		MENUS.gamepad, 
+		MENUS.deadzones
+	], 
+	[MENUS.secret]
+];
 
 for (var i = 0; i < array_length(bgArr); i++)
 {
@@ -42,10 +55,10 @@ if (sel != selected)
 {
     event_play_oneshot("event:/SFX/ui/pauseselect");
     
-    if (option.type == UnknownEnum.Value_5)
+    if (option.type == menutype.slider)
         slidevalue = option.value;
     
-    if (m.options[sel].type == UnknownEnum.Value_5)
+    if (m.options[sel].type == menutype.slider)
         m.options[sel].silence();
 }
 
@@ -85,7 +98,7 @@ switch (option.type)
             slidebuffer = 1;
             option.onChange(moveslide);
             
-            if (menu == UnknownEnum.Value_1)
+            if (menu == MENUS.audio)
                 set_option_params();
         }
         else if (moveslide == 0 && slidevalue != option.value)
@@ -109,12 +122,12 @@ if (key_back && !instance_exists(obj_option_keyconfig))
 {
     event_play_oneshot("event:/SFX/ui/back");
     
-    if (menu == UnknownEnum.Value_0)
+    if (menu == MENUS.mainmenu)
     {
         if (room == rm_mainmenu)
         {
             with (obj_pauseNew)
-                state = UnknownEnum.Value_1;
+                state = pausestates.unpause;
         }
         
         instance_destroy();
@@ -143,7 +156,7 @@ if (string_ends_with(keystring, "awesome"))
 {
     event_play_oneshot("event:/SFX/special/magicharp");
     menuprev = menu;
-    menu = UnknownEnum.Value_8;
+    menu = MENUS.secret;
     selected = 0;
     keystring = "";
 }

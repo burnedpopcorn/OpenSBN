@@ -1,7 +1,7 @@
 if (player == -4 || pillar == -4 || !instance_exists(pillar))
     exit;
 
-mail_trigger(UnknownEnum.Value_10);
+mail_trigger(mailtriggers.eeriepillarhitplayer);
 event_play_oneshot("event:/SFX/bo/punch", player.x, player.y);
 punched = true;
 

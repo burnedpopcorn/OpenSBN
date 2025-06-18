@@ -42,7 +42,7 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
     {
         instance_destroy(obj_fadeout);
         instance_destroy(other, false);
-        mail_trigger(UnknownEnum.Value_16);
+        mail_trigger(mailtriggers.caughtbygrapo);
         targetDoor = "A";
         room_goto(timesuproom);
         state = states.timesup;

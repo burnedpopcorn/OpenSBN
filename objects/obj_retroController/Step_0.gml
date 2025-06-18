@@ -10,7 +10,7 @@ if (!activated)
     
     with (obj_pauseNew)
     {
-        if (state == UnknownEnum.Value_1)
+        if (state == pausestates.unpause)
             go = true;
     }
     

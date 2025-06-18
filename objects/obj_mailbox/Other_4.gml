@@ -1,4 +1,4 @@
-mail_trigger(UnknownEnum.Value_0);
+mail_trigger(mailtriggers.defaultmail);
 var num_unread = 0;
 
 for (var i = 0; i < array_length(global.mailArr); i++)

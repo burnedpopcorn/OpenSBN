@@ -18,5 +18,5 @@ output = function()
     trace("Grindcount: ", global.grinds);
     
     if (global.grinds >= 36)
-        mail_trigger(UnknownEnum.Value_6);
+        mail_trigger(mailtriggers.grindcount36plus);
 };

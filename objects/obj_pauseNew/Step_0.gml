@@ -16,20 +16,21 @@ with (obj_player1)
 
 if (input_check_pressed("start") && global.shellactivate == false && can_pause)
 {
-    if (room == rm_mainmenu && state == UnknownEnum.Value_1)
+	// if in save select room, just go to option menu instead
+    if (room == rm_mainmenu && state == pausestates.unpause)
     {
-        if (obj_mainmenu.state != UnknownEnum.Value_1)
+        if (obj_mainmenu.state != menuselected.selectsave)
             exit;
         
         event_play_oneshot("event:/SFX/ui/optionselect", x, y);
         instance_create(0, 0, obj_optionNew);
-        state = UnknownEnum.Value_0;
+        state = pausestates.pause;
         exit;
     }
     
-    if (state == UnknownEnum.Value_1)
+    if (state == pausestates.unpause)
     {
-        state = UnknownEnum.Value_0;
+        state = pausestates.pause;
         toppin_has[0] = global.tomatofollow;
         toppin_has[1] = global.pineapplefollow;
         toppin_has[2] = global.shroomfollow;
@@ -47,7 +48,7 @@ if (input_check_pressed("start") && global.shellactivate == false && can_pause)
             surface_set_target(pause_surf);
             draw_clear_alpha(c_black, 0);
             gpu_set_blendenable(false);
-            draw_surface_stretched_ext(application_surface, 0, 0, obj_gameFrame.defaultwidth, obj_gameFrame.defaultheight, 16777215, 1);
+            draw_surface_stretched_ext(application_surface, 0, 0, obj_gameFrame.defaultwidth, obj_gameFrame.defaultheight, c_white, 1);
             gpu_set_blendenable(true);
             gpu_set_blendmode(bm_normal);
             shader_reset();
@@ -88,7 +89,7 @@ if (input_check_pressed("start") && global.shellactivate == false && can_pause)
     }
     else
     {
-        state = UnknownEnum.Value_1;
+        state = pausestates.unpause;
         pause = false;
         scr_unpauseinstances();
         scr_unpausemusic();
@@ -97,7 +98,7 @@ if (input_check_pressed("start") && global.shellactivate == false && can_pause)
     }
 }
 
-if (state == UnknownEnum.Value_0)
+if (state == pausestates.pause)
 {
     pauseScale = lerp(pauseScale, 1, 0.2);
     pauseX = lerp(pauseX, 0, 0.2);
@@ -120,7 +121,7 @@ else
 bgX += 0.2;
 bgY += 0.2;
 
-if (state == UnknownEnum.Value_0 && !instance_exists(obj_option) && !instance_exists(obj_optionNew))
+if (state == pausestates.pause && !instance_exists(obj_option) && !instance_exists(obj_optionNew))
 {
     var prevselected = selected;
     var moveselect = -input_check_pressed("up") + input_check_pressed("down");
@@ -136,7 +137,7 @@ if (state == UnknownEnum.Value_0 && !instance_exists(obj_option) && !instance_ex
         switch (selected)
         {
             case 0:
-                state = UnknownEnum.Value_1;
+                state = pausestates.unpause;
                 pause = false;
                 scr_unpauseinstances();
                 scr_unpausemusic();
@@ -161,7 +162,7 @@ if (state == UnknownEnum.Value_0 && !instance_exists(obj_option) && !instance_ex
                     obj_music.music = -4;
                     alarm[1] = 1;
                     pause = false;
-                    state = UnknownEnum.Value_1;
+                    state = pausestates.unpause;
                 }
                 else
                 {
@@ -177,14 +178,14 @@ if (state == UnknownEnum.Value_0 && !instance_exists(obj_option) && !instance_ex
                 with (instance_create(x, y, obj_optionNew))
                     depth = other.depth - 3;
                 
-                state = UnknownEnum.Value_0;
+                state = pausestates.pause;
                 exit;
                 break;
             
             case 3:
                 if (room == rm_levelselect || string_copy(room_get_name(room), 1, 3) == "hub")
                 {
-                    state = UnknownEnum.Value_1;
+                    state = pausestates.unpause;
                     pause = false;
                     scr_unpauseinstances();
                     scr_unpausemusic();
@@ -208,12 +209,12 @@ if (state == UnknownEnum.Value_0 && !instance_exists(obj_option) && !instance_ex
                     
                     global.cowboyhat = 0;
                     global.coop = false;
-                    state = UnknownEnum.Value_1;
+                    state = pausestates.unpause;
                     exit;
                 }
                 else
                 {
-                    state = UnknownEnum.Value_1;
+                    state = pausestates.unpause;
                     pause = false;
                     scr_unpauseinstances();
                     scr_unpausemusic();

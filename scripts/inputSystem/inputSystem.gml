@@ -128,13 +128,23 @@ function scr_setinput_init()
     }
     
     ini_open_from_string(obj_savesystem.ini_str_options);
-    global.deadzones[UnknownEnum.Value_0] = ini_read_real("Option", "deadzoneMaster", 0.3);
-    global.deadzones[UnknownEnum.Value_1] = ini_read_real("Option", "deadzoneVertical", 0.5);
-    global.deadzones[UnknownEnum.Value_2] = ini_read_real("Option", "deadzoneHorizontal", 0.5);
-    global.deadzones[UnknownEnum.Value_3] = ini_read_real("Option", "deadzonePress", 0.5);
-    global.deadzones[UnknownEnum.Value_4] = ini_read_real("Option", "deadzoneSJump", 0.8);
-    global.deadzones[UnknownEnum.Value_5] = ini_read_real("Option", "deadzoneCrouch", 0.65);
+    global.deadzones[deadzone.master] = ini_read_real("Option", "deadzoneMaster", 0.3);
+    global.deadzones[deadzone.vertical] = ini_read_real("Option", "deadzoneVertical", 0.5);
+    global.deadzones[deadzone.horizontal] = ini_read_real("Option", "deadzoneHorizontal", 0.5);
+    global.deadzones[deadzone.press] = ini_read_real("Option", "deadzonePress", 0.5);
+    global.deadzones[deadzone.sjump] = ini_read_real("Option", "deadzoneSJump", 0.8);
+    global.deadzones[deadzone.crouch] = ini_read_real("Option", "deadzoneCrouch", 0.65);
     ini_close();
+}
+
+enum deadzone
+{
+	master = 0,
+	vertical = 1,
+	horizontal = 2,
+	press = 3,
+	sjump = 4,
+	crouch = 5,
 }
 
 function scr_input_create()

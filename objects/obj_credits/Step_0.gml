@@ -20,7 +20,7 @@ if (creditIndex >= (array_length(creditArr) - 2) || input_check("start"))
         if (final && finaleBuffer <= 0)
         {
             if (completed)
-                mail_trigger(UnknownEnum.Value_21);
+                mail_trigger(mailtriggers.watchedcredits);
             
             with (obj_player1)
             {
