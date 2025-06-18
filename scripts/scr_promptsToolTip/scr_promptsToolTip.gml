@@ -40,10 +40,10 @@ function scr_setTransfoTip(argument0)
 {
     switch (argument0)
     {
-        case UnknownEnum.Value_271:
-        case UnknownEnum.Value_272:
-        case UnknownEnum.Value_273:
-        case UnknownEnum.Value_270:
+        case states.fishdash:
+        case states.fishground:
+        case states.fishhurt:
+        case states.fishswim:
             global.TransfoPrompt = string("[fa_middle][spr_transfopromptfont]{0} Move {1} Dash", get_control_sprite("right") + get_control_sprite("left") + get_control_sprite("up") + get_control_sprite("down"), get_control_sprite("slap"));
             break;
         

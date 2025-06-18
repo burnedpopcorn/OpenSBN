@@ -180,7 +180,7 @@ function state_player_knightpep()
         }
     }
     
-    if (!grounded && place_meeting_collision(x + sign(hsp), y, UnknownEnum.Value_1))
+    if (!grounded && place_meeting_collision(x + sign(hsp), y, Exclude.SLOPES))
         movespeed = 0;
     
     if (move != 0 && hsp != 0 && sprite_index != spr_knightpep_doublejump)

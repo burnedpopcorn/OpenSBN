@@ -20,7 +20,7 @@ if (showtext)
     
     draw_set_alpha(1 - textalpha);
     
-    if (device_found && device_selected[UnknownEnum.Value_0] == false)
+    if (device_found && device_selected[states.controller1] == false)
         draw_text(obj_gameFrame.defaultwidth / 2, obj_gameFrame.defaultheight - 64, "Controller found - press Start to connect.");
     else if (!device_found)
         draw_text(obj_gameFrame.defaultwidth / 2, obj_gameFrame.defaultheight - 64, "Controller disconnected!");

@@ -1,7 +1,7 @@
 if (!global.option_timer || room == Realtitlescreen || room == rm_mainmenu || room == rm_levelselect || room == rank_room || instance_exists(obj_titlecard) || !global.option_hud)
     exit;
 
-if (instance_exists(obj_pauseNew) && obj_pauseNew.state == UnknownEnum.Value_0 && !global.option_timer_speedrun)
+if (instance_exists(obj_pauseNew) && obj_pauseNew.state == pausestates.pause && !global.option_timer_speedrun)
     exit;
 
 draw_set_color(c_white);

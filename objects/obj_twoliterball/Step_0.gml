@@ -34,7 +34,7 @@ instance_destroy(instance_place(x + hsp, y, obj_destructibles));
 instance_destroy(instance_place(x + hsp, y, obj_metalblock));
 instance_destroy(instance_place(x + hsp, y, obj_ratblock));
 
-if (place_meeting_collision(x + _hsp, y, UnknownEnum.Value_1) && _allow_collisions)
+if (place_meeting_collision(x + _hsp, y, Exclude.SLOPES) && _allow_collisions)
     instance_destroy();
 
 scr_collision();

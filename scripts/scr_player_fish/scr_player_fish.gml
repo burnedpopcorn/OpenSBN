@@ -87,7 +87,7 @@ function state_player_fishdash()
     vsp = vdir + grav;
     var bumped = 0;
     
-    if (place_meeting_collision(x + sign(hdir), y, UnknownEnum.Value_1) && !place_meeting(x + sign(hdir), y, obj_destructibles))
+    if (place_meeting_collision(x + sign(hdir), y, Exclude.SLOPES) && !place_meeting(x + sign(hdir), y, obj_destructibles))
     {
         var _ledge = 0;
         _ledge -= slope_check_up(x + sign(hdir), y, 9);
@@ -97,7 +97,7 @@ function state_player_fishdash()
             y += _ledge;
     }
     
-    if (place_meeting_collision(x, y + sign(vdir), UnknownEnum.Value_1) && !place_meeting(x, y + sign(vdir), obj_destructibles))
+    if (place_meeting_collision(x, y + sign(vdir), Exclude.SLOPES) && !place_meeting(x, y + sign(vdir), obj_destructibles))
     {
         var _ledge = 0;
         _ledge -= slope_check_left(x, y + sign(vdir), 9);

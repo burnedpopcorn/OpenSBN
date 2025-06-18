@@ -61,7 +61,7 @@ if (state == states.walk)
 {
     image_speed = 0.2;
     
-    if (!place_meeting_collision(x + (2 * hsp), y + 8, UnknownEnum.Value_8))
+    if (!place_meeting_collision(x + (2 * hsp), y + 8, Exclude.PLATFORMS))
     {
         var _noSolid = true;
         var _collist = ds_list_create();

@@ -28,7 +28,7 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
     other.vsp = 0;
     other.hsp = 0;
     other.cutscene = 1;
-    var fisharr = [UnknownEnum.Value_270, UnknownEnum.Value_271, UnknownEnum.Value_272, UnknownEnum.Value_273];
+    var fisharr = [states.fishswim, states.fishdash, states.fishground, states.fishhurt];
     
     if (!array_contains(fisharr, other.state))
         other.sprite_index = other.spr_hurtjump;

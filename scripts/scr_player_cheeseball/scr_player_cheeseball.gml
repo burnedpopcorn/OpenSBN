@@ -68,7 +68,7 @@ function state_player_cheeseball()
     
     sprite_index = spr_cheeseballplayer;
     
-    if (place_meeting_collision(x + sign(hsp), y, UnknownEnum.Value_1) && (!place_meeting(x + sign(hsp), y, obj_ratblock) || place_meeting(x + sign(hsp), y, obj_rattumble)))
+    if (place_meeting_collision(x + sign(hsp), y, Exclude.SLOPES) && (!place_meeting(x + sign(hsp), y, obj_ratblock) || place_meeting(x + sign(hsp), y, obj_rattumble)))
     {
         cheeseballbounce = 0;
         slopejump = 0;

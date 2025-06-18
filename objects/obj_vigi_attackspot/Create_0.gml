@@ -1,1 +1,1 @@
-attack = UnknownEnum.Value_2;
+attack = states.normal;

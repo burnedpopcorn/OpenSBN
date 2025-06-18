@@ -7,8 +7,8 @@ if (instance_number(object_index) > 1)
 global.player_input_device = -2;
 active = true;
 device_found = false;
-device_selected[UnknownEnum.Value_0] = false;
-device_selected[UnknownEnum.Value_1] = false;
+device_selected[states.controller1] = false;
+device_selected[states.controller2] = false;
 disconnected_device = -2;
 showtext = false;
 textflash = 0;
@@ -36,7 +36,7 @@ for (var i = 0; i < 8; i++)
 {
     if (gamepad_is_connected(i))
     {
-        device_selected[UnknownEnum.Value_0] = true;
+        device_selected[states.controller1] = true;
         global.player_input_device = i;
         device_found = true;
     }

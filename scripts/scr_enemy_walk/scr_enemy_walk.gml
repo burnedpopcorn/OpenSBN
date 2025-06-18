@@ -45,7 +45,7 @@ function scr_enemy_walk()
     if (turntimer > 0 && turner == 1)
         turntimer--;
     
-    if (place_meeting_collision(x + image_xscale, y, UnknownEnum.Value_1) || place_meeting(x + image_xscale, y, obj_hallway) || (turntimer <= 0 && turner))
+    if (place_meeting_collision(x + image_xscale, y, Exclude.SLOPES) || place_meeting(x + image_xscale, y, obj_hallway) || (turntimer <= 0 && turner))
     {
         if (object_index == obj_tack)
         {

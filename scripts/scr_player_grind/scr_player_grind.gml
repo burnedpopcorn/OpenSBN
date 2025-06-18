@@ -36,7 +36,7 @@ function state_player_grind()
         }
     }
     
-    if (place_meeting_collision(x + xscale, y, UnknownEnum.Value_1))
+    if (place_meeting_collision(x + xscale, y, Exclude.SLOPES))
     {
         instance_create(x + (10 * xscale), y + 10, obj_bumpeffect);
         xscale *= -1;

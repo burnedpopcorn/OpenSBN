@@ -1,12 +1,12 @@
 var fade = 0;
 var pillar = false;
-var s = UnknownEnum.Value_20;
+var s = states.titlescreen;
 var inw = false;
 var inPause = false;
 
 with (obj_pause)
 {
-    if (state == UnknownEnum.Value_0)
+    if (state == pausestates.pause)
         inPause = true;
 }
 
@@ -84,7 +84,7 @@ if (music != -4 && !inPause)
         if (music.music_name == "event:/music/water")
         {
             var s2 = 0;
-            var fisharr = [UnknownEnum.Value_270, UnknownEnum.Value_271, UnknownEnum.Value_272, UnknownEnum.Value_273];
+            var fisharr = [states.fishswim, states.fishdash, states.fishground, states.fishhurt];
             
             if (array_contains(fisharr, s))
                 s2 = 1;
@@ -92,7 +92,7 @@ if (music != -4 && !inPause)
             if (room == water_fish)
                 s2 = 2;
             
-            if (s != UnknownEnum.Value_86 && s != UnknownEnum.Value_63 && s != UnknownEnum.Value_210 && s != UnknownEnum.Value_20)
+            if (s != states.backbreaker && s != states.chainsaw && s != states.debugstate && s != states.titlescreen)
                 fmod_event_setParameter(music.music_inst, "state2", s2, true);
         }
     }

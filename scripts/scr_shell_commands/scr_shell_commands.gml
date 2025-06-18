@@ -261,13 +261,20 @@ function sh_instance_create(argument0)
         instance_create(argument0[2], argument0[3], _obj);
 }
 
+// at this point i dont care
+enum coords
+{
+	_x = 0,
+	_y = 1,
+}
+
 function meta_instance_create()
 {
     return 
     {
         description: "create an object",
         arguments: ["<object>", "<x>", "<y>"],
-        suggestions: [global.ObjectNameList, UnknownEnum.Value_0, UnknownEnum.Value_1],
+        suggestions: [global.ObjectNameList, coords._x, coords._y],
         argumentDescriptions: ["the object to create", "the X coordinate to create the object at", "the Y coordinate to create the object at"]
     };
 }

@@ -259,7 +259,7 @@ function scr_noise_shield()
             else
             {
                 substate = states.jump;
-                storedsubstate = UnknownEnum.Value_176;
+                storedsubstate = states.boss_shield;
                 shield_buffer = 120;
                 sprite_index = spr_playerN_jump;
                 image_index = 0;

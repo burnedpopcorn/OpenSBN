@@ -1,5 +1,5 @@
 var _idlespr = spr_weirdfishidle;
-var chillStates = [UnknownEnum.Value_271, UnknownEnum.Value_272, UnknownEnum.Value_273, UnknownEnum.Value_270];
+var chillStates = [states.fishdash, states.fishground, states.fishhurt, states.fishswim];
 
 if (global.panic)
     _idlespr = global.lap ? spr_weirdfishlap : spr_weirdfishescape;

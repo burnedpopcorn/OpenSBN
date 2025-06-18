@@ -1,11 +1,11 @@
 function fmod_init(argument0)
 {
-    return fmod_studio_system_init(argument0, UnknownEnum.Value_0, UnknownEnum.Value_0);
+    return fmod_studio_system_init(argument0, FMOD_STUDIO_INIT.NORMAL, FMOD_INIT.NORMAL);
 }
 
 function fmod_loadBank(argument0)
 {
-    return fmod_studio_system_load_bank_file(argument0, UnknownEnum.Value_0);
+    return fmod_studio_system_load_bank_file(argument0, FMOD_STUDIO_LOAD_BANK.NORMAL);
 }
 
 function fmod_event_play(argument0)

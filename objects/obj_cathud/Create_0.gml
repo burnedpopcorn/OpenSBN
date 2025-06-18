@@ -1,3 +1,8 @@
+enum catpos
+{
+	normal = 0, // idk
+}
+
 with (obj_cathud)
 {
     if (id != other.id)
@@ -18,7 +23,7 @@ edgecount = sprite_get_number(spr_cathud_edges) / 2;
 show = true;
 cats = [];
 
-cat = function(argument0, argument1, argument2, argument3, argument4, argument5 = UnknownEnum.Value_0, argument6 = UnknownEnum.Value_0) constructor
+cat = function(argument0, argument1, argument2, argument3, argument4, argument5 = catpos.normal, argument6 = catpos.normal) constructor
 {
     x = argument3;
     y = argument4;

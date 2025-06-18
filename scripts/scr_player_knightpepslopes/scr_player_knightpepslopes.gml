@@ -52,7 +52,7 @@ function state_player_knightpepslopes()
     if ((sprite_index == spr_knightpep_doublejump || sprite_index == spr_knightpep_fly) && floor(image_index) == (image_number - 1))
         image_index = image_number - 1;
     
-    if (place_meeting_collision(x + sign(hsp), y, UnknownEnum.Value_1) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+    if (place_meeting_collision(x + sign(hsp), y, Exclude.SLOPES) && !place_meeting(x + sign(hsp), y, obj_destructibles))
     {
         movespeed = 0;
         vsp = -6;

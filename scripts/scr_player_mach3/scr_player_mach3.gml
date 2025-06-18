@@ -191,7 +191,7 @@ function state_player_mach3()
         }
     }
     
-    if ((!grounded || slopeCheck(x + xscale, y)) && place_meeting_collision(x + xscale, y, UnknownEnum.Value_1) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_metalblock))
+    if ((!grounded || slopeCheck(x + xscale, y)) && place_meeting_collision(x + xscale, y, Exclude.SLOPES) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_metalblock))
     {
         wallspeed = movespeed;
         
@@ -200,7 +200,7 @@ function state_player_mach3()
         
         state = states.climbwall;
     }
-    else if (place_meeting_collision(x + xscale, y, UnknownEnum.Value_1) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_metalblock) && !place_meeting(x + xscale, y, obj_mach3solid))
+    else if (place_meeting_collision(x + xscale, y, Exclude.SLOPES) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_metalblock) && !place_meeting(x + xscale, y, obj_mach3solid))
     {
         var _ledge = slope_check_up(x + xscale, y, (vsp >= 0) ? 32 : 22);
         

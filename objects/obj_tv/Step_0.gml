@@ -244,7 +244,7 @@ switch (state)
                     prompt = -4;
                 }
                 
-                if (b[1] == UnknownEnum.Value_0)
+                if (b[1] == tvprompt.normal)
                 {
                     sprite_index = spr_tv_open;
                     image_index = 0;

@@ -273,7 +273,7 @@ function scr_resetinput()
 
 function scr_input_update(argument0 = -1)
 {
-    var dz = global.deadzones[UnknownEnum.Value_0];
+    var dz = global.deadzones[deadzone.master];
     gamepad_set_axis_deadzone(argument0, dz);
     var keys = ds_map_keys_to_array(global.input_map);
     

@@ -151,7 +151,7 @@ function state_player_handstandjump()
     
     mask_index = spr_player_mask;
     
-    if ((!grounded || slopeCheck(x + xscale, y)) && place_meeting_collision(x + xscale, y, UnknownEnum.Value_1) && !place_meeting(x + xscale, y, obj_destructibles))
+    if ((!grounded || slopeCheck(x + xscale, y)) && place_meeting_collision(x + xscale, y, Exclude.SLOPES) && !place_meeting(x + xscale, y, obj_destructibles))
     {
         grabclimbbuffer = 10;
         wallspeed = 6 * getRPGMulti("movespeed");
@@ -161,7 +161,7 @@ function state_player_handstandjump()
         
         state = states.climbwall;
     }
-    else if ((grounded || !input_check("attack")) && place_meeting_collision(x + xscale, y, UnknownEnum.Value_1) && !place_meeting(x + xscale, y, obj_destructibles))
+    else if ((grounded || !input_check("attack")) && place_meeting_collision(x + xscale, y, Exclude.SLOPES) && !place_meeting(x + xscale, y, obj_destructibles))
     {
         var _ledge = slope_check_up(x + xscale, y, (vsp >= 0) ? 32 : 22);
         

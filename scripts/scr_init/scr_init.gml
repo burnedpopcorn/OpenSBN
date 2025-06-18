@@ -1,10 +1,10 @@
 enum states 
 {
-	// for some reason the sbn devs added these
-	// but its just eggplant states, just shifted by two
-	unknown0 = 0,
-	unknown1 = 1,
+	// used for controllers lmao
+	controller1 = 0,
+	controller2 = 1,
 	
+	// main states
 	normal = 2,
 	revolver = 3,
 	dynamite = 4,
@@ -68,6 +68,7 @@ enum states
 	highjump = 62,
 	chainsaw = 63,
 	facestomp = 64,
+	mach4 = 65,
 	timesup = 66,
 	machroll = 67,
 	shotgun = 68,

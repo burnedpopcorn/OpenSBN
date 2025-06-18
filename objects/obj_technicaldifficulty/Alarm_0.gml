@@ -1,4 +1,4 @@
-var _check = (storedState == UnknownEnum.Value_270 || storedState == UnknownEnum.Value_273 || storedState == UnknownEnum.Value_271 || storedState == UnknownEnum.Value_272) ? UnknownEnum.Value_270 : UnknownEnum.Value_2;
+var _check = (storedState == states.fishswim || storedState == states.fishhurt || storedState == states.fishdash || storedState == states.fishground) ? states.fishswim : states.normal;
 use_static = 1;
 static_index = sprite_get_number(spr_tvstatic) - 1;
 static_dir = -1;

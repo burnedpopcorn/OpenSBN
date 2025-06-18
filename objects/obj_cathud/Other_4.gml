@@ -25,7 +25,7 @@ for (var i = 0; i < _ecount; i++)
     array_push(_etaken, ii);
     var per = i / _ecount;
     var _x = (760 * per) + 150;
-    var _ec = new cat(_catno, spr_cathud_edges, ii, _x, obj_gameFrame.defaultheight, UnknownEnum.Value_0, UnknownEnum.Value_0);
+    var _ec = new cat(_catno, spr_cathud_edges, ii, _x, obj_gameFrame.defaultheight, catpos.normal, catpos.normal);
     array_push(cats, _ec);
     _catno++;
 }

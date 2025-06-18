@@ -2886,7 +2886,6 @@
     {"id":{"name":"_decompiled_TileSet140","path":"sprites/_decompiled_TileSet140/_decompiled_TileSet140.yy",},},
     {"id":{"name":"_decompiled_ts_secretplatform","path":"sprites/_decompiled_ts_secretplatform/_decompiled_ts_secretplatform.yy",},},
     {"id":{"name":"_decompiled_ts_hubdeco","path":"sprites/_decompiled_ts_hubdeco/_decompiled_ts_hubdeco.yy",},},
-    {"id":{"name":"_GLOBAL_INIT","path":"scripts/_GLOBAL_INIT/_GLOBAL_INIT.yy",},},
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Loadiingroom","path":"rooms/Loadiingroom/Loadiingroom.yy",},},

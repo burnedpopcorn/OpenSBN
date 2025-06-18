@@ -6,7 +6,7 @@ with (obj_player1)
         hide = true;
 }
 
-if (hide || !global.option_hud || (instance_exists(obj_pauseNew) && obj_pauseNew.state == UnknownEnum.Value_0) || room == rm_evilleafyishere || instance_exists(obj_titlecard) || instance_exists(obj_levelselect) || instance_exists(obj_technicaldifficulty) || instance_exists(obj_option) || instance_exists(obj_optionNew) || instance_exists(obj_rank) || instance_exists(obj_mainmenu) || instance_exists(obj_endlevelfade))
+if (hide || !global.option_hud || (instance_exists(obj_pauseNew) && obj_pauseNew.state == pausestates.pause) || room == rm_evilleafyishere || instance_exists(obj_titlecard) || instance_exists(obj_levelselect) || instance_exists(obj_technicaldifficulty) || instance_exists(obj_option) || instance_exists(obj_optionNew) || instance_exists(obj_rank) || instance_exists(obj_mainmenu) || instance_exists(obj_endlevelfade))
 {
     show = false;
     exit;

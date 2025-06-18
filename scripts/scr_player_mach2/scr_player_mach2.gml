@@ -137,7 +137,7 @@ function state_player_mach2()
     if (input_check_pressed("jump"))
         input_buffer_jump = 0;
     
-    if ((!grounded || slopeCheck(x + xscale, y)) && place_meeting_collision(x + xscale, y, UnknownEnum.Value_1) && !place_meeting(x + xscale, y, obj_destructibles))
+    if ((!grounded || slopeCheck(x + xscale, y)) && place_meeting_collision(x + xscale, y, Exclude.SLOPES) && !place_meeting(x + xscale, y, obj_destructibles))
     {
         wallspeed = movespeed;
         
@@ -146,7 +146,7 @@ function state_player_mach2()
         
         state = states.climbwall;
     }
-    else if (place_meeting_collision(x + xscale, y, UnknownEnum.Value_1) && !place_meeting(x + xscale, y, obj_destructibles))
+    else if (place_meeting_collision(x + xscale, y, Exclude.SLOPES) && !place_meeting(x + xscale, y, obj_destructibles))
     {
         if (skateboarding)
         {

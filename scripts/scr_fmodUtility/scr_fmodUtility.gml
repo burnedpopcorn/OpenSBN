@@ -12,7 +12,7 @@ function event_play_oneshot(argument0, argument1 = undefined, argument2 = undefi
 
 function event_isplaying(argument0)
 {
-    return fmod_event_getPlaybackState(argument0) == UnknownEnum.Value_0;
+    return fmod_event_getPlaybackState(argument0) == FMOD_STUDIO_PLAYBACK_STATE.PLAYING;
 }
 
 function event_play_multiple(argument0, argument1 = undefined, argument2 = undefined, argument3 = 0)

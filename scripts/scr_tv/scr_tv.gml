@@ -160,7 +160,7 @@ function tv_do_expression(argument0)
 function scr_tv_get_transfo_sprite()
 {
     var _state = states.normal;
-    var _tauntstate = UnknownEnum.Value_2;
+    var _tauntstate = states.normal;
     var _sp = spr_null;
     var _player = -4;
     

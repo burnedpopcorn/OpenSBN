@@ -2,7 +2,7 @@ if (place_meeting(x, y - 16, obj_player1))
 {
     with (obj_player1)
     {
-        if (place_meeting(x, y + 16, other.id) && !place_meeting_collision(x + xscale, y, UnknownEnum.Value_1) && bbox_bottom <= other.bbox_top && xscale == sign(other.image_xscale))
+        if (place_meeting(x, y + 16, other.id) && !place_meeting_collision(x + xscale, y, Exclude.SLOPES) && bbox_bottom <= other.bbox_top && xscale == sign(other.image_xscale))
         {
             if (state == states.mach2 || state == states.ratmounttumble || state == states.trashroll || state == states.tumble || state == states.mach3 || state == states.trickjump)
             {

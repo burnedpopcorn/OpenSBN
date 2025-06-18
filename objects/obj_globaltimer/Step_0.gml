@@ -1,6 +1,6 @@
 var s = delta_time / 1000000;
 
-if ((instance_exists(obj_pauseNew) && obj_pauseNew.state == UnknownEnum.Value_1) || global.option_timer_speedrun)
+if ((instance_exists(obj_pauseNew) && obj_pauseNew.state == pausestates.unpause) || global.option_timer_speedrun)
 {
     if (room != rank_room && !instance_exists(obj_endlevelfade) && room != hub_loadingscreen)
     {

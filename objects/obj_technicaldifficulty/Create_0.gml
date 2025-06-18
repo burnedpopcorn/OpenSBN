@@ -12,4 +12,4 @@ event_play_oneshot("event:/SFX/misc/tvswitch");
 with (obj_player1)
     state = states.actor;
 
-storedState = UnknownEnum.Value_2;
+storedState = states.normal;

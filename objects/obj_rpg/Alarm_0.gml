@@ -6,7 +6,7 @@ if (!instance_exists(obj_player1))
 
 var player = obj_player1;
 var jumping = input_check("jump");
-var mach = player.state == states.mach2 || player.state == states.mach3 || player.state == UnknownEnum.Value_65;
+var mach = player.state == states.mach2 || player.state == states.mach3 || player.state == states.mach4;
 var earnArr = [];
 
 if ((player.move != 0 || mach) && player.grounded)

@@ -18,7 +18,7 @@ function boss_noise_decide_attack()
 function get_attack()
 {
     var chance = irandom(100) > 40;
-    c = UnknownEnum.Value_2;
+    c = states.normal;
     
     if (chance)
     {
@@ -40,7 +40,7 @@ function boss_noise_do_attack()
     targetstunned = 0;
     state = current_attack;
     attack_cooldown = attack_max[phase - 1];
-    current_behaviour = UnknownEnum.Value_2;
+    current_behaviour = states.normal;
     image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
     
     if (!angry)
@@ -384,7 +384,7 @@ function noise_behaviour_far()
     {
         var i = 0;
         
-        while (current_behaviour == UnknownEnum.Value_4)
+        while (current_behaviour == states.dynamite)
         {
             attack_cooldown = 0;
             boss_noise_decide_attack();
@@ -410,19 +410,19 @@ function boss_noise_normal()
     
     switch (current_behaviour)
     {
-        case UnknownEnum.Value_2:
+        case states.normal:
             noise_behaviour_none();
             break;
         
-        case UnknownEnum.Value_3:
+        case states.revolver:
             noise_behaviour_close();
             break;
         
-        case UnknownEnum.Value_5:
+        case states.boots:
             noise_behaviour_anywhere();
             break;
         
-        case UnknownEnum.Value_4:
+        case states.dynamite:
             noise_behaviour_far();
             break;
     }

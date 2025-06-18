@@ -46,7 +46,7 @@ function state_player_climbwall()
                 raildir = -xscale;
             }
             
-            if (verticalbuffer <= 0 && place_meeting_collision(x, y - 1, UnknownEnum.Value_1) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
+            if (verticalbuffer <= 0 && place_meeting_collision(x, y - 1, Exclude.SLOPES) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
             {
                 trace("climbwall hit head");
                 

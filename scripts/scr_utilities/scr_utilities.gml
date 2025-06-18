@@ -20,7 +20,7 @@ function real_volume()
 
 function bump_wall(argument0 = hsp)
 {
-    return place_meeting_collision(x + argument0, y, UnknownEnum.Value_1) && (!groundedSlope || place_meeting_collision(x + sign(argument0), bbox_top, UnknownEnum.Value_1));
+    return place_meeting_collision(x + argument0, y, Exclude.SLOPES) && (!groundedSlope || place_meeting_collision(x + sign(argument0), bbox_top, Exclude.SLOPES));
 }
 
 function try_solid(argument0, argument1, argument2, argument3)

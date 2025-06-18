@@ -1,7 +1,7 @@
 A Decompilation of Super Bo Noise
 	by burnedpopcorn180
 
-Original GameMaker Version: 2023.11.0.0
+Original GameMaker Version: 2023.11.1.129
 
 NOTE:
 The Creators of SBN were pretty lazy, and didn't clean up
@@ -26,6 +26,7 @@ Packages Added:
 	- NekoPresence
 	- Scribble Deluxe 9.0.0
 	- Mr Unown Collisions
+	- rtShell
 
 --------------------------------------------------------
 Project Decompilied by Ultimate_GMS2_Decompiler_v2.csx

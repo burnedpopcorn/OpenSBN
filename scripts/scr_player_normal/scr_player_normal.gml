@@ -124,7 +124,7 @@ function state_player_normal()
                 sprite_index = spr_move;
         }
         
-        if (place_meeting_collision(x + sign(hsp), y, UnknownEnum.Value_1) && xscale == move)
+        if (place_meeting_collision(x + sign(hsp), y, Exclude.SLOPES) && xscale == move)
             movespeed = 0;
         
         if (grounded)

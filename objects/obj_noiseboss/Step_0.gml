@@ -5,9 +5,9 @@ targetplayer = instance_nearest(x, y, obj_player1);
 wastedhits = 8 - elitehit;
 
 if (elitehit <= 2)
-    attackpool = [UnknownEnum.Value_176, states.turn, UnknownEnum.Value_74, UnknownEnum.Value_74, UnknownEnum.Value_74];
+    attackpool = [states.boss_shield, states.turn, states.pistol, states.pistol, states.pistol];
 else if (elitehit <= 4)
-    attackpool = [UnknownEnum.Value_176, UnknownEnum.Value_176, UnknownEnum.Value_176, states.turn];
+    attackpool = [states.boss_shield, states.boss_shield, states.boss_shield, states.turn];
 else if (elitehit <= 6)
     attackpool = [states.turn];
 

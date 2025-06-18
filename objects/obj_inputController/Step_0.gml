@@ -1,6 +1,6 @@
 if (active)
 {
-    if (device_found && !device_selected[UnknownEnum.Value_0])
+    if (device_found && !device_selected[states.controller1])
     {
         for (i = 0; i < 8; i++)
         {
@@ -8,7 +8,7 @@ if (active)
             
             if (_index != -2)
             {
-                device_selected[UnknownEnum.Value_0] = true;
+                device_selected[states.controller1] = true;
                 global.player_input_device = _index;
             }
         }

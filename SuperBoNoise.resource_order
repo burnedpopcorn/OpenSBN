@@ -2682,6 +2682,5 @@
     {"name":"_decompiled_TileSet140","order":1097,"path":"sprites/_decompiled_TileSet140/_decompiled_TileSet140.yy",},
     {"name":"_decompiled_ts_secretplatform","order":1098,"path":"sprites/_decompiled_ts_secretplatform/_decompiled_ts_secretplatform.yy",},
     {"name":"_decompiled_ts_hubdeco","order":1099,"path":"sprites/_decompiled_ts_hubdeco/_decompiled_ts_hubdeco.yy",},
-    {"name":"_GLOBAL_INIT","order":17,"path":"scripts/_GLOBAL_INIT/_GLOBAL_INIT.yy",},
   ],
 }

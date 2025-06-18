@@ -16,7 +16,7 @@ switch (state)
         sprite_index = movespr;
         var _bbox_side = (image_xscale >= 1) ? bbox_right : bbox_left;
         
-        if (place_meeting_collision(x + image_xscale, y, UnknownEnum.Value_1) || place_meeting(x + image_xscale, y, obj_hallway) || !place_meeting_collision(_bbox_side + image_xscale, y + 31))
+        if (place_meeting_collision(x + image_xscale, y, Exclude.SLOPES) || place_meeting(x + image_xscale, y, obj_hallway) || !place_meeting_collision(_bbox_side + image_xscale, y + 31))
             image_xscale *= -1;
         
         hsp = image_xscale * 2;

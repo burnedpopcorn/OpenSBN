@@ -1,17 +1,23 @@
 var _channels = 256;
-var _coreflags = UnknownEnum.Value_0;
-var _studioflags = UnknownEnum.Value_0;
+var _coreflags = FMOD_INIT.NORMAL;
+var _studioflags = FMOD_STUDIO_INIT.NORMAL;
 fmod_studio_system_create();
 show_debug_message("fmod_studio_system_create: " + string(fmod_last_result()));
 fmod_studio_system_init(_channels, _studioflags, _coreflags);
 show_debug_message("fmod_studio_system_init: " + string(fmod_last_result()));
 system = fmod_studio_system_get_core_system();
-var banks = ["sound/Desktop/Master.strings.bank", "sound/Desktop/Master.bank", "sound/Desktop/music.bank", "sound/Desktop/sfx.bank"];
+var banks = 
+[
+	"sound/Desktop/Master.strings.bank", 
+	"sound/Desktop/Master.bank", 
+	"sound/Desktop/music.bank", 
+	"sound/Desktop/sfx.bank"
+];
 
 for (var i = 0; i < array_length(banks); i++)
 {
     var b = working_directory + banks[i];
-    var bank = fmod_studio_system_load_bank_file(b, UnknownEnum.Value_0);
+    var bank = fmod_studio_system_load_bank_file(b, FMOD_STUDIO_LOAD_BANK.NORMAL);
     show_debug_message(concat("Loaded ", banks[i], ": ", string(fmod_last_result())));
     fmod_studio_bank_load_sample_data(bank);
     show_debug_message(concat("Sample data for ", banks[i], ": ", string(fmod_last_result())));
