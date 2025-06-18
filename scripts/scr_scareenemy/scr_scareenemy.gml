@@ -22,6 +22,4 @@ function scr_scareenemy()
                 vsp = -3;
         }
     }
-    
-    exit;
 }

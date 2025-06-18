@@ -17,7 +17,6 @@ function cutscene_customer_check(argument0, argument1, argument2)
     
     ds_list_add(global.saveroom, argument2.id);
     cutscene_end_action();
-    exit;
 }
 
 function cutscene_customer_end(argument0)
@@ -26,5 +25,4 @@ function cutscene_customer_end(argument0)
         happy = 1;
     
     cutscene_end_action();
-    exit;
 }

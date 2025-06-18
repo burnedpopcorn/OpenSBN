@@ -10,5 +10,4 @@ function cutscene_set_player_pos(argument0, argument1)
     }
     
     cutscene_end_action();
-    exit;
 }

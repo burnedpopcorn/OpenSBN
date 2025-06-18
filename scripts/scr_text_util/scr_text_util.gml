@@ -422,7 +422,7 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
                         draw_set_halign(fa_center);
                         draw_set_valign(fa_middle);
                         draw_set_font(global.grannyfont);
-                        draw_text_color(cx + 16, cy + 14, icon.str, c_black, c_black, c_black, c_black, argument4);
+                        draw_text_color(cx + 16, cy + 14, icon.str, c_black, c_black, c_black, c_black, alpha);
                         draw_set_font(f);
                         draw_set_halign(fa_left);
                         draw_set_valign(fa_top);

@@ -1,6 +1,6 @@
 function cutscene_gustavo_end()
 {
-    var finish = 0;
+    var finish = false;
     
     with (obj_player1)
     {
@@ -8,7 +8,7 @@ function cutscene_gustavo_end()
         {
             if (image_index > (image_number - 1))
             {
-                finish = 1;
+                finish = true;
                 state = states.normal;
             }
         }
@@ -29,6 +29,4 @@ function cutscene_gustavo_end()
         
         cutscene_end_action();
     }
-    
-    exit;
 }

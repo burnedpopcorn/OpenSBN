@@ -1,11 +1,11 @@
 function cutscene_superpinball_start()
 {
-    var _finish = 0;
+    var _finish = false;
     
     with (obj_player1)
     {
         if (state != states.door && state != states.comingoutdoor)
-            _finish = 1;
+            _finish = true;
     }
     
     if (_finish)

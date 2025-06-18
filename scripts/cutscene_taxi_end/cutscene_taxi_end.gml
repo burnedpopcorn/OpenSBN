@@ -1,8 +1,5 @@
-function cutscene_taxi_end(argument0, argument1)
+function cutscene_taxi_end(player, target_room)
 {
-    var player = argument0;
-    var target_room = argument1;
-    
     with (player)
     {
         var handler = other;
@@ -29,6 +26,4 @@ function cutscene_taxi_end(argument0, argument1)
             }
         }
     }
-    
-    exit;
 }

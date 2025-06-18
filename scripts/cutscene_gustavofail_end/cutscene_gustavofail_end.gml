@@ -1,6 +1,5 @@
-function cutscene_gustavofail_end(argument0)
+function cutscene_gustavofail_end(time)
 {
-    var time = argument0;
     timer++;
     
     with (obj_gustavo)
@@ -60,6 +59,4 @@ function cutscene_gustavofail_end(argument0)
         obj_player1.state = states.normal;
         cutscene_end_action();
     }
-    
-    exit;
 }

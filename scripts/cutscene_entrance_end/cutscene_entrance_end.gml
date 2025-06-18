@@ -11,7 +11,6 @@ function cutscene_entrance_end()
     global.entrancecutscene = 1;
     quick_ini_write_real(get_savefile_ini(), "cutscene", "entrance", 1);
     cutscene_end_action();
-    exit;
 }
 
 function cutscene_factory_end()
@@ -27,12 +26,10 @@ function cutscene_factory_end()
     global.factorycutscene = 1;
     quick_ini_write_real(get_savefile_ini(), "cutscene", "factory", 1);
     cutscene_end_action();
-    exit;
 }
 
 function cutscene_save_game()
 {
     gamesave_async_save();
     cutscene_end_action();
-    exit;
 }

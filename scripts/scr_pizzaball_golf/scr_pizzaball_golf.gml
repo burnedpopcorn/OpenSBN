@@ -32,6 +32,4 @@ function scr_pizzaball_golf()
                 x += player.xscale;
         }
     }
-    
-    exit;
 }

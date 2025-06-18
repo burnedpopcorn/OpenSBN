@@ -1,17 +1,13 @@
-function cutscene_check_collision(argument0, argument1)
+function cutscene_check_collision(obj1, obj2)
 {
-    var obj1 = argument0;
-    var obj2 = argument1;
-    var finish = 0;
+    var finish = false;
     
     with (obj1)
     {
         if (place_meeting(x, y, obj2))
-            finish = 1;
+            finish = true;
     }
     
     if (finish)
         cutscene_end_action();
-    
-    exit;
 }

@@ -136,5 +136,4 @@ function scr_initenemy()
     tauntspr = spr_null;
     storedspr = spr_null;
     taunttimer = 20;
-    exit;
 }

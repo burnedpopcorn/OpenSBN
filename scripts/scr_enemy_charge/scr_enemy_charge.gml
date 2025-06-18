@@ -64,9 +64,7 @@ function scr_enemy_charge()
                 hsp = 0;
         }
         else
-        {
             hsp = image_xscale * movespeed;
-        }
         
         if (((scr_solid(x + 1, y) && image_xscale == 1) || (scr_solid(x - 1, y) && image_xscale == -1)) && !place_meeting(x + sign(hsp), y, obj_slope))
             image_xscale *= -1;
@@ -113,6 +111,4 @@ function scr_enemy_charge()
         var _railinst = instance_place(x, y + 1, obj_railparent);
         hsp += (_railinst.movespeed * _railinst.dir);
     }
-    
-    exit;
 }

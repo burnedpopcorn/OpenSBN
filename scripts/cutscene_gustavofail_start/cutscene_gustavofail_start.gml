@@ -33,6 +33,4 @@ function cutscene_gustavofail_start()
         global.failcutscene = 0;
         cutscene_end_action();
     }
-    
-    exit;
 }

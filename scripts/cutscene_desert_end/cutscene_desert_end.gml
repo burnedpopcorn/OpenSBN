@@ -11,5 +11,4 @@ function cutscene_desert_end()
     global.desertcutscene = 1;
     quick_ini_write_real(get_savefile_ini(), "cutscene", "desert", 1);
     cutscene_end_action();
-    exit;
 }

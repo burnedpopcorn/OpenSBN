@@ -187,9 +187,7 @@ function scr_enemy_grabbed()
             hitX = x;
             hitY = y;
             
-            if (object_index != obj_noisey && object_index != obj_tank)
-            {
-            }
+            if (object_index != obj_noisey && object_index != obj_tank) { }
             
             _obj_player.movespeed = 0;
             _obj_player.hitLag = lag;
@@ -552,7 +550,6 @@ function scr_enemy_grabbed()
     
     sprite_index = stunfallspr;
     image_speed = 0.35;
-    exit;
 }
 
 function check_grabbed_solid(argument0)

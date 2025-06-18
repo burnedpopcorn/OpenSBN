@@ -95,13 +95,9 @@ function scr_pizzaball_normal()
     if (sprite_index != spr_pizzaball_hitwall && sprite_index != spr_pizzaball_hitwall2)
     {
         if (thrown || kicked)
-        {
             sprite_index = spr_pizzaball_roll;
-        }
         else if (chair)
-        {
             sprite_index = spr_pizzaball_idle1;
-        }
         else if (sprite_index == spr_pizzaball_roll)
         {
             if (!scr_slope())
@@ -116,9 +112,7 @@ function scr_pizzaball_normal()
             }
         }
         else if (floor(image_index) == (image_number - 1))
-        {
             sprite_index = spr_pizzaball_idle2;
-        }
     }
 }
 

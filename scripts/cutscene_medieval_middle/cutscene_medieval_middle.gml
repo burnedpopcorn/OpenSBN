@@ -1,13 +1,13 @@
 function cutscene_medieval_middle()
 {
-    var _finish = 0;
+    var _finish = false;
     
     with (obj_knightplatform)
     {
         y = approach(y, y_to, 5);
         
         if (y == y_to)
-            _finish = 1;
+            _finish = true;
     }
     
     with (obj_camera)
@@ -18,6 +18,4 @@ function cutscene_medieval_middle()
     
     if (_finish)
         cutscene_end_action();
-    
-    exit;
 }

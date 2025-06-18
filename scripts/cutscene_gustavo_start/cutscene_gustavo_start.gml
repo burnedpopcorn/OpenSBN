@@ -37,6 +37,4 @@ function cutscene_gustavo_start()
         
         cutscene_end_action();
     }
-    
-    exit;
 }

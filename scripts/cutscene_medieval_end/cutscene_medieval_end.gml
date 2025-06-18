@@ -16,5 +16,4 @@ function cutscene_medieval_end()
     global.medievalcutscene = 1;
     quick_ini_write_real(get_savefile_ini(), "cutscene", "medieval", 1);
     cutscene_end_action();
-    exit;
 }

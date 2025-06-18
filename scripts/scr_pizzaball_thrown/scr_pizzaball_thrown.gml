@@ -27,9 +27,7 @@ function scr_pizzaball_thrown()
                     bounced = 1;
                 }
                 else
-                {
                     substate = states.crouch;
-                }
             }
             
             if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope) && !place_meeting(x + hsp, y, obj_destructibles))
@@ -58,6 +56,4 @@ function scr_pizzaball_thrown()
             
             break;
     }
-    
-    exit;
 }

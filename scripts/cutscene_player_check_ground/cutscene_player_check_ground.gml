@@ -1,12 +1,11 @@
-function cutscene_player_check_ground(argument0)
+function cutscene_player_check_ground(player)
 {
-    var player = argument0;
-    var finish = 0;
+    var finish = false;
     
     with (player)
     {
         if (grounded)
-            finish = 1;
+            finish = true;
     }
     
     if (finish)

@@ -7,5 +7,4 @@ function cutscene_camera_shake(argument0, argument1)
     }
     
     cutscene_end_action();
-    exit;
 }

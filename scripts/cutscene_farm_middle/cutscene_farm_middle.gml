@@ -1,6 +1,6 @@
 function cutscene_farm_middle()
 {
-    var _finish = 0;
+    var _finish = false;
     
     with (obj_mort_inline)
     {
@@ -8,16 +8,14 @@ function cutscene_farm_middle()
         x += (dir * 5);
         
         if (!point_in_camera(x, y, view_camera[0]))
-            _finish = 1;
+            _finish = true;
     }
     
     if (!instance_exists(obj_mort_inline))
-        _finish = 1;
+        _finish = true;
     
     if (_finish)
         cutscene_end_action();
-    
-    exit;
 }
 
 function cutscene_farm_end()
@@ -34,5 +32,4 @@ function cutscene_farm_end()
     global.levelcompletename = -4;
     quick_ini_write_real(get_savefile_ini(), "cutscene", "farm", 1);
     cutscene_end_action();
-    exit;
 }

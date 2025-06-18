@@ -1,6 +1,6 @@
 function cutscene_player_pos_lerp(argument0, argument1, argument2)
 {
-    var _finish = 0;
+    var _finish = false;
     
     with (obj_player1)
     {
@@ -13,12 +13,10 @@ function cutscene_player_pos_lerp(argument0, argument1, argument2)
             y = lerp(y, argument1, argument2);
             
             if (x > (argument0 - 4) && x < (x + 4) && y > (argument1 - 4) && y < (argument1 + 4))
-                _finish = 1;
+                _finish = true;
         }
     }
     
     if (_finish)
         cutscene_end_action();
-    
-    exit;
 }

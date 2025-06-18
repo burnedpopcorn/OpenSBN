@@ -1,10 +1,6 @@
-function cutscene_move_player(argument0, argument1, argument2, argument3)
+function cutscene_move_player(player, x_to, max_hsp, threshold)
 {
-    var player = argument0;
-    var x_to = argument1;
-    var max_hsp = argument2;
-    var threshold = argument3;
-    var finish = 0;
+    var finish = false;
     
     with (player)
     {
@@ -32,11 +28,11 @@ function cutscene_move_player(argument0, argument1, argument2, argument3)
         else
         {
             hsp = 0;
-            finish = 1;
+            finish = true;
         }
         
         if (place_meeting(x + hsp, y, obj_solid))
-            finish = 1;
+            finish = true;
     }
     
     if (finish)
@@ -53,6 +49,4 @@ function cutscene_move_player(argument0, argument1, argument2, argument3)
         if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)
             steppy = 0;
     }
-    
-    exit;
 }

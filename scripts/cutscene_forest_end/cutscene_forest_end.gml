@@ -12,7 +12,6 @@ function cutscene_forest_end()
     global.levelcompletename = -4;
     quick_ini_write_real(get_savefile_ini(), "cutscene", "forest", 1);
     cutscene_end_action();
-    exit;
 }
 
 function cutscene_beach_end()
@@ -29,7 +28,6 @@ function cutscene_beach_end()
     global.levelcompletename = -4;
     quick_ini_write_real(get_savefile_ini(), "cutscene", "beach", 1);
     cutscene_end_action();
-    exit;
 }
 
 function cutscene_sewer_end()
@@ -46,5 +44,4 @@ function cutscene_sewer_end()
     global.levelcompletename = -4;
     quick_ini_write_real(get_savefile_ini(), "cutscene", "sewer", 1);
     cutscene_end_action();
-    exit;
 }

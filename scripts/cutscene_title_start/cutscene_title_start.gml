@@ -4,25 +4,22 @@ function cutscene_title_start()
         state = states.actor;
     
     cutscene_end_action();
-    exit;
 }
 
 function cutscene_title_middle()
 {
-    var finish = 0;
+    var finish = false;
     
     with (obj_title)
     {
         collide = 1;
         
         if (grounded)
-            finish = 1;
+            finish = true;
     }
     
     if (finish)
         cutscene_end_action();
-    
-    exit;
 }
 
 function cutscene_title_end()
@@ -42,6 +39,4 @@ function cutscene_title_end()
         with (obj_inputController)
             press_start = 1;
     }
-    
-    exit;
 }

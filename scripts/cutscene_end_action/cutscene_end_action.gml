@@ -9,6 +9,4 @@ function cutscene_end_action()
         else
             scene = 0;
     }
-    
-    exit;
 }

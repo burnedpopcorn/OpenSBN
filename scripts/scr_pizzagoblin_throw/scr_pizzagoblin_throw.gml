@@ -170,9 +170,7 @@ function scr_pizzagoblin_throwOLD()
                 break;
             
             case obj_noisegoblin:
-                with (instance_create(x, y, obj_noisegoblin_arrow))
-                {
-                }
+                with (instance_create(x, y, obj_noisegoblin_arrow)) { }
                 
                 break;
             
@@ -386,6 +384,4 @@ function scr_pizzagoblin_throwOLD()
         hsp += 0.1;
     else if (!grounded && hsp > 0)
         hsp -= 0.1;
-    
-    exit;
 }

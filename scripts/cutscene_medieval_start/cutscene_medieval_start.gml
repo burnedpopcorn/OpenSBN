@@ -23,7 +23,6 @@ function cutscene_medieval_start()
     }
     
     cutscene_end_action();
-    exit;
 }
 
 function cutscene_medieval_start2()
@@ -35,5 +34,4 @@ function cutscene_medieval_start2()
     }
     
     cutscene_end_action();
-    exit;
 }

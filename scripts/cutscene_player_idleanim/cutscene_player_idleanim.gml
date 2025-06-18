@@ -7,5 +7,4 @@ function cutscene_player_idleanim()
     }
     
     cutscene_end_action();
-    exit;
 }

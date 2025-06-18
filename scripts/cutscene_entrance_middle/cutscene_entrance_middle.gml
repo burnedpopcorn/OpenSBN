@@ -7,5 +7,4 @@ function cutscene_entrance_middle()
     }
     
     cutscene_end_action();
-    exit;
 }

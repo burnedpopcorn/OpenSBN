@@ -10,5 +10,4 @@ function cutscene_set_player_actor()
     }
     
     cutscene_end_action();
-    exit;
 }
