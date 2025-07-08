@@ -1,4 +1,2 @@
-function scr_ragecheck()
-{
-    exit;
-}
+// unused
+function scr_ragecheck() { }

@@ -27,9 +27,7 @@ function scr_do_rank(argument0 = true, argument1 = false)
     if (!global.tutorial_room)
     {
         if (!argument1)
-        {
             scr_savescore(global.leveltosave);
-        }
         else
         {
             ini_open_from_string(obj_savesystem.ini_str);

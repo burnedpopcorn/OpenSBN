@@ -15,6 +15,4 @@ function scr_kungfu()
         sprite_index = choose(spr_kungfu1, spr_kungfu2, spr_kungfu3);
     else
         sprite_index = choose(spr_kungfuair1transition, spr_kungfuair2transition, spr_kungfuair3transition);
-    
-    exit;
 }

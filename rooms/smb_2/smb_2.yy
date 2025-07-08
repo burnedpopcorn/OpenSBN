@@ -163,7 +163,7 @@
   ],
   "parent": {
     "name": "SMB2",
-    "path": "folders/Rooms/Unused VirDesert Levels/Levels/SMB2.yy",
+    "path": "folders/Rooms/Levels/SMB2.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

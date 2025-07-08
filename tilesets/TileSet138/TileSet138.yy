@@ -13,7 +13,7 @@
   "out_tilevborder": 2,
   "parent": {
     "name": "SMB2",
-    "path": "folders/Tile Sets/Unused/SMB2.yy",
+    "path": "folders/Tile Sets/Levels/SMB2.yy",
   },
   "spriteId": {
     "name": "_decompiled_TileSet138",

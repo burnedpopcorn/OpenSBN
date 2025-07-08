@@ -14,8 +14,6 @@ function state_turret_normal()
         charge_buffer = charge_max;
         stopfiring = 100;
     }
-    
-    exit;
 }
 
 function state_turret_charge()
@@ -23,9 +21,7 @@ function state_turret_charge()
     sprite_index = shootspr;
     
     if (charge_buffer > 0)
-    {
         charge_buffer--;
-    }
     else if (can_fire)
     {
         with (instance_create(x, y, obj_enemybullet))
@@ -45,6 +41,4 @@ function state_turret_charge()
         state = states.normal;
         charge_buffer = charge_max;
     }
-    
-    exit;
 }

@@ -1,4 +1,2 @@
-function scr_losepoints()
-{
-    exit;
-}
+// unused
+function scr_losepoints() { }
