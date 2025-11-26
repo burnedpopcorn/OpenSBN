@@ -17,7 +17,7 @@ if (obj_player1.sprite_index == spr_player_breakdance && dancecount > 0)
         
         with (obj_music)
         {
-            if (music != -4)
+            if (music != noone)
                 fmod_event_setParameter(music.music_inst, "state3", 1, true);
         }
         

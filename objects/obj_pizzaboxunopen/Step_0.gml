@@ -195,7 +195,7 @@ if (place_meeting(x, y, obj_player1) && sprite_index == spr_pizzaboxunopen)
         if (isWater)
             introspr = spr_toppin_fruisetta_taunt;
         
-        scr_queueToolTipPrompt("You found a super secret Savouri!", -4);
+        scr_queueToolTipPrompt("You found a super secret Savouri!", noone);
         
         with (instance_create(x, y - 25, content))
         {

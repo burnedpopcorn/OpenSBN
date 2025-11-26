@@ -4,7 +4,7 @@ if (instance_exists(obj_hungrypillar))
     
     if (ds_list_find_index(global.saveroom, pillar) != -1)
     {
-        pillar = -4;
+        pillar = noone;
         instance_destroy();
     }
 }

@@ -1,8 +1,8 @@
 draw_self();
 
-if (object_list != -4)
+if (object_list != noone)
 {
-    var text = -4;
+    var text = noone;
     var xx = 0;
     var yy = 0;
     
@@ -38,7 +38,7 @@ if (object_list != -4)
     surface_reset_target();
     draw_surface(surface, x, y);
     
-    if (text != -4)
+    if (text != noone)
     {
         draw_set_font(global.editorfont);
         draw_set_halign(fa_center);

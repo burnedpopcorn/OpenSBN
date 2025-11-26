@@ -6,7 +6,7 @@ switch (targetRoom)
         break;
     
     default:
-        global.levelcompletename = -4;
+        global.levelcompletename = noone;
         break;
 }
 
@@ -18,7 +18,7 @@ with (obj_player1)
     {
         stop_music(false);
         global.leveltosave = other.level;
-        global.leveltorestart = -4;
+        global.leveltorestart = noone;
         backtohubstartx = x;
         backtohubstarty = y;
         backtohubroom = room;
@@ -52,7 +52,7 @@ with (obj_player2)
     {
         stop_music();
         global.leveltosave = other.level;
-        global.leveltorestart = -4;
+        global.leveltorestart = noone;
         backtohubstartx = x;
         backtohubstarty = y;
         backtohubroom = room;

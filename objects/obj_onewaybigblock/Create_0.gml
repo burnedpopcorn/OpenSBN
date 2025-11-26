@@ -2,7 +2,7 @@ if (room == rm_blank)
     exit;
 
 depth = 1;
-solid_inst = -4;
+solid_inst = noone;
 
 if (image_xscale == 1)
 {

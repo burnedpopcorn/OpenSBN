@@ -357,7 +357,7 @@ function scr_init()
     global.pigreduction = 0;
     global.pigtotal = 0;
     global.levelcomplete = 0;
-    global.levelcompletename = -4;
+    global.levelcompletename = noone;
     global.midwaytreasure = 0;
     global.watertreasure = 0;
     global.newtoppin[0] = 0;
@@ -372,8 +372,8 @@ function scr_init()
     global.lastrank = "none";
     global.throwarc = 1;
     global.hidetiles = 0;
-    global.leveltosave = -4;
-    global.leveltorestart = -4;
+    global.leveltosave = noone;
+    global.leveltorestart = noone;
     global.combodropped = 0;
     global.tauntcount = 0;
     global.RedCoinMax = 600;
@@ -445,7 +445,7 @@ function scr_init()
         {
             closeFunction: scr_shell_closeconsole,
             openFunction: scr_shell_openconsole,
-            openKey: 117,
+            openKey: vk_f6,
             screenAnchorPointV: "top",
             prompt: "how bo ",
             saveHistory: true,
@@ -484,14 +484,14 @@ function scr_init()
     global.showing_collisions = 0;
     global.performance_mode = 0;
     global.horse = 0;
-    global.checkpoint_room = -4;
+    global.checkpoint_room = noone;
     global.checkpoint_door = "A";
     global.kungfu = 0;
     global.graffiticount = 0;
     global.graffitimax = 20;
     global.noisejetpack = 0;
     global.hasfarmer = array_create(3, 0);
-    global.savedattackstyle = -4;
+    global.savedattackstyle = noone;
     global.bobby_x = -100;
     global.bobby_y = -100;
     global.bobbydead = false;

@@ -2,7 +2,7 @@ scr_initenemy();
 underground = 1;
 threshold_x = 400;
 threshold_y = 96;
-targetplayer = -4;
+targetplayer = noone;
 running = 0;
 scared_max = 30;
 runmovespeed = 0;

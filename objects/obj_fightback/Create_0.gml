@@ -1,4 +1,4 @@
-pillar = -4;
+pillar = noone;
 fight = false;
-player = -4;
+player = noone;
 punched = false;

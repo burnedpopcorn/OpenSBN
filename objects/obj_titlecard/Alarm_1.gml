@@ -8,7 +8,7 @@ for (var i = 0; i < array_length(group_arr); i++)
         array_push(tex_arr, _tex_array[j]);
 }
 
-if (offload_arr != -4)
+if (offload_arr != noone)
 {
     for (var i = 0; i < array_length(offload_arr); i++)
     {

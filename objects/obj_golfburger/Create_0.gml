@@ -1,5 +1,5 @@
 scr_initenemy();
-golfid = -4;
+golfid = noone;
 shot = 0;
 shootdir = 0;
 grav = 0.5;

@@ -1,4 +1,4 @@
-if (playerid != -4)
+if (playerid != noone)
 {
     with (playerid)
     {
@@ -35,7 +35,7 @@ if (!got)
                     {
                         got = 1;
                         
-                        if (got_func != -4)
+                        if (got_func != noone)
                             got_func();
                         
                         alarm[0] = 150;

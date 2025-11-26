@@ -91,10 +91,10 @@ function create_buttons_array(argument0, argument1, argument2, argument3, argume
             sprite_set_size(xsize, argument3);
             label = b[0];
             
-            if (b[1] != -4)
+            if (b[1] != noone)
                 OnSelect = method(id, b[1]);
             
-            if (b[2] != -4)
+            if (b[2] != noone)
                 OnDeselect = method(id, b[2]);
             
             parent = other.id;

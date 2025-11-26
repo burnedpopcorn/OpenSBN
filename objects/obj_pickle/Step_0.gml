@@ -2,7 +2,7 @@ if (room == rm_blank)
     exit;
 
 if (!instance_exists(cloneid))
-    cloneid = -4;
+    cloneid = noone;
 
 switch (state)
 {
@@ -172,7 +172,7 @@ if (state == states.chase)
             
             state = states.pizzagoblinthrow;
             
-            if (elite && cloneid == -4)
+            if (elite && cloneid == noone)
             {
                 var tx = image_xscale * 32;
                 

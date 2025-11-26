@@ -6,7 +6,7 @@ with (instance_place(x + hsp, y, obj_grape))
     instance_destroy();
 }
 
-if (baddieID != -4 && !instance_exists(baddieID) && !player)
+if (baddieID != noone && !instance_exists(baddieID) && !player)
 {
     instance_create(x, y, obj_genericpoofeffect);
     instance_destroy();

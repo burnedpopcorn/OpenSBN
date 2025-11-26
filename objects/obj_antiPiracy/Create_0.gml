@@ -6,7 +6,7 @@ alarm[0] = 600;
 
 with (obj_music)
 {
-    if (music != -4)
+    if (music != noone)
         fmod_event_stop(music.music_inst, true);
 }
 

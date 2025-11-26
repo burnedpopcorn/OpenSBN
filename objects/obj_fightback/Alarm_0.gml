@@ -1,4 +1,4 @@
-if (player == -4 || pillar == -4 || !instance_exists(pillar))
+if (player == noone || pillar == noone || !instance_exists(pillar))
     exit;
 
 mail_trigger(mailtriggers.eeriepillarhitplayer);

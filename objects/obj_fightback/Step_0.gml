@@ -1,4 +1,4 @@
-if (!instance_exists(pillar) || pillar == -4)
+if (!instance_exists(pillar) || pillar == noone)
 {
     instance_destroy();
     exit;

@@ -25,7 +25,7 @@ parrycount = 0;
 transitionstate = 0;
 bombtimer = 0;
 hasbomb = 0;
-bombgrabID = -4;
+bombgrabID = noone;
 knightbuffer = 0;
 spawnpool = [obj_tack, obj_grape];
 hitplayer = 0;
@@ -38,7 +38,7 @@ function player_hurt(argument0, argument1)
     {
         SUPER_player_hurt(argument0, argument1);
     }
-    else if ((argument1.state != states.backbreaker || argument1.parry_inst == -4) && argument1.state != states.Parry && ds_list_find_index(hitlist, argument1) == -1)
+    else if ((argument1.state != states.backbreaker || argument1.parry_inst == noone) && argument1.state != states.Parry && ds_list_find_index(hitlist, argument1) == -1)
     {
         ds_list_add(hitlist, argument1);
         SUPER_player_hurt(argument0, argument1);

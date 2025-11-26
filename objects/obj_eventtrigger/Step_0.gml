@@ -1,4 +1,4 @@
-if (condition != -4 && condition())
+if (condition != noone && condition())
 {
     if ((!activated && flags.do_once) || !flags.do_once)
     {
@@ -10,7 +10,7 @@ if (condition != -4 && condition())
         activated = true;
     }
 }
-else if (reverse_output != -4 && condition != -4 && !condition())
+else if (reverse_output != noone && condition != noone && !condition())
 {
     if ((activated && flags.do_once) || !flags.do_once)
     {

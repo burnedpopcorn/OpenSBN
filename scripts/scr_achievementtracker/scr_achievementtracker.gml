@@ -5,14 +5,14 @@ function add_achievement_update(argument0, argument1, argument2, argument3)
         name: argument0,
         update_rate: argument1,
         frames: 0,
-        update_func: -4,
-        creation_code: -4,
+        update_func: noone,
+        creation_code: noone,
         variables: ds_map_create(),
         unlocked: 0
     };
     q.update_func = method(q, argument3);
     
-    if (create_func != -4)
+    if (create_func != noone)
     {
         q.creation_code = method(q, argument2);
         q.creation_code();
@@ -27,14 +27,14 @@ function add_achievement_notify(argument0, argument1, argument2)
     var q = 
     {
         name: argument0,
-        creation_code: -4,
-        func: -4,
+        creation_code: noone,
+        func: noone,
         unlocked: 0,
         variables: ds_map_create()
     };
     q.func = method(q, argument2);
     
-    if (argument1 != -4)
+    if (argument1 != noone)
     {
         q.creation_code = method(q, argument1);
         q.creation_code();
@@ -135,7 +135,7 @@ function achievements_load(argument0)
 function achievement_get_struct(argument0)
 {
     var l = obj_achievementtracker.achievements_update;
-    var b = -4;
+    var b = noone;
     var q;
     
     for (var i = 0; i < ds_list_size(l); i++)
@@ -149,7 +149,7 @@ function achievement_get_struct(argument0)
         }
     }
     
-    if (b == -4)
+    if (b == noone)
     {
         l = obj_achievementtracker.achievements_notify;
         

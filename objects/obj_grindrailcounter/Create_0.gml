@@ -6,7 +6,7 @@ condition = function()
 {
     var p = instance_place(x, y, obj_player1);
     
-    if (p != -4)
+    if (p != noone)
         return p.state == states.grind;
     
     return false;

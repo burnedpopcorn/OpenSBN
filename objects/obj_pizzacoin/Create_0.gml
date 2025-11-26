@@ -6,6 +6,6 @@ grav = 0.5;
 if (obj_player1.character == "S")
     instance_destroy();
 
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

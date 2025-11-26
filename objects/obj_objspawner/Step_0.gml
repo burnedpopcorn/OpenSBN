@@ -1,2 +1,2 @@
-if (func != -4)
+if (func != noone)
     func();

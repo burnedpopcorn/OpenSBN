@@ -1,6 +1,6 @@
 scr_initenemy();
 cooldown = 50;
-hitboxID = -4;
+hitboxID = noone;
 possess_movespeed = 0;
 parryable = 1;
 invincible = 0;

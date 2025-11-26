@@ -14,7 +14,7 @@ else
 {
     fadealpha = approach(fadealpha, 0, 0.1);
     
-    if (fadealpha <= 0 && !music && title_music != -4)
+    if (fadealpha <= 0 && !music && title_music != noone)
     {
         music = 1;
         event_play_oneshot(title_music);

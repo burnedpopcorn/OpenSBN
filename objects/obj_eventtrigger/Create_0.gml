@@ -1,7 +1,7 @@
 inst_num = instance_number(obj_eventtrigger);
-condition = -4;
-output = -4;
-reverse_output = -4;
+condition = noone;
+output = noone;
+reverse_output = noone;
 
 default_condition = function()
 {
@@ -23,4 +23,4 @@ flags =
 activated = false;
 condition = default_condition;
 output = default_output;
-reverse_output = -4;
+reverse_output = noone;

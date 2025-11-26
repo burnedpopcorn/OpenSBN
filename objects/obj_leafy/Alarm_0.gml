@@ -38,7 +38,7 @@ while (!place_meeting(x, y + 1, obj_solid))
     
     var _col = instance_place(x, y + i + 1, obj_solid);
     
-    if (_col == -4)
+    if (_col == noone)
     {
         i++;
         continue;

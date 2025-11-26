@@ -2,7 +2,7 @@ event_inherited();
 
 got_func = function()
 {
-    if (global.beercutscene == -4 || !global.beercutscene)
+    if (global.beercutscene == noone || !global.beercutscene)
     {
         global.beercutscene = 1;
         quick_ini_write_real(get_savefile_ini(), "cutscene", "beer", 1);
@@ -11,13 +11,13 @@ got_func = function()
     exit;
 };
 
-if (global.beercutscene == -4)
+if (global.beercutscene == noone)
     global.beercutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "beer", 0);
 
 if (global.beercutscene)
     instance_destroy();
 
-if (global.pinballcutscene == -4)
+if (global.pinballcutscene == noone)
     global.pinballcutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "pinball", 0);
 
 if (!global.pinballcutscene && !global.levelcomplete)

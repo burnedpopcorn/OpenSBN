@@ -1,4 +1,4 @@
-if (baddieID != -4 && !instance_exists(baddieID))
+if (baddieID != noone && !instance_exists(baddieID))
     exit;
 
 if (instance_exists(baddieID))

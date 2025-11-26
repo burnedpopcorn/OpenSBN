@@ -29,7 +29,7 @@ defaultwidth = global.resolutions[resolution.normal][1][0];
 defaultheight = global.resolutions[resolution.normal][1][1];
 displaywidth = defaultwidth;
 displayheight = defaultheight;
-gui_surface = -4;
+gui_surface = noone;
 application_surface_draw_enable(false);
 __display_set_gui_size_hook(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
 alarm[0] = 1;

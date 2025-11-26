@@ -34,13 +34,11 @@ if (activated == 1)
         highest_y = -250;
         var _instY = collision_line(obj_player1.x, obj_player1.y, obj_player1.x, obj_player1.y - 270, obj_solid, false, true);
         
-        if (_instY != -4)
+        if (_instY != noone)
             highest_y = -abs(obj_player1.y - (_instY.y + _instY.sprite_height)) - 32;
         
         if (random_buffer > 0)
-        {
             random_buffer--;
-        }
         else
         {
             var c = 0;
@@ -69,7 +67,7 @@ if (activated == 1)
                         {
                             image_index = 8;
                             
-                            if (!place_meeting(x, y, obj_solid) && !place_meeting(x, y, obj_slope) && _col == -4)
+                            if (!place_meeting(x, y, obj_solid) && !place_meeting(x, y, obj_slope) && _col == noone)
                             {
                                 shot = 1;
                                 var n = irandom(array_length(content) - 1);
