@@ -6,15 +6,15 @@ if (!global.panic)
     {
         var pm = music;
         
-        if (pm == -4 || pm.music_name != nm.music_name)
+        if (pm == noone || pm.music_name != nm.music_name)
         {
             alarm[0] = 1;
             
-            if (pm != -4)
+            if (pm != noone)
             {
                 fmod_event_stop(pm.music_inst, true);
                 
-                if (pm.secret_inst != -4)
+                if (pm.secret_inst != noone)
                     fmod_event_stop(pm.secret_inst, true);
             }
             
@@ -33,13 +33,13 @@ if (!global.panic)
         fmod_event_stop(pillarMusic, true);
     }
     
-    if (music != -4 && music.roomstart != -4)
+    if (music != noone && music.roomstart != noone)
         music.roomstart(room, music.music_inst, music.secret_inst);
 }
 
 if (global.inSecret)
 {
-    if (music != -4 && music.secret_inst != -4)
+    if (music != noone && music.secret_inst != noone)
     {
         fmod_event_play(music.secret_inst);
         savedMusicPos = fmod_event_getTimelinePosition(music.music_inst);
@@ -60,7 +60,7 @@ else if (global.inSecretend)
 {
     global.inSecretend = false;
     
-    if (music != -4)
+    if (music != noone)
     {
         fmod_event_stop(music.secret_inst, true);
         fmod_event_setTimelinePosition(music.music_inst, savedMusicPos);

@@ -29,7 +29,7 @@ function cutscene_farm_end()
     
     global.levelcomplete = 0;
     global.farmcutscene = 1;
-    global.levelcompletename = -4;
+    global.levelcompletename = noone;
     quick_ini_write_real(get_savefile_ini(), "cutscene", "farm", 1);
     cutscene_end_action();
 }

@@ -6,7 +6,7 @@ scr_init_saveData();
 with (obj_player1)
 {
     global.leveltosave = "hub";
-    global.leveltorestart = -4;
+    global.leveltorestart = noone;
     sprite_index = spr_victory;
     visible = true;
     image_index = 0;

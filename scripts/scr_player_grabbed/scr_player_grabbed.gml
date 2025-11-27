@@ -103,7 +103,7 @@ function state_player_grabbed()
         
         state = states.hurt;
         
-        if (scr_solid(x, y) || collision_line(x, y, _obj_player.x, _obj_player.y, obj_solid, false, true) != -4)
+        if (scr_solid(x, y) || collision_line(x, y, _obj_player.x, _obj_player.y, obj_solid, false, true) != noone)
         {
             x = _obj_player.x;
             y = _obj_player.y;

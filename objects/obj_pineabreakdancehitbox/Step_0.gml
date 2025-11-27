@@ -7,7 +7,7 @@ if (!instance_exists(ID))
 if (ID.state != states.punch)
 {
     instance_destroy();
-    ID.breakdanceinst = -4;
+    ID.breakdanceinst = noone;
     exit;
 }
 

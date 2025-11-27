@@ -58,7 +58,7 @@ if (global.panic)
         fmod_event_setParameter(escapeMusic, "state2", 0, 1);
         fmod_event_stop(pillarMusic, true);
         
-        if (music != -4)
+        if (music != noone)
         {
             fmod_event_stop(music.music_inst, true);
             fmod_event_stop(music.secret_inst, true);
@@ -77,7 +77,7 @@ else
     fmod_event_stop(escapeMusic, true);
 }
 
-if (music != -4 && !inPause)
+if (music != noone && !inPause)
 {
     if (variable_struct_exists(music, "music_name"))
     {

@@ -3,8 +3,8 @@ function state_player_ratmount()
     move = input_check("right") - input_check("left");
     doublejump = 0;
     
-    if (ratgrabbedID != -4 && !instance_exists(ratgrabbedID))
-        ratgrabbedID = -4;
+    if (ratgrabbedID != noone && !instance_exists(ratgrabbedID))
+        ratgrabbedID = noone;
     
     hsp = movespeed;
     
@@ -76,7 +76,7 @@ function state_player_ratmount()
                 {
                     sprite_index = spr_player_ratmountidle;
                     
-                    if (ratgrabbedID == -4)
+                    if (ratgrabbedID == noone)
                     {
                         if (idle < 400)
                             idle++;
@@ -257,7 +257,7 @@ function ratmount_kickbrick()
 
 function ratmount_shootpowerup()
 {
-    if (input_check_pressed("shoot") && ratpowerup != -4 && ratshootbuffer <= 0)
+    if (input_check_pressed("shoot") && ratpowerup != noone && ratshootbuffer <= 0)
     {
         switch (ratpowerup)
         {

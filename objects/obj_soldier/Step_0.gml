@@ -76,7 +76,7 @@ switch (state)
             var colX = player.x > (x - threshold_x) && player.x < (x + threshold_x);
             var colY = player.y > (y - threshold_y) && player.y < (y + threshold_y);
             
-            if (sprite_index != scaredspr && col == -4 && col2 == -4 && colX && colY)
+            if (sprite_index != scaredspr && col == noone && col2 == noone && colX && colY)
             {
                 if (x != player.x)
                     image_xscale = sign(player.x - x);
@@ -139,7 +139,7 @@ switch (state)
             var colX = player.x > (x - threshold_x) && player.x < (x + threshold_x);
             var colY = player.y > (y - threshold_y) && player.y < (y + threshold_y);
             
-            if (sprite_index != scaredspr && col == -4 && col2 == -4 && colX && colY)
+            if (sprite_index != scaredspr && col == noone && col2 == noone && colX && colY)
             {
                 if (x != player.x)
                     image_xscale = sign(player.x - x);

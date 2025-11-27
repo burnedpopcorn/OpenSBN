@@ -76,7 +76,7 @@ if (state == states.walk)
     {
         cooldown--;
     }
-    else if (t && collision_line(x, y, playerid.x, playerid.y, obj_solid, false, true) == -4)
+    else if (t && collision_line(x, y, playerid.x, playerid.y, obj_solid, false, true) == noone)
     {
         var b = id;
         
@@ -95,7 +95,7 @@ if (state == states.walk)
                 if (id != b)
                     leaderID = b;
                 else
-                    leaderID = -4;
+                    leaderID = noone;
             }
         }
     }
@@ -126,9 +126,9 @@ else if (state == states.punch)
     hsp = image_xscale * attackspeed;
     var q = outofsight;
     
-    if (leaderID == -4)
+    if (leaderID == noone)
     {
-        if (!t || collision_line(x, y, playerid.x, playerid.y, obj_solid, true, false) != -4)
+        if (!t || collision_line(x, y, playerid.x, playerid.y, obj_solid, true, false) != noone)
             outofsight = 1;
         
         if (t)
@@ -140,7 +140,7 @@ else if (state == states.punch)
     }
     else
     {
-        leaderID = -4;
+        leaderID = noone;
     }
     
     if (outofsight)
@@ -171,10 +171,10 @@ else if (state == states.punch)
         image_xscale *= -1;
 }
 
-if (state != states.punch && hitboxID != -4 && instance_exists(hitboxID))
+if (state != states.punch && hitboxID != noone && instance_exists(hitboxID))
 {
     instance_destroy(hitboxID);
-    hitboxID = -4;
+    hitboxID = noone;
 }
 
 if (state == states.stun && stunned > 100 && birdcreated == 0)

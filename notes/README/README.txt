@@ -1,5 +1,6 @@
-A Decompilation of Super Bo Noise
-	by burnedpopcorn180
+OpenSBN
+	A Decompilation of Super Bo Noise
+		by burnedpopcorn180
 
 Original GameMaker Version: 2023.11.1.129
 
@@ -11,12 +12,9 @@ This means that many old pizza tower objects and scripts still
 exist, and still reference assets like rooms and sprites that
 no longer exist and have been removed
 
-There are also some player states that have also have had their code removed, but can still be called
-(dont recommend it, since they will crash the game,
-since the state function code has been deleted, but the function is still being referenced)
-
 I dont plan on ever making a cleaned up version, because frankly i dont really like SBN anyways
 (its a mystery why im even making this decomp anyways...)
+but yeah keep that in mind
 
 --------------------------------------------------------
 

@@ -1,4 +1,4 @@
-if (followID != -4)
+if (followID != noone)
 {
     if (instance_exists(followID))
     {
@@ -6,7 +6,5 @@ if (followID != -4)
         y = followID.y;
     }
     else
-    {
         instance_destroy();
-    }
 }

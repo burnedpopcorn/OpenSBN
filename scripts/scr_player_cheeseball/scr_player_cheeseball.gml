@@ -14,7 +14,7 @@ function state_player_cheeseball()
     
     if (scr_slope())
     {
-        var _check = -4;
+        var _check = noone;
         
         if (place_meeting_slope(x, y + 1, false) && !instance_exists(_check))
         {

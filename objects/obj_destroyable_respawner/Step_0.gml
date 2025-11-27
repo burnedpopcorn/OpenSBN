@@ -2,7 +2,7 @@ if (spawn_buffer > 0)
 {
     spawn_buffer--;
 }
-else if (content != -4)
+else if (content != noone)
 {
     var _collidewithplayer = 0;
     

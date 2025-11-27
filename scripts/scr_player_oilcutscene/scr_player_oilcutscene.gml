@@ -65,7 +65,7 @@ function state_player_oilcutscene()
                     
                     with (obj_music)
                     {
-                        if (music != -4)
+                        if (music != noone)
                             fmod_event_play(music.music_inst);
                     }
                     

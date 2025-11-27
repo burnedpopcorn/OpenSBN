@@ -7,7 +7,7 @@ function scr_editor_init_buttons()
         
         OnSelect = function()
         {
-            var a = [["SAVE", -4, -4], ["LOAD LEVEL", -4, -4], ["EXIT EDITOR", -4, -4]];
+            var a = [["SAVE", noone, noone], ["LOAD LEVEL", noone, noone], ["EXIT EDITOR", noone, noone]];
             create_buttons_array(0, 64, 32, 24, a);
         };
         
@@ -48,7 +48,7 @@ function scr_editor_init_buttons()
                 }
             };
             
-            a = [["SCENERY", onselect, -4], ["ENEMIES", onselect, -4], ["TRIGGERS", onselect, -4]];
+            a = [["SCENERY", onselect, noone], ["ENEMIES", onselect, noone], ["TRIGGERS", onselect, noone]];
             create_buttons_array(0, 64, 32, 24, a);
             var t = 0;
             

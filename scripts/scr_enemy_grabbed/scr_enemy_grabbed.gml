@@ -522,7 +522,7 @@ function scr_enemy_grabbed()
             vsp = -6;
             _player.sprite_index = spr_pepperman_throw;
             _player.image_index = 0;
-            _player.pepperman_grabID = -4;
+            _player.pepperman_grabID = noone;
         }
         
         if (_player.input_check("attack") && _player.input_check("up"))
@@ -537,12 +537,12 @@ function scr_enemy_grabbed()
             vsp = -20;
             _player.sprite_index = spr_pepperman_throw;
             _player.image_index = 0;
-            _player.pepperman_grabID = -4;
+            _player.pepperman_grabID = noone;
         }
         
         if (_player.state != states.normal && _player.state != states.jump)
         {
-            _player.pepperman_grabID = -4;
+            _player.pepperman_grabID = noone;
             state = states.stun;
             pepperman_grab = 0;
         }
@@ -560,7 +560,7 @@ function check_grabbed_solid(argument0)
     if (instance_exists(argument0) && argument0.sprite_index == spr_playerN_piledriver)
         exit;
     
-    if ((!place_meeting(x, y, obj_destructibles) || (place_meeting(x, y, obj_onewaybigblock) && collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != -4)) && (scr_solid(x, y) || collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != -4))
+    if ((!place_meeting(x, y, obj_destructibles) || (place_meeting(x, y, obj_onewaybigblock) && collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != noone)) && (scr_solid(x, y) || collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != noone))
     {
         var _dist = abs(x - obj_player1.x);
         x = argument0.x;

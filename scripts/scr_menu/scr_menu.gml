@@ -50,7 +50,7 @@ function add_option_press(argument0, argument1, argument2, argument3)
     return b;
 }
 
-function add_option_toggle(argument0, argument1, argument2, argument3 = -4)
+function add_option_toggle(argument0, argument1, argument2, argument3 = noone)
 {
     b = 
     {
@@ -64,7 +64,7 @@ function add_option_toggle(argument0, argument1, argument2, argument3 = -4)
     return b;
 }
 
-function add_option_multiple(argument0, argument1, argument2, argument3, argument4 = -4)
+function add_option_multiple(argument0, argument1, argument2, argument3, argument4 = noone)
 {
     b = 
     {
@@ -89,7 +89,7 @@ function create_option_value(argument0, argument1, argument2 = 1)
     };
 }
 
-function add_option_slide(argument0, argument1, argument2, argument3 = -4, argument4 = -4, argument5 = -4)
+function add_option_slide(argument0, argument1, argument2, argument3 = noone, argument4 = noone, argument5 = noone)
 {
     b = 
     {
@@ -102,7 +102,7 @@ function add_option_slide(argument0, argument1, argument2, argument3 = -4, argum
         on_move: argument3,
         slidecount: 0,
         moving: 0,
-        sound: -4
+        sound: noone
     };
     array_push(argument0.options, b);
     return b;

@@ -10,7 +10,7 @@ else
 
 if (global.hurtcounter >= global.hurtmilestone && global.hurtcounter >= 10)
 {
-    scr_queueToolTipPrompt(string("[spr_tutorialfont]You have hurt Bo Noise {0} times...", global.hurtmilestone), -4, 150);
+    scr_queueToolTipPrompt(string("[spr_tutorialfont]You have hurt Bo Noise {0} times...", global.hurtmilestone), noone, 150);
     global.hurtmilestone += 10;
 }
 
@@ -35,18 +35,18 @@ else
 if (!global.showhud)
     visible = false;
 
-if (targetgolf != -4 && !instance_exists(targetgolf))
-    targetgolf = -4;
+if (targetgolf != noone && !instance_exists(targetgolf))
+    targetgolf = noone;
 
-if (targetgolf != -4 && !view_visible[1])
+if (targetgolf != noone && !view_visible[1])
 {
     view_visible[1] = true;
     view_enabled = true;
 }
 
-if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
+if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
 {
-    if (prompt != -4)
+    if (prompt != noone)
         prompt_buffer = 2;
     
     bubbleindex += image_speed;
@@ -64,8 +64,8 @@ if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
             case spr_tv_bubbleclose:
                 bubblespr = spr_tv_bubbleclosed;
                 
-                if (prompt == -4 || prompt == "")
-                    bubblespr = -4;
+                if (prompt == noone || prompt == "")
+                    bubblespr = noone;
                 
                 break;
         }
@@ -76,7 +76,7 @@ image_speed = 0.35;
 var _state = states.normal;
 var _tauntstate = states.normal;
 var _sp = spr_null;
-var _player = -4;
+var _player = noone;
 
 with (obj_player1)
 {
@@ -133,7 +133,7 @@ switch (state)
         var _transfo = true;
         var _transfospr = scr_tv_get_transfo_sprite();
         
-        if (_transfospr == spr_null || _transfospr == -4)
+        if (_transfospr == spr_null || _transfospr == noone)
             _transfo = false;
         else
             idlespr = _transfospr;
@@ -223,7 +223,7 @@ switch (state)
                 var b = ds_list_find_value(tvprompts_list, 0);
                 prompt_buffer = prompt_max;
                 
-                if (b[0] != "" && b[0] != -4)
+                if (b[0] != "" && b[0] != noone)
                 {
                     bubblespr = spr_tv_bubbleopen;
                     bubbleindex = 0;
@@ -233,15 +233,15 @@ switch (state)
                 }
                 else
                 {
-                    if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
+                    if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
                         bubblespr = spr_tv_bubbleclose;
                     
                     if (bubblespr == spr_tv_bubbleclosed)
-                        bubblespr = -4;
+                        bubblespr = noone;
                     
                     bubbleindex = 0;
                     promptx = promptxstart;
-                    prompt = -4;
+                    prompt = noone;
                 }
                 
                 if (b[1] == tvprompt.normal)
@@ -280,7 +280,7 @@ switch (state)
             }
             else
             {
-                bubblespr = -4;
+                bubblespr = noone;
             }
         }
         
@@ -317,7 +317,7 @@ switch (state)
         
         if (tv_trans >= sprite_get_number(spr_tv_whitenoise))
         {
-            if (expressionsprite != -4)
+            if (expressionsprite != noone)
             {
                 state = states.tv_expression;
                 sprite_index = expressionsprite;
@@ -349,7 +349,7 @@ switch (state)
                     else
                     {
                         state = states.tv_whitenoise;
-                        expressionsprite = -4;
+                        expressionsprite = noone;
                     }
                 }
                 
@@ -364,7 +364,7 @@ switch (state)
                     else
                     {
                         state = states.tv_whitenoise;
-                        expressionsprite = -4;
+                        expressionsprite = noone;
                     }
                 }
                 
@@ -374,7 +374,7 @@ switch (state)
                 if (global.combo < 3 || _player.isgustavo || _player.mach4mode || _player.state == states.hurt || _player.state == states.mach3 || _player.sprite_index == _player.spr_mach3boost || global.stylethreshold >= 3)
                 {
                     state = states.tv_whitenoise;
-                    expressionsprite = -4;
+                    expressionsprite = noone;
                     
                     if (_player.state == states.hurt || _player.state == states.fishhurt)
                         tv_do_expression(spr_tv_exprhurt);
@@ -390,7 +390,7 @@ switch (state)
                 else
                 {
                     state = states.tv_whitenoise;
-                    expressionsprite = -4;
+                    expressionsprite = noone;
                 }
                 
                 break;
@@ -401,7 +401,7 @@ switch (state)
                     if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)) && sprite_index != spr_mach3boost && mach4mode == 0)
                     {
                         other.state = states.tv_whitenoise;
-                        other.expressionsprite = -4;
+                        other.expressionsprite = noone;
                     }
                     
                     if (mach4mode)
@@ -416,7 +416,7 @@ switch (state)
                     if (mach4mode == 0 && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)))
                     {
                         other.state = states.tv_whitenoise;
-                        other.expressionsprite = -4;
+                        other.expressionsprite = noone;
                     }
                 }
                 
@@ -427,7 +427,7 @@ switch (state)
                 
                 with (obj_player1)
                 {
-                    if (_transfospr != spr_null && _transfospr != -4)
+                    if (_transfospr != spr_null && _transfospr != noone)
                         _transfo = true;
                     
                     if (isgustavo)
@@ -437,7 +437,7 @@ switch (state)
                 if (global.stylethreshold < 3 || _transfo || _player.mach4mode || _player.state == states.hurt || _player.state == states.mach3 || _player.sprite_index == _player.spr_mach3boost)
                 {
                     state = states.tv_whitenoise;
-                    expressionsprite = -4;
+                    expressionsprite = noone;
                 }
                 
                 break;
@@ -454,7 +454,7 @@ switch (state)
                 }
                 else if (floor(image_index) == (image_number - 1) && !instance_exists(obj_comboend))
                 {
-                    expressionsprite = -4;
+                    expressionsprite = noone;
                     expressionbuffer = 0;
                     state = states.tv_whitenoise;
                 }
@@ -476,7 +476,7 @@ switch (state)
                 if (!global.panic || _transfo || _player.mach4mode || _player.state == states.hurt || _player.state == states.mach3 || _player.sprite_index == _player.spr_mach3boost)
                 {
                     state = states.tv_whitenoise;
-                    expressionsprite = -4;
+                    expressionsprite = noone;
                 }
                 
                 break;
@@ -493,7 +493,7 @@ switch (state)
                 if (!_secret)
                 {
                     state = states.tv_whitenoise;
-                    expressionsprite = -4;
+                    expressionsprite = noone;
                 }
                 
                 break;
@@ -503,7 +503,7 @@ switch (state)
         {
             state = states.tv_whitenoise;
             tv_trans = 0;
-            expressionsprite = -4;
+            expressionsprite = noone;
         }
         
         break;
@@ -519,7 +519,7 @@ var change_pos = 0;
 if (obj_player1.x > (room_width - 224) && obj_player1.y < 387)
     change_pos = 1;
 
-if (bubblespr != -4 && obj_player1.x > 316 && obj_player1.y < 101)
+if (bubblespr != noone && obj_player1.x > 316 && obj_player1.y < 101)
     change_pos = 1;
 
 var spd = 15;

@@ -149,6 +149,6 @@ function scr_do_rank(argument0 = true, argument1 = false)
     image_index = 0;
     global.panic = false;
     global.snickchallenge = false;
-    global.leveltorestart = -4;
+    global.leveltorestart = noone;
     gamesave_async_save();
 }

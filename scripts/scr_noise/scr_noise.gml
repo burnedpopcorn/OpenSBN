@@ -31,7 +31,7 @@ function scr_noise_walk()
         
         scr_noise_do_jump();
     }
-    else if (attackpool != -4)
+    else if (attackpool != noone)
     {
         if (attackbuffer > 0)
         {
@@ -58,7 +58,7 @@ function scr_noise_walk()
                     case states.turn:
                         if (!instance_exists(obj_noisetrap_crosshair) && instance_exists(obj_noisetrap))
                         {
-                            var b = -4;
+                            var b = noone;
                             var q = 0;
                             
                             with (obj_noisetrap)
@@ -122,7 +122,7 @@ function scr_noise_do_jump(argument0 = 1)
 {
     var found = 0;
     var nearest = room_width * room_height;
-    b = -4;
+    b = noone;
     
     with (obj_noise_pogospot)
     {
@@ -288,7 +288,7 @@ function scr_noise_pistol()
         
         case states.idle:
             sprite_index = spr_playerN_minigunidle;
-            b = -4;
+            b = noone;
             
             with (obj_player1)
             {
@@ -299,7 +299,7 @@ function scr_noise_pistol()
             if (cooldown > 0)
                 cooldown--;
             
-            if (b != -4 && cooldown <= 0)
+            if (b != noone && cooldown <= 0)
             {
                 cooldown = 80;
                 shoot_buffer = 1;

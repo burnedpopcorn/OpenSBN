@@ -1,4 +1,4 @@
-func = -4;
-stepfunc = -4;
+func = noone;
+stepfunc = noone;
 active = 0;
 trigger = 0;

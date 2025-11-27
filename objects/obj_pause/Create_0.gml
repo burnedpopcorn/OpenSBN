@@ -26,6 +26,6 @@ for (i = 0; i < array_length(toppin_sprite); i++)
     toppin_has[i] = 0;
 }
 
-pauseSpr = -4;
+pauseSpr = noone;
 pauseScale = 5;
 pauseMusic = fmod_createEventInstance("event:/music/pause");

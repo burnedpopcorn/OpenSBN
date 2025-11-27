@@ -11,7 +11,7 @@ if (sprite_index == spr_weirdfishidle || sprite_index == _idlespr)
     if (sprite_index != _idlespr)
         sprite_index = _idlespr;
     
-    playerID = -4;
+    playerID = noone;
     exit;
 }
 

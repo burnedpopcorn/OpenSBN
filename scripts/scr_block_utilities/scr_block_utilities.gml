@@ -44,10 +44,10 @@ function scr_solid_line(argument0)
 
 function scr_solid_line_ext(argument0, argument1, argument2, argument3)
 {
-    if (collision_line(argument0, argument1, argument2, argument3, obj_solid, false, true) != -4)
+    if (collision_line(argument0, argument1, argument2, argument3, obj_solid, false, true) != noone)
         return true;
     
-    if (collision_line(argument0, argument1, argument2, argument3, obj_slope, false, true) != -4)
+    if (collision_line(argument0, argument1, argument2, argument3, obj_slope, false, true) != noone)
         return true;
     
     return false;

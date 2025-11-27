@@ -41,7 +41,7 @@ function npc_do_dialog()
 
 function vigilante_add_battle()
 {
-    if (global.vigilantecutscene1 == -4 || !global.vigilantecutscene1)
+    if (global.vigilantecutscene1 == noone || !global.vigilantecutscene1)
     {
         global.vigilantecutscene1 = 1;
         quick_ini_write_real(get_savefile_ini(), "cutscene", "vigilante1", 1);

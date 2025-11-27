@@ -6,13 +6,13 @@ enum pausestates
 
 depth = -998;
 state = pausestates.unpause;
-pause_surf = -4;
-pause_spr = -4;
+pause_surf = noone;
+pause_spr = noone;
 pauseAlpha = 0;
 pauseScale = 5;
 pauseX = -708;
 pauseY = -802;
-bg_surf = -4;
+bg_surf = noone;
 bgX = 0;
 bgY = 0;
 selected = 0;

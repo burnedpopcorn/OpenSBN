@@ -76,12 +76,12 @@ if (pause && !instance_exists(obj_option))
                 
                 if (!global.snickchallenge)
                 {
-                    var rm = -4;
+                    var rm = noone;
                     rm = global.leveltorestart;
                     ds_list_clear(global.saveroom);
                     ds_list_clear(global.baddieroom);
                     
-                    if (rm != -4 && rm != -1)
+                    if (rm != noone && rm != -1)
                     {
                         stop_all_sounds();
                         scr_unpauseinstances();
@@ -89,7 +89,7 @@ if (pause && !instance_exists(obj_option))
                         savedroom = rm;
                         global.levelreset = 0;
                         scr_playerreset();
-                        obj_music.music = -4;
+                        obj_music.music = noone;
                         global.levelreset = 1;
                         scr_room_goto(rm);
                         pause = 0;

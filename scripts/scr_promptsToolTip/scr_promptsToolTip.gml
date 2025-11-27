@@ -10,7 +10,7 @@ function scr_queueToolTipPrompt(argument0 = "", argument1 = argument0, argument2
     argument2 = clamp(argument2, 60, 450);
     var type = 0;
     
-    if (argument1 == -4)
+    if (argument1 == noone)
         type = 1;
     else if (argument1 == -1)
         type = 2;

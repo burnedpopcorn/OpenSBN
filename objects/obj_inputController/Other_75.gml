@@ -25,7 +25,7 @@ switch (ev)
     case "gamepad lost":
         if (global.player_input_device == gp)
         {
-            global.player_input_device = -4;
+            global.player_input_device = noone;
             disconnected_device = true;
         }
         else

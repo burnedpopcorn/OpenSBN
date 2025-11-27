@@ -2,9 +2,9 @@ function scr_initenemy()
 {
     scr_collision_init();
     mySoundEmitter = 0;
-    santaID = -4;
+    santaID = noone;
     rattime = 0;
-    platformid = -4;
+    platformid = noone;
     usepalette = 0;
     blur_effect = 0;
     hsp_carry = 0;
@@ -88,7 +88,7 @@ function scr_initenemy()
     turntimer = 0;
     turnstart = 0;
     timedgate = 0;
-    chargeID = -4;
+    chargeID = noone;
     angle = image_angle;
     is_controllable = 0;
     possess_movespeed = 0;

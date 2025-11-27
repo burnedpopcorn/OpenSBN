@@ -461,8 +461,10 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 								q = string_char_at(val, j);
 								var s = 0;
 								o = 1;
-								if option_struct != -4
+								
+								if (option_struct != noone)
 									o = option_struct.offset;
+									
 								d = ((j % 2) == 0) ? -1 : 1;
 								_dir = floor(Wave(-1, 1, 0.1, 0));
 								s += (_dir * d * o);

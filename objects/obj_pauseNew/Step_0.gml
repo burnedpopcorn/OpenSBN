@@ -147,19 +147,19 @@ if (state == pausestates.pause && !instance_exists(obj_option) && !instance_exis
             
             case 2:
                 var roomname = room_get_name(room);
-                var rm = -4;
+                var rm = noone;
                 rm = global.leveltorestart;
                 ds_list_clear(global.saveroom);
                 ds_list_clear(global.baddieroom);
                 
-                if (rm != -4 && rm != -1)
+                if (rm != noone && rm != -1)
                 {
                     scr_unpauseinstances();
                     instance_activate_all();
                     stop_all_sounds();
                     scr_unpausemusic();
                     stop_music(true);
-                    obj_music.music = -4;
+                    obj_music.music = noone;
                     alarm[1] = 1;
                     pause = false;
                     state = pausestates.unpause;

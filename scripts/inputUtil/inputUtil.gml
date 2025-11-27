@@ -77,7 +77,7 @@ function scr_checkanygamepad(argument0)
             return gpButtons[i];
     }
     
-    return -4;
+    return noone;
 }
 
 function scr_check_joysticks(argument0, argument1 = 0.5)
@@ -95,7 +95,7 @@ function scr_check_joysticks(argument0, argument1 = 0.5)
             return sticks[i];
     }
     
-    return -4;
+    return noone;
 }
 
 function scr_checkanystick(argument0, argument1 = 0.5)

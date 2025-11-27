@@ -2,7 +2,7 @@ function scr_random_granny()
 {
     var count = instance_number(obj_granny);
     var n = irandom(count - 1);
-    var b = -4;
+    var b = noone;
     var found = 0;
     
     while (!found)

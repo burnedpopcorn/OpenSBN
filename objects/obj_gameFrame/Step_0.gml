@@ -1,4 +1,4 @@
-var cr = -4;
+var cr = noone;
 
 if (gameframe_mouse_in_window() && (device_mouse_x_to_gui(0) != previousMouseX || device_mouse_y_to_gui(0) != previousMouseY))
 {
@@ -22,7 +22,7 @@ else
     cr = -1;
 }
 
-if (cr != -4)
+if (cr != noone)
 {
     window_set_cursor(cr);
     global.gameframe_current_cursor = cr;
@@ -101,6 +101,4 @@ if (global.option_focusmute)
         fmod_global_setParameter("focus", 0, false);
 }
 else
-{
     fmod_global_setParameter("focus", 1, false);
-}

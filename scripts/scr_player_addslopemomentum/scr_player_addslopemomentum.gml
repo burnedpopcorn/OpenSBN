@@ -35,7 +35,7 @@ function scr_playerAddSlopeMomentum(argument0, argument1)
 
 function scr_pizzaball_addslopemomentum(argument0, argument1)
 {
-    var _check = -4;
+    var _check = noone;
     
     if (place_meeting_slope(x, y + 1, false) && !instance_exists(_check))
     {

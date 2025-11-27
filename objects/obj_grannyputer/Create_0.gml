@@ -11,8 +11,8 @@ text_vsp = 0;
 text_wave_x = 0;
 text_wave_y = 0;
 tex_x = 0;
-surfclip = -4;
-surffinal = -4;
+surfclip = noone;
+surffinal = noone;
 depth = 0;
 wave_timer = 0;
 level_xpad = 16;
@@ -31,7 +31,7 @@ addlevel = function(argument0, argument1, argument2 = true, argument3 = true, ar
         treasure: argument4,
         gottreasure: false,
         rank: argument5,
-        gotrank: -4
+        gotrank: noone
     };
     ini_open_from_string(obj_savesystem.ini_str);
     

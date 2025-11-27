@@ -7,7 +7,7 @@ function state_turret_normal()
     var colX = (image_xscale > 0) ? (targetplayer.x > x) : (targetplayer.x < x);
     var colY = targetplayer.bbox_bottom > bbox_top && targetplayer.bbox_top < bbox_bottom;
     
-    if (col == -4 && col2 == -4 && colX && colY)
+    if (col == noone && col2 == noone && colX && colY)
     {
         state = states.charge;
         can_fire = 1;

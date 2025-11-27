@@ -92,7 +92,7 @@ function tv_push_prompt_once(argument0, argument1)
 {
     with (obj_tv)
     {
-        if (special_prompts == -4)
+        if (special_prompts == noone)
             return false;
         
         var b = ds_map_find_value(special_prompts, argument1);
@@ -123,7 +123,7 @@ function tv_do_expression(argument0)
 {
     with (obj_tv)
     {
-        if (expressionsprite != argument0 && bubblespr == -4)
+        if (expressionsprite != argument0 && bubblespr == noone)
         {
             state = states.tv_whitenoise;
             expressionsprite = argument0;
@@ -162,7 +162,7 @@ function scr_tv_get_transfo_sprite()
     var _state = states.normal;
     var _tauntstate = states.normal;
     var _sp = spr_null;
-    var _player = -4;
+    var _player = noone;
     
     with (obj_player1)
     {

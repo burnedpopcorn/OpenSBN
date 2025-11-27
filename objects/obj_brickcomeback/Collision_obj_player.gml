@@ -16,7 +16,7 @@ if (!trapped)
         instance_destroy();
     }
 }
-else if (other.state == states.ratmountpunch && baddieID == -4)
+else if (other.state == states.ratmountpunch && baddieID == noone)
 {
     vsp = -6;
     hsp = other.xscale * 8;

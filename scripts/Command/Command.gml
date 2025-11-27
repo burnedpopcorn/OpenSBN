@@ -19,7 +19,7 @@ function PlaceCommand(argument0, argument1, argument2) : Command() constructor
 {
     static Do = function()
     {
-        if (instance == -4)
+        if (instance == noone)
         {
             instance = instance_create(snap_tile(x, 32) + object.place_xoffset, snap_tile(y, 32) + object.place_yoffset, obj_fakeobject);
             
@@ -58,5 +58,5 @@ function PlaceCommand(argument0, argument1, argument2) : Command() constructor
     x = argument0;
     y = argument1;
     object = argument2;
-    instance = -4;
+    instance = noone;
 }

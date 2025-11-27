@@ -95,7 +95,7 @@ attack_max[6] = 25;
 attack_max[7] = 25;
 attack_max[8] = 25;
 attack_cooldown = attack_max[0];
-dashcloudid = -4;
+dashcloudid = noone;
 targetstunned = 0;
 targetstunnedminus[0] = 30;
 targetstunnedminus[1] = 30;
@@ -183,7 +183,7 @@ function boss_hurt_noplayer(argument0)
 
 function player_hurt(argument0, argument1)
 {
-    if (!argument1.inv_frames && (argument1.state != states.backbreaker || argument1.parry_inst == -4))
+    if (!argument1.inv_frames && (argument1.state != states.backbreaker || argument1.parry_inst == noone))
     {
         hitstate = state;
         hithsp = hsp;

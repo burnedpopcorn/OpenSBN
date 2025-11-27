@@ -4,7 +4,7 @@ if (room == rm_blank)
 player = (obj_player1.spotlight == 1) ? obj_player1 : obj_player2;
 
 if (!instance_exists(obj_pizzaball))
-    targetgolf = -4;
+    targetgolf = noone;
 
 if (collect_shake > 0)
     collect_shake *= 0.5;
@@ -192,12 +192,12 @@ if (instance_exists(player) && player.state != states.timesup && player.state !=
     var cam_width = camera_get_view_width(view_camera[0]);
     var cam_height = camera_get_view_height(view_camera[0]);
     
-    if (targetgolf != -4 && !instance_exists(targetgolf))
-        targetgolf = -4;
+    if (targetgolf != noone && !instance_exists(targetgolf))
+        targetgolf = noone;
     
     var cam_x, cam_y;
     
-    if (targetgolf == -4)
+    if (targetgolf == noone)
     {
         if (!global.coop || room == rm_levelselect || room == Realtitlescreen)
         {
@@ -262,7 +262,7 @@ else if (follow_golf)
         
         if (room == custom_lvl_room)
         {
-            if (obj_player1.cam != -4)
+            if (obj_player1.cam != noone)
             {
                 _room_x = obj_player1.cam.x;
                 _room_y = obj_player1.cam.y;
@@ -287,7 +287,7 @@ else if (follow_golf)
     }
     else
     {
-        targetgolf = -4;
+        targetgolf = noone;
         follow_golf = 0;
     }
 }

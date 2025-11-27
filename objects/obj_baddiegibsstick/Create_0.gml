@@ -8,6 +8,6 @@ grav = 0.4;
 collisioned = 0;
 depth = -9;
 sprite_index = choose(spr_null, spr_null2);
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

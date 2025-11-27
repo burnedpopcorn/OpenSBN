@@ -3,9 +3,9 @@ with (obj_player1)
 
 var func = dialog[currentdialog][2];
 
-if (func != -4)
+if (func != noone)
 {
-    if (npcID != -4 && instance_exists(npcID))
+    if (npcID != noone && instance_exists(npcID))
     {
         with (npcID)
             method(id, func)();

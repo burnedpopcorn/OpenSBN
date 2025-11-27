@@ -1,4 +1,4 @@
-tex_list = -4;
+tex_list = noone;
 draw_flush();
 var group_arr = ["playergroup", "baddiegroup", "hubgroup", "hudgroup", "structuregroup"];
 tex_list = ds_list_create();

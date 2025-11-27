@@ -14,7 +14,7 @@ if (instance_exists(fromCurrent) && place_meeting(x, y, fromCurrent))
 }
 else
 {
-    fromCurrent = -4;
+    fromCurrent = noone;
     currentMovespeed = approach(currentMovespeed, 0, 0.5);
     x += (xOffset + lengthdir_x(currentMovespeed, currentDirection));
     _y += (vsp + lengthdir_y(currentMovespeed, currentDirection));

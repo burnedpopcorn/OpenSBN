@@ -133,7 +133,7 @@ if (object_index != obj_player2 || global.coop == true)
 if (verticalhallway)
 {
     verticalbuffer = 2;
-    var _vinst = -4;
+    var _vinst = noone;
     
     with (obj_verticalhallway)
     {
@@ -143,7 +143,7 @@ if (verticalhallway)
             _vinst = id;
     }
     
-    if (_vinst != -4)
+    if (_vinst != noone)
     {
         x = _vinst.x + (_vinst.sprite_width * vertical_x);
         var bbox_size = abs(bbox_right - bbox_left);
@@ -226,7 +226,7 @@ global.redcoin = 0;
 if (global.inSecret && object_index == obj_player1)
 {
     global.secretfound += 1;
-    scr_queueToolTipPrompt("[spr_tutorialfont]You have found " + string(global.secretfound) + ((global.secretfound > 1) ? " secrets out of 3!" : " secret out of 3!"), -4, 300);
+    scr_queueToolTipPrompt("[spr_tutorialfont]You have found " + string(global.secretfound) + ((global.secretfound > 1) ? " secrets out of 3!" : " secret out of 3!"), noone, 300);
 }
 
 with (obj_garpo)

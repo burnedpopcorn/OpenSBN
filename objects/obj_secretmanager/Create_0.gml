@@ -6,6 +6,6 @@ if (instance_number(object_index) > 1)
 
 secrettriggers = ds_list_create();
 touchall = ds_list_create();
-touchrequirement = -4;
+touchrequirement = noone;
 init = 0;
 waittime = 0;

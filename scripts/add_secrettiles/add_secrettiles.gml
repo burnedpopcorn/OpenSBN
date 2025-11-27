@@ -14,7 +14,7 @@ function add_secrettiles(argument0)
             {
                 nm: name,
                 alpha: 1,
-                surf: -4
+                surf: noone
             });
         }
         

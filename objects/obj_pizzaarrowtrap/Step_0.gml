@@ -9,7 +9,7 @@ if (!shot)
     
     while (i < t)
     {
-        if (collision_line(x, y + (i * n), x + (image_xscale * range), y + (i * n), obj_player1, false, true) != -4)
+        if (collision_line(x, y + (i * n), x + (image_xscale * range), y + (i * n), obj_player1, false, true) != noone)
         {
             shot = 1;
             break;

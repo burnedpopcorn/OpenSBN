@@ -1,4 +1,4 @@
-objectlist = -4;
+objectlist = noone;
 count = 0;
 wave = 0;
 state = states.normal;

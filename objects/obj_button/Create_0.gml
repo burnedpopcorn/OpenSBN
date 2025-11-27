@@ -1,10 +1,10 @@
 image_speed = 0;
 image_index = 0;
-spr_icon = -4;
+spr_icon = noone;
 selected = 0;
 hovered = 0;
 buttonid = 0;
-parent = -4;
-info = -4;
-OnSelect = -4;
-OnDeselect = -4;
+parent = noone;
+info = noone;
+OnSelect = noone;
+OnDeselect = noone;

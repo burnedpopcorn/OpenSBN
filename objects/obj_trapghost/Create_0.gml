@@ -5,5 +5,5 @@ if (instance_number(object_index) > 1)
 }
 
 state = states.normal;
-trapid = -4;
+trapid = noone;
 image_speed = 0.35;

@@ -4,14 +4,14 @@ if (instance_number(object_index) > 1)
     exit;
 }
 
-bossID = -4;
+bossID = noone;
 bossdead = 0;
 bosstimer_x = 257;
 bosstimer_y = 466;
 bell_sprite = spr_bosstimer_bell;
 bell_index = 0;
 bell_buffer = 0;
-bar_surface = -4;
+bar_surface = noone;
 barfill_x = 0;
 round_timermax = 7200;
 round_timer = round_timermax;

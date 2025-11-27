@@ -3,11 +3,11 @@ function scr_editor_state_objects()
     var mx = mouse_x;
     var my = mouse_y;
     
-    if (button == -4 && key_mbleft2)
+    if (button == noone && key_mbleft2)
     {
         scr_editor_get_object_mouse(mx, my);
         
-        if (object != -4 && ds_list_empty(selectedobjects))
+        if (object != noone && ds_list_empty(selectedobjects))
             scr_do_command(new PlaceCommand(mx, my, object));
         
         if (!ds_list_empty(selectedobjects))
@@ -27,7 +27,7 @@ function scr_editor_get_object_mouse(argument0, argument1)
 {
     scr_editor_clear_selectedobjects();
     var num = instance_place_list(argument0, argument1, obj_fakeobject, global.instancelist, 1);
-    var o = -4;
+    var o = noone;
     
     for (i = 0; i < num; i++)
     {
@@ -35,14 +35,14 @@ function scr_editor_get_object_mouse(argument0, argument1)
         
         with (b)
         {
-            if (layerdepth == other.layerdepth && (o == -4 || depth < o.depth))
+            if (layerdepth == other.layerdepth && (o == noone || depth < o.depth))
                 o = b;
         }
     }
     
     ds_list_clear(global.instancelist);
     
-    if (o != -4)
+    if (o != noone)
         ds_list_add(selectedobjects, o);
 }
 

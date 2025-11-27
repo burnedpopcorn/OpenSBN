@@ -12,7 +12,7 @@ if (active)
     {
         with (obj_tv)
         {
-            if (expressionsprite == -4)
+            if (expressionsprite == noone)
                 tv_do_expression(spr_tv_exprsecret);
         }
     }

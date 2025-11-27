@@ -2,7 +2,7 @@ event_inherited();
 
 got_func = function()
 {
-    if (global.papercutscene == -4 || !global.papercutscene)
+    if (global.papercutscene == noone || !global.papercutscene)
     {
         global.papercutscene = 1;
         quick_ini_write_real(get_savefile_ini(), "cutscene", "paper", 1);
@@ -11,7 +11,7 @@ got_func = function()
     exit;
 };
 
-if (global.papercutscene == -4)
+if (global.papercutscene == noone)
     global.papercutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "paper", 0);
 
 if (global.papercutscene)

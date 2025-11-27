@@ -58,7 +58,7 @@ function kill_sound_list(argument0)
             {
                 var entry = ds_list_find_value(global.FMOD_OneShotList, p);
                 
-                if (entry != -4 && !is_undefined(entry) && entry.id == snd_id)
+                if (entry != noone && !is_undefined(entry) && entry.id == snd_id)
                 {
                     kill_sounds(snd_id);
                     ds_list_delete(global.FMOD_OneShotList, p);
@@ -75,7 +75,7 @@ function kill_sound_list(argument0)
         {
             var entry = ds_list_find_value(global.FMOD_OneShotList, p);
             
-            if (entry != -4 && !is_undefined(entry) && entry.id == snd_id)
+            if (entry != noone && !is_undefined(entry) && entry.id == snd_id)
             {
                 kill_sounds(snd_id);
                 ds_list_delete(global.FMOD_OneShotList, p);
@@ -107,11 +107,11 @@ function add_music(argument0, argument1, argument2 = undefined, argument3 = unde
 {
     var q = 
     {
-        music_inst: -4,
-        secret_inst: -4,
+        music_inst: noone,
+        secret_inst: noone,
         music_name: argument1,
         secret_name: argument2,
-        roomstart: -4
+        roomstart: noone
     };
     
     with (q)
@@ -132,7 +132,7 @@ function stop_music(argument0 = true)
 {
     with (obj_music)
     {
-        if (music != -4)
+        if (music != noone)
         {
             fmod_event_stop(music.music_inst, argument0);
             fmod_event_stop(music.secret_inst, argument0);

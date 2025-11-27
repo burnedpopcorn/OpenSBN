@@ -15,7 +15,7 @@ with (obj_player1)
 }
 
 global.exitrank = 0;
-global.leveltorestart = -4;
-global.leveltosave = -4;
+global.leveltorestart = noone;
+global.leveltosave = noone;
 global.level_minutes = 0;
 global.level_seconds = 0;

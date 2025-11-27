@@ -462,7 +462,7 @@ function state_pepperman_normal()
         sprite_index = spr_fall;
     }
     
-    if (input_check("attack") && (!place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
+    if (input_check("attack") && (!place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == noone && sprite_index != spr_pepperman_throw)
     {
         if (move != 0)
             xscale = move;
@@ -489,10 +489,10 @@ function state_pepperman_normal()
 
 function pepperman_grab_reset()
 {
-    if (pepperman_grabID != -4)
+    if (pepperman_grabID != noone)
     {
         if (!instance_exists(pepperman_grabID))
-            pepperman_grabID = -4;
+            pepperman_grabID = noone;
     }
     
     exit;

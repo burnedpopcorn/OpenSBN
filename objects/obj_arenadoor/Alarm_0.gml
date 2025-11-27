@@ -1,6 +1,6 @@
 shot = 0;
 
-if (objectlist != -4 && count < array_length(objectlist[wave]) && objectlist[wave] != -4)
+if (objectlist != noone && count < array_length(objectlist[wave]) && objectlist[wave] != noone)
 {
     finish = 0;
     shot = 0;

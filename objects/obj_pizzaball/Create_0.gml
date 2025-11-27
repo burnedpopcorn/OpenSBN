@@ -1,5 +1,5 @@
 scr_initenemy();
-pointerID = -4;
+pointerID = noone;
 destroyable = 0;
 shakestun = 0;
 hitspeed = 0;

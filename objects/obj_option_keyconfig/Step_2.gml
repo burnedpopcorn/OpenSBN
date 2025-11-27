@@ -98,10 +98,10 @@ else
     
     var gpinput = scr_checkanygamepad(global.player_input_device);
     
-    if (gpinput == -4)
+    if (gpinput == noone)
         gpinput = scr_check_joysticks(global.player_input_device);
     
-    if (gpinput != -4)
+    if (gpinput != noone)
     {
         if (!array_contains(input_get(inputs[selected]).gpInputs, gpinput))
         {

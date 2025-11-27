@@ -16,7 +16,7 @@ if (vsp < 0)
 can_jump = (grounded && vsp > 0) || (coyote_time > 0 && vsp > 0);
 var prevmask = mask_index;
 var a = instance_place(x, y, obj_secrettile);
-secret_array = (a != -4 && instance_exists(a) && a.secretFunction()) ? a.tiles : [];
+secret_array = (a != noone && instance_exists(a) && a.secretFunction()) ? a.tiles : [];
 
 switch (state)
 {
@@ -738,7 +738,7 @@ switch (state)
 }
 
 a = instance_place(x, y, obj_secrettile);
-secret_array = (a != -4) ? a.tiles : ["-4"];
+secret_array = (a != noone) ? a.tiles : ["-4"];
 scr_playersounds();
 
 if (prevstate != state)

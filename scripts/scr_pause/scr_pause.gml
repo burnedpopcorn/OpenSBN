@@ -2,7 +2,7 @@ function scr_pausemusic()
 {
     with (obj_music)
     {
-        if (music != -4)
+        if (music != noone)
         {
             other.savedPauseMusic = fmod_event_getPause(music.music_inst);
             other.savedPauseSecret = fmod_event_getPause(music.secret_inst);
@@ -24,12 +24,12 @@ function scr_unpausemusic()
 {
     with (obj_music)
     {
-        if (music != -4)
+        if (music != noone)
         {
-            if (music.music_inst != -4)
+            if (music.music_inst != noone)
                 fmod_event_setPause(music.music_inst, other.savedPauseMusic);
             
-            if (music.secret_inst != -4)
+            if (music.secret_inst != noone)
                 fmod_event_setPause(music.secret_inst, other.savedPauseSecret);
         }
         
@@ -108,7 +108,7 @@ function pause_all_sounds(argument0)
     {
         var snd_id = ds_list_find_value(global.FMOD_OneShotList, i).id;
         
-        if (snd_id != -4 && !is_undefined(snd_id))
+        if (snd_id != noone && !is_undefined(snd_id))
             fmod_event_setPause(snd_id, argument0);
     }
 }
@@ -121,7 +121,7 @@ function stop_all_sounds()
     {
         var snd_id = ds_list_find_value(global.FMOD_OneShotList, i).id;
         
-        if (snd_id != -4 && !is_undefined(snd_id))
+        if (snd_id != noone && !is_undefined(snd_id))
             kill_sounds(snd_id);
     }
     

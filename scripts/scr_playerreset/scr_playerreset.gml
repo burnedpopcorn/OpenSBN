@@ -58,7 +58,7 @@ function scr_playerreset()
             shownrankc = 0;
             ds_list_clear(tvprompts_list);
             prompt = "";
-            bubblespr = -4;
+            bubblespr = noone;
             promptx = promptxstart;
             sprite_index = spr_tv_off;
             tvsprite = spr_tv_idle;
@@ -69,7 +69,7 @@ function scr_playerreset()
         {
             ds_list_clear(secrettriggers);
             ds_list_clear(touchall);
-            touchrequirement = -4;
+            touchrequirement = noone;
             init = 0;
         }
         
@@ -95,7 +95,7 @@ function scr_playerreset()
         global.fill = 5000;
         global.chunk = 5;
         global.hasfarmer = array_create(3, 0);
-        global.checkpoint_room = -4;
+        global.checkpoint_room = noone;
         global.checkpoint_door = "A";
         global.noisejetpack = 0;
         global.hp = 0;
@@ -191,10 +191,10 @@ function scr_playerreset()
         in_supertaunt = false;
         cutscene_frame = -1;
         drownBuffer = 0;
-        ratpowerup = -4;
+        ratpowerup = noone;
         scale_xs = 1;
         scale_ys = 1;
-        obj_camera.targetgolf = -4;
+        obj_camera.targetgolf = noone;
         ds_list_clear(global.baddietomb);
         obj_player1.supercharge = 0;
         obj_player1.supercharged = 0;
@@ -258,7 +258,7 @@ function scr_playerreset()
             xscale = 1;
             yscale = 1;
             parry = 0;
-            parry_inst = -4;
+            parry_inst = noone;
             parry_count = 0;
             is_firing = 0;
             pogospeed = 6;
@@ -376,7 +376,7 @@ function scr_playerreset()
         pogochargeactive = 0;
         pogocharge = 100;
         parry = 0;
-        parry_inst = -4;
+        parry_inst = noone;
         parry_count = 0;
         is_firing = 0;
         x = backtohubstartx;

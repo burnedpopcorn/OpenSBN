@@ -1,1 +1,1 @@
-trapID = -4;
+trapID = noone;

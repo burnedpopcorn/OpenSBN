@@ -4,7 +4,7 @@ function secret_add(argument0, argument1)
     {
         ds_list_add(secrettriggers, [argument1]);
         
-        if (argument0 != -4)
+        if (argument0 != noone)
             method(id, argument0)();
     }
     
@@ -27,7 +27,7 @@ function secret_add_touchall_requirement(argument0, argument1)
 
 function secret_check_touchall()
 {
-    if (touchrequirement != -4 && is_array(touchrequirement))
+    if (touchrequirement != noone && is_array(touchrequirement))
     {
         for (var xx = 0; xx < array_length(touchrequirement); xx++)
         {

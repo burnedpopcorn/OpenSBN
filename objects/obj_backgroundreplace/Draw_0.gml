@@ -1,4 +1,4 @@
-if (backgroundID != -4)
+if (backgroundID != noone)
 {
     var cx = camera_get_view_x(view_camera[0]);
     var cy = camera_get_view_y(view_camera[0]);
@@ -18,7 +18,7 @@ if (backgroundID != -4)
             var ly = layer_get_y(backgroundID) + (yy * sprh);
             draw_sprite(background_spr, 0, lx, ly);
             
-            if (chunks != -4)
+            if (chunks != noone)
             {
                 for (var i = 0; i < array_length(chunks); i++)
                 {

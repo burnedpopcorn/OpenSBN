@@ -1,8 +1,8 @@
 scr_initenemy();
 idle = 1;
 cooldown = 0;
-leaderID = -4;
-hitboxID = -4;
+leaderID = noone;
+hitboxID = noone;
 attackspeed = 0;
 attackmaxspeed = 8;
 outofsight = 0;
