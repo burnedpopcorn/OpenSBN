@@ -1,14 +1,10 @@
 function eatThrows(argument0)
 {
-    var i = array_length(obj_credits.thrownArr) - 1;
-    
-    while (i > -1)
+    for (var i = array_length(obj_credits.thrownArr) - 1; i > -1; i--)
     {
         var food = obj_credits.thrownArr[i];
         
-        if (food.splat || food.image_xscale > 1.5)
-        {
-        }
+        if (food.splat || food.image_xscale > 1.5) { }
         else
         {
             var xx = xstart - sprite_get_xoffset(sprite_index);
@@ -28,8 +24,6 @@ function eatThrows(argument0)
                 }
             }
         }
-        
-        i--;
     }
 }
 

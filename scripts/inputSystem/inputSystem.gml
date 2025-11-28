@@ -155,39 +155,40 @@ function scr_input_create()
     if (!variable_global_exists("stickpressed"))
     {
         global.stickpressed = ds_map_create();
-        var stickarr = [32785, 32786, 32787, 32788];
+        var stickarr = [gp_axislh, gp_axislv, gp_axisrh, gp_axisrv];
         
         for (var i = 0; i < array_length(stickarr); i++)
             ds_map_set(global.stickpressed, string(stickarr[i]), false);
     }
     
     ini_open_from_string(obj_savesystem.ini_str_options);
-    scr_input_ini_read("up", false, [38]);
-    scr_input_ini_read("down", false, [40]);
-    scr_input_ini_read("left", false, [37]);
-    scr_input_ini_read("right", false, [39]);
-    scr_input_ini_read("jump", false, [90]);
-    scr_input_ini_read("slap", false, [88]);
-    scr_input_ini_read("taunt", false, [67]);
-    scr_input_ini_read("shoot", false, [65]);
-    scr_input_ini_read("attack", false, [16]);
+    scr_input_ini_read("up", false, [vk_up]);
+    scr_input_ini_read("down", false, [vk_down]);
+    scr_input_ini_read("left", false, [vk_left]);
+    scr_input_ini_read("right", false, [vk_right]);
+    scr_input_ini_read("jump", false, [ord("Z")]);
+    scr_input_ini_read("slap", false, [ord("X")]);
+    scr_input_ini_read("taunt", false, [ord("C")]);
+    scr_input_ini_read("shoot", false, [ord("A")]);
+    scr_input_ini_read("attack", false, [vk_shift]);
     scr_input_ini_read("superjump", false, []);
     scr_input_ini_read("groundpound", false, []);
-    scr_input_ini_read("start", false, [27]);
-    scr_input_ini_read("special", false, [86]);
-    scr_input_ini_read("upC", true, [32781, 32786], true, true);
-    scr_input_ini_read("downC", true, [32782, 32786], true, false);
-    scr_input_ini_read("leftC", true, [32783, 32785], true, true);
-    scr_input_ini_read("rightC", true, [32784, 32785], true, false);
-    scr_input_ini_read("jumpC", true, [32769], true);
-    scr_input_ini_read("slapC", true, [32771], true);
-    scr_input_ini_read("tauntC", true, [32772], true);
-    scr_input_ini_read("shootC", true, [32770], true);
-    scr_input_ini_read("attackC", true, [32774, 32776], 1);
+    scr_input_ini_read("start", false, [vk_escape]);
+    scr_input_ini_read("special", false, [ord("V")]);
+	
+    scr_input_ini_read("upC", true, [gp_padu, gp_axislv], true, true);
+    scr_input_ini_read("downC", true, [gp_padd, gp_axislv], true, false);
+    scr_input_ini_read("leftC", true, [gp_padl, gp_axislh], true, true);
+    scr_input_ini_read("rightC", true, [gp_padr, gp_axislh], true, false);
+    scr_input_ini_read("jumpC", true, [gp_face1], true);
+    scr_input_ini_read("slapC", true, [gp_face3], true);
+    scr_input_ini_read("tauntC", true, [gp_face4], true);
+    scr_input_ini_read("shootC", true, [gp_face2], true);
+    scr_input_ini_read("attackC", true, [gp_shoulderr, gp_shoulderrb], true);
     scr_input_ini_read("superjumpC", true, [], true);
     scr_input_ini_read("groundpoundC", true, [], true);
-    scr_input_ini_read("startC", true, [32778], true);
-    scr_input_ini_read("specialC", true, [32775], true);
+    scr_input_ini_read("startC", true, [gp_start], true);
+    scr_input_ini_read("specialC", true, [gp_shoulderlb], true);
     ini_close();
 }
 

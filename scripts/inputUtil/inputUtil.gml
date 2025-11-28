@@ -1,6 +1,6 @@
 function scr_gpinput_isaxis(argument0)
 {
-    var axes = [32787, 32788, 32786, 32785];
+    var axes = [gp_axisrh, gp_axisrv, gp_axislv, gp_axislh];
     
     if (array_contains(axes, argument0))
         return true;
@@ -16,7 +16,7 @@ function scr_input_stickpressed(argument0)
 
 function scr_input_stickpressed_update(argument0 = global.player_input_device, argument1 = global.deadzones[deadzone.master])
 {
-    var sticks = [32785, 32786, 32787, 32788];
+    var sticks = [gp_axislh, gp_axislv, gp_axisrh, gp_axisrv];
     
     for (var i = 0; i < array_length(sticks); i++)
     {
@@ -35,13 +35,13 @@ function scr_checkdeadzone(argument0, argument1)
     
     switch (argument0)
     {
-        case 32785:
-        case 32787:
+        case gp_axislh:
+        case gp_axisrh:
             dz = global.deadzones[deadzone.horizontal];
             break;
         
-        case 32786:
-        case 32788:
+        case gp_axislv:
+        case gp_axisrv:
             dz = global.deadzones[deadzone.vertical];
             break;
     }
@@ -69,7 +69,29 @@ function scr_checkdeadzone(argument0, argument1)
 
 function scr_checkanygamepad(argument0)
 {
-    var gpButtons = [32769, 32770, 32771, 32772, 32773, 32775, 32774, 32776, 32777, 32778, 32779, 32780, 32781, 32782, 32783, 32784, 32785, 32786, 32788, 32787];
+    var gpButtons = 
+	[
+		gp_face1, 
+		gp_face2, 
+		gp_face3, 
+		gp_face4, 
+		gp_shoulderl, 
+		gp_shoulderlb, 
+		gp_shoulderr, 
+		gp_shoulderrb, 
+		gp_select, 
+		gp_start, 
+		gp_stickl, 
+		gp_stickr, 
+		gp_padu, 
+		gp_padd, 
+		gp_padl, 
+		gp_padr, 
+		gp_axislh, 
+		gp_axislv, 
+		gp_axisrv, 
+		gp_axisrh
+	];
     
     for (var i = 0; i < array_length(gpButtons); i++)
     {
@@ -82,7 +104,7 @@ function scr_checkanygamepad(argument0)
 
 function scr_check_joysticks(argument0, argument1 = 0.5)
 {
-    var sticks = [32785, 32786, 32787, 32788];
+    var sticks = [gp_axislh, gp_axislv, gp_axisrh, gp_axisrv];
     
     for (var i = 0; i < array_length(sticks); i++)
     {
@@ -100,7 +122,7 @@ function scr_check_joysticks(argument0, argument1 = 0.5)
 
 function scr_checkanystick(argument0, argument1 = 0.5)
 {
-    var sticks = [32785, 32786, 32787, 32788];
+    var sticks = [gp_axislh, gp_axislv, gp_axisrh, gp_axisrv];
     
     for (var i = 0; i < array_length(sticks); i++)
     {
@@ -136,9 +158,7 @@ function scr_checkgroundpound()
 function scr_button_pressed(argument0)
 {
     if (keyboard_check_pressed(vk_enter) || input_get("jump").pressed)
-    {
         return -1;
-    }
     else if (gamepad_is_connected(argument0))
     {
         if (gamepad_button_check(argument0, gp_face1) || gamepad_button_check(argument0, gp_start))
@@ -150,37 +170,44 @@ function scr_button_pressed(argument0)
 
 function scr_input_icon_define()
 {
-    input_addIcon([16], spr_tutorialkey_special, 0);
-    input_addIcon([17], spr_tutorialkey_special, 1);
-    input_addIcon([32], spr_tutorialkey_special, 2);
-    input_addIcon([38], spr_tutorialkey_special, 3);
-    input_addIcon([40], spr_tutorialkey_special, 4);
-    input_addIcon([39], spr_tutorialkey_special, 5);
-    input_addIcon([37], spr_tutorialkey_special, 6);
-    input_addIcon([27], spr_tutorialkey_special, 7);
-    input_addIcon([18], spr_tutorialkey_special, 8);
+    input_addIcon([vk_shift], spr_tutorialkey_special, 0);
+    input_addIcon([vk_control], spr_tutorialkey_special, 1);
+    input_addIcon([vk_space], spr_tutorialkey_special, 2);
+    input_addIcon([vk_up], spr_tutorialkey_special, 3);
+    input_addIcon([vk_down], spr_tutorialkey_special, 4);
+    input_addIcon([vk_right], spr_tutorialkey_special, 5);
+    input_addIcon([vk_left], spr_tutorialkey_special, 6);
+    input_addIcon([vk_escape], spr_tutorialkey_special, 7);
+    input_addIcon([vk_alt], spr_tutorialkey_special, 8);
     input_addIcon(["NONE"], spr_tutorialkey_empty);
-    var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    
+	
+    var alphabet = 
+	[
+		"A", "B", "C", "D", "E", "F", 
+		"G", "H", "I", "J", "K", "L", 
+		"M", "N", "O", "P", "Q", "R", 
+		"S", "T", "U", "V", "W", "X", 
+		"Y", "Z"
+	];
     for (var i = 0; i < array_length(alphabet); i++)
         input_addIcon([ord(alphabet[i])], spr_tutorialkey_letters, i);
     
-    input_addIcon([32785, 32786], spr_gamepadbutton_leftstick);
-    input_addIcon([32787, 32788], spr_gamepadbutton_rightstick);
-    input_addIcon([32769], spr_gamepadbutton_south);
-    input_addIcon([32770], spr_gamepadbutton_east);
-    input_addIcon([32771], spr_gamepadbutton_west);
-    input_addIcon([32772], spr_gamepadbutton_north);
-    input_addIcon([32781], spr_gamepadbutton_up);
-    input_addIcon([32782], spr_gamepadbutton_down);
-    input_addIcon([32783], spr_gamepadbutton_left);
-    input_addIcon([32784], spr_gamepadbutton_right);
-    input_addIcon([32778], spr_gamepadbutton_start);
-    input_addIcon([32777], spr_gamepadbutton_select);
-    input_addIcon([32773], spr_gamepadbutton_leftbumper);
-    input_addIcon([32775], spr_gamepadbutton_lefttrigger);
-    input_addIcon([32774], spr_gamepadbutton_rightbumper);
-    input_addIcon([32776], spr_gamepadbutton_righttrigger);
+    input_addIcon([gp_axislh, gp_axislv], spr_gamepadbutton_leftstick);
+    input_addIcon([gp_axisrh, gp_axisrv], spr_gamepadbutton_rightstick);
+    input_addIcon([gp_face1], spr_gamepadbutton_south);
+    input_addIcon([gp_face2], spr_gamepadbutton_east);
+    input_addIcon([gp_face3], spr_gamepadbutton_west);
+    input_addIcon([gp_face4], spr_gamepadbutton_north);
+    input_addIcon([gp_padu], spr_gamepadbutton_up);
+    input_addIcon([gp_padd], spr_gamepadbutton_down);
+    input_addIcon([gp_padl], spr_gamepadbutton_left);
+    input_addIcon([gp_padr], spr_gamepadbutton_right);
+    input_addIcon([gp_start], spr_gamepadbutton_start);
+    input_addIcon([gp_select], spr_gamepadbutton_select);
+    input_addIcon([gp_shoulderl], spr_gamepadbutton_leftbumper);
+    input_addIcon([gp_shoulderlb], spr_gamepadbutton_lefttrigger);
+    input_addIcon([gp_shoulderr], spr_gamepadbutton_rightbumper);
+    input_addIcon([gp_shoulderrb], spr_gamepadbutton_righttrigger);
 }
 
 function scr_input_set_icon(argument0)

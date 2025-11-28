@@ -1,7 +1,7 @@
 # OpenSBN
 A Decompilation of Super Bo Noise
 
-GameMaker Used: ```2023.11.1.129```
+GameMaker Version Used: ```2023.11.1.129```
 
 ### ABOUT
 

@@ -158,7 +158,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Sprites/HUD/TV/Backgrounds/Unused.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Combo","folderPath":"folders/Sprites/HUD/TV/Combo.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Leftovers","folderPath":"folders/Sprites/Leftovers.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Comeball","folderPath":"folders/Sprites/Leftovers/Comeball.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Coneball","folderPath":"folders/Sprites/Leftovers/Coneball.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CrackerKicker","folderPath":"folders/Sprites/Leftovers/CrackerKicker.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cutscene Gustavo","folderPath":"folders/Sprites/Leftovers/Cutscene Gustavo.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Lone G&B","folderPath":"folders/Sprites/Leftovers/Lone G&B.yy",},
