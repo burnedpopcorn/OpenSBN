@@ -1,4 +1,4 @@
-var r = ds_list_find_value(rooms, selectedroom);
+var r = rooms[| selectedroom];
 draw_rectangle_color(0, 0, r.width, r.height, c_white, c_white, c_white, c_white, 1);
 
 if (object != noone)

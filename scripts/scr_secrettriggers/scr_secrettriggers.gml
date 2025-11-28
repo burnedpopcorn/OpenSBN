@@ -35,7 +35,7 @@ function secret_check_touchall()
             
             for (i = 0; i < ds_list_size(touchall); i++)
             {
-                b = ds_list_find_value(touchall, i);
+                b = touchall[| i];
                 
                 if (b[1] == xx)
                     t++;

@@ -64,7 +64,7 @@ function achievement_add_variable(argument0, argument1, argument2 = false)
 
 function achievement_get_variable(argument0)
 {
-    return ds_map_find_value(variables, argument0);
+    return variables[? argument0];
 }
 
 function achievement_unlock(argument0, argument1, argument2)
@@ -87,7 +87,7 @@ function achievement_save_variables(argument0)
 {
     for (var i = 0; i < ds_list_size(argument0); i++)
     {
-        var b = ds_list_find_value(argument0, i);
+        var b = argument0[| i];
         
         with (b)
         {
@@ -96,7 +96,7 @@ function achievement_save_variables(argument0)
             
             for (i = 0; i < size; i++)
             {
-                var q = ds_map_find_value(variables, key);
+                var q = variables[? key];
                 
                 if (q.save)
                     quick_ini_write_real(get_savefile_ini(), "achievements_variables", key, q.value);
@@ -111,7 +111,7 @@ function achievements_load(argument0)
 {
     for (var i = 0; i < ds_list_size(argument0); i++)
     {
-        var b = ds_list_find_value(argument0, i);
+        var b = argument0[| i];
         
         with (b)
         {
@@ -121,7 +121,7 @@ function achievements_load(argument0)
             
             for (i = 0; i < size; i++)
             {
-                var q = ds_map_find_value(variables, key);
+                var q = variables[? key];
                 
                 if (q.save)
                     q.value = ini_read_real("achievements_variables", key, q.init_value);
@@ -140,7 +140,7 @@ function achievement_get_struct(argument0)
     
     for (var i = 0; i < ds_list_size(l); i++)
     {
-        q = ds_list_find_value(l, i);
+        q = l[| i];
         
         if (q.name == argument0)
         {
@@ -155,7 +155,7 @@ function achievement_get_struct(argument0)
         
         for (var i = 0; i < ds_list_size(l); i++)
         {
-            b = ds_list_find_value(l, i);
+            b = l[| i];
             
             if (q.name == argument0)
             {

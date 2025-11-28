@@ -1,5 +1,5 @@
-var ev = ds_map_find_value(async_load, "event_type");
-var gp = ds_map_find_value(async_load, "pad_index");
+var ev = async_load[? "event_type"];
+var gp = async_load[? "pad_index"];
 trace(string("{0} for gamepad {1}", ev, gp));
 
 switch (ev)

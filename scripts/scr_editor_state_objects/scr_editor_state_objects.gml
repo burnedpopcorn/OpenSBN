@@ -14,7 +14,7 @@ function scr_editor_state_objects()
         {
             for (var i = 0; i < ds_list_size(selectedobjects); i++)
             {
-                var b = ds_list_find_value(selectedobjects, i);
+                var b = selectedobjects[| i];
                 
                 with (b)
                     selected = 1;
@@ -31,7 +31,7 @@ function scr_editor_get_object_mouse(argument0, argument1)
     
     for (i = 0; i < num; i++)
     {
-        b = ds_list_find_value(global.instancelist, i);
+        b = global.instancelist[| i];
         
         with (b)
         {
@@ -50,7 +50,7 @@ function scr_editor_clear_selectedobjects()
 {
     for (i = 0; i < ds_list_size(selectedobjects); i++)
     {
-        b = ds_list_find_value(selectedobjects, i);
+        b = selectedobjects[| i];
         
         with (b)
             selected = 0;

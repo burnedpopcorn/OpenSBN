@@ -103,17 +103,17 @@ safe_layer_set_depth = function(argument0, argument1)
 set_layer_depths = function()
 {
     var temp_map = ds_map_create();
-    ds_map_set(temp_map, "Tiles_Foreground", 50);
-    ds_map_set(temp_map, "Tiles_", 100);
-    ds_map_set(temp_map, "Tiles_BG", 200);
-    ds_map_set(temp_map, "Assets_BG", 210);
-    ds_map_set(temp_map, "Assets_FG", -350);
-    ds_map_set(temp_map, "Assets_Foreground", -350);
-    ds_map_set(temp_map, "Effect_", -600);
-    ds_map_set(temp_map, "Foregrounds_", -500);
-    ds_map_set(temp_map, "Foregrounds_Ground", -500);
-    ds_map_set(temp_map, "Foregrounds", -500);
-    ds_map_set(temp_map, "Tiles_Bottle", 0);
+    temp_map[? "Tiles_Foreground"] = 50;
+    temp_map[? "Tiles_"] = 100;
+    temp_map[? "Tiles_BG"] = 200;
+    temp_map[? "Assets_BG"] = 210;
+    temp_map[? "Assets_FG"] = -350;
+    temp_map[? "Assets_Foreground"] = -350;
+    temp_map[? "Effect_"] = -600;
+    temp_map[? "Foregrounds_"] = -500;
+    temp_map[? "Foregrounds_Ground"] = -500;
+    temp_map[? "Foregrounds"] = -500;
+    temp_map[? "Tiles_Bottle"] = 0;
     var a = layer_get_all();
     
     for (var i = 0; i < array_length(a); i++)
@@ -124,10 +124,10 @@ set_layer_depths = function()
         var nums_at = string_last_pos(nums, layer_name);
         var layer_check_name = (nums == "") ? layer_name : string_delete(layer_name, nums_at, real(nums));
         
-        if (!is_undefined(ds_map_find_value(temp_map, layer_check_name)))
+        if (!is_undefined(temp_map[? layer_check_name]))
         {
             var sub = (string_digits(layer_name) == "") ? 0 : real(string_digits(layer_name));
-            safe_layer_set_depth(a[i], ds_map_find_value(temp_map, layer_check_name) - sub);
+            safe_layer_set_depth(a[i], temp_map[? layer_check_name] - sub);
         }
     }
     

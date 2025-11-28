@@ -79,7 +79,7 @@ function scr_setinput_init()
                     if (!scr_input_stickpressed(gpInputs[i]) && ((!gpAxisInvert && gamepad_axis_value(global.player_input_device, gpInputs[i]) >= dz) || (gpAxisInvert && gamepad_axis_value(global.player_input_device, gpInputs[i]) <= -dz)))
                     {
                         pressed = true;
-                        ds_map_set(global.stickpressed, string(gpInputs[i]), true);
+                        global.stickpressed[? string(gpInputs[i])] = true;
                         exit;
                     }
                 }
@@ -158,7 +158,7 @@ function scr_input_create()
         var stickarr = [gp_axislh, gp_axislv, gp_axisrh, gp_axisrv];
         
         for (var i = 0; i < array_length(stickarr); i++)
-            ds_map_set(global.stickpressed, string(stickarr[i]), false);
+            global.stickpressed[? string(stickarr[i])] = false;
     }
     
     ini_open_from_string(obj_savesystem.ini_str_options);
@@ -194,12 +194,12 @@ function scr_input_create()
 
 function scr_input_add(argument0, argument1)
 {
-    ds_map_set(global.input_map, argument0, argument1);
+    global.input_map[? argument0] = argument1;
 }
 
 function input_get(argument0)
 {
-    return ds_map_find_value(global.input_map, argument0);
+    return global.input_map[? argument0];
 }
 
 function scr_input_ini_read(argument0, argument1, argument2, argument3 = false, argument4 = false)
@@ -279,7 +279,7 @@ function scr_input_update(argument0 = -1)
     var keys = ds_map_keys_to_array(global.input_map);
     
     for (var i = 0; i < array_length(keys); i++)
-        ds_map_find_value(global.input_map, array_get(keys, i)).update(object_index);
+        global.input_map[? array_get(keys, i)].update(object_index);
     
     scr_input_stickpressed_update();
 }

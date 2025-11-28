@@ -85,7 +85,7 @@ function scr_collide_destructibles()
         
         for (var k = 0; k < num; k++)
         {
-            with (ds_list_find_value(global.instancelist, k))
+            with (global.instancelist[| k])
             {
                 falling = 1;
                 

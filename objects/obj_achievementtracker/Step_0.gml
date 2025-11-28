@@ -1,6 +1,6 @@
 for (var i = 0; i < ds_list_size(achievements_update); i++)
 {
-    var b = ds_list_find_value(achievements_update, i);
+    var b = achievements_update[| i];
     
     with (b)
     {
@@ -23,7 +23,7 @@ while (!ds_queue_empty(notify_queue))
     
     for (var i = 0; i < ds_list_size(achievements_notify); i++)
     {
-        var q = ds_list_find_value(achievements_notify, i);
+        var q = achievements_notify[| i];
         
         with (q)
         {

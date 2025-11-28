@@ -97,7 +97,7 @@ function scr_unpauseinstances()
     fmod_event_setPause_all(false);
     
     for (var i = 0; i < ds_list_size(global.PauseInstances); i++)
-        instance_activate_object(ds_list_find_value(global.PauseInstances, i));
+        instance_activate_object(global.PauseInstances[| i]);
 }
 
 function pause_all_sounds(argument0)
@@ -106,7 +106,7 @@ function pause_all_sounds(argument0)
     
     for (var i = 0; i < ds_list_size(global.FMOD_OneShotList); i++)
     {
-        var snd_id = ds_list_find_value(global.FMOD_OneShotList, i).id;
+        var snd_id = global.FMOD_OneShotList[| i].id;
         
         if (snd_id != noone && !is_undefined(snd_id))
             fmod_event_setPause(snd_id, argument0);
@@ -119,7 +119,7 @@ function stop_all_sounds()
     
     for (var i = 0; i < ds_list_size(global.FMOD_OneShotList); i++)
     {
-        var snd_id = ds_list_find_value(global.FMOD_OneShotList, i).id;
+        var snd_id = global.FMOD_OneShotList[| i].id;
         
         if (snd_id != noone && !is_undefined(snd_id))
             kill_sounds(snd_id);

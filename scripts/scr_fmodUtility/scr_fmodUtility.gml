@@ -56,7 +56,7 @@ function kill_sound_list(argument0)
             
             for (var p = 0; p < ds_list_size(global.FMOD_OneShotList); p++)
             {
-                var entry = ds_list_find_value(global.FMOD_OneShotList, p);
+                var entry = global.FMOD_OneShotList[| p];
                 
                 if (entry != noone && !is_undefined(entry) && entry.id == snd_id)
                 {
@@ -73,7 +73,7 @@ function kill_sound_list(argument0)
         
         for (var p = 0; p < ds_list_size(global.FMOD_OneShotList); p++)
         {
-            var entry = ds_list_find_value(global.FMOD_OneShotList, p);
+            var entry = global.FMOD_OneShotList[| p];
             
             if (entry != noone && !is_undefined(entry) && entry.id == snd_id)
             {
@@ -125,7 +125,7 @@ function add_music(argument0, argument1, argument2 = undefined, argument3 = unde
             roomstart = method(self, argument3);
     }
     
-    ds_map_set(global.musicMap, argument0, q);
+    global.musicMap[? argument0] = q;
 }
 
 function stop_music(argument0 = true)

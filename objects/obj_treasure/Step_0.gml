@@ -19,7 +19,7 @@ if (player == 0 && place_meeting(x, y, obj_player1))
     
     for (var i = 0; i < num; i++)
     {
-        var _player = ds_list_find_value(global.instancelist, i);
+        var _player = global.instancelist[| i];
         
         with (_player)
         {

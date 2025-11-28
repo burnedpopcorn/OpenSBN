@@ -1,6 +1,6 @@
 if (!global.panic)
 {
-    var nm = ds_map_find_value(global.musicMap, room);
+    var nm = global.musicMap[? room];
     
     if (!is_undefined(nm))
     {

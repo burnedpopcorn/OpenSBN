@@ -10,6 +10,6 @@ repeat (abs(trueYscale) - 1)
 if (ds_list_find_index(global.saveroom, id) == -1)
     ds_list_add(global.saveroom, id, imageIndexArray);
 else
-    imageIndexArray = ds_list_find_value(global.saveroom, ds_list_find_index(global.saveroom, id) + 1);
+    imageIndexArray = global.saveroom[| ds_list_find_index(global.saveroom, id) + 1];
 
 image_angle = round(image_angle / 90) * 90;

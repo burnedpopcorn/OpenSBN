@@ -15,7 +15,7 @@ if (object_list != noone)
     
     for (var i = 0; i < ds_list_size(object_list); i++)
     {
-        var b = ds_list_find_value(object_list, i);
+        var b = object_list[| i];
         
         if (hovered_object == i)
         {

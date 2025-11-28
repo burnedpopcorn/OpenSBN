@@ -8,7 +8,7 @@ function getRPGMulti(argument0)
     if (!instance_exists(obj_rpg))
         instance_create(0, 0, obj_rpg);
     
-    var val = ds_map_find_value(global.rpgStats, argument0);
+    var val = global.rpgStats[? argument0];
     
     if (!is_undefined(val))
         multi = val;

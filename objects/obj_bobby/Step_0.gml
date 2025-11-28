@@ -69,7 +69,7 @@ if (state == states.walk)
         
         for (var i = 0; i < ds_list_size(_collist); i++)
         {
-            var _col = ds_list_find_value(_collist, i);
+            var _col = _collist[| i];
             
             if (_col.object_index != obj_water && _col.object_index != obj_waterTop && _col.object_index != obj_waterCurrent)
                 _noSolid = false;

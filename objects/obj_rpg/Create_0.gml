@@ -22,9 +22,9 @@ visible = false;
 
 for (var i = 0; i < array_length(defaultStats); i++)
 {
-    ds_map_set(statOne, array_get(array_get(defaultStats, i), 0), defaultStats[i][1]);
-    ds_map_set(global.rpgStats, array_get(array_get(defaultStats, i), 0), defaultStats[i][1]);
-    ds_map_set(statMax, array_get(array_get(defaultStats, i), 0), defaultStats[i][2]);
+	statOne[? array_get(array_get(defaultStats, i), 0)] = defaultStats[i][1];
+	global.rpgStats[? array_get(array_get(defaultStats, i), 0)] = defaultStats[i][1];
+	statMax[? array_get(array_get(defaultStats, i), 0)] = defaultStats[i][2];
 }
 
 playerStat = function(argument0, argument1) constructor

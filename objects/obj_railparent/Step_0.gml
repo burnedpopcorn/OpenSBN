@@ -7,7 +7,7 @@ for (var i = 0; i < array_length(objectlist); i++)
     {
         for (var j = 0; j < ds_list_size(global.instancelist); j++)
         {
-            var t = ds_list_find_value(global.instancelist, j);
+            var t = global.instancelist[| j];
             
             with (t)
                 hsp_carry = other.dir * other.movespeed;

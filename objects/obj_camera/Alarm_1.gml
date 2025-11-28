@@ -7,7 +7,7 @@ with (obj_comboend)
 with (obj_particlesystem)
 {
     for (var i = 0; i < ds_list_size(global.collect_list); i++)
-        cs += ds_list_find_value(global.collect_list, i).value;
+        cs += global.collect_list[| i].value;
 }
 
 var sc = _score - global.comboscore - cs;

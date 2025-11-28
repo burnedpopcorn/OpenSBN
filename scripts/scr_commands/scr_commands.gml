@@ -6,7 +6,7 @@ function scr_do_command(argument0)
         {
             undo--;
             var t = ds_list_size(commandlist) - undo;
-            ds_list_find_value(commandlist, t).ds_list_find_value(commandlist, t).OnDelete();
+            commandlist[| t].commandlist[| t].OnDelete();
             ds_list_delete(commandlist, t);
         }
         
@@ -19,7 +19,7 @@ function scr_undo_command()
 {
     if (!ds_list_empty(commandlist))
     {
-        var b = ds_list_find_value(commandlist, ds_list_size(commandlist) - undo);
+        var b = commandlist[| ds_list_size(commandlist) - undo];
         
         if (b.state == 1)
         {
@@ -36,7 +36,7 @@ function scr_redo_command()
 {
     if (!ds_list_empty(commandlist))
     {
-        b = ds_list_find_value(commandlist, ds_list_size(commandlist) - undo);
+        b = commandlist[| ds_list_size(commandlist) - undo];
         
         if (b.state == 0)
         {

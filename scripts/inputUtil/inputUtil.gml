@@ -11,7 +11,7 @@ function scr_gpinput_isaxis(argument0)
 function scr_input_stickpressed(argument0)
 {
     var s = string(argument0);
-    return ds_map_find_value(global.stickpressed, s);
+    return global.stickpressed[? s];
 }
 
 function scr_input_stickpressed_update(argument0 = global.player_input_device, argument1 = global.deadzones[deadzone.master])
@@ -22,10 +22,10 @@ function scr_input_stickpressed_update(argument0 = global.player_input_device, a
     {
         var s = string(sticks[i]);
         var val = gamepad_axis_value(argument0, sticks[i]);
-        var pressed = ds_map_find_value(global.stickpressed, s);
+        var pressed = global.stickpressed[? s];
         
         if (pressed && val < argument1 && val > -argument1)
-            ds_map_set(global.stickpressed, s, false);
+            global.stickpressed[? s] = false;
     }
 }
 
@@ -285,7 +285,7 @@ function input_addIcon(argument0, argument1, argument2 = 0)
     for (var i = 0; i < array_length(argument0); i++)
     {
         var input = argument0[i];
-        ds_map_set(global.input_icons, input, [argument1, argument2]);
+        global.input_icons[? input] = [argument1, argument2];
         show_debug_message(concat("Added ", sprite_get_name(argument1), string(" (frame: {0}) to input icon map for {1}.", argument2, input)));
     }
 }
@@ -317,7 +317,7 @@ function scr_input_get_icon(argument0, argument1 = false)
     {
         for (var i = 0; i < length; i++)
         {
-            var ico = ds_map_find_value(global.input_icons, array_get(inputArr, i));
+            var ico = global.input_icons[? array_get(inputArr, i)];
             
             if (!is_undefined(ico))
                 array_push(result, ico);
@@ -325,7 +325,7 @@ function scr_input_get_icon(argument0, argument1 = false)
     }
     
     if (array_length(result) == 0)
-        result = [ds_map_find_value(global.input_icons, "NONE")];
+        result = [global.input_icons[? "NONE"]];
     
     return argument1 ? result : result[0];
 }

@@ -8,7 +8,7 @@ else
     
     for (var i = 0; i < num; i++)
     {
-        var b = ds_list_find_value(global.instancelist, i);
+        var b = global.instancelist[| i];
         
         with (b)
         {

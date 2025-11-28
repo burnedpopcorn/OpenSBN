@@ -11,11 +11,11 @@ for (var i = 0; i < array_length(statNames); i++)
     else if (nm == "defense")
         mail_trigger(mailtriggers.maxdefense);
     
-    var pmax = ds_map_find_value(statMax, nm);
-    var pmin = ds_map_find_value(statOne, nm);
+    var pmax = statMax[? nm];
+    var pmin = statOne[? nm];
     var n = (st.level - 1) * (pmax - pmin);
     var v = (n / 99) + pmin;
-    ds_map_set(global.rpgStats, nm, v);
+    global.rpgStats[? nm] = v;
 }
 
 if (maxxed)

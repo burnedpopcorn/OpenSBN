@@ -2,7 +2,7 @@ var i = ds_list_size(global.AfterImageList) - 1;
 
 while (i > -1)
 {
-    with (ds_list_find_value(global.AfterImageList, i))
+    with (global.AfterImageList[| i])
     {
         if (lifeTime > 0)
             lifeTime--;

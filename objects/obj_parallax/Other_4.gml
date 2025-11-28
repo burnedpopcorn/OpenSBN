@@ -48,10 +48,10 @@ while (i < array_length(a))
         {
             var _parallax_value = undefined;
             
-            if (!is_undefined(ds_map_find_value(global.ParallaxMap, array_get(a, i))))
-                _parallax_value = ds_map_find_value(global.ParallaxMap, array_get(a, i)).args;
-            else if (!is_undefined(ds_map_find_value(global.ParallaxMap, layer_get_name(a[i]))))
-                _parallax_value = ds_map_find_value(global.ParallaxMap, layer_get_name(a[i])).args;
+            if (!is_undefined(global.ParallaxMap[? array_get(a, i)]))
+                _parallax_value = global.ParallaxMap[? array_get(a, i)].args;
+            else if (!is_undefined(global.ParallaxMap[? layer_get_name(a[i])]))
+                _parallax_value = global.ParallaxMap[? layer_get_name(a[i])].args;
             else
                 break;
             

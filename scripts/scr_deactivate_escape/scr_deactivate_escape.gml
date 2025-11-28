@@ -13,7 +13,7 @@ function scr_deactivate_escape()
         {
             for (var i = 0; i < ds_list_size(deactivatedlist); i++)
             {
-                var _id = ds_list_find_value(deactivatedlist, i);
+                var _id = deactivatedlist[| i];
                 
                 if (object_get_parent(_id) == obj_characterselect)
                     _id.boundbox = 0;
@@ -31,7 +31,7 @@ function scr_deactivate_escape()
             {
                 for (var i = 0; i < ds_list_size(baddielist); i++)
                 {
-                    var b = ds_list_find_value(baddielist, i);
+                    var b = baddielist[| i];
                     
                     if (b[0] != wave && instance_exists(b[1]))
                     {
@@ -45,7 +45,7 @@ function scr_deactivate_escape()
         {
             for (var i = 0; i < ds_list_size(baddielist); i++)
             {
-                var b = array_get(ds_list_find_value(baddielist, i), 1);
+                var b = array_get(baddielist[| i], 1);
                 
                 if (instance_exists(b))
                 {

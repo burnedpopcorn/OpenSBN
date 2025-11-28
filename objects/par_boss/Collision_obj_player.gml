@@ -7,7 +7,7 @@ if (!attacking)
 {
     if (!invincible)
     {
-        var s = ds_map_find_value(player_hurtstates, _player.state);
+        var s = player_hurtstates[? _player.state];
         
         if (!is_undefined(s))
         {
@@ -20,7 +20,7 @@ if (!attacking)
 }
 else
 {
-    var sb = ds_map_find_value(boss_hurtstates, state);
+    var sb = boss_hurtstates[? state];
     
     if (!is_undefined(sb) && state != states.chainsaw && state != states.stun)
     {

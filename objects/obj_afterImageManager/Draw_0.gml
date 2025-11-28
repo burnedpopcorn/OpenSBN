@@ -1,6 +1,6 @@
 for (var i = 0; i < ds_list_size(global.AfterImageList); i++)
 {
-    with (ds_list_find_value(global.AfterImageList, i))
+    with (global.AfterImageList[| i])
     {
         if (visible)
         {

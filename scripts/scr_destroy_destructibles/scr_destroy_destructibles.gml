@@ -10,7 +10,7 @@ function scr_destroy_destructibles(argument0, argument1, argument2 = obj_destruc
     {
         for (var i = 0; i < ds_list_size(global.instancelist); i++)
         {
-            var inst = ds_list_find_value(global.instancelist, i);
+            var inst = global.instancelist[| i];
             instance_destroy(inst);
         }
     }
